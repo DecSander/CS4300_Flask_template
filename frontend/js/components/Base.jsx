@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 export default class App extends React.Component {
   render() {
     return (
-      <Provider>
-      </Provider>
+      <div id='base'>
+      </div>
     );
   }
 }
