@@ -4,7 +4,8 @@
   "description": "This Flask app template is intended to get you started with your project and launch it on Heroku, and assumes no prior experience with web development (but some patience).  If you have any questions dont hesistate to ask the TAs or come to OH. In this README I will include an overview section with information on the flask app architecture and a step-by-step guide to loading up your app in dev and production (in Heroku) with instructions for (optional) EC2/EB add-ons addcoming soon. This README was written by Ilan Filonenko with help from Joseph Antonakakis. ## Table of Contents ### [Overview](#overview-of-the-project-and-introduction-to-flask) ### [Step-By-Step](#step-by-step-guide) ### [Post-Setup-Getting-Started](#getting-started) ### [AWS Deployment](#deploy-to-ec2-quick) ## Overview of the project and Introduction to Flask This will overview `Flask` development operations for setting up a new project with an emphasis on the `Model-View-Controller` design pattern.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "gulp",
+    "gulp-prod": "gulp production"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,26 @@
   },
   "homepage": "https://github.com/DecSander/CS4300_Flask_template#readme",
   "dependencies": {
-    "material-ui": "^0.20.0"
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.1",
+    "browserify-incremental": "^3.1.1",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-string-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.0",
+    "material-ui": "^0.20.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

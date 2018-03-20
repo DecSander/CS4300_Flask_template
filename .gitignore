@@ -6,3 +6,6 @@ vagrant/site.retry
 vagrant/a4keypair.pem
 node_modules/
 package-lock.json
+bundle.js
+bundle.js.map
+.browserify-cache.json
