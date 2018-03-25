@@ -52,6 +52,8 @@ if __name__ == "__main__":
                         breed = breed_link.text
                         # if breed[0].lower() in ['a', 'b', 'c']:
                         #     continue
+                        if breed.lower() != "akita":
+                            continue
                         print breed
 
                         breed_messages = []
@@ -69,11 +71,19 @@ if __name__ == "__main__":
                             for thread_link in breed_page.find_all(class_="PreviewTooltip"):
                                 thread_ref = thread_link.get('href')
                                 thread_page = url_get(BASE_URL + thread_ref)
-                                if "stud" in (BASE_URL + thread_ref).lower():
-                                    print BASE_URL + thread_ref
 
-                                for message in thread_page.find_all(class_="messageText"):
-                                    breed_messages.append(message.text.strip())
+                                thread_pages_obj = thread_page.find(class_="pageNavHeader")
+                                if thread_pages_obj:
+                                    num_pages = int(thread_pages_obj.text[-1])
+                                else:
+                                    num_pages = 1
+                                for thread_page_num in xrange(1, num_pages+1):
+                                    if thread_page_num != 1:
+                                        thread_page = url_get(BASE_URL + thread_ref + "page-" + str(thread_page_num))
+                                        print BASE_URL + thread_ref + "page-" + str(thread_page_num)
+
+                                    for message in thread_page.find_all(class_="messageText"):
+                                        breed_messages.append(message.text.strip())
 
                                 data[breed] = breed_messages
                         with open("output.json", 'w') as f:
