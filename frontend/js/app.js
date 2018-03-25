@@ -1,5 +1,18 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
-import ReactDOM from 'react-dom';
-import Base from 'components/Base';
+import React from 'react';
+import { render } from 'react-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<Base />, document.getElementById('react'));
+import GlobalStore from 'infra/GlobalStore';
+import App from 'components/App';
+import { requestPreferences } from 'infra/api';
+
+requestPreferences();
+
+render((
+  <HashRouter>
+    <Provider store={GlobalStore}>
+      <App />
+    </Provider>
+  </HashRouter>), document.getElementById('react')
+);
