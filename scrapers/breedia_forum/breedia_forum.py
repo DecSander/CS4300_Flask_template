@@ -24,6 +24,7 @@ def url_get(url):
     if diff < 1/RATE_LIMIT:
         time.sleep(1/RATE_LIMIT - diff)
 
+    last_request = time.time()
     data = BSoup(requests.get(url).text, 'html.parser')
     cache[url] = data
     return data
