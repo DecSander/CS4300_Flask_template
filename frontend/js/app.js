@@ -5,9 +5,8 @@ import { Provider } from 'react-redux';
 
 import GlobalStore from 'infra/GlobalStore';
 import App from 'components/App';
-import { requestPreferences } from 'infra/api';
-
-requestPreferences();
+import { preferenceKeys } from 'infra/const';
+import { updatePreference } from 'infra/GlobalActions';
 
 render((
   <HashRouter>
@@ -16,3 +15,7 @@ render((
     </Provider>
   </HashRouter>), document.getElementById('react')
 );
+
+preferenceKeys.forEach(key => {
+  if (localStorage[key] !== undefined) updatePreference(key, JSON.parse(localStorage[key]));
+});

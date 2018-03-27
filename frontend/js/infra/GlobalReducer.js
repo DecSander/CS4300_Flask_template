@@ -1,5 +1,7 @@
 import { Record, List } from 'immutable';
 import { requestMoreBreeds, sendLike, sendDislike } from 'infra/api';
+import { updatePreference } from 'infra/GlobalActions';
+import { preferencesDefault } from 'infra/const';
 
 const Breed = Record({
   name: '',
@@ -10,16 +12,23 @@ const hardcodedBreeds = [{
   name: 'Corgi', img: '/static/img/corgi.jpg'
 }, {
   name: 'Husky', img: '/static/img/husky.jpg'
+}, {
+  name: 'Corgi', img: '/static/img/corgi.jpg'
+}, {
+  name: 'Husky', img: '/static/img/husky.jpg'
+}, {
+  name: 'Corgi', img: '/static/img/corgi.jpg'
+}, {
+  name: 'Husky', img: '/static/img/husky.jpg'
+}, {
+  name: 'Corgi', img: '/static/img/corgi.jpg'
 }];
 
-const Preferences = Record({
-  keywords: ''
-});
+const Preferences = Record(preferencesDefault);
 
 const GlobalState = Record({
   currentBreeds: List(hardcodedBreeds).map(Breed),
   liked: List(),
-  disliked: List(),
   preferences: new Preferences()
 });
 
@@ -31,27 +40,16 @@ export default function globalReducer(state = initialState, action) {
     return state
       .set('currentBreeds', state.currentBreeds.concat(List(action.breeds).map(Breed)));
   case 'LIKE_BREED': {
-    if (state.currentBreeds.size - 1 === 3) requestMoreBreeds();
-    const current = state.currentBreeds.get(0);
+    const current = state.currentBreeds.get(action.breed_number);
     sendLike(current.name);
     return state
-      .set('currentBreeds', state.currentBreeds.splice(0, 1))
+      .set('currentBreeds', state.currentBreeds.splice(action.breed_number, 1))
       .set('liked', state.liked.push(current));
   }
-  case 'DISLIKE_BREED': {
-    if (state.currentBreeds.size - 1 === 3) requestMoreBreeds();
-    const current = state.currentBreeds.get(0);
-    sendDislike(current.name);
-    return state
-      .set('currentBreeds', state.currentBreeds.splice(0, 1))
-      .set('disliked', state.disliked.push(current));
-  }
   case 'UPDATE_PREFERENCE':
+    localStorage[action.field] = JSON.stringify(action.value);
     return state
       .setIn(['preferences', action.field], action.value);
-  case 'RECEIVE_PREFERENCE_VALUES':
-    return state
-      .set('preferences', state.preferences.merge(action.values));
   default:
     return state;
   }

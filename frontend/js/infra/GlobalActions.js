@@ -7,15 +7,10 @@ export function receiveBreeds(breeds) {
   });
 }
 
-export function likeBreed() {
+export function likeBreed(breed_number) {
   return GlobalStore.dispatch({
-    type: 'LIKE_BREED'
-  });
-}
-
-export function dislikeBreed() {
-  return GlobalStore.dispatch({
-    type: 'DISLIKE_BREED'
+    type: 'LIKE_BREED',
+    breed_number
   });
 }
 
@@ -23,12 +18,5 @@ export function updatePreference(field, value) {
   return GlobalStore.dispatch({
     type: 'UPDATE_PREFERENCE',
     field, value
-  });
-}
-
-export function receivePreferenceValues(values) {
-  return GlobalStore.dispatch({
-    type: 'RECEIVE_PREFERENCE_VALUES',
-    values
   });
 }

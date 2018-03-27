@@ -1,7 +1,14 @@
 import { receiveBreeds, receivePreferenceValues } from 'infra/GlobalActions';
 
-export function requestMoreBreeds() {
-  fetch('/breeds')
+function getQueryString(params) {
+  var esc = encodeURIComponent;
+  return Object.keys(params)
+    .map(k => `${k}=${esc(params[k])}`)
+    .join('&');
+}
+
+export function requestMoreBreeds(preferences) {
+  fetch(`/breeds?${getQueryString(preferences.toJS())}`)
     .then(JSON.parse)
     .then(receiveBreeds)
     .catch(console.log);
@@ -16,22 +23,4 @@ export function sendLike(breed) {
       'content-type': 'application/json'
     }
   });
-}
-
-export function sendDislike(breed) {
-  fetch('/dislike', {
-    body: JSON.stringify({ breed }),
-    cache: 'no-cache',
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json'
-    }
-  });
-}
-
-export function requestPreferences() {
-  fetch('/pref')
-    .then(JSON.parse)
-    .then(receivePreferenceValues)
-    .catch(console.log);
 }
