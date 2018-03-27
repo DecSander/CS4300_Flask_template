@@ -32,7 +32,7 @@ class Home extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col offset={{md: 4}} lg={4} xs={12}>
+          <Col offset={{lg: 5}} lg={2} xs={12}>
             <Infinite containerHeight={900} infiniteLoadBeginEdgeOffset={300} elementHeight={350} onInfiniteLoad={() => { requestMoreBreeds(preferences); }}>
               {currentBreeds.map((breed, i) =>
                 <Card style={{margin: 'auto'}}>
