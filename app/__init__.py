@@ -23,7 +23,7 @@ app.register_blueprint(accounts)
 from app.irsystem import irsystem as irsystem
 app.register_blueprint(irsystem)
 
-from app.home import home
+from app.home.home_controller import home
 app.register_blueprint(home)
 
 # Initialize app w/SocketIO
