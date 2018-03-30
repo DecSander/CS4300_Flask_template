@@ -16,6 +16,11 @@ render((
   </HashRouter>), document.getElementById('react')
 );
 
+// Load preferences from local storage
 preferenceKeys.forEach(key => {
   if (localStorage[key] !== undefined) updatePreference(key, JSON.parse(localStorage[key]));
 });
+
+// Pre-load home image
+const i = new Image();
+i.src = '/static/img/home.jpg';

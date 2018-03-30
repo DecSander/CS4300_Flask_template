@@ -20,3 +20,16 @@ export function updatePreference(field, value) {
     field, value
   });
 }
+
+export function requestMoreBreedsFailed() {
+  return GlobalStore.dispatch({
+    type: 'REQUEST_BREEDS_FAILED'
+  });
+}
+
+export function requestMoreBreedsStart() {
+  return GlobalStore.dispatch({
+    type: 'REQUEST_BREEDS_START'
+  });
+}
+

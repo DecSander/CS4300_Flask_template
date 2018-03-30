@@ -1,17 +1,26 @@
-import { receiveBreeds, receivePreferenceValues } from 'infra/GlobalActions';
-
-function getQueryString(params) {
-  var esc = encodeURIComponent;
-  return Object.keys(params)
-    .map(k => `${k}=${esc(params[k])}`)
-    .join('&');
-}
+import { receiveBreeds, receivePreferenceValues,
+         requestMoreBreedsStart, requestMoreBreedsFailed } from 'infra/GlobalActions';
 
 export function requestMoreBreeds(preferences) {
-  fetch(`/breeds?${getQueryString(preferences.toJS())}`)
+  requestMoreBreedsStart();
+  fetch(`/breeds`, {
+    body: preferences.toJS(),
+    cache: 'no-cache',
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (response.ok) return response
+      else throw Error(response.statusText)
+    })
     .then(JSON.parse)
     .then(receiveBreeds)
-    .catch(console.log);
+    .catch(v => {
+      requestMoreBreedsFailed();
+      console.log(v);
+    })
 }
 
 export function sendLike(breed) {

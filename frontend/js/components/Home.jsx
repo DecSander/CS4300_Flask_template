@@ -1,55 +1,39 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import Infinite from 'react-infinite';
-import { Card, CardActions, CardMedia, CardTitle } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import { withRouter } from 'react-router-dom';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
-import { likeBreed } from 'infra/GlobalActions';
-import { requestMoreBreeds } from 'infra/api';
+import { updatePreference } from 'infra/GlobalActions';
 
-function mapStateToProps({ currentBreeds, preferences }) {
-  return { currentBreeds, preferences };
-}
+class Home extends React.Component {
 
-function keypress(e) {
-  if (e.keyCode === 38) likeBreed();
-}
-
-class Home extends Component {
-
-  componentDidMount() {
-    document.addEventListener('keyup', keypress);
+  componentWillMount() {
+    document.getElementsByTagName("body")[0].className += ' background';
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', keypress);
+    const element = document.getElementsByTagName("body")[0];
+    element.className = element.className.replace(/background/g, '');
   }
 
   render() {
-    const { currentBreeds, preferences } = this.props;
-
+    const { history } = this.props;
     return (
       <Container fluid>
         <Row>
-          <Col offset={{lg: 5}} lg={2} xs={12}>
-            <Infinite containerHeight={900} infiniteLoadBeginEdgeOffset={300} elementHeight={350} onInfiniteLoad={() => { requestMoreBreeds(preferences); }}>
-              {currentBreeds.map((breed, i) =>
-                <Card style={{margin: 'auto'}}>
-                  <CardMedia style={{width: 400, height: 300}} overlay={<CardTitle title={breed.name} />}>
-                    <img src={breed.img} alt={breed.name} />
-                  </CardMedia>
-                  <CardActions>
-                    <FlatButton label="Like ❤️ " onClick={() => likeBreed(i)} />
-                  </CardActions>
-                </Card>
-              )}
-            </Infinite>
+          <Col offset={{lg: 4}} lg={4} xs={12}>
+            <div style={{textAlign: 'center', fontWeight: '200', fontFamily: 'roboto', color: 'blue'}}>
+              <h1 style={{fontSize: '56px'}}>Who's A Good Dog?</h1>
+              <h3 style={{fontSize: '30px'}}>Find out which dog you should get</h3>
+              <TextField style={{paddingRight: '75px', marginRight: '20px'}} floatingLabelText="Search" onChange={(e, v) => updatePreference('keywords', v)} />
+              <RaisedButton secondary={true} onClick={() => history.push('/preferences')}>Submit</RaisedButton>
+            </div>
           </Col>
         </Row>
       </Container>
     );
   }
-}
+};
 
-export default connect(mapStateToProps)(Home);
+export default withRouter(Home);

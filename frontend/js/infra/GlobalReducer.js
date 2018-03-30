@@ -29,7 +29,8 @@ const Preferences = Record(preferencesDefault);
 const GlobalState = Record({
   currentBreeds: List(hardcodedBreeds).map(Breed),
   liked: List(),
-  preferences: new Preferences()
+  preferences: new Preferences(),
+  isInfiniteLoading: false
 });
 
 const initialState = new GlobalState();
@@ -50,6 +51,12 @@ export default function globalReducer(state = initialState, action) {
     localStorage[action.field] = JSON.stringify(action.value);
     return state
       .setIn(['preferences', action.field], action.value);
+  case 'REQUEST_BREEDS_START':
+    return state
+      .set('isInfiniteLoading', true);
+  case 'REQUEST_BREEDS_FAILED':
+    return state
+      .set('isInfiniteLoading', false);
   default:
     return state;
   }
