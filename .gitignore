@@ -9,3 +9,4 @@ package-lock.json
 bundle.js
 bundle.js.map
 .browserify-cache.json
+database/*.pickle

@@ -25,14 +25,23 @@ def extend_with_default(validator_class):
 jsonschema = extend_with_default(Draft4Validator)
 
 
-set_preferences = {
+preferences = {
     "type": "object",
     "properties": {
         "preferences": {
             "type": "object",
         },
     },
-    "default": {},
     "required": ["preferences"]
+}
+
+liked_dog = {
+    "type": "object",
+    "properties": {
+        "dog_name": {
+            "type": "string",
+        },
+    },
+    "required": ["dog_name"]
 }
 
