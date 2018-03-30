@@ -34,6 +34,7 @@ def url_get(url):
 
 if __name__ == "__main__":
     data = {}
+    order = ['skip', 'nutrition', 'grooming', 'exercise', 'training', 'health']
     for page in range(1,24):
         breeds_page = url_get(BASE_URL + BREEDS_ROOT + 'page/' + str(page))
         print("Page: " + str(page))
@@ -60,6 +61,7 @@ if __name__ == "__main__":
             #print(attribute_list.prettify())
                 
             #print('-------')
+
             dog_data['About'] = about_the_breed.get_text()
 
             fact_list = breed_page.find_all(class_='fact-slider__slide-content')
@@ -75,6 +77,33 @@ if __name__ == "__main__":
             #for care in care_list:
                 #print(care.prettify())
 
+            dog_footer = breed_page.find(class_='breed-hero__footer')
+            dog_data['Blurb'] = dog_footer.get_text()
+    
+            general_appearance = breed_page.find(class_='breed-standard__content-wrap')
+            if general_appearance != None:
+                dog_data['General_apperance'] = general_appearance.get_text()
+
+            care = breed_page.find_all('div', class_='tabs__tab-panel-content')        
+            
+            for i in range(len(care)):
+                if i == 0:
+                    continue
+                else:
+                    if care[i].find('p') != None:
+                        dog_data[order[i]] = care[i].find('p').get_text()
+
+            bar_graphs = breed_page.find_all('div', class_='bar-graph')
+
+
+            for bar in bar_graphs:
+                key = bar.get_text().split('\n')[1] 
+                value = bar.find(class_='bar-graph__section')['style']
+                value = value.split(':')[1]
+                dog_data[key] = value[:-1].strip()
+
             data[breed_name] = dog_data
 
-   # print(json.dumps(data, indent=2, separators=(',', ': ')))
+
+
+    print(json.dumps(data, indent=4, separators=(',', ': ')))
