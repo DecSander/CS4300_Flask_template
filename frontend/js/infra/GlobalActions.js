@@ -1,12 +1,5 @@
 import GlobalStore from 'infra/GlobalStore';
 
-export function receiveBreeds(breeds) {
-  return GlobalStore.dispatch({
-    type: 'RECEIVE_BREEDS',
-    breeds
-  });
-}
-
 export function likeBreed(breed_number) {
   return GlobalStore.dispatch({
     type: 'LIKE_BREED',
@@ -21,15 +14,48 @@ export function updatePreference(field, value) {
   });
 }
 
-export function requestMoreBreedsFailed() {
-  return GlobalStore.dispatch({
-    type: 'REQUEST_BREEDS_FAILED'
-  });
-}
-
 export function requestMoreBreedsStart() {
   return GlobalStore.dispatch({
     type: 'REQUEST_BREEDS_START'
   });
 }
 
+export function receiveBreeds(breeds) {
+  return GlobalStore.dispatch({
+    type: 'RECEIVE_BREEDS',
+    breeds
+  });
+}
+
+export function requestMoreBreedsFailed() {
+  return GlobalStore.dispatch({
+    type: 'REQUEST_BREEDS_FAILED'
+  });
+}
+
+
+export function requestLikedDogsStart() {
+  return GlobalStore.dispatch({
+    type: 'REQUEST_LIKED_START'
+  });
+}
+
+export function receiveLikedDogs(dogs) {
+  return GlobalStore.dispatch({
+    type: 'RECEIVE_LIKED',
+    dogs
+  });
+}
+
+export function requestLikedDogsFailed() {
+  return GlobalStore.dispatch({
+    type: 'REQUEST_LIKED_FAILED'
+  });
+}
+
+export function changeCheckPreferences(selected) {
+  return GlobalStore.dispatch({
+    type: 'CHANGE_CHECK_PREFERENCES',
+    selected
+  });
+}

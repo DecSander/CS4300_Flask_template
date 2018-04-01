@@ -7,6 +7,7 @@ import GlobalStore from 'infra/GlobalStore';
 import App from 'components/App';
 import { preferenceKeys } from 'infra/const';
 import { updatePreference } from 'infra/GlobalActions';
+import { getLikedDogs } from 'infra/api';
 
 render((
   <HashRouter>
@@ -20,6 +21,8 @@ render((
 preferenceKeys.forEach(key => {
   if (localStorage[key] !== undefined) updatePreference(key, JSON.parse(localStorage[key]));
 });
+
+getLikedDogs();
 
 // Pre-load home image
 const i = new Image();

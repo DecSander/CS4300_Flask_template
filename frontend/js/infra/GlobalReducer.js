@@ -8,38 +8,21 @@ const Breed = Record({
   img: ''
 });
 
-const hardcodedBreeds = [{
-  name: 'Corgi', img: '/static/img/corgi.jpg'
-}, {
-  name: 'Husky', img: '/static/img/husky.jpg'
-}, {
-  name: 'Corgi', img: '/static/img/corgi.jpg'
-}, {
-  name: 'Husky', img: '/static/img/husky.jpg'
-}, {
-  name: 'Corgi', img: '/static/img/corgi.jpg'
-}, {
-  name: 'Husky', img: '/static/img/husky.jpg'
-}, {
-  name: 'Corgi', img: '/static/img/corgi.jpg'
-}];
-
 const Preferences = Record(preferencesDefault);
 
 const GlobalState = Record({
-  currentBreeds: List(hardcodedBreeds).map(Breed),
+  currentBreeds: List(),
   liked: List(),
   preferences: new Preferences(),
-  isInfiniteLoading: false
+  breedsInfiniteLoading: false,
+  likedLoading: false,
+  checkPreferences: false
 });
 
 const initialState = new GlobalState();
 
 export default function globalReducer(state = initialState, action) {
   switch (action.type) {
-  case 'RECEIVE_BREEDS':
-    return state
-      .set('currentBreeds', state.currentBreeds.concat(List(action.breeds).map(Breed)));
   case 'LIKE_BREED': {
     const current = state.currentBreeds.get(action.breed_number);
     sendLike(current.name);
@@ -51,12 +34,31 @@ export default function globalReducer(state = initialState, action) {
     localStorage[action.field] = JSON.stringify(action.value);
     return state
       .setIn(['preferences', action.field], action.value);
+  case 'CHANGE_CHECK_PREFERENCES':
+    return state
+      .set('checkPreferences', action.selected);
+
   case 'REQUEST_BREEDS_START':
     return state
-      .set('isInfiniteLoading', true);
+      .set('breedsInfiniteLoading', true);
+  case 'RECEIVE_BREEDS':
+    return state
+      .set('breedsInfiniteLoading', false)
+      .set('currentBreeds', state.currentBreeds.concat(List(action.breeds).map(breed => new Breed({name: breed.dog_name, img: List(breed.images)}))));
   case 'REQUEST_BREEDS_FAILED':
     return state
-      .set('isInfiniteLoading', false);
+      .set('breedsInfiniteLoading', false);
+
+  case 'REQUEST_LIKED_START':
+    return state
+      .set('likedLoading', true);
+  case 'RECEIVE_LIKED':
+    return state
+      .set('likedLoading', false)
+      .set('liked', state.liked.concat(List(action.dogs).map(v => new Breed({name: v, img: List()}))));
+  case 'REQUEST_LIKED_FAILED':
+    return state
+      .set('likedLoading', false);
   default:
     return state;
   }

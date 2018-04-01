@@ -12,14 +12,23 @@ const iconStyles = {
   color: 'white'
 };
 
+const tabs = [{
+  name: 'Home', value: '/'
+}, {
+  name: 'Prefs', value: '/preferences'
+}, {
+  name: 'Breeds', value: '/breeds'
+}, {
+  name: 'Matches', value: '/matches'
+}]
+
 function Header({ location, history }) {
   return (
     <AppBar iconElementLeft={<FontIcon style={iconStyles} className="fas fa-paw" />} title={'Who\'s a good dog?'}>
       <Tabs value={location.pathname} onChange={(v) => history.push(v)}>
-        <Tab label="&nbsp;&nbsp;Home&nbsp;&nbsp;" value='/' />
-        <Tab label="&nbsp;&nbsp;Prefs&nbsp;&nbsp;" value='/preferences' />
-        <Tab label="&nbsp;&nbsp;Breeds&nbsp;&nbsp;" value='/breeds' />
-        <Tab label="&nbsp;&nbsp;Matches&nbsp;&nbsp;" value='/matches' />
+        {tabs.map(tab => 
+          <Tab key={`tab-${tab.name}`} label={`\u00A0\u00A0\u00A0${tab.name}\u00A0\u00A0\u00A0`} value={tab.value} />
+        )}
       </Tabs>
     </AppBar>
   );

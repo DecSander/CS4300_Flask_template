@@ -33,6 +33,7 @@
     "gulp-uglify": "^3.0.0",
     "immutable": "^3.8.2",
     "material-ui": "^0.20.0",
+    "nuka-carousel": "^4.0.3",
     "react": "^16.2.0",
     "react-accessible-accordion": "^2.2.1",
     "react-dom": "^16.2.0",

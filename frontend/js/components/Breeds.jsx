@@ -4,13 +4,17 @@ import { Container, Row, Col } from 'react-grid-system';
 import Infinite from 'react-infinite';
 import { Card, CardActions, CardMedia, CardTitle } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
+import Dialog from 'material-ui/Dialog';
+import Carousel from 'nuka-carousel';
 
 import { likeBreed } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
+import { capitalizeFirstLetter } from 'infra/utils';
 
-function mapStateToProps({ currentBreeds, preferences, isInfiniteLoading }) {
-  return { currentBreeds, preferences, isInfiniteLoading };
+function mapStateToProps({ currentBreeds, preferences, breedsInfiniteLoading }) {
+  return { currentBreeds, preferences, breedsInfiniteLoading };
 }
 
 function keypress(e) {
@@ -19,50 +23,82 @@ function keypress(e) {
 
 class Breeds extends Component {
 
-  requestBreeds = () => {
-    setTimeout(requestMoreBreeds(this.props.preferences), 8000);
+  state = {
+    modalOpen: false,
+    selectedNumber: 0,
+    selectedBreed: null
   }
 
-  componentDidMount() {
-    document.addEventListener('keyup', keypress);
+  handleOpen = (breed, i) => {
+    this.setState({
+      modalOpen: true,
+      selectedNumber: i,
+      selectedBreed: breed
+    });
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('keyup', keypress);
+  handleClose = () => {
+    this.setState({
+      modalOpen: false,
+      selectedNumber: 0,
+      selectedBreed: null
+    });
   }
 
-  elementInfiniteLoad() {
+  buildSlideshow = () => {
+    const { selectedBreed } = this.state;
     return (
-      <CircularProgress />
+      <Carousel slideWidth="400px">
+        {selectedBreed.img.map(image => <img style={{height: '300px', width: '400px'}} src={image} />)}
+      </Carousel>
+    );
+  }
+
+  buildDialog = () => {
+    const { selectedBreed, modalOpen, selectedNumber } = this.state;
+    const actions = [<FlatButton label="Save ❤️ " onClick={() => { likeBreed(selectedNumber); this.handleClose(); }} />];
+
+    if (selectedBreed === null) {
+      return null;
+    } else {
+      return (
+        <Dialog actions={actions} style={{marginTop: '-200px'}} title={capitalizeFirstLetter(selectedBreed.name)}
+            modal={false} open={modalOpen} onRequestClose={this.handleClose}>
+          {this.buildSlideshow()}
+          <br />
+          {`${selectedBreed.name} Description here`}
+        </Dialog>
+      );
+    }
+  }
+
+  buildBreedCard = (breed, i) => {
+    return (
+      <Col lg={4} xs={12} key={`breed-${breed.name}-${i}`}>
+        <Card style={{margin: 'auto', marginTop: '20px'}}>
+          <div onClick={() => this.handleOpen(breed, i)}>
+            <CardMedia style={{width: 400, height: 300}} overlay={<CardTitle title={capitalizeFirstLetter(breed.name)} />}>
+              <img style={{height: '300px', width: '200px'}} src={breed.img.get(0)} alt={breed.name} />
+            </CardMedia>
+          </div>
+          <CardActions>
+            <FlatButton label="Save ❤️ " onClick={() => likeBreed(i)} />
+          </CardActions>
+        </Card>
+      </Col>
     );
   }
 
   render() {
-    const { currentBreeds, preferences, isInfiniteLoading } = this.props;
+    const { currentBreeds, preferences } = this.props;
 
     return (
       <Container fluid>
         <Row>
-          <Col offset={{lg: 5}} lg={2} xs={12}>
-            <Infinite containerHeight={900}
-                infiniteLoadBeginEdgeOffset={300}
-                elementHeight={350}
-                loadingSpinnerDelegate={this.elementInfiniteLoad()}
-                isInfiniteLoading={isInfiniteLoading}
-                onInfiniteLoad={this.requestBreeds}>
-              {currentBreeds.map((breed, i) =>
-                <Card style={{margin: 'auto'}} key={`${breed.name}-${i}`}>
-                  <CardMedia style={{width: 400, height: 300}} overlay={<CardTitle title={breed.name} />}>
-                    <img src={breed.img} alt={breed.name} />
-                  </CardMedia>
-                  <CardActions>
-                    <FlatButton label="Save ❤️ " onClick={() => likeBreed(i)} />
-                  </CardActions>
-                </Card>
-              )}
-            </Infinite>
-          </Col>
+          {currentBreeds.map(this.buildBreedCard)}
         </Row>
+        <RaisedButton style={{marginTop: '20px'}} secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(preferences)} />
+        {this.buildDialog()}
       </Container>
     );
   }
