@@ -96,9 +96,19 @@ class Breeds extends Component {
       <Container fluid>
         <Row>
           {currentBreeds.map(this.buildBreedCard)}
+          <Col lg={4} xs={12}>
+            <Card style={{paddingTop: '20px'}}>
+              <RaisedButton
+                labelStyle={{height: '100%', fontSize: '40px'}}
+                style={{height: '100%'}}
+                buttonStyle={{height: '100%'}}
+                overlayStyle={{height: '100%'}}
+                fullWidth={true}
+                secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(preferences)} />
+              {this.buildDialog()}
+            </Card>
+          </Col>
         </Row>
-        <RaisedButton style={{marginTop: '20px'}} secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(preferences)} />
-        {this.buildDialog()}
       </Container>
     );
   }
