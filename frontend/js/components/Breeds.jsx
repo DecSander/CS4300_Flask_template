@@ -10,7 +10,7 @@ import Dialog from 'material-ui/Dialog';
 import Carousel from 'nuka-carousel';
 
 import { likeBreed } from 'infra/GlobalActions';
-import { requestMoreBreeds } from 'infra/api';
+import { requestMoreBreeds, resetBreeds } from 'infra/api';
 import { capitalizeFirstLetter } from 'infra/utils';
 
 function mapStateToProps({ currentBreeds, preferences, breedsInfiniteLoading }) {
@@ -105,6 +105,13 @@ class Breeds extends Component {
                 overlayStyle={{height: '100%'}}
                 fullWidth={true}
                 secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(preferences)} />
+              <RaisedButton
+                labelStyle={{height: '100%', fontSize: '40px'}}
+                style={{height: '100%', marginTop: '20px'}}
+                buttonStyle={{height: '100%'}}
+                overlayStyle={{height: '100%'}}
+                fullWidth={true}
+                primary={true} label="Reset Breeds" onClick={resetBreeds} />
               {this.buildDialog()}
             </Card>
           </Col>

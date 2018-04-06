@@ -4,7 +4,7 @@ import { receiveBreeds, receivePreferenceValues, requestMoreBreedsStart,
 
 export function requestMoreBreeds(preferences) {
   requestMoreBreedsStart();
-  fetch(`/api/get_dogs`, {
+  fetch('/api/get_dogs', {
       body: JSON.stringify({preferences: preferences.toJS()}),
       cache: 'no-cache',
       method: 'POST',
@@ -38,7 +38,7 @@ export function sendLike(breed) {
 
 export function getLikedDogs() {
   requestLikedDogsStart();
-  fetch(`/api/liked_dog`, {
+  fetch('/api/liked_dog', {
       credentials: 'include',
       cache: 'no-cache'
     })
@@ -53,4 +53,15 @@ export function getLikedDogs() {
       requestLikedDogsFailed();
       console.log(v);
     });
+}
+
+export function resetBreeds() {
+  fetch('/api/reset', {
+    cache: 'no-cache',
+    method: 'DELETE',
+    credentials: 'include',
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
 }
