@@ -60,7 +60,7 @@ class Matches extends React.Component {
           <Card style={{margin: 'auto', marginTop: '20px'}} key={`match-${breed.name}-${i}`}>
             <div onClick={() => this.handleOpen(breed)}>
               <CardMedia style={{width: 400, height: 300}} overlay={<CardTitle title={capitalizeFirstLetter(breed.name)} />}>
-                <img src={breed.img.get(0)} alt={breed.name}/>
+                <img style={{width: 400, height: 300}} src={breed.img.get(0)} alt={breed.name}/>
               </CardMedia>
             </div>
             <CardActions>
