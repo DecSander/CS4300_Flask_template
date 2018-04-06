@@ -53,7 +53,8 @@ class Matches extends React.Component {
       return null;
     } else {
       return (
-        <Dialog title={capitalizeFirstLetter(selectedBreed.name)} modal={false} open={modalOpen} onRequestClose={this.handleClose}>
+        <Dialog style={{marginTop: '-200px'}} title={capitalizeFirstLetter(selectedBreed.name)}
+            modal={false} open={modalOpen} onRequestClose={this.handleClose}>
           {this.buildSlideshow()}
           <br />
           {'Breed Description here'}
@@ -73,8 +74,8 @@ class Matches extends React.Component {
         <Col lg={4} xs={12}>
           <Card style={{margin: 'auto', marginTop: '20px'}} key={`match-${breed.name}-${i}`}>
             <div onClick={() => this.handleOpen(breed, i)}>
-              <CardMedia style={{width: 400, height: 300}} overlay={<CardTitle title={capitalizeFirstLetter(breed.name)} />}>
-                <img style={{width: 400, height: 300}} src={breed.img.get(0)} alt={breed.name}/>
+              <CardMedia style={{width: 525, height: 300}} overlay={<CardTitle title={capitalizeFirstLetter(breed.name)} />}>
+                <img style={{width: 525, height: 300}} src={breed.img.get(0)} alt={breed.name}/>
               </CardMedia>
             </div>
             <CardActions>
