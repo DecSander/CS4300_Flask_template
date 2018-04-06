@@ -44,7 +44,7 @@ function buildToggle(preferences, labels, id) {
     <div style={{marginTop: '-25px', marginBottom: '-20px'}}>
       <span style={{float: 'left'}}>{labels[0]}</span>
       <span style={{float: 'right'}}>{labels[1]}</span>
-      <Toggle style={{width: '75px', marginTop: '20px'}} toggled={preferences.get(id)} onToggle={(e, v) => updatePreference(id, v)} />
+      <Toggle style={{margin: 'auto', width: '75px', marginTop: '20px'}} toggled={preferences.get(id)} onToggle={(e, v) => updatePreference(id, v)} />
     </div>
   );
 }
