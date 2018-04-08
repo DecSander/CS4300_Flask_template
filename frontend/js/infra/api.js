@@ -55,7 +55,7 @@ export function getLikedDogs() {
     });
 }
 
-export function resetBreeds() {
+export function sendResetBreeds() {
   fetch('/api/reset', {
     cache: 'no-cache',
     method: 'DELETE',

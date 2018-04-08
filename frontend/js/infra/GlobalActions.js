@@ -59,3 +59,9 @@ export function changeCheckPreferences(selected) {
     selected
   });
 }
+
+export function resetBreedList() {
+  return GlobalStore.dispatch({
+    type: 'RESET_BREED_LIST'
+  });
+}

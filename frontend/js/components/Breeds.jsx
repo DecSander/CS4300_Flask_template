@@ -9,16 +9,12 @@ import CircularProgress from 'material-ui/CircularProgress';
 import Dialog from 'material-ui/Dialog';
 import Carousel from 'nuka-carousel';
 
-import { likeBreed } from 'infra/GlobalActions';
-import { requestMoreBreeds, resetBreeds } from 'infra/api';
+import { likeBreed, resetBreedList } from 'infra/GlobalActions';
+import { requestMoreBreeds } from 'infra/api';
 import { capitalizeFirstLetter } from 'infra/utils';
 
 function mapStateToProps({ currentBreeds, preferences, breedsInfiniteLoading }) {
   return { currentBreeds, preferences, breedsInfiniteLoading };
-}
-
-function keypress(e) {
-  if (e.keyCode === 38) likeBreed();
 }
 
 class Breeds extends Component {
@@ -111,7 +107,7 @@ class Breeds extends Component {
                 buttonStyle={{height: '100%'}}
                 overlayStyle={{height: '100%'}}
                 fullWidth={true}
-                primary={true} label="Reset Breeds" onClick={resetBreeds} />
+                primary={true} label="Reset Breeds" onClick={resetBreedList} />
               {this.buildDialog()}
             </Card>
           </Col>

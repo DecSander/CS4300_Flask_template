@@ -1,5 +1,5 @@
 import { Record, List } from 'immutable';
-import { requestMoreBreeds, sendLike, sendDislike } from 'infra/api';
+import { requestMoreBreeds, sendLike, sendDislike, sendResetBreeds } from 'infra/api';
 import { updatePreference } from 'infra/GlobalActions';
 import { preferencesDefault } from 'infra/const';
 
@@ -59,6 +59,10 @@ export default function globalReducer(state = initialState, action) {
   case 'REQUEST_LIKED_FAILED':
     return state
       .set('likedLoading', false);
+  case 'RESET_BREED_LIST':
+    sendResetBreeds();
+    return state
+      .set('currentBreeds', List());
   default:
     return state;
   }
