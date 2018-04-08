@@ -652,8 +652,8 @@ var Matches = function (_React$Component) {
       return _react2.default.createElement(
         _nukaCarousel2.default,
         { slideWidth: '400px' },
-        selectedBreed.img.map(function (image) {
-          return _react2.default.createElement('img', { style: { height: '300px', width: '400px' }, src: image });
+        selectedBreed.img.map(function (image, i) {
+          return _react2.default.createElement('img', { key: 'img-' + selectedBreed.name + '-' + i, style: { height: '300px', width: '400px' }, src: image });
         })
       );
     }, _this.buildDialog = function () {
@@ -694,10 +694,10 @@ var Matches = function (_React$Component) {
         return liked.map(function (breed, i) {
           return _react2.default.createElement(
             _reactGridSystem.Col,
-            { lg: 4, xs: 12 },
+            { lg: 4, xs: 12, key: 'match-' + breed.name + '-' + i },
             _react2.default.createElement(
               _Card.Card,
-              { style: { margin: 'auto', marginTop: '20px' }, key: 'match-' + breed.name + '-' + i },
+              { style: { margin: 'auto', marginTop: '20px' } },
               _react2.default.createElement(
                 'div',
                 { onClick: function onClick() {
@@ -1146,6 +1146,13 @@ var GlobalState = (0, _immutable.Record)({
   checkPreferences: false
 });
 
+function buildDog(breed) {
+  return new Breed({
+    name: breed.dog_name,
+    img: (0, _immutable.List)(breed.images)
+  });
+}
+
 var initialState = new GlobalState();
 
 function globalReducer() {
@@ -1168,18 +1175,14 @@ function globalReducer() {
     case 'REQUEST_BREEDS_START':
       return state.set('breedsInfiniteLoading', true);
     case 'RECEIVE_BREEDS':
-      return state.set('breedsInfiniteLoading', false).set('currentBreeds', state.currentBreeds.concat((0, _immutable.List)(action.breeds).map(function (breed) {
-        return new Breed({ name: breed.dog_name, img: (0, _immutable.List)(breed.images) });
-      })));
+      return state.set('breedsInfiniteLoading', false).set('currentBreeds', state.currentBreeds.concat((0, _immutable.List)(action.breeds).map(buildDog)));
     case 'REQUEST_BREEDS_FAILED':
       return state.set('breedsInfiniteLoading', false);
 
     case 'REQUEST_LIKED_START':
       return state.set('likedLoading', true);
     case 'RECEIVE_LIKED':
-      return state.set('likedLoading', false).set('liked', state.liked.concat((0, _immutable.List)(action.dogs).map(function (v) {
-        return new Breed({ name: v, img: (0, _immutable.List)() });
-      })));
+      return state.set('likedLoading', false).set('liked', state.liked.concat((0, _immutable.List)(action.dogs).map(buildDog)));
     case 'REQUEST_LIKED_FAILED':
       return state.set('likedLoading', false);
     case 'RESET_BREED_LIST':

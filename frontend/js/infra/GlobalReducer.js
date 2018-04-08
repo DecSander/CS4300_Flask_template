@@ -19,6 +19,13 @@ const GlobalState = Record({
   checkPreferences: false
 });
 
+function buildDog(breed) {
+  return new Breed({
+    name: breed.dog_name,
+    img: List(breed.images)
+  });
+}
+
 const initialState = new GlobalState();
 
 export default function globalReducer(state = initialState, action) {
@@ -44,7 +51,7 @@ export default function globalReducer(state = initialState, action) {
   case 'RECEIVE_BREEDS':
     return state
       .set('breedsInfiniteLoading', false)
-      .set('currentBreeds', state.currentBreeds.concat(List(action.breeds).map(breed => new Breed({name: breed.dog_name, img: List(breed.images)}))));
+      .set('currentBreeds', state.currentBreeds.concat(List(action.breeds).map(buildDog)));
   case 'REQUEST_BREEDS_FAILED':
     return state
       .set('breedsInfiniteLoading', false);
@@ -55,7 +62,7 @@ export default function globalReducer(state = initialState, action) {
   case 'RECEIVE_LIKED':
     return state
       .set('likedLoading', false)
-      .set('liked', state.liked.concat(List(action.dogs).map(v => new Breed({name: v, img: List()}))));
+      .set('liked', state.liked.concat(List(action.dogs).map(buildDog)));
   case 'REQUEST_LIKED_FAILED':
     return state
       .set('likedLoading', false);

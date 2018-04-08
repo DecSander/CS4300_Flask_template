@@ -52,7 +52,7 @@ def get_json_from_dog_names(dog_names):
     for dog in dog_names:
         if dog in dog_urls:
             dogs.append({"dog_name": dog, "images": dog_urls[dog][0:5]})
-    return json.dumps({"dogs": dogs})
+    return dogs
 
 
 def updated_liked_data(uuid, dog):
@@ -78,7 +78,7 @@ def get_likes(uuid):
     else:
         user_data = {'exclude': [], 'liked': set(), 'disliked': set()}
 
-    return {"liked": list(user_data['liked']), "disliked": list(user_data['disliked'])}
+    return {"liked": get_json_from_dog_names(list(user_data['liked']))}
 
 
 @irsystem.before_request
@@ -95,7 +95,7 @@ def get_dogs(request_json):
     preferences = request_json['preferences']
 
     next_dog_names = get_next_dog_names(session['uuid'], preferences)
-    return get_json_from_dog_names(next_dog_names), 200
+    return json.dumps({"dogs": get_json_from_dog_names(next_dog_names)}), 200
 
 
 @irsystem.route('/liked_dog', methods=['POST'])

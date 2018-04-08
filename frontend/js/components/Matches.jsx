@@ -42,7 +42,9 @@ class Matches extends React.Component {
     const { selectedBreed } = this.state;
     return (
       <Carousel slideWidth="400px">
-        {selectedBreed.img.map(image => <img style={{height: '300px', width: '400px'}} src={image} />)}
+        {selectedBreed.img.map((image, i) =>
+          <img key={`img-${selectedBreed.name}-${i}`} style={{height: '300px', width: '400px'}} src={image} />
+        )}
       </Carousel>
     );
   }
@@ -71,8 +73,8 @@ class Matches extends React.Component {
       return <div>No Matches yet 😞</div>
     } else {
       return liked.map((breed, i) =>
-        <Col lg={4} xs={12}>
-          <Card style={{margin: 'auto', marginTop: '20px'}} key={`match-${breed.name}-${i}`}>
+        <Col lg={4} xs={12} key={`match-${breed.name}-${i}`}>
+          <Card style={{margin: 'auto', marginTop: '20px'}}>
             <div onClick={() => this.handleOpen(breed, i)}>
               <CardMedia style={{width: 525, height: 300}} overlay={<CardTitle title={capitalizeFirstLetter(breed.name)} />}>
                 <img style={{width: 525, height: 300}} src={breed.img.get(0)} alt={breed.name}/>
