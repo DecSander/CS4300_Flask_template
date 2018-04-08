@@ -47,7 +47,7 @@ export function getLikedDogs() {
       else throw Error(response.statusText)
     })
     .then(JSON.parse)
-    .then(result => { return result.liked; })
+    .then(result => result.liked)
     .then(receiveLikedDogs)
     .catch(v => {
       requestLikedDogsFailed();
