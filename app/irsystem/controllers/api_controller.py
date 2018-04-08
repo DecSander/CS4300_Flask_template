@@ -49,10 +49,7 @@ def get_json_from_dog_names(dog_names):
     path = 'database/dog_urls.json'
     dog_urls = json.load(open(path, 'r'))['dogs']
     dogs = []
-    print 'dog_names', dog_names
     for dog in dog_names:
-        print 'here'
-        print dog, dog in dog_urls, dog_urls.keys(),
         if dog in dog_urls:
             dogs.append({"dog_name": dog, "images": dog_urls[dog][0:5]})
     return json.dumps({"dogs": dogs})
@@ -67,7 +64,6 @@ def updated_liked_data(uuid, dog):
 
     user_data['liked'].add(dog)
 
-    print user_data['exclude']
     index = user_data['exclude'].index(dog)
     disliked = [d for d in user_data['exclude'][0:index] if d not in user_data['liked']]
     user_data['disliked'].update(disliked)
@@ -118,7 +114,7 @@ def liked_dog(request_json):
 def get_liked_dog():
     if 'uuid' not in session:
         print "error, no uuid in cookie"
-        return json.dumps({"liked": [], "disliked": []})
+        return json.dumps({"liked": [], "disliked": []}), 400
 
     uuid = session['uuid']
     return json.dumps(get_likes(uuid))
