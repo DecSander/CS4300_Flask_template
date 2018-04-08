@@ -68,7 +68,7 @@ class Matches extends React.Component {
   buildLikedCards = () => {
     const { liked, likedLoading } = this.props;
     if (likedLoading) {
-      return <Col style={{textAlign: 'center'}} offset={{lg: 4}}><CircularProgress /></Col>;
+      return <Col style={{textAlign: 'center', paddingTop: '40px'}}><CircularProgress size={100} thickness={8} /></Col>;
     } else if (liked.size === 0) {
       return <div>No Matches yet 😞</div>
     } else {

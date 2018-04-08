@@ -261,6 +261,12 @@ var Breeds = function (_Component) {
           selectedBreed.name + ' Description here'
         );
       }
+    }, _this.buildLoading = function () {
+      return _react2.default.createElement(
+        _reactGridSystem.Col,
+        { lg: 4, xs: 12, style: { textAlign: 'center', paddingTop: '40px' } },
+        _react2.default.createElement(_CircularProgress2.default, { size: 100, thickness: 8 })
+      );
     }, _this.buildBreedCard = function (breed, i) {
       return _react2.default.createElement(
         _reactGridSystem.Col,
@@ -288,16 +294,15 @@ var Breeds = function (_Component) {
           )
         )
       );
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
+    }, _this.buildBreedCards = function () {
+      var _this$props = _this.props,
+          currentBreeds = _this$props.currentBreeds,
+          preferences = _this$props.preferences,
+          breedsInfiniteLoading = _this$props.breedsInfiniteLoading;
 
-  _createClass(Breeds, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          currentBreeds = _props.currentBreeds,
-          preferences = _props.preferences;
 
+      var cards = breedsInfiniteLoading ? null : currentBreeds.map(_this.buildBreedCard);
+      var loading = breedsInfiniteLoading ? _this.buildLoading() : null;
 
       return _react2.default.createElement(
         _reactGridSystem.Container,
@@ -305,7 +310,7 @@ var Breeds = function (_Component) {
         _react2.default.createElement(
           _reactGridSystem.Row,
           null,
-          currentBreeds.map(this.buildBreedCard),
+          cards,
           _react2.default.createElement(
             _reactGridSystem.Col,
             { lg: 4, xs: 12 },
@@ -328,11 +333,19 @@ var Breeds = function (_Component) {
                 overlayStyle: { height: '100%' },
                 fullWidth: true,
                 primary: true, label: 'Reset Breeds', onClick: _GlobalActions.resetBreedList }),
-              this.buildDialog()
+              _this.buildDialog()
             )
-          )
+          ),
+          loading
         )
       );
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Breeds, [{
+    key: 'render',
+    value: function render() {
+      return this.buildBreedCards();
     }
   }]);
 
@@ -681,8 +694,8 @@ var Matches = function (_React$Component) {
       if (likedLoading) {
         return _react2.default.createElement(
           _reactGridSystem.Col,
-          { style: { textAlign: 'center' }, offset: { lg: 4 } },
-          _react2.default.createElement(_CircularProgress2.default, null)
+          { style: { textAlign: 'center', paddingTop: '40px' } },
+          _react2.default.createElement(_CircularProgress2.default, { size: 100, thickness: 8 })
         );
       } else if (liked.size === 0) {
         return _react2.default.createElement(
@@ -713,7 +726,7 @@ var Matches = function (_React$Component) {
                 _Card.CardActions,
                 null,
                 _react2.default.createElement(_FlatButton2.default, { label: 'See More', onClick: function onClick() {
-                    return _this.handleOpen(breed);
+                    return _this.handleOpen(breed, i);
                   } })
               )
             )

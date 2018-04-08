@@ -68,6 +68,10 @@ class Breeds extends Component {
     }
   }
 
+  buildLoading = () => {
+    return <Col lg={4} xs={12} style={{textAlign: 'center', paddingTop: '40px'}}><CircularProgress size={100} thickness={8} /></Col>;
+  }
+
   buildBreedCard = (breed, i) => {
     return (
       <Col lg={4} xs={12} key={`breed-${breed.name}-${i}`}>
@@ -85,13 +89,16 @@ class Breeds extends Component {
     );
   }
 
-  render() {
-    const { currentBreeds, preferences } = this.props;
+  buildBreedCards = () => {
+    const { currentBreeds, preferences, breedsInfiniteLoading } = this.props;
+
+    const cards = breedsInfiniteLoading ? null : currentBreeds.map(this.buildBreedCard);
+    const loading = breedsInfiniteLoading ? this.buildLoading() : null;
 
     return (
       <Container fluid>
         <Row>
-          {currentBreeds.map(this.buildBreedCard)}
+          {cards}
           <Col lg={4} xs={12}>
             <Card style={{paddingTop: '20px'}}>
               <RaisedButton
@@ -111,9 +118,14 @@ class Breeds extends Component {
               {this.buildDialog()}
             </Card>
           </Col>
+          {loading}
         </Row>
       </Container>
     );
+  }
+
+  render() {
+    return this.buildBreedCards();
   }
 }
 
