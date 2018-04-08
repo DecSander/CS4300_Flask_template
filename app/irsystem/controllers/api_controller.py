@@ -15,19 +15,19 @@ sys.path.insert(0, os.path.dirname(__file__) + "/../")
 
 
 breeds = ['rottweiler', 'labrador', 'wolfhound', 'cairn', 'samoyed', 'greyhound', 'vizsla', 'deerhound', 'akita', 'briard', 'hound', 'pinscher', 'bullterrier', 'malinois', 'setter', 'lhasa', 'collie', 'bluetick', 'saluki', 'groenendael', 'pyrenees', 'papillon', 'doberman', 'leonberg', 'poodle', 'whippet', 'basenji', 'beagle', 'kelpie', 'entlebucher', 'shihtz', 'pekinese', 'kuvasz', 'newfoundland', 'appenzeller', 'coonhound', 'keeshond', 'shiba', 'germanshepherd', 'weimaraner', 'pug', 'schipperke', 'pomeranian', 'mountain', 'bulldog', 'pointer', 'african', 'springer', 'spaniel', 'chihuahua', 'sheepdog', 'husky', 'maltese', 'clumber', 'eskimo', 'terrier', 'stbernard', 'retriever', 'schnauzer', 'pembroke', 'komondor', 'bouvier', 'dingo', 'mastiff', 'malamute', 'mexicanhairless', 'borzoi', 'elkhound', 'ridgeback', 'dhole', 'brabancon', 'boxer', 'dachshund', 'affenpinscher', 'otterhound', 'chow', 'redbone', 'corgi', 'dane', 'airedale']
+breedset = set(breeds)
 
 
 def get_n_random_dogs(n, exclude=frozenset()):
     output = []
     exclude = set(exclude)
-    # Don't loop forever, but try to find 10 dogs
-    for i in range(30):
-        next_dog = random.choice(breeds)
-        if next_dog not in exclude:
-            output.append(next_dog)
-
-        if len(output) == 10:
+    available = breedset - exclude
+    for i in range(0, 10):
+        if len(available) == 0:
             return output
+        next_dog = random.sample(available, 1)[0]
+        available -= set([next_dog])
+        output.append(next_dog)
     return output
 
 
