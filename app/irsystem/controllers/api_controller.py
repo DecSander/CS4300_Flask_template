@@ -106,6 +106,7 @@ def get_dogs(request_json):
 @validate_json(schemas.liked_dog)
 def liked_dog(request_json):
     if 'uuid' not in session:
+        print "error, no uuid in cookie"
         return "error, no uuid in cookie", 400
 
     uuid = session['uuid']
@@ -116,8 +117,8 @@ def liked_dog(request_json):
 @irsystem.route('/liked_dog', methods=['GET'])
 def get_liked_dog():
     if 'uuid' not in session:
-        return "error, no uuid in cookie", 400
+        print "error, no uuid in cookie"
+        return json.dumps({"liked": [], "disliked": []})
 
     uuid = session['uuid']
     return json.dumps(get_likes(uuid))
-
