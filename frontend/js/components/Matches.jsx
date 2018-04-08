@@ -81,7 +81,7 @@ class Matches extends React.Component {
               </CardMedia>
             </div>
             <CardActions>
-              <FlatButton label="See More" onClick={() => this.handleOpen(breed)} />
+              <FlatButton label="See More" onClick={() => this.handleOpen(breed, i)} />
             </CardActions>
           </Card>
         </Col>
