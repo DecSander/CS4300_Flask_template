@@ -699,9 +699,13 @@ var Matches = function (_React$Component) {
         );
       } else if (liked.size === 0) {
         return _react2.default.createElement(
-          'div',
-          null,
-          'No Matches yet \uD83D\uDE1E'
+          _reactGridSystem.Col,
+          { style: { textAlign: 'center', paddingTop: '40px' } },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'No Matches yet \uD83D\uDE1E'
+          )
         );
       } else {
         return liked.map(function (breed, i) {

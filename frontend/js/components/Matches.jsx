@@ -70,7 +70,7 @@ class Matches extends React.Component {
     if (likedLoading) {
       return <Col style={{textAlign: 'center', paddingTop: '40px'}}><CircularProgress size={100} thickness={8} /></Col>;
     } else if (liked.size === 0) {
-      return <div>No Matches yet 😞</div>
+      return <Col style={{textAlign: 'center', paddingTop: '40px'}}><h1>No Matches yet 😞</h1></Col>
     } else {
       return liked.map((breed, i) =>
         <Col lg={4} xs={12} key={`match-${breed.name}-${i}`}>
