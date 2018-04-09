@@ -1,6 +1,6 @@
 import { Record, List } from 'immutable';
-import { requestMoreBreeds, sendLike, sendDislike, sendResetBreeds } from 'infra/api';
-import { updatePreference } from 'infra/GlobalActions';
+import { requestMoreBreeds, sendLike, sendDislike, sendResetBreeds,
+         sendRemoveMatch } from 'infra/api';
 import { preferencesDefault } from 'infra/const';
 
 const Breed = Record({
@@ -37,6 +37,11 @@ export default function globalReducer(state = initialState, action) {
       .set('currentBreeds', state.currentBreeds.splice(action.breed_number, 1))
       .set('liked', state.liked.push(current));
   }
+  case 'REMOVE_MATCH':
+    sendRemoveMatch(state.liked.get(action.breed_number).name);
+    return state
+      .set('liked', state.liked.splice(action.breed_number, 1));
+
   case 'UPDATE_PREFERENCE':
     localStorage[action.field] = JSON.stringify(action.value);
     return state

@@ -614,6 +614,8 @@ var _nukaCarousel2 = _interopRequireDefault(_nukaCarousel);
 
 var _utils = require('infra/utils');
 
+var _GlobalActions = require('infra/GlobalActions');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -731,6 +733,9 @@ var Matches = function (_React$Component) {
                 null,
                 _react2.default.createElement(_FlatButton2.default, { label: 'See More', onClick: function onClick() {
                     return _this.handleOpen(breed, i);
+                  } }),
+                _react2.default.createElement(_FlatButton2.default, { label: 'Remove', onClick: function onClick() {
+                    return (0, _GlobalActions.removeMatch)(i);
                   } })
               )
             )
@@ -761,7 +766,7 @@ var Matches = function (_React$Component) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Matches);
 
-},{"infra/utils":14,"material-ui/Card":214,"material-ui/CircularProgress":218,"material-ui/Dialog":220,"material-ui/FlatButton":223,"nuka-carousel":293,"react":387,"react-grid-system":316,"react-infinite":329,"react-redux":353}],8:[function(require,module,exports){
+},{"infra/GlobalActions":9,"infra/utils":14,"material-ui/Card":214,"material-ui/CircularProgress":218,"material-ui/Dialog":220,"material-ui/FlatButton":223,"nuka-carousel":293,"react":387,"react-grid-system":316,"react-infinite":329,"react-redux":353}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1059,6 +1064,7 @@ exports.receiveLikedDogs = receiveLikedDogs;
 exports.requestLikedDogsFailed = requestLikedDogsFailed;
 exports.changeCheckPreferences = changeCheckPreferences;
 exports.resetBreedList = resetBreedList;
+exports.removeMatch = removeMatch;
 
 var _GlobalStore = require('infra/GlobalStore');
 
@@ -1131,6 +1137,13 @@ function resetBreedList() {
   });
 }
 
+function removeMatch(breed_number) {
+  return _GlobalStore2.default.dispatch({
+    type: 'REMOVE_MATCH',
+    breed_number: breed_number
+  });
+}
+
 },{"infra/GlobalStore":11}],10:[function(require,module,exports){
 'use strict';
 
@@ -1142,8 +1155,6 @@ exports.default = globalReducer;
 var _immutable = require('immutable');
 
 var _api = require('infra/api');
-
-var _GlobalActions = require('infra/GlobalActions');
 
 var _const = require('infra/const');
 
@@ -1183,6 +1194,10 @@ function globalReducer() {
         (0, _api.sendLike)(current.name);
         return state.set('currentBreeds', state.currentBreeds.splice(action.breed_number, 1)).set('liked', state.liked.push(current));
       }
+    case 'REMOVE_MATCH':
+      (0, _api.sendRemoveMatch)(state.liked.get(action.breed_number).name);
+      return state.set('liked', state.liked.splice(action.breed_number, 1));
+
     case 'UPDATE_PREFERENCE':
       localStorage[action.field] = JSON.stringify(action.value);
       return state.setIn(['preferences', action.field], action.value);
@@ -1210,7 +1225,7 @@ function globalReducer() {
   }
 }
 
-},{"immutable":156,"infra/GlobalActions":9,"infra/api":12,"infra/const":13}],11:[function(require,module,exports){
+},{"immutable":156,"infra/api":12,"infra/const":13}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1237,6 +1252,7 @@ exports.requestMoreBreeds = requestMoreBreeds;
 exports.sendLike = sendLike;
 exports.getLikedDogs = getLikedDogs;
 exports.sendResetBreeds = sendResetBreeds;
+exports.sendRemoveMatch = sendRemoveMatch;
 
 var _GlobalActions = require('infra/GlobalActions');
 
@@ -1287,6 +1303,18 @@ function getLikedDogs() {
 
 function sendResetBreeds() {
   fetch('/api/reset', {
+    cache: 'no-cache',
+    method: 'DELETE',
+    credentials: 'include',
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
+}
+
+function sendRemoveMatch(breed) {
+  fetch('/api/unlike', {
+    body: JSON.stringify({ dog_name: breed.toLowerCase() }),
     cache: 'no-cache',
     method: 'DELETE',
     credentials: 'include',

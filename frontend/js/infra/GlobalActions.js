@@ -65,3 +65,10 @@ export function resetBreedList() {
     type: 'RESET_BREED_LIST'
   });
 }
+
+export function removeMatch(breed_number) {
+  return GlobalStore.dispatch({
+    type: 'REMOVE_MATCH',
+    breed_number
+  });
+}

@@ -65,3 +65,15 @@ export function sendResetBreeds() {
     }
   });
 }
+
+export function sendRemoveMatch(breed) {
+  fetch('/api/unlike', {
+    body: JSON.stringify({ dog_name: breed.toLowerCase() }),
+    cache: 'no-cache',
+    method: 'DELETE',
+    credentials: 'include',
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
+}

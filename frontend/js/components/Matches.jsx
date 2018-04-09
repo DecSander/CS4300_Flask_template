@@ -9,6 +9,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 import Carousel from 'nuka-carousel';
 
 import { capitalizeFirstLetter } from 'infra/utils';
+import { removeMatch } from 'infra/GlobalActions';
 
 function mapStateToProps({ liked, likedLoading }) {
   return { liked, likedLoading };
@@ -82,6 +83,7 @@ class Matches extends React.Component {
             </div>
             <CardActions>
               <FlatButton label="See More" onClick={() => this.handleOpen(breed, i)} />
+              <FlatButton label="Remove" onClick={() => removeMatch(i)} />
             </CardActions>
           </Card>
         </Col>
