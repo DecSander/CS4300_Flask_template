@@ -2,10 +2,11 @@ import { receiveBreeds, receivePreferenceValues, requestMoreBreedsStart,
          requestMoreBreedsFailed, requestLikedDogsStart, requestLikedDogsFailed,
          receiveLikedDogs } from 'infra/GlobalActions';
 
-export function requestMoreBreeds(preferences) {
+export function requestMoreBreeds(preferences, sendPrefs = true) {
   requestMoreBreedsStart();
+  const prefsObj = sendPrefs ? preferences.toJS() : {};
   fetch('/api/get_dogs', {
-      body: JSON.stringify({preferences: preferences.toJS()}),
+      body: JSON.stringify({preferences: prefsObj}),
       cache: 'no-cache',
       method: 'POST',
       credentials: 'include',

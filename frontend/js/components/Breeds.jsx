@@ -13,8 +13,8 @@ import { likeBreed, resetBreedList } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
 import { capitalizeFirstLetter } from 'infra/utils';
 
-function mapStateToProps({ currentBreeds, preferences, breedsInfiniteLoading }) {
-  return { currentBreeds, preferences, breedsInfiniteLoading };
+function mapStateToProps({ currentBreeds, preferences, breedsLoading, checkPreferences }) {
+  return { currentBreeds, preferences, breedsLoading, checkPreferences };
 }
 
 class Breeds extends Component {
@@ -90,10 +90,10 @@ class Breeds extends Component {
   }
 
   buildBreedCards = () => {
-    const { currentBreeds, preferences, breedsInfiniteLoading } = this.props;
+    const { currentBreeds, preferences, breedsLoading, checkPreferences } = this.props;
 
     const cards = currentBreeds.map(this.buildBreedCard);
-    const loading = breedsInfiniteLoading ? this.buildLoading() : null;
+    const loading = breedsLoading ? this.buildLoading() : null;
 
     return (
       <Container fluid>
@@ -107,7 +107,7 @@ class Breeds extends Component {
                 buttonStyle={{height: '100%'}}
                 overlayStyle={{height: '100%'}}
                 fullWidth={true}
-                secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(preferences)} />
+                secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(preferences, checkPreferences)} />
               <RaisedButton
                 labelStyle={{height: '100%', fontSize: '40px'}}
                 style={{height: '100%', marginTop: '20px'}}

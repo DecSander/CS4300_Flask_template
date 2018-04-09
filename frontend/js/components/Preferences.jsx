@@ -5,21 +5,8 @@ import TextField from 'material-ui/TextField';
 import Slider from 'material-ui/Slider';
 import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
-import {
-  Table,
-  TableBody,
-  TableFooter,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemTitle,
-    AccordionItemBody,
-} from 'react-accessible-accordion';
+import { Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from 'react-accessible-accordion';
 
 import { updatePreference } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
@@ -126,7 +113,7 @@ class Preferences extends React.Component {
 
   submit = () => {
     const { history, preferences } = this.props;
-    requestMoreBreeds(preferences);
+    requestMoreBreeds(preferences, true);
     history.push('/breeds');
   }
 

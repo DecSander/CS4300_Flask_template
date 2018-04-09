@@ -194,9 +194,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function mapStateToProps(_ref) {
   var currentBreeds = _ref.currentBreeds,
       preferences = _ref.preferences,
-      breedsInfiniteLoading = _ref.breedsInfiniteLoading;
+      breedsLoading = _ref.breedsLoading,
+      checkPreferences = _ref.checkPreferences;
 
-  return { currentBreeds: currentBreeds, preferences: preferences, breedsInfiniteLoading: breedsInfiniteLoading };
+  return { currentBreeds: currentBreeds, preferences: preferences, breedsLoading: breedsLoading, checkPreferences: checkPreferences };
 }
 
 var Breeds = function (_Component) {
@@ -298,11 +299,12 @@ var Breeds = function (_Component) {
       var _this$props = _this.props,
           currentBreeds = _this$props.currentBreeds,
           preferences = _this$props.preferences,
-          breedsInfiniteLoading = _this$props.breedsInfiniteLoading;
+          breedsLoading = _this$props.breedsLoading,
+          checkPreferences = _this$props.checkPreferences;
 
 
       var cards = currentBreeds.map(_this.buildBreedCard);
-      var loading = breedsInfiniteLoading ? _this.buildLoading() : null;
+      var loading = breedsLoading ? _this.buildLoading() : null;
 
       return _react2.default.createElement(
         _reactGridSystem.Container,
@@ -324,7 +326,7 @@ var Breeds = function (_Component) {
                 overlayStyle: { height: '100%' },
                 fullWidth: true,
                 secondary: true, label: 'Get More Breeds', onClick: function onClick() {
-                  return (0, _api.requestMoreBreeds)(preferences);
+                  return (0, _api.requestMoreBreeds)(preferences, checkPreferences);
                 } }),
               _react2.default.createElement(_RaisedButton2.default, {
                 labelStyle: { height: '100%', fontSize: '40px' },
@@ -490,9 +492,11 @@ var Home = function (_React$Component) {
           history = _this$props.history,
           preferences = _this$props.preferences;
 
-      (0, _api.requestMoreBreeds)(preferences);
+      (0, _GlobalActions.changeCheckPreferences)(false);
+      (0, _api.requestMoreBreeds)(preferences, false);
       history.push('/breeds');
     }, _this.submitWithPrefs = function () {
+      (0, _GlobalActions.changeCheckPreferences)(true);
       _this.props.history.push('/preferences');
     }, _this.keypress = function (e) {
       if (e.keyCode === 13) _this.submitNoPrefs();
@@ -519,10 +523,6 @@ var Home = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          history = _props.history,
-          checkPreferences = _props.checkPreferences;
-
       return _react2.default.createElement(
         _reactGridSystem.Container,
         { fluid: true },
@@ -547,9 +547,6 @@ var Home = function (_React$Component) {
               ),
               _react2.default.createElement(_TextField2.default, { floatingLabelStyle: { color: 'blue' }, style: { width: '500px', fontSize: '30px' }, floatingLabelText: 'Search', onChange: function onChange(e, v) {
                   return (0, _GlobalActions.updatePreference)('keywords', v);
-                } }),
-              _react2.default.createElement(_Toggle2.default, { label: 'More Preferences', toggled: checkPreferences, onToggle: function onToggle(e, v) {
-                  return (0, _GlobalActions.changeCheckPreferences)(v);
                 } }),
               _react2.default.createElement('br', null),
               _react2.default.createElement(
@@ -983,7 +980,7 @@ var Preferences = function (_React$Component) {
           history = _this$props.history,
           preferences = _this$props.preferences;
 
-      (0, _api.requestMoreBreeds)(preferences);
+      (0, _api.requestMoreBreeds)(preferences, true);
       history.push('/breeds');
     }, _this.keypress = function (e) {
       if (e.keyCode === 13) _this.submit();
@@ -1172,7 +1169,7 @@ var GlobalState = (0, _immutable.Record)({
   currentBreeds: (0, _immutable.List)(),
   liked: (0, _immutable.List)(),
   preferences: new Preferences(),
-  breedsInfiniteLoading: false,
+  breedsLoading: false,
   likedLoading: false,
   checkPreferences: false
 });
@@ -1208,11 +1205,11 @@ function globalReducer() {
       return state.set('checkPreferences', action.selected);
 
     case 'REQUEST_BREEDS_START':
-      return state.set('breedsInfiniteLoading', true);
+      return state.set('breedsLoading', true);
     case 'RECEIVE_BREEDS':
-      return state.set('breedsInfiniteLoading', false).set('currentBreeds', state.currentBreeds.concat((0, _immutable.List)(action.breeds).map(buildDog)));
+      return state.set('breedsLoading', false).set('currentBreeds', state.currentBreeds.concat((0, _immutable.List)(action.breeds).map(buildDog)));
     case 'REQUEST_BREEDS_FAILED':
-      return state.set('breedsInfiniteLoading', false);
+      return state.set('breedsLoading', false);
 
     case 'REQUEST_LIKED_START':
       return state.set('likedLoading', true);
@@ -1260,9 +1257,12 @@ exports.sendRemoveMatch = sendRemoveMatch;
 var _GlobalActions = require('infra/GlobalActions');
 
 function requestMoreBreeds(preferences) {
+  var sendPrefs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
   (0, _GlobalActions.requestMoreBreedsStart)();
+  var prefsObj = sendPrefs ? preferences.toJS() : {};
   fetch('/api/get_dogs', {
-    body: JSON.stringify({ preferences: preferences.toJS() }),
+    body: JSON.stringify({ preferences: prefsObj }),
     cache: 'no-cache',
     method: 'POST',
     credentials: 'include',

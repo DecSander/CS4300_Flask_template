@@ -17,11 +17,13 @@ class Home extends React.Component {
 
   submitNoPrefs = () => {
     const { history, preferences } = this.props;
-    requestMoreBreeds(preferences);
+    changeCheckPreferences(false);
+    requestMoreBreeds(preferences, false);
     history.push('/breeds');
   }
 
   submitWithPrefs = () => {
+    changeCheckPreferences(true);
     this.props.history.push('/preferences');
   }
 
@@ -45,7 +47,6 @@ class Home extends React.Component {
   }
 
   render() {
-    const { history, checkPreferences } = this.props;
     return (
       <Container fluid>
         <Row>
@@ -54,7 +55,6 @@ class Home extends React.Component {
               <h1 style={{fontSize: '56px'}}>Who's A Good Dog?</h1>
               <h3 style={{fontSize: '30px'}}>Find out which dog you should get</h3>
               <TextField floatingLabelStyle={{color: 'blue'}} style={{width: '500px', fontSize: '30px'}} floatingLabelText="Search" onChange={(e, v) => updatePreference('keywords', v)} />
-              <Toggle label="More Preferences" toggled={checkPreferences} onToggle={(e, v) => changeCheckPreferences(v)} />
               <br />
               <RaisedButton primary={true} style={{marginRight: '20px'}} onClick={this.submitWithPrefs}>Select More Prefs</RaisedButton>
               <RaisedButton secondary={true} onClick={this.submitNoPrefs}>Submit</RaisedButton>

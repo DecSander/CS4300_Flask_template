@@ -14,7 +14,7 @@ const GlobalState = Record({
   currentBreeds: List(),
   liked: List(),
   preferences: new Preferences(),
-  breedsInfiniteLoading: false,
+  breedsLoading: false,
   likedLoading: false,
   checkPreferences: false
 });
@@ -52,14 +52,14 @@ export default function globalReducer(state = initialState, action) {
 
   case 'REQUEST_BREEDS_START':
     return state
-      .set('breedsInfiniteLoading', true);
+      .set('breedsLoading', true);
   case 'RECEIVE_BREEDS':
     return state
-      .set('breedsInfiniteLoading', false)
+      .set('breedsLoading', false)
       .set('currentBreeds', state.currentBreeds.concat(List(action.breeds).map(buildDog)));
   case 'REQUEST_BREEDS_FAILED':
     return state
-      .set('breedsInfiniteLoading', false);
+      .set('breedsLoading', false);
 
   case 'REQUEST_LIKED_START':
     return state
