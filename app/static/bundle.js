@@ -485,19 +485,17 @@ var Home = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref2, [this].concat(args))), _this), _this.submit = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref2, [this].concat(args))), _this), _this.submitNoPrefs = function () {
       var _this$props = _this.props,
           history = _this$props.history,
           preferences = _this$props.preferences;
 
-      if (_this.props.checkPreferences) {
-        history.push('/preferences');
-      } else {
-        (0, _api.requestMoreBreeds)(preferences);
-        history.push('/breeds');
-      }
+      (0, _api.requestMoreBreeds)(preferences);
+      history.push('/breeds');
+    }, _this.submitWithPrefs = function () {
+      _this.props.history.push('/preferences');
     }, _this.keypress = function (e) {
-      if (e.keyCode === 13) _this.submit();
+      if (e.keyCode === 13) _this.submitNoPrefs();
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -556,7 +554,12 @@ var Home = function (_React$Component) {
               _react2.default.createElement('br', null),
               _react2.default.createElement(
                 _RaisedButton2.default,
-                { secondary: true, onClick: this.submit },
+                { primary: true, style: { marginRight: '20px' }, onClick: this.submitWithPrefs },
+                'Select More Prefs'
+              ),
+              _react2.default.createElement(
+                _RaisedButton2.default,
+                { secondary: true, onClick: this.submitNoPrefs },
                 'Submit'
               )
             )

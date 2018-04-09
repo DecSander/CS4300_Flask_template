@@ -15,18 +15,18 @@ function mapStateToProps({ checkPreferences, preferences }) {
 
 class Home extends React.Component {
 
-  submit = () => {
+  submitNoPrefs = () => {
     const { history, preferences } = this.props;
-    if (this.props.checkPreferences) {
-      history.push('/preferences');
-    } else {
-      requestMoreBreeds(preferences);
-      history.push('/breeds');
-    }
+    requestMoreBreeds(preferences);
+    history.push('/breeds');
+  }
+
+  submitWithPrefs = () => {
+    this.props.history.push('/preferences');
   }
 
   keypress = (e) => {
-    if (e.keyCode === 13) this.submit();
+    if (e.keyCode === 13) this.submitNoPrefs();
   }
 
   componentWillMount() {
@@ -56,7 +56,8 @@ class Home extends React.Component {
               <TextField floatingLabelStyle={{color: 'blue'}} style={{width: '500px', fontSize: '30px'}} floatingLabelText="Search" onChange={(e, v) => updatePreference('keywords', v)} />
               <Toggle label="More Preferences" toggled={checkPreferences} onToggle={(e, v) => changeCheckPreferences(v)} />
               <br />
-              <RaisedButton secondary={true} onClick={this.submit}>Submit</RaisedButton>
+              <RaisedButton primary={true} style={{marginRight: '20px'}} onClick={this.submitWithPrefs}>Select More Prefs</RaisedButton>
+              <RaisedButton secondary={true} onClick={this.submitNoPrefs}>Submit</RaisedButton>
             </div>
           </Col>
         </Row>
