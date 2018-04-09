@@ -86,6 +86,25 @@ def make_session_permanent():
     session.permanent = True
 
 
+@irsystem.route('/reset', methods=['DELETE'])
+def reset_uuid():
+    if 'uuid' not in session:
+        print 'error, no uuid in cookie'
+        return 'error, no uuid in cookie', 400
+
+    uuid = session['uuid']
+    path = 'database/' + str(uuid) + ".pickle"
+
+    if not os.path.isfile(path):
+        return 'error, invalid uuid', 400
+
+    user_data = pickle.load(open(path, 'r'))
+    user_data['exclude'] = []
+    pickle.dump(user_data, open(path, 'w'))
+
+    return 'Success'
+
+
 @irsystem.route('/get_dogs', methods=['POST'])
 @validate_json(schemas.preferences)
 def get_dogs(request_json):
