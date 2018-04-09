@@ -301,7 +301,7 @@ var Breeds = function (_Component) {
           breedsInfiniteLoading = _this$props.breedsInfiniteLoading;
 
 
-      var cards = breedsInfiniteLoading ? null : currentBreeds.map(_this.buildBreedCard);
+      var cards = currentBreeds.map(_this.buildBreedCard);
       var loading = breedsInfiniteLoading ? _this.buildLoading() : null;
 
       return _react2.default.createElement(

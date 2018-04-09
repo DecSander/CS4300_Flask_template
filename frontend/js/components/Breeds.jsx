@@ -92,7 +92,7 @@ class Breeds extends Component {
   buildBreedCards = () => {
     const { currentBreeds, preferences, breedsInfiniteLoading } = this.props;
 
-    const cards = breedsInfiniteLoading ? null : currentBreeds.map(this.buildBreedCard);
+    const cards = currentBreeds.map(this.buildBreedCard);
     const loading = breedsInfiniteLoading ? this.buildLoading() : null;
 
     return (
