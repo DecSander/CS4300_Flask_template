@@ -77,8 +77,8 @@ class Breeds extends Component {
       <Col lg={4} xs={12} key={`breed-${breed.name}-${i}`}>
         <Card style={{margin: 'auto', marginTop: '20px'}}>
           <div onClick={() => this.handleOpen(breed, i)}>
-            <CardMedia style={{width: 525, height: 300}} overlay={<CardTitle title={capitalizeFirstLetter(breed.name)} />}>
-              <img style={{width: 525, height: 300}} src={breed.img.get(0)} alt={breed.name} />
+            <CardMedia style={{width: '100%', height: 400}} overlay={<CardTitle title={capitalizeFirstLetter(breed.name)} />}>
+              <img style={{width: '100%', height: 400}} src={breed.img.get(0)} alt={breed.name} />
             </CardMedia>
           </div>
           <CardActions>

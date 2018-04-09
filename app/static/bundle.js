@@ -281,8 +281,8 @@ var Breeds = function (_Component) {
               } },
             _react2.default.createElement(
               _Card.CardMedia,
-              { style: { width: 525, height: 300 }, overlay: _react2.default.createElement(_Card.CardTitle, { title: (0, _utils.capitalizeFirstLetter)(breed.name) }) },
-              _react2.default.createElement('img', { style: { width: 525, height: 300 }, src: breed.img.get(0), alt: breed.name })
+              { style: { width: '100%', height: 400 }, overlay: _react2.default.createElement(_Card.CardTitle, { title: (0, _utils.capitalizeFirstLetter)(breed.name) }) },
+              _react2.default.createElement('img', { style: { width: '100%', height: 400 }, src: breed.img.get(0), alt: breed.name })
             )
           ),
           _react2.default.createElement(
@@ -724,8 +724,8 @@ var Matches = function (_React$Component) {
                   } },
                 _react2.default.createElement(
                   _Card.CardMedia,
-                  { style: { width: 525, height: 300 }, overlay: _react2.default.createElement(_Card.CardTitle, { title: (0, _utils.capitalizeFirstLetter)(breed.name) }) },
-                  _react2.default.createElement('img', { style: { width: 525, height: 300 }, src: breed.img.get(0), alt: breed.name })
+                  { style: { width: '100%', height: 400 }, overlay: _react2.default.createElement(_Card.CardTitle, { title: (0, _utils.capitalizeFirstLetter)(breed.name) }) },
+                  _react2.default.createElement('img', { style: { width: '100%', height: 400 }, src: breed.img.get(0), alt: breed.name })
                 )
               ),
               _react2.default.createElement(
