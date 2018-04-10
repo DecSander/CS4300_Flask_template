@@ -543,25 +543,25 @@ var Home = function (_React$Component) {
             { offset: { lg: 4 }, lg: 4, xs: 12 },
             _react2.default.createElement(
               'div',
-              { style: { textAlign: 'center', fontWeight: '200', fontFamily: 'roboto', color: 'blue' } },
+              { style: { textAlign: 'center', fontWeight: '200', fontFamily: 'roboto', color: 'black' } },
               _react2.default.createElement(
                 'h1',
-                { style: { fontSize: '56px' } },
+                { style: { backgroundColor: 'white', fontSize: '56px' } },
                 'Who\'s A Good Dog?'
               ),
               _react2.default.createElement(
                 'h3',
-                { style: { fontSize: '30px' } },
+                { style: { backgroundColor: 'white', fontSize: '30px' } },
                 'Find out which dog you should get'
               ),
-              _react2.default.createElement(_TextField2.default, { floatingLabelStyle: { color: 'blue' }, style: { width: '500px', fontSize: '30px' }, floatingLabelText: 'Search', onChange: function onChange(e, v) {
+              _react2.default.createElement(_TextField2.default, { floatingLabelStyle: { color: 'white' }, inputStyle: { color: 'white' }, style: { width: '500px', fontSize: '30px' }, floatingLabelText: 'Search', onChange: function onChange(e, v) {
                   return (0, _GlobalActions.updatePreference)('keywords', v);
                 } }),
               _react2.default.createElement('br', null),
               _react2.default.createElement(
                 _RaisedButton2.default,
                 { primary: true, style: { marginRight: '20px' }, onClick: this.submitWithPrefs },
-                'Select More Prefs'
+                'More Preferences'
               ),
               _react2.default.createElement(
                 _RaisedButton2.default,
