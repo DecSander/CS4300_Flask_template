@@ -5,7 +5,8 @@ import { preferencesDefault } from 'infra/const';
 
 const Breed = Record({
   name: '',
-  img: ''
+  img: '',
+  match: 25
 });
 
 const Preferences = Record(preferencesDefault);
