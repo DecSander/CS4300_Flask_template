@@ -54,10 +54,13 @@ class Home extends React.Component {
             <div style={{textAlign: 'center', fontWeight: '200', fontFamily: 'roboto', color: 'black'}}>
               <h1 style={{backgroundColor: 'white', fontSize: '56px'}}>Who's A Good Dog?</h1>
               <h3 style={{backgroundColor: 'white', fontSize: '30px'}}>Find out which dog you should get</h3>
-              <TextField floatingLabelStyle={{color: 'white'}} inputStyle={{color: 'white'}} style={{width: '500px', fontSize: '30px'}} floatingLabelText="Search" onChange={(e, v) => updatePreference('keywords', v)} />
+              <TextField floatingLabelStyle={{color: 'white'}} inputStyle={{color: 'white'}}
+                style={{width: '500px', fontSize: '30px'}} floatingLabelText="Search" onChange={(e, v) => updatePreference('keywords', v)} />
               <br />
-              <RaisedButton primary={true} style={{marginRight: '20px'}} onClick={this.submitWithPrefs}>More Preferences</RaisedButton>
-              <RaisedButton secondary={true} onClick={this.submitNoPrefs}>Submit</RaisedButton>
+              <RaisedButton primary={true} overlayStyle={{color: 'white', paddingLeft: '50px', paddingRight: '50px'}}
+                style={{marginRight: '20px'}} onClick={this.submitWithPrefs}>More Preferences</RaisedButton>
+              <RaisedButton secondary={true} overlayStyle={{color: 'white', paddingLeft: '50px', paddingRight: '50px'}}
+                onClick={this.submitNoPrefs}>Submit</RaisedButton>
             </div>
           </Col>
         </Row>

@@ -554,18 +554,21 @@ var Home = function (_React$Component) {
                 { style: { backgroundColor: 'white', fontSize: '30px' } },
                 'Find out which dog you should get'
               ),
-              _react2.default.createElement(_TextField2.default, { floatingLabelStyle: { color: 'white' }, inputStyle: { color: 'white' }, style: { width: '500px', fontSize: '30px' }, floatingLabelText: 'Search', onChange: function onChange(e, v) {
+              _react2.default.createElement(_TextField2.default, { floatingLabelStyle: { color: 'white' }, inputStyle: { color: 'white' },
+                style: { width: '500px', fontSize: '30px' }, floatingLabelText: 'Search', onChange: function onChange(e, v) {
                   return (0, _GlobalActions.updatePreference)('keywords', v);
                 } }),
               _react2.default.createElement('br', null),
               _react2.default.createElement(
                 _RaisedButton2.default,
-                { primary: true, style: { marginRight: '20px' }, onClick: this.submitWithPrefs },
+                { primary: true, overlayStyle: { color: 'white', paddingLeft: '50px', paddingRight: '50px' },
+                  style: { marginRight: '20px' }, onClick: this.submitWithPrefs },
                 'More Preferences'
               ),
               _react2.default.createElement(
                 _RaisedButton2.default,
-                { secondary: true, onClick: this.submitNoPrefs },
+                { secondary: true, overlayStyle: { color: 'white', paddingLeft: '50px', paddingRight: '50px' },
+                  onClick: this.submitNoPrefs },
                 'Submit'
               )
             )
