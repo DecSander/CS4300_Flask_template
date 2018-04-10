@@ -1,0 +1,794 @@
+[
+  [
+    "affenpinscher", 
+    "affenpinscher"
+  ], 
+  [
+    "afghan-hound", 
+    "afghan hound"
+  ], 
+  [
+    "airedale-terrier", 
+    "airedale terrier"
+  ], 
+  [
+    "akita", 
+    "akita"
+  ], 
+  [
+    "alaskan-malamute", 
+    "alaskan malamute"
+  ], 
+  [
+    "american-foxhound", 
+    "foxhound"
+  ], 
+  [
+    "american-staffordshire-terrier", 
+    "staffordshire bull terrier"
+  ], 
+  [
+    "american-water-spaniel", 
+    "american water spaniel"
+  ], 
+  [
+    "anatolian-shepherd-dog", 
+    "anatolian shepherd dog"
+  ], 
+  [
+    "australian-cattle-dog", 
+    "australian cattle dog"
+  ], 
+  [
+    "australian-kelpie", 
+    "australian kelpie"
+  ], 
+  [
+    "australian-shepherd", 
+    "australian shepherd"
+  ], 
+  [
+    "australian-terrier", 
+    "australian terrier"
+  ], 
+  [
+    "azawakh", 
+    "azawakh"
+  ], 
+  [
+    "basenji", 
+    "basenji"
+  ], 
+  [
+    "basset-fauve-de-bretagne", 
+    "basset fauve de bretagne"
+  ], 
+  [
+    "basset-hound", 
+    "basset hound"
+  ], 
+  [
+    "bavarian-mountain-scent-hound", 
+    "bavarian mountain hound"
+  ], 
+  [
+    "beagle", 
+    "beagle"
+  ], 
+  [
+    "bearded-collie", 
+    "bearded collie"
+  ], 
+  [
+    "beauceron", 
+    "beauceron"
+  ], 
+  [
+    "bedlington-terrier", 
+    "bedlington terrier"
+  ], 
+  [
+    "belgian-laekenois", 
+    "belgian shepherd dog (laekenos)"
+  ], 
+  [
+    "belgian-malinois", 
+    "belgian shepherd dog (malinois)"
+  ], 
+  [
+    "belgian-sheepdog", 
+    "belgian shepherd dog (groenendael)"
+  ], 
+  [
+    "belgian-tervuren", 
+    "belgian shepherd dog (tervuren)"
+  ], 
+  [
+    "bergamasco-sheepdog", 
+    "bergamasco"
+  ], 
+  [
+    "bernese-mountain-dog", 
+    "bernese mountain dog"
+  ], 
+  [
+    "bichon-frise", 
+    "bichon frise"
+  ], 
+  [
+    "black-russian-terrier", 
+    "russian black terrier"
+  ], 
+  [
+    "bloodhound", 
+    "bloodhound"
+  ], 
+  [
+    "boerboel", 
+    "boerboel"
+  ], 
+  [
+    "bolognese", 
+    "bolognese"
+  ], 
+  [
+    "border-collie", 
+    "border collie"
+  ], 
+  [
+    "border-terrier", 
+    "border terrier"
+  ], 
+  [
+    "borzoi", 
+    "borzoi"
+  ], 
+  [
+    "boston-terrier", 
+    "boston terrier"
+  ], 
+  [
+    "bouvier-des-flandres", 
+    "bouvier des flandres"
+  ], 
+  [
+    "boxer", 
+    "boxer"
+  ], 
+  [
+    "bracco-italiano", 
+    "bracco italiano"
+  ], 
+  [
+    "briard", 
+    "briard"
+  ], 
+  [
+    "brittany", 
+    "brittany"
+  ], 
+  [
+    "brussels-griffon", 
+    "griffon bruxellois"
+  ], 
+  [
+    "bull-terrier", 
+    "bull terrier"
+  ], 
+  [
+    "bulldog", 
+    "bulldog"
+  ], 
+  [
+    "bullmastiff", 
+    "bullmastiff"
+  ], 
+  [
+    "cairn-terrier", 
+    "cairn terrier"
+  ], 
+  [
+    "canaan-dog", 
+    "canaan dog"
+  ], 
+  [
+    "cane-corso", 
+    "cane corso"
+  ], 
+  [
+    "cardigan-welsh-corgi", 
+    "welsh corgi (cardigan)"
+  ], 
+  [
+    "carolina-dog", 
+    "carolina dog"
+  ], 
+  [
+    "catahoula-leopard-dog", 
+    "catahoula leopard dog"
+  ], 
+  [
+    "cavalier-king-charles-spaniel", 
+    "cavalier king charles spaniel"
+  ], 
+  [
+    "cesky-terrier", 
+    "cesky terrier"
+  ], 
+  [
+    "chesapeake-bay-retriever", 
+    "chesapeake bay retriever"
+  ], 
+  [
+    "chihuahua", 
+    "chihuahua"
+  ], 
+  [
+    "chinese-crested", 
+    "chinese crested"
+  ], 
+  [
+    "chinese-shar-pei", 
+    "shar pei"
+  ], 
+  [
+    "chow-chow", 
+    "chow chow"
+  ], 
+  [
+    "cirneco-delletna", 
+    "cirneco dell'etna"
+  ], 
+  [
+    "clumber-spaniel", 
+    "clumber spaniel"
+  ], 
+  [
+    "cocker-spaniel", 
+    "cocker spaniel"
+  ], 
+  [
+    "collie", 
+    "collie (rough)"
+  ], 
+  [
+    "coton-de-tulear", 
+    "coton de tulear"
+  ], 
+  [
+    "curly-coated-retriever", 
+    "curly coated retriever"
+  ], 
+  [
+    "czechoslovakian-vlcak", 
+    "czechoslovakian wolfdog"
+  ], 
+  [
+    "dachshund", 
+    "dachshund (long haired)"
+  ], 
+  [
+    "dalmatian", 
+    "dalmatian"
+  ], 
+  [
+    "dandie-dinmont-terrier", 
+    "dandie dinmont terrier"
+  ], 
+  [
+    "dogue-de-bordeaux", 
+    "dogue de bordeaux"
+  ], 
+  [
+    "dutch-shepherd", 
+    "dutch shepherd dog"
+  ], 
+  [
+    "english-cocker-spaniel", 
+    "cocker spaniel"
+  ], 
+  [
+    "english-foxhound", 
+    "old english sheepdog"
+  ], 
+  [
+    "english-setter", 
+    "english setter"
+  ], 
+  [
+    "english-springer-spaniel", 
+    "english springer spaniel"
+  ], 
+  [
+    "entlebucher-mountain-dog", 
+    "entlebucher mountain dog"
+  ], 
+  [
+    "estrela-mountain-dog", 
+    "estrela mountain dog"
+  ], 
+  [
+    "eurasier", 
+    "eurasier"
+  ], 
+  [
+    "field-spaniel", 
+    "field spaniel"
+  ], 
+  [
+    "finnish-lapphund", 
+    "finnish lapphund"
+  ], 
+  [
+    "finnish-spitz", 
+    "finnish spitz"
+  ], 
+  [
+    "flat-coated-retriever", 
+    "flat coated retriever"
+  ], 
+  [
+    "french-bulldog", 
+    "french bulldog"
+  ], 
+  [
+    "german-longhaired-pointer", 
+    "german longhaired pointer"
+  ], 
+  [
+    "german-pinscher", 
+    "german pinscher"
+  ], 
+  [
+    "german-shepherd-dog", 
+    "german shepherd dog"
+  ], 
+  [
+    "german-shorthaired-pointer", 
+    "german shorthaired pointer"
+  ], 
+  [
+    "german-spitz", 
+    "german spitz (mittel)"
+  ], 
+  [
+    "german-wirehaired-pointer", 
+    "german wirehaired pointer"
+  ], 
+  [
+    "giant-schnauzer", 
+    "giant schnauzer"
+  ], 
+  [
+    "glen-of-imaal-terrier", 
+    "glen of imaal terrier"
+  ], 
+  [
+    "golden-retriever", 
+    "golden retriever"
+  ], 
+  [
+    "gordon-setter", 
+    "gordon setter"
+  ], 
+  [
+    "grand-basset-griffon-vendeen", 
+    "basset griffon vendeen (grand)"
+  ], 
+  [
+    "great-dane", 
+    "great dane"
+  ], 
+  [
+    "greyhound", 
+    "greyhound"
+  ], 
+  [
+    "hamiltonstovare", 
+    "hamiltonstovare"
+  ], 
+  [
+    "havanese", 
+    "havanese"
+  ], 
+  [
+    "hovawart", 
+    "hovawart"
+  ], 
+  [
+    "ibizan-hound", 
+    "ibizan hound"
+  ], 
+  [
+    "irish-red-and-white-setter", 
+    "irish red & white setter"
+  ], 
+  [
+    "irish-setter", 
+    "irish setter"
+  ], 
+  [
+    "irish-terrier", 
+    "irish terrier"
+  ], 
+  [
+    "irish-water-spaniel", 
+    "irish water spaniel"
+  ], 
+  [
+    "irish-wolfhound", 
+    "irish wolfhound"
+  ], 
+  [
+    "italian-greyhound", 
+    "italian greyhound"
+  ], 
+  [
+    "japanese-chin", 
+    "japanese chin"
+  ], 
+  [
+    "jindo", 
+    "korean jindo"
+  ], 
+  [
+    "keeshond", 
+    "keeshond"
+  ], 
+  [
+    "kerry-blue-terrier", 
+    "kerry blue terrier"
+  ], 
+  [
+    "komondor", 
+    "komondor"
+  ], 
+  [
+    "kuvasz", 
+    "hungarian kuvasz"
+  ], 
+  [
+    "labrador-retriever", 
+    "labrador retriever"
+  ], 
+  [
+    "lagotto-romagnolo", 
+    "lagotto romagnolo"
+  ], 
+  [
+    "lakeland-terrier", 
+    "lakeland terrier"
+  ], 
+  [
+    "lancashire-heeler", 
+    "lancashire heeler"
+  ], 
+  [
+    "leonberger", 
+    "leonberger"
+  ], 
+  [
+    "lhasa-apso", 
+    "lhasa apso"
+  ], 
+  [
+    "lowchen", 
+    "lowchen"
+  ], 
+  [
+    "maltese", 
+    "maltese"
+  ], 
+  [
+    "manchester-terrier", 
+    "manchester terrier"
+  ], 
+  [
+    "mastiff", 
+    "mastiff"
+  ], 
+  [
+    "miniature-bull-terrier", 
+    "miniature bull terrier"
+  ], 
+  [
+    "miniature-pinscher", 
+    "miniature pinscher"
+  ], 
+  [
+    "miniature-schnauzer", 
+    "miniature schnauzer"
+  ], 
+  [
+    "neapolitan-mastiff", 
+    "neapolitan mastiff"
+  ], 
+  [
+    "newfoundland", 
+    "newfoundland"
+  ], 
+  [
+    "norfolk-terrier", 
+    "norfolk terrier"
+  ], 
+  [
+    "norwegian-buhund", 
+    "norwegian buhund"
+  ], 
+  [
+    "norwegian-elkhound", 
+    "norwegian elkhound"
+  ], 
+  [
+    "norwich-terrier", 
+    "norwich terrier"
+  ], 
+  [
+    "nova-scotia-duck-tolling-retriever", 
+    "nova scotia duck tolling retriever"
+  ], 
+  [
+    "old-english-sheepdog", 
+    "old english sheepdog"
+  ], 
+  [
+    "otterhound", 
+    "otterhound"
+  ], 
+  [
+    "papillon", 
+    "papillon"
+  ], 
+  [
+    "parson-russell-terrier", 
+    "parson russell terrier"
+  ], 
+  [
+    "pekingese", 
+    "pekingese"
+  ], 
+  [
+    "pembroke-welsh-corgi", 
+    "welsh corgi (pembroke)"
+  ], 
+  [
+    "perro-de-presa-canario", 
+    "presa canario"
+  ], 
+  [
+    "petit-basset-griffon-vendeen", 
+    "basset griffon vendeen (petit)"
+  ], 
+  [
+    "pharaoh-hound", 
+    "pharaoh hound"
+  ], 
+  [
+    "pointer", 
+    "pointer"
+  ], 
+  [
+    "polish-lowland-sheepdog", 
+    "polish lowland sheepdog"
+  ], 
+  [
+    "pomeranian", 
+    "pomeranian"
+  ], 
+  [
+    "poodle", 
+    "poodle (standard)"
+  ], 
+  [
+    "portuguese-podengo", 
+    "portuguese podengo"
+  ], 
+  [
+    "portuguese-pointer", 
+    "portuguese pointer"
+  ], 
+  [
+    "portuguese-water-dog", 
+    "portuguese water dog"
+  ], 
+  [
+    "pug", 
+    "pug"
+  ], 
+  [
+    "puli", 
+    "hungarian puli"
+  ], 
+  [
+    "pyrenean-mastiff", 
+    "pyrenean mastiff"
+  ], 
+  [
+    "pyrenean-shepherd", 
+    "pyrenean sheepdog"
+  ], 
+  [
+    "redbone-coonhound", 
+    "coonhound"
+  ], 
+  [
+    "rhodesian-ridgeback", 
+    "rhodesian ridgeback"
+  ], 
+  [
+    "rottweiler", 
+    "rottweiler"
+  ], 
+  [
+    "russell-terrier", 
+    "parson russell terrier"
+  ], 
+  [
+    "saluki", 
+    "saluki"
+  ], 
+  [
+    "samoyed", 
+    "samoyed"
+  ], 
+  [
+    "schipperke", 
+    "schipperke"
+  ], 
+  [
+    "scottish-deerhound", 
+    "deerhound"
+  ], 
+  [
+    "scottish-terrier", 
+    "scottish terrier"
+  ], 
+  [
+    "sealyham-terrier", 
+    "sealyham terrier"
+  ], 
+  [
+    "shetland-sheepdog", 
+    "shetland sheepdog"
+  ], 
+  [
+    "shiba-inu", 
+    "japanese shiba inu"
+  ], 
+  [
+    "shih-tzu", 
+    "shih tzu"
+  ], 
+  [
+    "siberian-husky", 
+    "siberian husky"
+  ], 
+  [
+    "silky-terrier", 
+    "australian silky terrier"
+  ], 
+  [
+    "skye-terrier", 
+    "skye terrier"
+  ], 
+  [
+    "sloughi", 
+    "sloughi"
+  ], 
+  [
+    "small-munsterlander-pointer", 
+    "small munsterlander"
+  ], 
+  [
+    "smooth-fox-terrier", 
+    "smooth fox terrier"
+  ], 
+  [
+    "soft-coated-wheaten-terrier", 
+    "soft-coated wheaten terrier"
+  ], 
+  [
+    "spanish-water-dog", 
+    "spanish water dog"
+  ], 
+  [
+    "spinone-italiano", 
+    "italian spinone"
+  ], 
+  [
+    "st-bernard", 
+    "st. bernard"
+  ], 
+  [
+    "staffordshire-bull-terrier", 
+    "staffordshire bull terrier"
+  ], 
+  [
+    "standard-schnauzer", 
+    "schnauzer"
+  ], 
+  [
+    "sussex-spaniel", 
+    "sussex spaniel"
+  ], 
+  [
+    "swedish-lapphund", 
+    "swedish lapphund"
+  ], 
+  [
+    "swedish-vallhund", 
+    "swedish vallhund"
+  ], 
+  [
+    "tibetan-mastiff", 
+    "tibetan mastiff"
+  ], 
+  [
+    "tibetan-spaniel", 
+    "tibetan spaniel"
+  ], 
+  [
+    "tibetan-terrier", 
+    "tibetan terrier"
+  ], 
+  [
+    "treeing-walker-coonhound", 
+    "coonhound"
+  ], 
+  [
+    "vizsla", 
+    "hungarian vizsla"
+  ], 
+  [
+    "weimaraner", 
+    "weimaraner"
+  ], 
+  [
+    "welsh-springer-spaniel", 
+    "welsh springer spaniel"
+  ], 
+  [
+    "welsh-terrier", 
+    "welsh terrier"
+  ], 
+  [
+    "west-highland-white-terrier", 
+    "west highland white terrier"
+  ], 
+  [
+    "whippet", 
+    "whippet"
+  ], 
+  [
+    "wire-fox-terrier", 
+    "wire fox terrier"
+  ], 
+  [
+    "wirehaired-pointing-griffon", 
+    "korthals griffon"
+  ]
+  [
+    "doberman-pinscher",
+    "dobermann"
+  ]
+  [
+    "great-pyrenees",
+    "pyrenean mountain dog"
+  ]
+  [
+    "american-english-coonhound", 
+    "coonhound"
+  ],
+  [
+    "bluetick-coonhound", 
+    "coonhound"
+  ],
+  [
+    "black-and-tan-coonhound", 
+    "coonhound"
+  ],
+  [
+    "xoloitzcuintli",
+    "mexican hairless"
+  ]
+]
