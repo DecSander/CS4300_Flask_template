@@ -1,3 +1,6 @@
 .background { 
-  background: url(/static/img/home.jpg) no-repeat center center fixed;
+  background-image: url(/static/img/home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100vh;
 }
