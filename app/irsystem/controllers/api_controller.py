@@ -14,6 +14,11 @@ from app.irsystem.src.structured_compare import structured_score
 # allow imports from root
 sys.path.insert(0, os.path.dirname(__file__) + "/../")
 
+DOGGO_DATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "final_dataset.json")
+with open(DOGGO_DATA_FILE, 'r') as f:
+    DOGGO_DATA = json.load(f)
+
+
 USEABLE_PREFERENCES = {"shedding": "shedding",
                        "activityLevel": "energy level",
                        "trainability": "trainability",
@@ -56,14 +61,32 @@ def get_next_dog_names(uuid, preferences):
     pickle.dump(user_data, open(path, 'w'))
     return next_dog_names
 
+def construct_description(dog, structured_scores):
+    base = DOGGO_DATA[dog]["text"]["akc"]["blurb"]
+    if structured_scores is not None:
+        contrib_data = structured_scores[dog]["contributions"]
+        contributions = sorted(contrib_data.keys(), key=lambda x: contrib_data[x], reverse=True)[:3]
+        factors = "High contribution match factors: " + ", ".join(contributions)
+        return base + "\n\n" + factors
 
-def get_json_from_dog_names(dog_names):
+    return base
+
+
+def get_json_from_dog_names(dog_names, structured_scores=None):
     path = 'database/dog_urls.json'
     dog_urls = json.load(open(path, 'r'))['dogs']
     dogs = []
     for dog in dog_names:
+        dog_json = {"dog_name": dog, }
         if dog in dog_urls:
-            dogs.append({"dog_name": dog, "images": dog_urls[dog][0:5]})
+            dog_json["images"] = dog_urls[dog][0:5]
+        else:
+            dog_json["images"] = []
+
+        dog_json["description"] = construct_description(dog, structured_scores)
+        dog_json["percent_match"] = structured_scores[dog]["score"] if structured_scores else None
+
+        dogs.append(dog_json)
     return dogs
 
 
@@ -132,11 +155,11 @@ def get_dogs(request_json):
             except KeyError:
                 reformatted_preferences[key] = preferences[key]
     preferences = reformatted_preferences
-    scores = get_structured_scores(preferences)
+    structured_scores = get_structured_scores(preferences)
 
-    dog_names = sorted(scores.keys(), key=lambda x: scores[x], reverse=True)[:20]
+    dog_names = sorted(structured_scores.keys(), key=lambda x: structured_scores[x]["score"], reverse=True)[:20]
     print dog_names
-    return json.dumps({"dogs": get_json_from_dog_names(dog_names)}), 200
+    return json.dumps({"dogs": get_json_from_dog_names(dog_names, structured_scores)}), 200
 
 
 @irsystem.route('/liked_dog', methods=['POST'])
