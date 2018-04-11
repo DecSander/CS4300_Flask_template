@@ -51,13 +51,13 @@
     "akc": {
       "shedding": 0.6, 
       "group": "Toy Group", 
-      "weight": 2.6666666666666665, 
+      "weight": 8.5, 
       "energy level": 0.6, 
       "temperament/demeanor": 1.0, 
-      "height": 4.0, 
+      "height": 8.333333333333334, 
       "akc breed popularity": 0.7760416666666666, 
       "trainability": 0.8, 
-      "life expectancy": 4.5, 
+      "life expectancy": 13.5, 
       "grooming frequency": 0.6
     }, 
     "wagwalking": {

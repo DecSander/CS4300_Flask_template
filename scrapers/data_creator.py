@@ -34,6 +34,13 @@ def depercentify(s):
 def flatten(l):
     return [item for sublist in l for item in sublist]
 
+def is_num(x):
+    try:
+        float(x)
+        return True
+    except ValueError:
+        return False
+
 for doggo in akc_data:
     print doggo
     if doggo in ww_matches:
@@ -66,16 +73,18 @@ for doggo in akc_data:
         akc_info["temperament/demeanor"] = depercentify(akc_info["temperament/demeanor"])
 
     if akc_info["height"] is not None:
-        height_re = re.compile(r"(\d+)")
-        heights = map(float, flatten(height_re.findall(akc_info["height"])))
+        heights = [float(x) for x in re.split(r"[^\d]", akc_info["height"]) if is_num(x)]
         akc_info["height"] = sum(heights)/len(heights)
 
     if akc_info["energy level"] is not None:
         akc_info["energy level"] = depercentify(akc_info["energy level"])
 
     if akc_info["life expectancy"] is not None:
-        life_re = re.compile(r"(\d+)")
-        akc_info["life expectancy"] = sum(map(float, flatten(life_re.findall(akc_info["life expectancy"]))))/2.0
+        if akc_info["life expectancy"] == "Late teens":
+            akc_info["life expectancy"] = 17.0
+        else:
+            lifespans = [float(x) for x in re.split(r"[^\d]", akc_info["life expectancy"]) if is_num(x)]
+            akc_info["life expectancy"] = sum(lifespans)/len(lifespans)
 
     if akc_info["akc breed popularity"] is not None:
         pop_re = re.compile(r"(\d+) of (\d+)")
@@ -86,10 +95,9 @@ for doggo in akc_data:
             akc_info["akc breed popularity"] = None
 
     if akc_info["weight"] is not None:
-        Weight_re = re.compile(r"(\d+)")
+        weights = [float(x) for x in re.split(r"[^\d]", akc_info["weight"]) if is_num(x)]
         try:
-            Weights = map(float, flatten(Weight_re.findall(akc_info["weight"])))
-            akc_info["weight"] = sum(Weights)/len(Weights)
+            akc_info["weight"] = sum(weights)/len(weights)
         except (ValueError, ZeroDivisionError):
             akc_info["weight"] = None
 
