@@ -1,0 +1,64 @@
+"nederlandse-kooikerhondje": {
+  "text": {
+    "akc": {
+      "nutrition": "some text about nutrional needs", 
+      "About": "about the dog", 
+      "Temperament:": "Friendly, Alert, Quick", 
+      "General_apperance": "appearance stuff", 
+      "health": null, 
+      "Blurb": "blurb", 
+      "Facts": [
+        "The Nederlandse Kooikerhondje is believed to be an ancestor of the Nova Scotia Duck Tolling Retriever.", 
+        "The Dutch keep a breeding registry to record all litters born starting in 1942. This also includes health information.", 
+      ], 
+      "training": "info about training", 
+      "grooming": "info about grooming", 
+      "exercise": "info about excersize"
+    }, 
+    "wagwalking": {
+      "overview": "overview", 
+      "appearance": "appearance", 
+      "texture": "straight", 
+      "reviews": null, 
+      "ancestry": "Spaniel", 
+      "maintenance": "maintenance", 
+      "temperament": "temperament", 
+      "concerns": [
+        "Von Willebrand's Disease", 
+        "Kooiker Paralysis", 
+        "Polymyositis"
+      ], 
+      "history": "history"
+    }, 
+    "breedia": [["example of text"], ["more text"]]
+  }, 
+  "structured": {
+    "akc": {
+      "Shedding": "60%", 
+      "Temperament/Demeanor": null, 
+      "Height:": "15-17 inches (male) 14-16 inches (female)", 
+      "Energy Level": "60%", 
+      "Life Expectancy:": "12-14 years", 
+      "AKC Breed Popularity:": "Ranks  of 192", 
+      "Trainability": null, 
+      "Weight:": null, 
+      "Grooming Frequency": "20%", 
+      "Group:": "Sporting Group"
+    }, 
+    "wagwalking": {
+      "activity_minutes": null, 
+      "grooming_freq": "weekly", 
+      "ratings": null, 
+      "food_monthly_cost": null, 
+      "lifespan": 13, 
+      "height": 14, 
+      "num_ratings": 0, 
+      "activity_level": null, 
+      "walk_miles": null, 
+      "coat_length": 3, 
+      "activity": "", 
+      "size": 22
+    }, 
+    "breedia": null
+  }
+}, 
