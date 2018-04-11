@@ -4,8 +4,10 @@ import os
 from collections import namedtuple
 import re
 import sys
+import time
 
 DATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "final_dataset.json")
+# This is here in case all the weights are 0, we don't want to just fail
 WEIGHT_EPSILON = .00001
 
 with open(DATA_FILE, 'r') as f:
@@ -34,18 +36,22 @@ _scale_val("walk_miles")
 
 def _score(preferences, dog):
     total_weight = sum(v["importance"]+WEIGHT_EPSILON for k,v in preferences.items() if doggo_data[dog][k] is not None)
+    missing_weight = sum(v["importance"]+WEIGHT_EPSILON for k,v in preferences.items()) - total_weight
     score = 0
+    contributions = {}
     for p in preferences:
         if doggo_data[dog][p] is not None:
             importance = (preferences[p]["importance"] + WEIGHT_EPSILON) / total_weight
             similarity = 1 - abs(preferences[p]["value"] - doggo_data[dog][p])
+            contributions[p] = (similarity * importance) / total_weight
             score += similarity * importance
-    return score
+
+    confidence = missing_weight / total_weight
+    return {"score": score, "confidence": confidence, "contributions": contributions}
 
 def structured_score(preferences):
     return {d: _score(preferences, d) for d in doggo_data}
+
     
-
-
 if __name__ == "__main__":
     print doggo_data['affenpinscher']
