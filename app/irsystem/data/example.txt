@@ -2,12 +2,12 @@
   "text": {
     "akc": {
       "nutrition": "The\u00a0Affenpinscher should do well on a high-quality\u00a0dog food, whether commercially manufactured or home-prepared with your veterinarian\u2019s supervision and approval. Any diet should be appropriate to the dog\u2019s age (puppy, adult, or senior). Some dogs are prone to getting\u00a0overweight, so watch your dog\u2019s calorie consumption and weight level.\u00a0Treats\u00a0can be an important aid in training, but giving too many can cause obesity. Learn about which\u00a0human foods\u00a0are safe for dogs, and which are not. Check with your vet if you have any concerns about your dog\u2019s weight or diet.\u00a0Clean, fresh water should be available at all times.", 
-      "About": "\n\u200bThe Affen\u2019s apish look has been described many ways. They\u2019ve been called \u201cmonkey dogs\u201d and \u201cape terriers.\u201d The French say diablotin moustachu (\u201cmustached little devil\u201d), and Star Wars fans argue whether they look more like Wookies or Ewoks.\nStanding less than a foot tall, these sturdy terrier-like dogs approach life with great confidence. \u201cThis isn\u2019t a breed you train,\u201d a professional dog handler tells us, \u201cHe\u2019s like a human. You befriend him.\u201d The dense, harsh coat is described as \u201cneat but shaggy\u201d and comes in several colors; the gait is light and confident. They can be willful and domineering, but mostly Affens are loyal, affectionate, and always entertaining. Affen people say they love being owned by their little monkey dogs.\n", 
-      "Temperament:": "Confident, Famously Funny, Fearless", 
-      "General_apperance": "The Affenpinscher is a balanced, wiry-haired terrier-like toy dog whose intelligence and demeanor make him a good house pet. Originating in Germany, the name Affenpinscher means \u201cmonkey-like terrier.\u201d The breed was developed to rid the kitchens, granaries, and stables of rodents. In France the breed is described as the \u201cDiablotin Moustachu,\u201d or moustached little devil, reflecting both the appearance and attitude of this delightful breed. The total overall appearance of the Affenpinscher is more important than any individual characteristic. He is described as having a neat but shaggy appearance.\n", 
+      "about": "\n\u200bThe Affen\u2019s apish look has been described many ways. They\u2019ve been called \u201cmonkey dogs\u201d and \u201cape terriers.\u201d The French say diablotin moustachu (\u201cmustached little devil\u201d), and Star Wars fans argue whether they look more like Wookies or Ewoks.\nStanding less than a foot tall, these sturdy terrier-like dogs approach life with great confidence. \u201cThis isn\u2019t a breed you train,\u201d a professional dog handler tells us, \u201cHe\u2019s like a human. You befriend him.\u201d The dense, harsh coat is described as \u201cneat but shaggy\u201d and comes in several colors; the gait is light and confident. They can be willful and domineering, but mostly Affens are loyal, affectionate, and always entertaining. Affen people say they love being owned by their little monkey dogs.\n", 
+      "general_apperance": "The Affenpinscher is a balanced, wiry-haired terrier-like toy dog whose intelligence and demeanor make him a good house pet. Originating in Germany, the name Affenpinscher means \u201cmonkey-like terrier.\u201d The breed was developed to rid the kitchens, granaries, and stables of rodents. In France the breed is described as the \u201cDiablotin Moustachu,\u201d or moustached little devil, reflecting both the appearance and attitude of this delightful breed. The total overall appearance of the Affenpinscher is more important than any individual characteristic. He is described as having a neat but shaggy appearance.\n", 
       "health": "\u00a0", 
       "exercise": "One of the attractions of the toy breeds is that their\u00a0small size\u00a0makes them ideal apartment dogs. While Affenpinschers can be perfectly happy living in close quarters, the breed is classified as \u201cmoderately active,\u201d and as such, they do need\u00a0exercise. Indoor play, both with his owner and just between himself and a toy, can be enough to make up a large chunk of an Affen\u2019s exercise regimen. Even so, a\u00a0brisk walk\u00a0once or twice a day is required. In addition to providing exercise, these walks give the Affen a chance to socialize both with people and other dogs.", 
-      "Facts": [
+      "temperament": "Confident, Famously Funny, Fearless", 
+      "facts": [
         "The Affenpinscher\u2019s fur is wiry and often considered hypoallergenic.", 
         "Because of their heritage as ratters, Affenpinschers tend to not do well with rodent pets such as hamsters, ferrets and gerbils, but tend to get along with other dogs.", 
         "The Affenpinscher was admitted to the AKC Stud Book in 1936.", 
@@ -17,7 +17,7 @@
       ], 
       "training": "Affenpinschers are courageous, bold, and often feisty. Basic\u00a0obedience\u00a0training is recommended. The breed has an undeserved reputation as being difficult to train becauseAffenpinschers are independent minded and can be stubborn. The key is that they are very intelligent and generally eager to please the humans they have bonded with. Keep in mind that they are easily bored and tend to lose interest during long training sessions. Shorter, more frequent sessions with a trainer who has experience working with\u00a0toy breeds\u00a0are usually quite successful.", 
       "grooming": "The Affenpinscher\u2019s medium-length, wiry coat should be groomed twice a week, first with a brush and then with a metal comb. Any mats should be pulled apart with the fingers. The hair on the head is usually brushed forward over the face, and then an inverted V-shape is cut to expose the eyes. Similarly, the hair on the bridge of the nose is trimmed into a fan shape to keep the eyes clear. The Affen\u2019s coat does not grow quickly, so a trimming a pet Affen every few months should suffice. The breed\u2019s national parent club, the Affenpinscher Club of America, provides a detailed\u00a0grooming guide. Affens should also have their\u00a0nails trimmed\u00a0and their\u00a0teeth brushed\u00a0regularly.", 
-      "Blurb": "\n            Loyal, curious, and famously amusing, this almost-human toy dog is fearless out of all proportion to his size. As with all great comedians, it\u2019s the Affenpinscher\u2019s apparent seriousness of purpose that makes his antics all the more amusing.\n        "
+      "blurb": "\n            Loyal, curious, and famously amusing, this almost-human toy dog is fearless out of all proportion to his size. As with all great comedians, it\u2019s the Affenpinscher\u2019s apparent seriousness of purpose that makes his antics all the more amusing.\n        "
     }, 
     "wagwalking": {
       "overview": "Originally, the Affenpinscher was commonly known as monkey dog because that is what Affenpinscher means in German. Presumably, the breed was named this because of their apish looking face. They were bred to hunt rats so they were also known as ratters. The breed originated in Germany from different types of small terriers in the 17th and 18th century. They were so small and cuddly, women decided they would make good lapdogs and the Affenpinscher was soon bred to be smaller to make them a better size to be companion dogs. They are small dogs, only about 9 to 11 inches tall and they weigh about 9 pounds. Their fur is medium length and wiry, usually belge, tan, red, silver, gray, or black. It is not a very common dog now and is even considered to be rare. It is best not to have these dogs in a home with small children because they do not like to be squeezed or chased.", 
@@ -41,26 +41,24 @@
       "history": "The Affenpinscher is a very unique breed of dog and they are still quite rare in the United States. When they originated in the 1600s, these dogs were bigger (12 to 13 inches) and were used to keep the rats and mice out of the stables. Early breeders crossed a different type of Schnauzer Ratting dog with the Affenpinscher for ratting but they were later crossed with Silky Pinschers, smooth haired German Pinschers, and Pugs in hopes of producing a smaller lap dog. This led to the Affenpinscher being the forebearer of other terriers such as the Miniature Schnauzer and Brussels Griffon. The first Affenpinschers were brought to the United States by Mrs. Bessie Mally who lived in Cicero, Illinois. The first of this breed to be registered with the American Kennel Club (AKC) was from the first litter of Mrs. Mally\u2019s dogs. This dog\u2019s name was Nolli v Anwander and she was accepted into the (AKC) in 1936. The breed almost died out as World War II came to an end and the last litter was whelped in June of 1940. It was not until 10 years later that the Affenpinscher breed started to be built back up by importing dogs from Germany that were descendants from the same litter as Mrs. Mally\u2019s dogs. According to the AKC, this breed is not as popular as most breeds. In fact, they rank 149th in breed popularity but with their confident and spunky personality, they seem to capture the heart of their owners right away."
     }, 
     "breedia": [
-      "Hi,\n\r\nDoes anyone on here own Affenpinschers? Would like to know a bit about them from an owner rather than a breeder or a book! In the future I would like a toy breed, I have always owned large dogs and something about these little \"Monkeys\" really draws me in  \n\r\nand no I am not going to run off half cock to find one, I am a responsible mommie and am just info gathering  \n\r\nThanks in advance\n\r\nRamoth", 
-      "My daughter owns four, one is the only red Affenpinscher in the UK. I can pass on any questions you have to her.", 
-      "dont breeders own their dogs then?", 
-      "My daughter bred three of hers but can't write at the moment due to an accident to her hand which happened 2 years ago", 
-      "Hey Anne good to see you here", 
+      "Enzo 4 year old Affenpinscher who lives in London.\nFirst 2 are when he was a puppy, 3rd close up is recent.", 
+      "I love the drag and drop! So much easier than the old system.\nOnly disadvantage is you can't caption the pics.", 
+      "I just love Affenpinchers - so full of character.", 
       "Hi Jane,\r\nGreat to see you.\r\nAnne"
     ]
   }, 
   "structured": {
     "akc": {
-      "Shedding": 0.6, 
-      "Height:": "9-11.5 inches", 
-      "Energy Level": 0.6, 
-      "Life Expectancy:": 13.5, 
-      "Weight:": "7-10 pounds", 
-      "Trainability": 0.8, 
-      "Temperament/Demeanor": 1.0, 
-      "AKC Breed Popularity:": 0.7760416666666666, 
-      "Grooming Frequency": 0.6, 
-      "Group:": "Toy Group"
+      "shedding": 0.6, 
+      "group": "Toy Group", 
+      "weight": 2.6666666666666665, 
+      "energy level": 0.6, 
+      "temperament/demeanor": 1.0, 
+      "height": 4.0, 
+      "akc breed popularity": 0.7760416666666666, 
+      "trainability": 0.8, 
+      "life expectancy": 4.5, 
+      "grooming frequency": 0.6
     }, 
     "wagwalking": {
       "activity_minutes": 60, 

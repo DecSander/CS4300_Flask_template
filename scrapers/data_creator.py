@@ -15,12 +15,13 @@ breedia_data = json.load(open("breedia_forum/output.json", 'r'))
 breedia_data = {k.lower(): v for k, v in breedia_data.items()}
 
 
+
 final_dataset = {}
 
-akc_textual = ["nutrition", "Temperament:", "General_apperance", "About",
-               "health", "exercise", "Facts", "training", "grooming", "Blurb"]
-akc_numerical = ["Temperament/Demeanor", "Height:", "Trainability", "Energy Level",
-                 "Grooming Frequency", "Life Expectancy:", "Weight:", "Shedding", "AKC Breed Popularity:", "Group:"]
+akc_textual = ["nutrition", "temperament", "general_apperance", "about",
+               "health", "exercise", "facts", "training", "grooming", "blurb"]
+akc_numerical = ["temperament/demeanor", "height", "trainability", "energy level",
+                 "grooming frequency", "life expectancy", "weight", "shedding", "akc breed popularity", "group"]
 
 ww_textual = ["temperament", "overview", "appearance", "texture",
               "reviews", "ancestry", "maintenance", "concerns", "history"]
@@ -51,42 +52,53 @@ for doggo in akc_data:
 
     akc_info = defaultdict(lambda : None)
     akc_info.update(akc_data[doggo])
-    if akc_info["Shedding"] is not None:
-        akc_info["Shedding"] = depercentify(akc_info["Shedding"])
+    better_dict = {}
+    x = akc_info.items()
+    for key, val in x:
+        new_key = key.replace(":", "").lower()
+        del akc_info[key]
+        akc_info[new_key] = val
 
-    if akc_info["Temperament/Demeanor"] is not None:
-        akc_info["Temperament/Demeanor"] = depercentify(akc_info["Temperament/Demeanor"])
+    if akc_info["shedding"] is not None:
+        akc_info["shedding"] = depercentify(akc_info["shedding"])
 
-    if akc_info["Height"] is not None:
-        height_re = re.compile(r"(\d+)-(\d+)")
-        heights = map(float, flatten(height_re.findall(akc_info["Height"])))
-        akc_info["Height"] = sum(heights)/len(heights)
+    if akc_info["temperament/demeanor"] is not None:
+        akc_info["temperament/demeanor"] = depercentify(akc_info["temperament/demeanor"])
 
-    if akc_info["Energy Level"] is not None:
-        akc_info["Energy Level"] = depercentify(akc_info["Energy Level"])
+    if akc_info["height"] is not None:
+        height_re = re.compile(r"(\d+)")
+        heights = map(float, flatten(height_re.findall(akc_info["height"])))
+        akc_info["height"] = sum(heights)/len(heights)
 
-    if akc_info["Life Expectancy:"] is not None:
-        life_re = re.compile(r"(\d+)-(\d+)")
-        akc_info["Life Expectancy:"] = sum(map(float, flatten(life_re.findall(akc_info["Life Expectancy:"]))))/2.0
+    if akc_info["energy level"] is not None:
+        akc_info["energy level"] = depercentify(akc_info["energy level"])
 
-    if akc_info["AKC Breed Popularity:"] is not None:
+    if akc_info["life expectancy"] is not None:
+        life_re = re.compile(r"(\d+)")
+        akc_info["life expectancy"] = sum(map(float, flatten(life_re.findall(akc_info["life expectancy"]))))/2.0
+
+    if akc_info["akc breed popularity"] is not None:
         pop_re = re.compile(r"(\d+) of (\d+)")
         try:
-            rank, total = map(int, flatten(pop_re.findall(akc_info["AKC Breed Popularity:"])))
-            akc_info["AKC Breed Popularity:"] = rank/total
+            rank, total = map(int, flatten(pop_re.findall(akc_info["akc breed popularity"])))
+            akc_info["akc breed popularity"] = rank/total
         except ValueError:
-            akc_info["AKC Breed Popularity:"] = None
+            akc_info["akc breed popularity"] = None
 
-    if akc_info["Weight"] is not None:
-        Weight_re = re.compile(r"(\d+)-(\d+)")
-        Weights = map(float, flatten(Weight_re.findall(akc_info["Weight"])))
-        akc_info["Weight"] = sum(Weights)/len(Weights)
+    if akc_info["weight"] is not None:
+        Weight_re = re.compile(r"(\d+)")
+        try:
+            Weights = map(float, flatten(Weight_re.findall(akc_info["weight"])))
+            akc_info["weight"] = sum(Weights)/len(Weights)
+        except (ValueError, ZeroDivisionError):
+            akc_info["weight"] = None
 
-    if akc_info["Trainability"] is not None:
-        akc_info["Trainability"] = depercentify(akc_info["Trainability"])
 
-    if akc_info["Grooming Frequency"] is not None:
-        akc_info["Grooming Frequency"] = depercentify(akc_info["Grooming Frequency"])
+    if akc_info["trainability"] is not None:
+        akc_info["trainability"] = depercentify(akc_info["trainability"])
+
+    if akc_info["grooming frequency"] is not None:
+        akc_info["grooming frequency"] = depercentify(akc_info["grooming frequency"])
 
 
     akc_text_data = {k: akc_info[k] for k in akc_textual}
