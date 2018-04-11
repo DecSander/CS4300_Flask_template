@@ -61,20 +61,6 @@ def get_next_dog_names(uuid, preferences):
 
 
 
-def construct_description(dog, structured_scores):
-    base = DOGGO_DATA[dog]["text"]["akc"]["blurb"]
-    if structured_scores is not None:
-        contrib_data = structured_scores[dog]["contributions"]
-        contributions = sorted(contrib_data.keys(), key=lambda x: contrib_data[x], reverse=True)[:3]
-        factors = "You'll love about this doggo: "
-        for contrib in contributions:
-            factor = contrib + ": " + str(DOGGO_DATA[dog]["structured"][contrib]) + " " + STRUCTURED_METADATA[contrib]
-            factors += "\n" + factor
-        return base + "\n\n" + factors
-
-    return base
-
-
 def get_json_from_dog_names(dog_names, structured_scores=None):
     path = 'database/dog_urls.json'
     dog_urls = json.load(open(path, 'r'))['dogs']
@@ -86,8 +72,22 @@ def get_json_from_dog_names(dog_names, structured_scores=None):
         else:
             dog_json["images"] = []
 
-        dog_json["description"] = construct_description(dog, structured_scores)
+        dog_json["description"] = DOGGO_DATA[dog]["text"]["akc"]["blurb"]
         dog_json["percent_match"] = structured_scores[dog]["score"] if structured_scores else None
+        if structured_scores is not None:
+            contrib_data = structured_scores[dog]["contributions"]
+            contributions = sorted(contrib_data.keys(), key=lambda x: contrib_data[x], reverse=True)[:3]
+            contrib_vals = []
+            for contrib in contributions:
+                factor = {
+                    "name" : contrib,
+                    "value" : DOGGO_DATA[dog]["structured"][contrib],
+                    "units" : STRUCTURED_METADATA[contrib]
+                }
+                contrib_vals.append(factor)
+            dog_json["contributions"] = contrib_vals
+        else:
+            dog_json["contributions"] = []
 
         dogs.append(dog_json)
     return dogs
