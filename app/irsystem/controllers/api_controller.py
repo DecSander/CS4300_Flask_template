@@ -15,23 +15,21 @@ from app.irsystem.src.structured_compare import structured_score
 sys.path.insert(0, os.path.dirname(__file__) + "/../")
 
 DOGGO_DATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "final_dataset.json")
+DOGGO_METADATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "structured_metadata.json")
 with open(DOGGO_DATA_FILE, 'r') as f:
     DOGGO_DATA = json.load(f)
 
+with open(DOGGO_METADATA_FILE, 'r') as f:
+    STRUCTURED_METADATA = json.load(f)
 
-USEABLE_PREFERENCES = {"shedding": "shedding",
-                       "activityLevel": "energy level",
-                       "trainability": "trainability",
-                       "temperament": "temperament",
-                       "hairLength": "coat_length",
-                       "lifespan": "lifespan",
-                       "dogSize": "weight"}
+
+STRUCTURED_FACTORS = ["activity_minutes", "shedding", "coat_length", "weight", "energy_level", "food_monthly_cost", "lifespan", "height", "popularity", "trainability", "temperament", "health", "grooming_frequency", "walk_miles"]
 
 breeds = ['rottweiler', 'labrador', 'wolfhound', 'cairn', 'samoyed', 'greyhound', 'vizsla', 'deerhound', 'akita', 'briard', 'hound', 'pinscher', 'bullterrier', 'malinois', 'setter', 'lhasa', 'collie', 'bluetick', 'saluki', 'groenendael', 'pyrenees', 'papillon', 'doberman', 'leonberg', 'poodle', 'whippet', 'basenji', 'beagle', 'kelpie', 'entlebucher', 'shihtz', 'pekinese', 'kuvasz', 'newfoundland', 'appenzeller', 'coonhound', 'keeshond', 'shiba', 'germanshepherd', 'weimaraner', 'pug', 'schipperke', 'pomeranian', 'mountain', 'bulldog', 'pointer', 'african', 'springer', 'spaniel', 'chihuahua', 'sheepdog', 'husky', 'maltese', 'clumber', 'eskimo', 'terrier', 'stbernard', 'retriever', 'schnauzer', 'pembroke', 'komondor', 'bouvier', 'dingo', 'mastiff', 'malamute', 'mexicanhairless', 'borzoi', 'elkhound', 'ridgeback', 'dhole', 'brabancon', 'boxer', 'dachshund', 'affenpinscher', 'otterhound', 'chow', 'redbone', 'corgi', 'dane', 'airedale']
 breedset = set(breeds)
 
 def get_structured_scores(preferences):
-    preferences = {new_key: preferences[key] for key, new_key in USEABLE_PREFERENCES.iteritems()}
+    preferences = {k:preferences[k] for k in STRUCTURED_FACTORS}
     return structured_score(preferences)
 
 
@@ -61,12 +59,17 @@ def get_next_dog_names(uuid, preferences):
     pickle.dump(user_data, open(path, 'w'))
     return next_dog_names
 
+
+
 def construct_description(dog, structured_scores):
     base = DOGGO_DATA[dog]["text"]["akc"]["blurb"]
     if structured_scores is not None:
         contrib_data = structured_scores[dog]["contributions"]
         contributions = sorted(contrib_data.keys(), key=lambda x: contrib_data[x], reverse=True)[:3]
-        factors = "High contribution match factors: " + ", ".join(contributions)
+        factors = "You'll love about this doggo: "
+        for contrib in contributions:
+            factor = contrib + ": " + str(DOGGO_DATA[dog]["structured"][contrib]) + " " + STRUCTURED_METADATA[contrib]
+            factors += "\n" + factor
         return base + "\n\n" + factors
 
     return base

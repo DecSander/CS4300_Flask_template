@@ -14,8 +14,6 @@ wagwalking_data = {k.lower(): v for k, v in wagwalking_data.items()}
 breedia_data = json.load(open("breedia_forum/output.json", 'r'))
 breedia_data = {k.lower(): v for k, v in breedia_data.items()}
 
-print wagwalking_data['rottweiler']['ratings']
-
 final_dataset = {}
 
 akc_textual = ["nutrition", "temperament", "general_apperance", "about",
@@ -117,7 +115,6 @@ for doggo in akc_data:
             akc_info["akc breed popularity"] = None
 
     if akc_info["weight"] is not None:
-        print akc_info["weight"]
         weights = [float(x) for x in re.split(r"[^\d]", akc_info["weight"]) if is_num(x)]
         try:
             akc_info["weight"] = sum(weights)/len(weights)
@@ -139,12 +136,12 @@ for doggo in akc_data:
         "temperament" : av(akc_num_data["temperament/demeanor"], ww_num_data["ratings"]["Friendliness"]/5.0, ww_num_data["num_ratings"]), 
         "height" : av(akc_num_data["height"], ww_num_data["height"]), 
         "trainability" : av(akc_num_data["trainability"], ww_num_data["ratings"]["Trainability"]/5.0, ww_num_data["num_ratings"]), 
-        "energy level" : av(akc_num_data["energy level"], ww_num_data["ratings"]["Energy"]/5.0, ww_num_data["num_ratings"]),
-        "grooming frequency" : akc_num_data["grooming frequency"], 
+        "energy_level" : av(akc_num_data["energy level"], ww_num_data["ratings"]["Energy"]/5.0, ww_num_data["num_ratings"]),
+        "grooming_frequency" : akc_num_data["grooming frequency"], 
         "lifespan" : av(akc_num_data["life expectancy"], ww_num_data["lifespan"]), 
         "weight" : av(akc_num_data["weight"], ww_num_data["size"]), 
         "shedding" : akc_num_data["shedding"], 
-        "akc breed popularity" : akc_num_data["akc breed popularity"], 
+        "popularity" : akc_num_data["akc breed popularity"], 
         "group" : akc_num_data["group"],
         "activity_minutes" : ww_num_data["activity_minutes"],
         "grooming_freq_text" : ww_num_data["grooming_freq"],

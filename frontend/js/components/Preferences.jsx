@@ -50,12 +50,12 @@ function buildRow(row, preferences) {
 const basics = [
   {name: 'Weight', id: 'weight', labels: ['Small', 'Big']},
   {name: 'Height', id: 'height', labels: ['Short', 'Tall']},
-  {name: 'Popularity', id: 'akc breed popularity', labels: ['Unpopular', 'Popular']}
+  {name: 'Popularity', id: 'popularity', labels: ['Unpopular', 'Popular']}
 ];
 
 const activity = [
   {name: 'Activity', id: 'activity_minutes', labels: ['Inactive', 'Active']},
-  {name: 'Energy Level', id: 'energy level', labels: ['Low Energy', 'High Energy']},
+  {name: 'Energy Level', id: 'energy_level', labels: ['Low Energy', 'High Energy']},
   {name: 'Walks Needed', id: 'walk_miles', labels: ['Rarely', 'Often']}
 ];
 

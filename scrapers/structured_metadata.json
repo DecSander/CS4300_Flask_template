@@ -1,0 +1,19 @@
+{
+    "activity_minutes": "minutes", 
+    "shedding": "scaled", 
+    "group": null, 
+    "coat_length": "in", 
+    "weight": "lbs", 
+    "energy_level": "scaled", 
+    "food_monthly_cost": "dollars", 
+    "activity_level": null, 
+    "lifespan": "years", 
+    "height": "in", 
+    "popularity": "scaled", 
+    "trainability": "scaled", 
+    "grooming_freq_text": null, 
+    "temperament": "scaled", 
+    "health": "scaled", 
+    "grooming_frequency": "scaled", 
+    "walk_miles": "miles"
+}
