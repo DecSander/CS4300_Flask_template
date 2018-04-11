@@ -833,7 +833,7 @@ function mapStateToProps(_ref) {
   return { preferences: preferences };
 }
 
-function buildSlider(preferences, labels, id, step) {
+function buildSlider(preferences, labels, id) {
   return _react2.default.createElement(
     'div',
     { style: { marginTop: '20px', marginBottom: '-20px' } },
@@ -848,27 +848,7 @@ function buildSlider(preferences, labels, id, step) {
       labels[1]
     ),
     _react2.default.createElement('div', { style: { clear: 'both' } }),
-    _react2.default.createElement(_Slider2.default, { value: preferences.get(id), step: step, onChange: function onChange(e, v) {
-        return (0, _GlobalActions.updatePreference)(id, v);
-      } })
-  );
-}
-
-function buildToggle(preferences, labels, id) {
-  return _react2.default.createElement(
-    'div',
-    { style: { marginTop: '-25px', marginBottom: '-20px' } },
-    _react2.default.createElement(
-      'span',
-      { style: { float: 'left' } },
-      labels[0]
-    ),
-    _react2.default.createElement(
-      'span',
-      { style: { float: 'right' } },
-      labels[1]
-    ),
-    _react2.default.createElement(_Toggle2.default, { style: { margin: 'auto', width: '75px', marginTop: '20px' }, toggled: preferences.get(id), onToggle: function onToggle(e, v) {
+    _react2.default.createElement(_Slider2.default, { value: preferences.get(id), onChange: function onChange(e, v) {
         return (0, _GlobalActions.updatePreference)(id, v);
       } })
   );
@@ -895,13 +875,37 @@ function buildImportance(preferences, id) {
   );
 }
 
-function getBasic(preferences) {
-  return [{ name: 'Activity Level', component: buildSlider(preferences, ['Inactive', 'Very Active'], 'activityLevel'), importance: buildImportance(preferences, 'activityLevel') }, { name: 'Price', component: buildSlider(preferences, ['Cheap', 'Expensive'], 'price'), importance: buildImportance(preferences, 'price') }, { name: 'Shedding', component: buildSlider(preferences, ['Doesn\'t Shed', 'Sheds Often'], 'shedding'), importance: buildImportance(preferences, 'shedding') }, { name: 'Dog Size', component: buildSlider(preferences, ['Tiny', 'Huge'], 'dogSize'), importance: buildImportance(preferences, 'dogSize') }, { name: 'Barking', component: buildSlider(preferences, ['Rarely Barks', 'Loud'], 'barking'), importance: buildImportance(preferences, 'barking') }, { name: 'Lifespan', component: buildSlider(preferences, ['Short', 'Long'], 'lifespan'), importance: buildImportance(preferences, 'lifespan') }, { name: 'Space Requirement', component: buildSlider(preferences, ['Apartment dog', 'Needs Backyard'], 'spaceRequirement', 0.33), importance: buildImportance(preferences, 'spaceRequirement') }, { name: 'Hair Length', component: buildSlider(preferences, ['Short', 'Long'], 'hairLength'), importance: buildImportance(preferences, 'hairLength') }, { name: 'Hypoallergenic', component: buildToggle(preferences, ['Non-Hypoallergenic', 'Hypoallergenic'], 'hypoAllergenic'), importance: buildImportance(preferences, 'hypoAllergenic') }];
+function buildRow(row, preferences) {
+  return _react2.default.createElement(
+    _Table.TableRow,
+    { key: 'pref-' + row.name },
+    _react2.default.createElement(
+      _Table.TableRowColumn,
+      null,
+      row.name
+    ),
+    _react2.default.createElement(
+      _Table.TableRowColumn,
+      null,
+      buildSlider(preferences, row.labels, row.id)
+    ),
+    _react2.default.createElement(
+      _Table.TableRowColumn,
+      null,
+      buildImportance(preferences, row.id)
+    )
+  );
 }
 
-function getBehavior(preferences) {
-  return [{ name: 'Good With Pets', component: buildToggle(preferences, ['Not good with pets', 'Great with other pets'], 'goodWithPets'), importance: buildImportance(preferences, 'goodWithPets') }, { name: 'Good With Children', component: buildToggle(preferences, ['Not good with kids', 'Great with kids'], 'goodWithChildren'), importance: buildImportance(preferences, 'goodWithChildren') }, { name: 'Train-ability', component: buildSlider(preferences, ['Easy to train', 'Stubborn'], 'trainability'), importance: buildImportance(preferences, 'trainability') }, { name: 'Temperament', component: buildSlider(preferences, ['Aggressive', 'Calm'], 'temperament'), importance: buildImportance(preferences, 'temperament') }];
-}
+var basics = [{ name: 'Weight', id: 'weight', labels: ['Small', 'Big'] }, { name: 'Height', id: 'height', labels: ['Short', 'Tall'] }, { name: 'Popularity', id: 'akc breed popularity', labels: ['Unpopular', 'Popular'] }];
+
+var activity = [{ name: 'Activity', id: 'activity_minutes', labels: ['Inactive', 'Active'] }, { name: 'Energy Level', id: 'energy level', labels: ['Low Energy', 'High Energy'] }, { name: 'Walks Needed', id: 'walk_miles', labels: ['Rarely', 'Often'] }];
+
+var grooming = [{ name: 'Shedding', id: 'shedding', labels: ['Doesn\'t Shed', 'Sheds Often'] }, { name: 'Coat Length', id: 'coat_length', labels: ['Short', 'Long'] }, { name: 'Grooming Frequency', id: 'grooming_frequency', labels: ['Infrequently', 'Frequently'] }];
+
+var costs = [{ name: 'Monthly Food Cost', id: 'food_monthly_cost', labels: ['Cheap', 'Expensive'] }, { name: 'Lifespan', id: 'lifespan', labels: ['Short', 'Long'] }, { name: 'Health', id: 'health', labels: ['Unhealthy', 'Healthy'] }];
+
+var behavior = [{ name: 'Train-ability', id: 'trainability', labels: ['Stubborn', 'Easy to Train'] }, { name: 'Temperament', id: 'temperament', labels: ['Calm', 'Excited'] }];
 
 var headerStyle = { fontSize: '20px', paddingBottom: '20px' };
 
@@ -942,34 +946,14 @@ function buildPrefs(name, prefs, expanded) {
         _react2.default.createElement(
           _Table.TableBody,
           { displayRowCheckbox: false },
-          prefs.map(function (p) {
-            return _react2.default.createElement(
-              _Table.TableRow,
-              { key: 'pref-' + p.name },
-              _react2.default.createElement(
-                _Table.TableRowColumn,
-                null,
-                p.name
-              ),
-              _react2.default.createElement(
-                _Table.TableRowColumn,
-                null,
-                p.component
-              ),
-              _react2.default.createElement(
-                _Table.TableRowColumn,
-                null,
-                p.importance
-              )
-            );
-          })
+          prefs
         )
       )
     )
   );
 }
 
-var allPrefs = [{ name: 'Basic', func: getBasic }, { name: 'Behavior', func: getBehavior }];
+var allPrefs = [{ name: 'Basic', props: basics }, { name: 'Activity', props: activity }, { name: 'Grooming', props: grooming }, { name: 'Costs', props: costs }, { name: 'Behavior', props: behavior }];
 
 var Preferences = function (_React$Component) {
   _inherits(Preferences, _React$Component);
@@ -1043,7 +1027,9 @@ var Preferences = function (_React$Component) {
             )
           ),
           allPrefs.map(function (obj, i) {
-            return buildPrefs(obj.name, obj.func(preferences), open === i + 1);
+            return buildPrefs(obj.name, obj.props.map(function (p) {
+              return buildRow(p, preferences);
+            }), open === i + 1);
           })
         ),
         _react2.default.createElement(
@@ -1347,36 +1333,29 @@ function sendRemoveMatch(breed) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var preferencesDefault = exports.preferencesDefault = {
+var preferencesDefaultBeforeMod = {
   keywords: '',
-  activityLevel: 0.5,
-  price: 0.5,
+  activity_minutes: 0.5,
   shedding: 0.5,
-  dogSize: 0.5,
-  barking: 0.5,
+  coat_length: 0.5,
+  weight: 0.5,
+  'energy level': 0.5,
+  food_monthly_cost: 0.5,
   lifespan: 0.5,
-  spaceRequirement: 0.5,
-  goodWithPets: false,
-  goodWithChildren: false,
+  height: 0.5,
+  'akc breed popularity': 0.5,
   trainability: 0.5,
-  hairLength: 0.5,
   temperament: 0.5,
-  hypoAllergenic: false,
-
-  activityLevelImportance: 0.5,
-  priceImportance: 0.5,
-  sheddingImportance: 0.5,
-  dogSizeImportance: 0.5,
-  barkingImportance: 0.5,
-  lifespanImportance: 0.5,
-  spaceRequirementImportance: 0.5,
-  goodWithPetsImportance: 0.5,
-  goodWithChildrenImportance: 0.5,
-  trainabilityImportance: 0.5,
-  hairLengthImportance: 0.5,
-  temperamentImportance: 0.5,
-  hypoAllergenicImportance: 0.5
+  health: 0.5,
+  grooming_frequency: 0.5,
+  walk_miles: 0.5
 };
+
+Object.keys(preferencesDefaultBeforeMod).forEach(function (k) {
+  preferencesDefaultBeforeMod[k + 'Importance'] = 0.5;
+});
+
+var preferencesDefault = exports.preferencesDefault = Object.freeze(preferencesDefaultBeforeMod);
 
 var preferenceKeys = exports.preferenceKeys = Object.keys(preferencesDefault);
 
