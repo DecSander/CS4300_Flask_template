@@ -132,11 +132,11 @@ def get_dogs(request_json):
             except KeyError:
                 reformatted_preferences[key] = preferences[key]
     preferences = reformatted_preferences
-    for x, y in sorted(get_structured_scores(preferences).items(), key=(lambda x:x[1]), reverse=True):
-        print x,y
+    scores = get_structured_scores(preferences)
 
-    next_dog_names = get_next_dog_names(session['uuid'], preferences)
-    return json.dumps({"dogs": get_json_from_dog_names(next_dog_names)}), 200
+    dog_names = sorted(scores.keys(), key=lambda x: scores[x], reverse=True)[:20]
+    print dog_names
+    return json.dumps({"dogs": get_json_from_dog_names(dog_names)}), 200
 
 
 @irsystem.route('/liked_dog', methods=['POST'])
