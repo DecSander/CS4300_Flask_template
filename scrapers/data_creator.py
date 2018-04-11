@@ -117,6 +117,7 @@ for doggo in akc_data:
             akc_info["akc breed popularity"] = None
 
     if akc_info["weight"] is not None:
+        print akc_info["weight"]
         weights = [float(x) for x in re.split(r"[^\d]", akc_info["weight"]) if is_num(x)]
         try:
             akc_info["weight"] = sum(weights)/len(weights)
@@ -141,7 +142,7 @@ for doggo in akc_data:
         "energy level" : av(akc_num_data["energy level"], ww_num_data["ratings"]["Energy"]/5.0, ww_num_data["num_ratings"]),
         "grooming frequency" : akc_num_data["grooming frequency"], 
         "lifespan" : av(akc_num_data["life expectancy"], ww_num_data["lifespan"]), 
-        "weight" : av(akc_num_data["weight"], ww_num_data["size"])/2, 
+        "weight" : av(akc_num_data["weight"], ww_num_data["size"]), 
         "shedding" : akc_num_data["shedding"], 
         "akc breed popularity" : akc_num_data["akc breed popularity"], 
         "group" : akc_num_data["group"],
@@ -165,3 +166,8 @@ for doggo in akc_data:
 print len(final_dataset)
 with open("final_dataset.json", 'w') as f:
     f.write(json.dumps(final_dataset, indent=2))
+
+with open("example.json", 'w') as f:
+    data = final_dataset["affenpinscher"]
+    data["text"]["breedia"] = data["text"]["breedia"][:5]
+    f.write(json.dumps(data, indent=2))

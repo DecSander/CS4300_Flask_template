@@ -9,13 +9,25 @@ import json
 from app.irsystem import irsystem
 from app.irsystem.models.helpers import validate_json
 from app.irsystem.models import schemas
+from app.irsystem.src.structured_compare import structured_score
 
 # allow imports from root
 sys.path.insert(0, os.path.dirname(__file__) + "/../")
 
+USEABLE_PREFERENCES = {"shedding": "shedding",
+                       "activityLevel": "energy level",
+                       "trainability": "trainability",
+                       "temperament": "temperament",
+                       "hairLength": "coat_length",
+                       "lifespan": "lifespan",
+                       "dogSize": "weight"}
 
 breeds = ['rottweiler', 'labrador', 'wolfhound', 'cairn', 'samoyed', 'greyhound', 'vizsla', 'deerhound', 'akita', 'briard', 'hound', 'pinscher', 'bullterrier', 'malinois', 'setter', 'lhasa', 'collie', 'bluetick', 'saluki', 'groenendael', 'pyrenees', 'papillon', 'doberman', 'leonberg', 'poodle', 'whippet', 'basenji', 'beagle', 'kelpie', 'entlebucher', 'shihtz', 'pekinese', 'kuvasz', 'newfoundland', 'appenzeller', 'coonhound', 'keeshond', 'shiba', 'germanshepherd', 'weimaraner', 'pug', 'schipperke', 'pomeranian', 'mountain', 'bulldog', 'pointer', 'african', 'springer', 'spaniel', 'chihuahua', 'sheepdog', 'husky', 'maltese', 'clumber', 'eskimo', 'terrier', 'stbernard', 'retriever', 'schnauzer', 'pembroke', 'komondor', 'bouvier', 'dingo', 'mastiff', 'malamute', 'mexicanhairless', 'borzoi', 'elkhound', 'ridgeback', 'dhole', 'brabancon', 'boxer', 'dachshund', 'affenpinscher', 'otterhound', 'chow', 'redbone', 'corgi', 'dane', 'airedale']
 breedset = set(breeds)
+
+def get_structured_scores(preferences):
+    preferences = {new_key: preferences[key] for key, new_key in USEABLE_PREFERENCES.iteritems()}
+    return structured_score(preferences)
 
 
 def get_n_random_dogs(n, exclude=frozenset()):
@@ -112,6 +124,16 @@ def get_dogs(request_json):
         session['uuid'] = str(uuid.uuid1())
 
     preferences = request_json['preferences']
+    reformatted_preferences = {}
+    for key in preferences:
+        if not key.endswith("Importance"):
+            try:
+                reformatted_preferences[key] = {"value" : preferences[key], "importance" : preferences[key + "Importance"]}
+            except KeyError:
+                reformatted_preferences[key] = preferences[key]
+    preferences = reformatted_preferences
+    for x, y in sorted(get_structured_scores(preferences).items(), key=(lambda x:x[1]), reverse=True):
+        print x,y
 
     next_dog_names = get_next_dog_names(session['uuid'], preferences)
     return json.dumps({"dogs": get_json_from_dog_names(next_dog_names)}), 200
