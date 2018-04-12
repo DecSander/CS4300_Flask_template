@@ -1,5 +1,4 @@
 let preferencesDefaultBeforeMod = {
-  keywords: '',
   activity_minutes: 0.5,
   shedding: 0.5,
   coat_length: 0.5,

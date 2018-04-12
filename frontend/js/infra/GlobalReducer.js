@@ -20,6 +20,7 @@ const Contribution = Record({
 const Preferences = Record(preferencesDefault);
 
 const GlobalState = Record({
+  search: '',
   currentBreeds: List(),
   liked: List(),
   preferences: new Preferences(),
@@ -54,6 +55,9 @@ export default function globalReducer(state = initialState, action) {
     return state
       .set('liked', state.liked.splice(action.breed_number, 1));
 
+  case 'CHANGE_SEARCH':
+    return state
+      .set('search', action.search);
   case 'UPDATE_PREFERENCE':
     localStorage[action.field] = JSON.stringify(action.value);
     return state

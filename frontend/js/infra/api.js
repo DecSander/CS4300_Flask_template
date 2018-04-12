@@ -2,7 +2,7 @@ import { receiveBreeds, receivePreferenceValues, requestMoreBreedsStart,
          requestMoreBreedsFailed, requestLikedDogsStart, requestLikedDogsFailed,
          receiveLikedDogs } from 'infra/GlobalActions';
 
-export function requestMoreBreeds(preferences, sendPrefs = true) {
+export function requestMoreBreeds(search, preferences, sendPrefs = true) {
   requestMoreBreedsStart();
   //const prefsObj = sendPrefs ? preferences.toJS() : {};
   const prefsObj = preferences.toJS();

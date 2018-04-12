@@ -11,8 +11,8 @@ import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from 
 import { updatePreference } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
 
-function mapStateToProps({ preferences }) {
-  return { preferences };
+function mapStateToProps({ preferences, search }) {
+  return { preferences, search };
 }
 
 function buildSlider(preferences, labels, id) {
@@ -111,12 +111,12 @@ const allPrefs = [
 class Preferences extends React.Component {
 
   state = {
-    open: 1
+    open: 0
   }
 
   submit = () => {
-    const { history, preferences } = this.props;
-    requestMoreBreeds(preferences, true);
+    const { history, preferences, search } = this.props;
+    requestMoreBreeds(search, preferences, true);
     history.push('/breeds');
   }
 
@@ -139,13 +139,7 @@ class Preferences extends React.Component {
     return (
       <div id='preferences'>
         <Accordion onChange={(i) => this.setState({open: i})}>
-          <AccordionItem expanded={open === 0} key="prefs-search">
-            <AccordionItemTitle>Search</AccordionItemTitle>
-            <AccordionItemBody>
-              <TextField value={preferences.keywords} floatingLabelText="Search" onChange={(e, v) => updatePreference('keywords', v)} />
-            </AccordionItemBody>
-          </AccordionItem>
-          {allPrefs.map((obj, i) => buildPrefs(obj.name, obj.props.map(p => buildRow(p, preferences)), open === i + 1))}
+          {allPrefs.map((obj, i) => buildPrefs(obj.name, obj.props.map(p => buildRow(p, preferences)), open === i))}
         </Accordion>
         <RaisedButton secondary={true} onClick={this.submit}>Submit</RaisedButton>
       </div>

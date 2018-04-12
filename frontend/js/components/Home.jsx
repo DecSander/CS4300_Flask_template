@@ -6,11 +6,11 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
 
-import { updatePreference, changeCheckPreferences } from 'infra/GlobalActions';
+import { updatePreference, changeCheckPreferences, changeSearch } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
 
-function mapStateToProps({ checkPreferences, preferences }) {
-  return { checkPreferences, preferences };
+function mapStateToProps({ checkPreferences, preferences, search }) {
+  return { checkPreferences, preferences, search };
 }
 
 class Home extends React.Component {
@@ -18,7 +18,7 @@ class Home extends React.Component {
   submitNoPrefs = () => {
     const { history, preferences } = this.props;
     changeCheckPreferences(false);
-    requestMoreBreeds(preferences, false);
+    requestMoreBreeds(search, preferences, false);
     history.push('/breeds');
   }
 
@@ -55,7 +55,7 @@ class Home extends React.Component {
               <h1 style={{backgroundColor: 'white', fontSize: '56px'}}>Who's A Good Dog?</h1>
               <h3 style={{backgroundColor: 'white', fontSize: '30px'}}>Find out which dog you should get</h3>
               <TextField floatingLabelStyle={{color: 'white'}} inputStyle={{color: 'white'}}
-                style={{width: '500px', fontSize: '30px'}} floatingLabelText="Search" onChange={(e, v) => updatePreference('keywords', v)} />
+                style={{width: '500px', fontSize: '30px'}} value={this.props.search} floatingLabelText="Search" onChange={(e, v) => changeSearch(v)} />
               <br />
               <RaisedButton primary={true} overlayStyle={{color: 'white', paddingLeft: '50px', paddingRight: '50px'}}
                 style={{marginRight: '20px'}} onClick={this.submitWithPrefs}>More Preferences</RaisedButton>

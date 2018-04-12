@@ -72,3 +72,10 @@ export function removeMatch(breed_number) {
     breed_number
   });
 }
+
+export function changeSearch(search) {
+  return GlobalStore.dispatch({
+    type: 'CHANGE_SEARCH',
+    search
+  });
+}

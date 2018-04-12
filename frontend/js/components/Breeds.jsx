@@ -101,7 +101,7 @@ class Breeds extends Component {
   }
 
   buildBreedCards = () => {
-    const { currentBreeds, preferences, breedsLoading, checkPreferences } = this.props;
+    const { currentBreeds, preferences, breedsLoading, checkPreferences, search } = this.props;
 
     const cards = currentBreeds.map(this.buildBreedCard);
     const loading = breedsLoading ? this.buildLoading() : null;
@@ -118,7 +118,7 @@ class Breeds extends Component {
                 buttonStyle={{height: '100%'}}
                 overlayStyle={{height: '100%'}}
                 fullWidth={true}
-                secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(preferences, checkPreferences)} />
+                secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(search, preferences, checkPreferences)} />
               <RaisedButton
                 labelStyle={{height: '100%', fontSize: '40px'}}
                 style={{height: '100%', marginTop: '20px'}}

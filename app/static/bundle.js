@@ -245,7 +245,7 @@ var Breeds = function (_Component) {
         _nukaCarousel2.default,
         { slideWidth: '400px' },
         selectedBreed.img.map(function (image) {
-          return _react2.default.createElement('img', { style: { height: '300px', width: '400px' }, src: image });
+          return _react2.default.createElement('img', { key: 'img-' + selectedBreed.name + '-' + i, style: { height: '300px', width: '400px' }, src: image });
         })
       );
     }, _this.buildDialog = function () {
@@ -317,7 +317,8 @@ var Breeds = function (_Component) {
           currentBreeds = _this$props.currentBreeds,
           preferences = _this$props.preferences,
           breedsLoading = _this$props.breedsLoading,
-          checkPreferences = _this$props.checkPreferences;
+          checkPreferences = _this$props.checkPreferences,
+          search = _this$props.search;
 
 
       var cards = currentBreeds.map(_this.buildBreedCard);
@@ -343,7 +344,7 @@ var Breeds = function (_Component) {
                 overlayStyle: { height: '100%' },
                 fullWidth: true,
                 secondary: true, label: 'Get More Breeds', onClick: function onClick() {
-                  return (0, _api.requestMoreBreeds)(preferences, checkPreferences);
+                  return (0, _api.requestMoreBreeds)(search, preferences, checkPreferences);
                 } }),
               _react2.default.createElement(_RaisedButton2.default, {
                 labelStyle: { height: '100%', fontSize: '40px' },
@@ -551,9 +552,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function mapStateToProps(_ref) {
   var checkPreferences = _ref.checkPreferences,
-      preferences = _ref.preferences;
+      preferences = _ref.preferences,
+      search = _ref.search;
 
-  return { checkPreferences: checkPreferences, preferences: preferences };
+  return { checkPreferences: checkPreferences, preferences: preferences, search: search };
 }
 
 var Home = function (_React$Component) {
@@ -576,7 +578,7 @@ var Home = function (_React$Component) {
           preferences = _this$props.preferences;
 
       (0, _GlobalActions.changeCheckPreferences)(false);
-      (0, _api.requestMoreBreeds)(preferences, false);
+      (0, _api.requestMoreBreeds)(search, preferences, false);
       history.push('/breeds');
     }, _this.submitWithPrefs = function () {
       (0, _GlobalActions.changeCheckPreferences)(true);
@@ -629,8 +631,8 @@ var Home = function (_React$Component) {
                 'Find out which dog you should get'
               ),
               _react2.default.createElement(_TextField2.default, { floatingLabelStyle: { color: 'white' }, inputStyle: { color: 'white' },
-                style: { width: '500px', fontSize: '30px' }, floatingLabelText: 'Search', onChange: function onChange(e, v) {
-                  return (0, _GlobalActions.updatePreference)('keywords', v);
+                style: { width: '500px', fontSize: '30px' }, value: this.props.search, floatingLabelText: 'Search', onChange: function onChange(e, v) {
+                  return (0, _GlobalActions.changeSearch)(v);
                 } }),
               _react2.default.createElement('br', null),
               _react2.default.createElement(
@@ -911,9 +913,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function mapStateToProps(_ref) {
-  var preferences = _ref.preferences;
+  var preferences = _ref.preferences,
+      search = _ref.search;
 
-  return { preferences: preferences };
+  return { preferences: preferences, search: search };
 }
 
 function buildSlider(preferences, labels, id) {
@@ -1053,13 +1056,14 @@ var Preferences = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Preferences.__proto__ || Object.getPrototypeOf(Preferences)).call.apply(_ref2, [this].concat(args))), _this), _this.state = {
-      open: 1
+      open: 0
     }, _this.submit = function () {
       var _this$props = _this.props,
           history = _this$props.history,
-          preferences = _this$props.preferences;
+          preferences = _this$props.preferences,
+          search = _this$props.search;
 
-      (0, _api.requestMoreBreeds)(preferences, true);
+      (0, _api.requestMoreBreeds)(search, preferences, true);
       history.push('/breeds');
     }, _this.keypress = function (e) {
       if (e.keyCode === 13) _this.submit();
@@ -1093,26 +1097,10 @@ var Preferences = function (_React$Component) {
           { onChange: function onChange(i) {
               return _this2.setState({ open: i });
             } },
-          _react2.default.createElement(
-            _reactAccessibleAccordion.AccordionItem,
-            { expanded: open === 0, key: 'prefs-search' },
-            _react2.default.createElement(
-              _reactAccessibleAccordion.AccordionItemTitle,
-              null,
-              'Search'
-            ),
-            _react2.default.createElement(
-              _reactAccessibleAccordion.AccordionItemBody,
-              null,
-              _react2.default.createElement(_TextField2.default, { value: preferences.keywords, floatingLabelText: 'Search', onChange: function onChange(e, v) {
-                  return (0, _GlobalActions.updatePreference)('keywords', v);
-                } })
-            )
-          ),
           allPrefs.map(function (obj, i) {
             return buildPrefs(obj.name, obj.props.map(function (p) {
               return buildRow(p, preferences);
-            }), open === i + 1);
+            }), open === i);
           })
         ),
         _react2.default.createElement(
@@ -1146,6 +1134,7 @@ exports.requestLikedDogsFailed = requestLikedDogsFailed;
 exports.changeCheckPreferences = changeCheckPreferences;
 exports.resetBreedList = resetBreedList;
 exports.removeMatch = removeMatch;
+exports.changeSearch = changeSearch;
 
 var _GlobalStore = require('infra/GlobalStore');
 
@@ -1225,6 +1214,13 @@ function removeMatch(breed_number) {
   });
 }
 
+function changeSearch(search) {
+  return _GlobalStore2.default.dispatch({
+    type: 'CHANGE_SEARCH',
+    search: search
+  });
+}
+
 },{"infra/GlobalStore":12}],11:[function(require,module,exports){
 'use strict';
 
@@ -1256,6 +1252,7 @@ var Contribution = (0, _immutable.Record)({
 var Preferences = (0, _immutable.Record)(_const.preferencesDefault);
 
 var GlobalState = (0, _immutable.Record)({
+  search: '',
   currentBreeds: (0, _immutable.List)(),
   liked: (0, _immutable.List)(),
   preferences: new Preferences(),
@@ -1291,6 +1288,8 @@ function globalReducer() {
       (0, _api.sendRemoveMatch)(state.liked.get(action.breed_number).name);
       return state.set('liked', state.liked.splice(action.breed_number, 1));
 
+    case 'CHANGE_SEARCH':
+      return state.set('search', action.search);
     case 'UPDATE_PREFERENCE':
       localStorage[action.field] = JSON.stringify(action.value);
       return state.setIn(['preferences', action.field], action.value);
@@ -1349,8 +1348,8 @@ exports.sendRemoveMatch = sendRemoveMatch;
 
 var _GlobalActions = require('infra/GlobalActions');
 
-function requestMoreBreeds(preferences) {
-  var sendPrefs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+function requestMoreBreeds(search, preferences) {
+  var sendPrefs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
   (0, _GlobalActions.requestMoreBreedsStart)();
   //const prefsObj = sendPrefs ? preferences.toJS() : {};
@@ -1422,13 +1421,12 @@ function sendRemoveMatch(breed) {
 }
 
 },{"infra/GlobalActions":10}],14:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var preferencesDefaultBeforeMod = {
-  keywords: '',
   activity_minutes: 0.5,
   shedding: 0.5,
   coat_length: 0.5,
@@ -1446,7 +1444,7 @@ var preferencesDefaultBeforeMod = {
 };
 
 Object.keys(preferencesDefaultBeforeMod).forEach(function (k) {
-  preferencesDefaultBeforeMod[k + 'Importance'] = 0.5;
+  preferencesDefaultBeforeMod[k + "Importance"] = 0.5;
 });
 
 var preferencesDefault = exports.preferencesDefault = Object.freeze(preferencesDefaultBeforeMod);
