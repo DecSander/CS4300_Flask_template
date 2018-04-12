@@ -47,7 +47,7 @@ class Breeds extends Component {
     const { selectedBreed } = this.state;
     return (
       <Carousel slideWidth="400px">
-        {selectedBreed.img.map(image => <img key={`img-${selectedBreed.name}-${i}`} style={{height: '300px', width: '400px'}} src={image} />)}
+        {selectedBreed.img.map((image, i) => <img key={`img-${selectedBreed.name}-${i}`} style={{height: '300px', width: '400px'}} src={image} />)}
       </Carousel>
     );
   }

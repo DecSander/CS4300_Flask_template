@@ -244,7 +244,7 @@ var Breeds = function (_Component) {
       return _react2.default.createElement(
         _nukaCarousel2.default,
         { slideWidth: '400px' },
-        selectedBreed.img.map(function (image) {
+        selectedBreed.img.map(function (image, i) {
           return _react2.default.createElement('img', { key: 'img-' + selectedBreed.name + '-' + i, style: { height: '300px', width: '400px' }, src: image });
         })
       );
@@ -598,7 +598,8 @@ var Home = function (_React$Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref2, [this].concat(args))), _this), _this.submitNoPrefs = function () {
       var _this$props = _this.props,
           history = _this$props.history,
-          preferences = _this$props.preferences;
+          preferences = _this$props.preferences,
+          search = _this$props.search;
 
       (0, _GlobalActions.changeCheckPreferences)(false);
       (0, _api.requestMoreBreeds)(search, preferences, false);

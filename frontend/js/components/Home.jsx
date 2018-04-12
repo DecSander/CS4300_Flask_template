@@ -16,7 +16,7 @@ function mapStateToProps({ checkPreferences, preferences, search }) {
 class Home extends React.Component {
 
   submitNoPrefs = () => {
-    const { history, preferences } = this.props;
+    const { history, preferences, search } = this.props;
     changeCheckPreferences(false);
     requestMoreBreeds(search, preferences, false);
     history.push('/breeds');
