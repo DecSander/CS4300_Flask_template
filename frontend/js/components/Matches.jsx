@@ -8,7 +8,8 @@ import FlatButton from 'material-ui/FlatButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import Carousel from 'nuka-carousel';
 
-import { capitalizeFirstLetter } from 'infra/utils';
+import Contributions from 'components/Contributions';
+import { formatText } from 'infra/utils';
 import { removeMatch } from 'infra/GlobalActions';
 
 function mapStateToProps({ liked, likedLoading }) {
@@ -56,11 +57,14 @@ class Matches extends React.Component {
       return null;
     } else {
       return (
-        <Dialog style={{marginTop: '-200px'}} title={capitalizeFirstLetter(selectedBreed.name)}
+        <Dialog style={{marginTop: '-200px'}} title={formatText(selectedBreed.name)}
             modal={false} open={modalOpen} onRequestClose={this.handleClose}>
           {this.buildSlideshow()}
           <br />
-          {'Breed Description here'}
+          {`${selectedBreed.description}`}
+          <br /><br /><br />
+          Why this is a good dog:
+          <Contributions values={selectedBreed.contributions} />
         </Dialog>
       );
     }
@@ -77,7 +81,7 @@ class Matches extends React.Component {
         <Col lg={4} xs={12} key={`match-${breed.name}-${i}`}>
           <Card style={{margin: 'auto', marginTop: '20px'}}>
             <div onClick={() => this.handleOpen(breed, i)}>
-              <CardMedia style={{width: '100%', height: 400}} overlay={<CardTitle title={capitalizeFirstLetter(breed.name)} />}>
+              <CardMedia style={{width: '100%', height: 400}} overlay={<CardTitle title={formatText(breed.name)} />}>
                 <img style={{width: '100%', height: 400}} src={breed.img.get(0)} alt={breed.name}/>
               </CardMedia>
             </div>

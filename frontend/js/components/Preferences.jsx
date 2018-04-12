@@ -5,17 +5,19 @@ import TextField from 'material-ui/TextField';
 import Slider from 'material-ui/Slider';
 import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from 'react-accessible-accordion';
 
 import { updatePreference } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
+import { preferenceLabels } from 'infra/const';
 
-function mapStateToProps({ preferences }) {
-  return { preferences };
+function mapStateToProps({ preferences, search }) {
+  return { preferences, search };
 }
 
-function buildSlider(preferences, labels, id) {
+function buildSlider(preferences, id) {
+  const labels = preferenceLabels[id];
   return (
     <div style={{marginTop: '20px', marginBottom: '-20px'}}>
       <span style={{float: 'left'}}>{labels[0]}</span>
@@ -41,39 +43,39 @@ function buildRow(row, preferences) {
   return (
     <TableRow key={`pref-${row.name}`}>
       <TableRowColumn>{row.name}</TableRowColumn>
-      <TableRowColumn>{buildSlider(preferences, row.labels, row.id)}</TableRowColumn>
+      <TableRowColumn>{buildSlider(preferences, row.id)}</TableRowColumn>
       <TableRowColumn>{buildImportance(preferences, row.id)}</TableRowColumn>
     </TableRow>
   );
 }
 
 const basics = [
-  {name: 'Weight', id: 'weight', labels: ['Small', 'Big']},
-  {name: 'Height', id: 'height', labels: ['Short', 'Tall']},
-  {name: 'Popularity', id: 'popularity', labels: ['Unpopular', 'Popular']}
+  {name: 'Weight', id: 'weight'},
+  {name: 'Height', id: 'height'},
+  {name: 'Popularity', id: 'popularity'}
 ];
 
 const activity = [
-  {name: 'Activity', id: 'activity_minutes', labels: ['Inactive', 'Active']},
-  {name: 'Energy Level', id: 'energy_level', labels: ['Low Energy', 'High Energy']},
-  {name: 'Walks Needed', id: 'walk_miles', labels: ['Rarely', 'Often']}
+  {name: 'Activity', id: 'activity_minutes'},
+  {name: 'Energy Level', id: 'energy_level'},
+  {name: 'Walks Needed', id: 'walk_miles'}
 ];
 
 const grooming = [
-  {name: 'Shedding', id: 'shedding', labels: ['Doesn\'t Shed', 'Sheds Often']},
-  {name: 'Coat Length', id: 'coat_length', labels: ['Short', 'Long']},
-  {name: 'Grooming Frequency', id: 'grooming_frequency', labels: ['Infrequently', 'Frequently']}
+  {name: 'Shedding', id: 'shedding'},
+  {name: 'Coat Length', id: 'coat_length'},
+  {name: 'Grooming Frequency', id: 'grooming_frequency'}
 ];
 
 const costs = [
-  {name: 'Monthly Food Cost', id: 'food_monthly_cost', labels: ['Cheap', 'Expensive']},
-  {name: 'Lifespan', id: 'lifespan', labels: ['Short', 'Long']},
-  {name: 'Health', id: 'health', labels: ['Unhealthy', 'Healthy']}
+  {name: 'Monthly Food Cost', id: 'food_monthly_cost'},
+  {name: 'Lifespan', id: 'lifespan'},
+  {name: 'Health', id: 'health'}
 ];
 
 const behavior = [
-  {name: 'Train-ability', id: 'trainability', labels: ['Stubborn', 'Easy to Train']},
-  {name: 'Temperament', id: 'temperament', labels: ['Calm', 'Excited']}
+  {name: 'Train-ability', id: 'trainability'},
+  {name: 'Temperament', id: 'temperament'}
 ];
 
 const headerStyle = {fontSize: '20px', paddingBottom: '20px'};
@@ -111,12 +113,12 @@ const allPrefs = [
 class Preferences extends React.Component {
 
   state = {
-    open: 1
+    open: 0
   }
 
   submit = () => {
-    const { history, preferences } = this.props;
-    requestMoreBreeds(preferences, true);
+    const { history, preferences, search } = this.props;
+    requestMoreBreeds(search, preferences, true);
     history.push('/breeds');
   }
 
@@ -139,13 +141,7 @@ class Preferences extends React.Component {
     return (
       <div id='preferences'>
         <Accordion onChange={(i) => this.setState({open: i})}>
-          <AccordionItem expanded={open === 0} key="prefs-search">
-            <AccordionItemTitle>Search</AccordionItemTitle>
-            <AccordionItemBody>
-              <TextField value={preferences.keywords} floatingLabelText="Search" onChange={(e, v) => updatePreference('keywords', v)} />
-            </AccordionItemBody>
-          </AccordionItem>
-          {allPrefs.map((obj, i) => buildPrefs(obj.name, obj.props.map(p => buildRow(p, preferences)), open === i + 1))}
+          {allPrefs.map((obj, i) => buildPrefs(obj.name, obj.props.map(p => buildRow(p, preferences)), open === i))}
         </Accordion>
         <RaisedButton secondary={true} onClick={this.submit}>Submit</RaisedButton>
       </div>

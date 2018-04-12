@@ -5,13 +5,22 @@ import { preferencesDefault } from 'infra/const';
 
 const Breed = Record({
   name: '',
-  img: '',
-  match: 25
+  img: List(),
+  match: 0,
+  description: '',
+  contributions: List()
+});
+
+const Contribution = Record({
+  name: '',
+  units: '',
+  value: 0
 });
 
 const Preferences = Record(preferencesDefault);
 
 const GlobalState = Record({
+  search: '',
   currentBreeds: List(),
   liked: List(),
   preferences: new Preferences(),
@@ -23,7 +32,10 @@ const GlobalState = Record({
 function buildDog(breed) {
   return new Breed({
     name: breed.dog_name,
-    img: List(breed.images)
+    img: List(breed.images),
+    description: breed.description,
+    match: Math.round(breed.percent_match * 100),
+    contributions: List(breed.contributions).map(Contribution)
   });
 }
 
@@ -43,6 +55,9 @@ export default function globalReducer(state = initialState, action) {
     return state
       .set('liked', state.liked.splice(action.breed_number, 1));
 
+  case 'CHANGE_SEARCH':
+    return state
+      .set('search', action.search);
   case 'UPDATE_PREFERENCE':
     localStorage[action.field] = JSON.stringify(action.value);
     return state
@@ -57,7 +72,7 @@ export default function globalReducer(state = initialState, action) {
   case 'RECEIVE_BREEDS':
     return state
       .set('breedsLoading', false)
-      .set('currentBreeds', state.currentBreeds.concat(List(action.breeds).map(buildDog)));
+      .set('currentBreeds', List(action.breeds).map(buildDog));
   case 'REQUEST_BREEDS_FAILED':
     return state
       .set('breedsLoading', false);
