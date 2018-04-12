@@ -4,7 +4,7 @@ import { receiveBreeds, receivePreferenceValues, requestMoreBreedsStart,
 
 export function requestMoreBreeds(search, preferences, sendPrefs = true) {
   requestMoreBreedsStart();
-  //const prefsObj = sendPrefs ? preferences.toJS() : {};
+  //const prefsObj = sendPrefs ? { search, preferences: preferences.toJS() } : { search };
   const prefsObj = preferences.toJS();
   fetch('/api/get_dogs', {
       body: JSON.stringify({preferences: prefsObj}),

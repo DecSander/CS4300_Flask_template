@@ -1352,7 +1352,7 @@ function requestMoreBreeds(search, preferences) {
   var sendPrefs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
   (0, _GlobalActions.requestMoreBreedsStart)();
-  //const prefsObj = sendPrefs ? preferences.toJS() : {};
+  //const prefsObj = sendPrefs ? { search, preferences: preferences.toJS() } : { search };
   var prefsObj = preferences.toJS();
   fetch('/api/get_dogs', {
     body: JSON.stringify({ preferences: prefsObj }),
