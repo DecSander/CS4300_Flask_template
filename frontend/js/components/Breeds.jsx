@@ -10,9 +10,10 @@ import Dialog from 'material-ui/Dialog';
 import Badge from 'material-ui/Badge';
 import Carousel from 'nuka-carousel';
 
+import Contributions from 'components/Contributions';
 import { likeBreed, resetBreedList } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
-import { capitalizeFirstLetter } from 'infra/utils';
+import { formatText } from 'infra/utils';
 
 function mapStateToProps({ currentBreeds, preferences, breedsLoading, checkPreferences }) {
   return { currentBreeds, preferences, breedsLoading, checkPreferences };
@@ -54,16 +55,18 @@ class Breeds extends Component {
   buildDialog = () => {
     const { selectedBreed, modalOpen, selectedNumber } = this.state;
     const actions = [<FlatButton label="Save ❤️ " onClick={() => { likeBreed(selectedNumber); this.handleClose(); }} />];
-
     if (selectedBreed === null) {
       return null;
     } else {
       return (
-        <Dialog actions={actions} style={{marginTop: '-200px'}} title={capitalizeFirstLetter(selectedBreed.name)}
-            modal={false} open={modalOpen} onRequestClose={this.handleClose}>
+        <Dialog style={{marginTop: '-200px'}} title={formatText(selectedBreed.name)}
+            modal={false} open={modalOpen} onRequestClose={this.handleClose} actions={actions}>
           {this.buildSlideshow()}
           <br />
-          {`${selectedBreed.name} Description here`}
+          {`${selectedBreed.description}`}
+          <br /><br /><br />
+          Why this is a good dog:
+          <Contributions values={selectedBreed.contributions} />
         </Dialog>
       );
     }
@@ -84,7 +87,7 @@ class Breeds extends Component {
             badgeContent={`${breed.match}%`} primary={true}>
           <Card style={{margin: 'auto', marginTop: '20px'}}>
             <div onClick={() => this.handleOpen(breed, i)}>
-              <CardMedia style={{width: '100%', height: 400}} overlay={<CardTitle title={capitalizeFirstLetter(breed.name)} />}>
+              <CardMedia style={{width: '100%', height: 400}} overlay={<CardTitle title={formatText(breed.name)} />}>
                 <img style={{width: '100%', height: 400}} src={breed.img.get(0)} alt={breed.name} />
               </CardMedia>
             </div>

@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import Slider from 'material-ui/Slider';
 import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from 'react-accessible-accordion';
 
 import { updatePreference } from 'infra/GlobalActions';
