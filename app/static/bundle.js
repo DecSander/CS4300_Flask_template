@@ -392,22 +392,47 @@ var _materialUiRating = require('material-ui-rating');
 
 var _utils = require('infra/utils');
 
+var _const = require('infra/const');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var headerStyle = { fontSize: '20px', paddingBottom: '20px' };
 
-function buildScaled(value) {
-  return _react2.default.createElement(_materialUiRating.Rating, {
-    iconFilled: _react2.default.createElement('img', { src: '/static/img/filled.png', height: 20 }),
-    iconNormal: _react2.default.createElement('img', { src: '/static/img/unfilled.png', height: 20 }),
-    value: value * 5, max: 5, readOnly: true
-  });
+function buildScaled(value, name) {
+  var labels = _const.preferenceLabels[name];
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'span',
+      { style: { display: 'inline-block', width: 85, verticalAlign: 8 } },
+      labels[0]
+    ),
+    _react2.default.createElement(_materialUiRating.Rating, {
+      style: { display: 'inline' },
+      iconFilled: _react2.default.createElement('img', { src: '/static/img/filled.png', height: 20 }),
+      iconNormal: _react2.default.createElement('img', { src: '/static/img/unfilled.png', height: 20 }),
+      value: value * 5, max: 5, readOnly: true
+    }),
+    _react2.default.createElement(
+      'span',
+      { style: { marginLeft: 30, verticalAlign: 6 } },
+      labels[1]
+    )
+  );
 }
 
 function Contribution(value) {
   var scaled = 'scaled';
-  var v = value.units === scaled ? buildScaled(value.value) : Math.round(value.value);
-  var units = value.units === scaled ? null : (0, _utils.formatText)(value.units);
+
+  var numberNode = _react2.default.createElement(
+    'div',
+    { style: { textAlign: 'center' } },
+    Math.round(value.value),
+    ' ',
+    (0, _utils.formatText)(value.units)
+  );
+  var scaledNode = buildScaled(value.value, value.name);
   return _react2.default.createElement(
     _Table.TableRow,
     { key: 'contrib-' + value.name },
@@ -418,10 +443,8 @@ function Contribution(value) {
     ),
     _react2.default.createElement(
       _Table.TableRowColumn,
-      { style: { textAlign: 'center' } },
-      v,
-      ' ',
-      units
+      null,
+      value.units === scaled ? scaledNode : numberNode
     )
   );
 }
@@ -440,7 +463,7 @@ function Contributions(_ref) {
   );
 }
 
-},{"infra/utils":15,"material-ui-rating":206,"material-ui/Table":249,"react":398}],6:[function(require,module,exports){
+},{"infra/const":14,"infra/utils":15,"material-ui-rating":206,"material-ui/Table":249,"react":398}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -904,6 +927,8 @@ var _GlobalActions = require('infra/GlobalActions');
 
 var _api = require('infra/api');
 
+var _const = require('infra/const');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -919,7 +944,8 @@ function mapStateToProps(_ref) {
   return { preferences: preferences, search: search };
 }
 
-function buildSlider(preferences, labels, id) {
+function buildSlider(preferences, id) {
+  var labels = _const.preferenceLabels[id];
   return _react2.default.createElement(
     'div',
     { style: { marginTop: '20px', marginBottom: '-20px' } },
@@ -973,7 +999,7 @@ function buildRow(row, preferences) {
     _react2.default.createElement(
       _Table.TableRowColumn,
       null,
-      buildSlider(preferences, row.labels, row.id)
+      buildSlider(preferences, row.id)
     ),
     _react2.default.createElement(
       _Table.TableRowColumn,
@@ -983,15 +1009,15 @@ function buildRow(row, preferences) {
   );
 }
 
-var basics = [{ name: 'Weight', id: 'weight', labels: ['Small', 'Big'] }, { name: 'Height', id: 'height', labels: ['Short', 'Tall'] }, { name: 'Popularity', id: 'popularity', labels: ['Unpopular', 'Popular'] }];
+var basics = [{ name: 'Weight', id: 'weight' }, { name: 'Height', id: 'height' }, { name: 'Popularity', id: 'popularity' }];
 
-var activity = [{ name: 'Activity', id: 'activity_minutes', labels: ['Inactive', 'Active'] }, { name: 'Energy Level', id: 'energy_level', labels: ['Low Energy', 'High Energy'] }, { name: 'Walks Needed', id: 'walk_miles', labels: ['Rarely', 'Often'] }];
+var activity = [{ name: 'Activity', id: 'activity_minutes' }, { name: 'Energy Level', id: 'energy_level' }, { name: 'Walks Needed', id: 'walk_miles' }];
 
-var grooming = [{ name: 'Shedding', id: 'shedding', labels: ['Doesn\'t Shed', 'Sheds Often'] }, { name: 'Coat Length', id: 'coat_length', labels: ['Short', 'Long'] }, { name: 'Grooming Frequency', id: 'grooming_frequency', labels: ['Infrequently', 'Frequently'] }];
+var grooming = [{ name: 'Shedding', id: 'shedding' }, { name: 'Coat Length', id: 'coat_length' }, { name: 'Grooming Frequency', id: 'grooming_frequency' }];
 
-var costs = [{ name: 'Monthly Food Cost', id: 'food_monthly_cost', labels: ['Cheap', 'Expensive'] }, { name: 'Lifespan', id: 'lifespan', labels: ['Short', 'Long'] }, { name: 'Health', id: 'health', labels: ['Unhealthy', 'Healthy'] }];
+var costs = [{ name: 'Monthly Food Cost', id: 'food_monthly_cost' }, { name: 'Lifespan', id: 'lifespan' }, { name: 'Health', id: 'health' }];
 
-var behavior = [{ name: 'Train-ability', id: 'trainability', labels: ['Stubborn', 'Easy to Train'] }, { name: 'Temperament', id: 'temperament', labels: ['Calm', 'Excited'] }];
+var behavior = [{ name: 'Train-ability', id: 'trainability' }, { name: 'Temperament', id: 'temperament' }];
 
 var headerStyle = { fontSize: '20px', paddingBottom: '20px' };
 
@@ -1117,7 +1143,7 @@ var Preferences = function (_React$Component) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouterDom.withRouter)(Preferences));
 
-},{"infra/GlobalActions":10,"infra/api":13,"material-ui/RaisedButton":237,"material-ui/Slider":239,"material-ui/Table":249,"material-ui/TextField":260,"material-ui/Toggle":262,"react":398,"react-accessible-accordion":315,"react-redux":364,"react-router-dom":381}],10:[function(require,module,exports){
+},{"infra/GlobalActions":10,"infra/api":13,"infra/const":14,"material-ui/RaisedButton":237,"material-ui/Slider":239,"material-ui/Table":249,"material-ui/TextField":260,"material-ui/Toggle":262,"react":398,"react-accessible-accordion":315,"react-redux":364,"react-router-dom":381}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1352,10 +1378,11 @@ function requestMoreBreeds(search, preferences) {
   var sendPrefs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
   (0, _GlobalActions.requestMoreBreedsStart)();
-  //const prefsObj = sendPrefs ? { search, preferences: preferences.toJS() } : { search };
-  var prefsObj = preferences.toJS();
+  //const prefsObj = sendPrefs ? { preferences: preferences.toJS() } : {};
+  //const prefs = Object.assign({}, prefsObjs, { search });
+  var prefs = preferences.toJS();
   fetch('/api/get_dogs', {
-    body: JSON.stringify({ preferences: prefsObj }),
+    body: JSON.stringify({ preferences: prefs }),
     cache: 'no-cache',
     method: 'POST',
     credentials: 'include',
@@ -1421,7 +1448,7 @@ function sendRemoveMatch(breed) {
 }
 
 },{"infra/GlobalActions":10}],14:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -1444,12 +1471,29 @@ var preferencesDefaultBeforeMod = {
 };
 
 Object.keys(preferencesDefaultBeforeMod).forEach(function (k) {
-  preferencesDefaultBeforeMod[k + "Importance"] = 0.5;
+  preferencesDefaultBeforeMod[k + 'Importance'] = 0.5;
 });
 
 var preferencesDefault = exports.preferencesDefault = Object.freeze(preferencesDefaultBeforeMod);
 
-var preferenceKeys = exports.preferenceKeys = Object.keys(preferencesDefault);
+var preferenceKeys = exports.preferenceKeys = Object.freeze(Object.keys(preferencesDefault));
+
+var preferenceLabels = exports.preferenceLabels = Object.freeze({
+  activity_minutes: ['Inactive', 'Active'],
+  shedding: ['Doesn\'t Shed', 'Sheds Often'],
+  coat_length: ['Short', 'Long'],
+  weight: ['Small', 'Big'],
+  energy_level: ['Low Energy', 'High Energy'],
+  food_monthly_cost: ['Cheap', 'Expensive'],
+  lifespan: ['Short', 'Long'],
+  height: ['Short', 'Tall'],
+  popularity: ['Unpopular', 'Popular'],
+  trainability: ['Stubborn', 'Easy to Train'],
+  temperament: ['Calm', 'Excited'],
+  health: ['Unhealthy', 'Healthy'],
+  grooming_frequency: ['Infrequently', 'Frequently'],
+  walk_miles: ['Rarely', 'Often']
+});
 
 },{}],15:[function(require,module,exports){
 "use strict";

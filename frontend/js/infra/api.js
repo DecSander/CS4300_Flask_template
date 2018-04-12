@@ -4,10 +4,11 @@ import { receiveBreeds, receivePreferenceValues, requestMoreBreedsStart,
 
 export function requestMoreBreeds(search, preferences, sendPrefs = true) {
   requestMoreBreedsStart();
-  //const prefsObj = sendPrefs ? { search, preferences: preferences.toJS() } : { search };
-  const prefsObj = preferences.toJS();
+  //const prefsObj = sendPrefs ? { preferences: preferences.toJS() } : {};
+  //const prefs = Object.assign({}, prefsObjs, { search });
+  const prefs = preferences.toJS();
   fetch('/api/get_dogs', {
-      body: JSON.stringify({preferences: prefsObj}),
+      body: JSON.stringify({preferences: prefs}),
       cache: 'no-cache',
       method: 'POST',
       credentials: 'include',
