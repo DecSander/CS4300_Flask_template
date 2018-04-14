@@ -6,6 +6,7 @@ import sys
 DATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "final_dataset.json")
 # This is here in case all the weights are 0, we don't want to just fail
 WEIGHT_EPSILON = .00001
+CONFIDENCE_THRESHOLD = 0.1
 
 with open(DATA_FILE, 'r') as f:
     doggo_data = {k: v["structured"] for k, v in json.load(f).iteritems()}
@@ -36,7 +37,7 @@ _scale_val("walk_miles")
 
 def _score(preferences, dog):
     total_weight = sum(v["importance"] + WEIGHT_EPSILON for k, v in preferences.items() if doggo_data[dog][k] is not None)
-    missing_weight = sum(v["importance"] + WEIGHT_EPSILON for k, v in preferences.items()) - total_weight
+    actual_weight = sum(v["importance"] + WEIGHT_EPSILON for k, v in preferences.items())
     score = 0
     contributions = {}
     for p in preferences:
@@ -45,8 +46,12 @@ def _score(preferences, dog):
             similarity = 1 - abs(preferences[p]["value"] - doggo_data[dog][p])
             contributions[p] = (similarity * importance) / total_weight
             score += similarity * importance
+        else:
+            contributions[p] = 0
 
-    confidence = missing_weight / total_weight
+    confidence = total_weight / actual_weight
+    if confidence < CONFIDENCE_THRESHOLD:
+        score = 0
     return {"score": score, "confidence": confidence, "contributions": contributions}
 
 

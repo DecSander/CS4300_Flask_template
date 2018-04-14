@@ -63,6 +63,7 @@ def get_next_dog_names(uuid, preferences):
 
 
 def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=None):
+    print structured_scores["pekingese"]["contributions"]["popularity"]
     dogs = []
     for dog in dog_names:
         dog_json = {"dog_name": dog, }
@@ -91,6 +92,8 @@ def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=Non
             contributions = sorted(contrib_data.keys(), key=lambda x: contrib_data[x], reverse=True)[:3]
             contrib_vals = []
             for contrib in contributions:
+                if contrib_data[contrib] < .01:
+                    continue
                 factor = {
                     "name": contrib,
                     "value": DOGGO_DATA[dog]["structured"][contrib],
@@ -185,6 +188,7 @@ def get_dogs(request_json):
     if structured_scores is not None:
         structured_dog_names = sorted(structured_scores.keys(), key=lambda x: structured_scores[x]["score"], reverse=True)
 
+    # print [structured_scores[x]["contributions"]["health"] for x in structured_scores]
     if structured_scores is None and normalized_search_scores is None:
         return 'Nothing supplied', 400
     elif structured_scores is None:  # search only
