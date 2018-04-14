@@ -48,7 +48,7 @@ def av(v1, v2, v2_num_ratings=100):
         if v2_num_ratings >= 100:
             return (v1 + v2)/2
         else:
-            v2_weight = v2_num_ratings/100
+            v2_weight = (v2_num_ratings/100)*0.5
             v1_weight = 1-v2_weight
             return v1 * v1_weight + v2*v2_weight
 
@@ -145,7 +145,7 @@ for doggo in akc_data:
         "group" : akc_num_data["group"],
         "activity_minutes" : ww_num_data["activity_minutes"],
         "grooming_freq_text" : ww_num_data["grooming_freq"],
-        "health": ww_num_data["ratings"]["Health"]/5.0,
+        "health": ww_num_data["ratings"]["Health"]/5.0 if ww_num_data["num_ratings"] > 3 else None,
         "food_monthly_cost" : ww_num_data["food_monthly_cost"],
         "activity_level" : ww_num_data["activity_level"],
         "walk_miles" : ww_num_data["walk_miles"],

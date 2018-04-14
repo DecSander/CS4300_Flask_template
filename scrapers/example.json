@@ -60,11 +60,11 @@
     "lifespan": 13.25, 
     "height": 9.166666666666668, 
     "activity_level": "medium", 
-    "trainability": 0.802, 
+    "trainability": 0.801, 
     "grooming_freq_text": "weekly", 
-    "temperament": 0.996, 
+    "temperament": 0.998, 
     "health": 0.9199999999999999, 
-    "energy_level": 0.614, 
+    "energy_level": 0.607, 
     "food_monthly_cost": 27, 
     "walk_miles": 6
   }
