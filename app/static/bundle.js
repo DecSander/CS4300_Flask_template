@@ -1379,11 +1379,11 @@ function requestMoreBreeds(search, preferences) {
   var sendPrefs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
   (0, _GlobalActions.requestMoreBreedsStart)();
-  //const prefsObj = sendPrefs ? { preferences: preferences.toJS() } : {};
-  //const prefs = Object.assign({}, prefsObjs, { search });
-  var prefs = preferences.toJS();
+  var prefsObj = sendPrefs ? { preferences: preferences.toJS() } : {};
+  var searchObj = search === '' ? {} : { search: search };
+  var prefs = Object.assign({}, prefsObj, searchObj);
   fetch('/api/get_dogs', {
-    body: JSON.stringify({ preferences: prefs }),
+    body: JSON.stringify(prefs),
     cache: 'no-cache',
     method: 'POST',
     credentials: 'include',

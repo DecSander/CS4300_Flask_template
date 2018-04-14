@@ -10,6 +10,7 @@ from app.irsystem import irsystem
 from app.irsystem.models.helpers import validate_json
 from app.irsystem.models import schemas
 from app.irsystem.src.structured_compare import structured_score
+from app.irsystem.src.freetext_compare import freetext_score
 
 # allow imports from root
 sys.path.insert(0, os.path.dirname(__file__) + "/../")
@@ -28,8 +29,9 @@ STRUCTURED_FACTORS = ["activity_minutes", "shedding", "coat_length", "weight", "
 breeds = ['rottweiler', 'labrador', 'wolfhound', 'cairn', 'samoyed', 'greyhound', 'vizsla', 'deerhound', 'akita', 'briard', 'hound', 'pinscher', 'bullterrier', 'malinois', 'setter', 'lhasa', 'collie', 'bluetick', 'saluki', 'groenendael', 'pyrenees', 'papillon', 'doberman', 'leonberg', 'poodle', 'whippet', 'basenji', 'beagle', 'kelpie', 'entlebucher', 'shihtz', 'pekinese', 'kuvasz', 'newfoundland', 'appenzeller', 'coonhound', 'keeshond', 'shiba', 'germanshepherd', 'weimaraner', 'pug', 'schipperke', 'pomeranian', 'mountain', 'bulldog', 'pointer', 'african', 'springer', 'spaniel', 'chihuahua', 'sheepdog', 'husky', 'maltese', 'clumber', 'eskimo', 'terrier', 'stbernard', 'retriever', 'schnauzer', 'pembroke', 'komondor', 'bouvier', 'dingo', 'mastiff', 'malamute', 'mexicanhairless', 'borzoi', 'elkhound', 'ridgeback', 'dhole', 'brabancon', 'boxer', 'dachshund', 'affenpinscher', 'otterhound', 'chow', 'redbone', 'corgi', 'dane', 'airedale']
 breedset = set(breeds)
 
+
 def get_structured_scores(preferences):
-    preferences = {k:preferences[k] for k in STRUCTURED_FACTORS}
+    preferences = {k: preferences[k] for k in STRUCTURED_FACTORS}
     return structured_score(preferences)
 
 
@@ -60,7 +62,6 @@ def get_next_dog_names(uuid, preferences):
     return next_dog_names
 
 
-
 def get_json_from_dog_names(dog_names, structured_scores=None):
     path = 'database/dog_urls.json'
     dog_urls = json.load(open(path, 'r'))['dogs']
@@ -80,9 +81,9 @@ def get_json_from_dog_names(dog_names, structured_scores=None):
             contrib_vals = []
             for contrib in contributions:
                 factor = {
-                    "name" : contrib,
-                    "value" : DOGGO_DATA[dog]["structured"][contrib],
-                    "units" : STRUCTURED_METADATA[contrib]
+                    "name": contrib,
+                    "value": DOGGO_DATA[dog]["structured"][contrib],
+                    "units": STRUCTURED_METADATA[contrib]
                 }
                 contrib_vals.append(factor)
             dog_json["contributions"] = contrib_vals
@@ -144,25 +145,49 @@ def reset_uuid():
 
 
 @irsystem.route('/get_dogs', methods=['POST'])
-@validate_json(schemas.preferences)
+@validate_json(schemas.get_dogs)
 def get_dogs(request_json):
     if 'uuid' not in session:
         session['uuid'] = str(uuid.uuid1())
 
-    preferences = request_json['preferences']
-    reformatted_preferences = {}
-    for key in preferences:
-        if not key.endswith("Importance"):
-            try:
-                reformatted_preferences[key] = {"value" : preferences[key], "importance" : preferences[key + "Importance"]}
-            except KeyError:
-                reformatted_preferences[key] = preferences[key]
-    preferences = reformatted_preferences
-    structured_scores = get_structured_scores(preferences)
+    structured_scores = None
+    if 'preferences' in request_json:
+        preferences = request_json['preferences']
+        reformatted_preferences = {}
+        for key in preferences:
+            if not key.endswith("Importance"):
+                try:
+                    reformatted_preferences[key] = {"value": preferences[key], "importance": preferences[key + "Importance"]}
+                except KeyError:
+                    reformatted_preferences[key] = preferences[key]
+        preferences = reformatted_preferences
+        structured_scores = get_structured_scores(preferences)
 
-    dog_names = sorted(structured_scores.keys(), key=lambda x: structured_scores[x]["score"], reverse=True)[:20]
-    print dog_names
-    return json.dumps({"dogs": get_json_from_dog_names(dog_names, structured_scores)}), 200
+    search_scores = None
+    if 'search' in request_json:
+        search_scores = freetext_score(request_json['search'])
+    print structured_scores
+    print search_scores
+
+    if structured_scores is None and search_scores is None:
+        return 'Nothing supplied', 400
+
+    if structured_score is not None:
+        search_dog_names = sorted(search_scores.keys(), key=lambda x: search_scores[x], reverse=True)[:10]
+    if search_scores is not None:
+        structured_dog_names = sorted(structured_scores.keys(), key=lambda x: structured_scores[x]["score"], reverse=True)[:10]
+
+    if structured_scores is None:  # search only
+        return json.dumps({"dogs": get_json_from_dog_names(search_dog_names)})
+    elif search_scores is None:  # preferences only
+        return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names)})
+    else:  # both
+        combined_scores = {}
+        for dog in structured_dog_names:
+            if dog in 'structured_scores':
+                combined_scores[dog] = search_scores[dog] + structured_scores[dog]['score']
+        combined_dog_names = sorted(combined_scores.keys(), key=lambda x: combined_scores[x]["score"], reverse=True)[:10]
+        return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, structured_scores)})
 
 
 @irsystem.route('/liked_dog', methods=['POST'])

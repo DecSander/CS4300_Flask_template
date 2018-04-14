@@ -1,4 +1,3 @@
-import jsonschema
 from jsonschema import Draft4Validator, validators
 
 
@@ -25,14 +24,17 @@ def extend_with_default(validator_class):
 jsonschema = extend_with_default(Draft4Validator)
 
 
-preferences = {
+get_dogs = {
     "type": "object",
     "properties": {
         "preferences": {
             "type": "object",
         },
+        "search": {
+            "type": "string"
+        }
     },
-    "required": ["preferences"]
+    "required": []
 }
 
 liked_dog = {
@@ -44,4 +46,3 @@ liked_dog = {
     },
     "required": ["dog_name"]
 }
-
