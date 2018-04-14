@@ -63,13 +63,15 @@ def get_next_dog_names(uuid, preferences):
 
 
 def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=None):
-    path = 'database/dog_urls.json'
-    dog_urls = json.load(open(path, 'r'))['dogs']
     dogs = []
     for dog in dog_names:
         dog_json = {"dog_name": dog, }
-        if dog in dog_urls:
-            dog_json["images"] = dog_urls[dog][0:5]
+        dog_images_path = 'app/static/img/scraped_images'
+        dirs = os.listdir(dog_images_path)
+        if dog in dirs:
+            images = os.listdir(dog_images_path + '/' + dog)
+            images = filter(lambda x: not x.endswith('.txt'), images)
+            dog_json["images"] = ['/static/img/scraped_images/' + dog + '/' + name for name in images[0:5]]
         else:
             dog_json["images"] = []
 

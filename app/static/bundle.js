@@ -272,7 +272,7 @@ var Breeds = function (_Component) {
           _react2.default.createElement('br', null),
           _react2.default.createElement('br', null),
           _react2.default.createElement('br', null),
-          'Why this is a good dog:',
+          selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null,
           _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions })
         );
       }
@@ -808,7 +808,7 @@ var Matches = function (_React$Component) {
           _react2.default.createElement('br', null),
           _react2.default.createElement('br', null),
           _react2.default.createElement('br', null),
-          'Why this is a good dog:',
+          selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null,
           _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions })
         );
       }
@@ -1475,7 +1475,7 @@ var preferencesDefaultBeforeMod = {
 };
 
 Object.keys(preferencesDefaultBeforeMod).forEach(function (k) {
-  preferencesDefaultBeforeMod[k + 'Importance'] = 0.5;
+  preferencesDefaultBeforeMod[k + 'Importance'] = 0;
 });
 
 var preferencesDefault = exports.preferencesDefault = Object.freeze(preferencesDefaultBeforeMod);
