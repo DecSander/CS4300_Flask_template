@@ -199,7 +199,7 @@ def get_dogs(request_json):
             if dog in structured_scores:
                 combined_scores[dog] = (normalized_search_scores[dog] + structured_scores[dog]['score']) / 2
         combined_dog_names = sorted(combined_scores.keys(), key=lambda x: combined_scores[x], reverse=True)[:10]
-        return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, combined_scores, structured_scores)})
+        return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, normalized_search_scores, structured_scores)})
 
 
 @irsystem.route('/liked_dog', methods=['POST'])
