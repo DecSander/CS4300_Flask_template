@@ -200,12 +200,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function mapStateToProps(_ref) {
-  var currentBreeds = _ref.currentBreeds,
+  var search = _ref.search,
+      currentBreeds = _ref.currentBreeds,
       preferences = _ref.preferences,
       breedsLoading = _ref.breedsLoading,
       checkPreferences = _ref.checkPreferences;
 
-  return { currentBreeds: currentBreeds, preferences: preferences, breedsLoading: breedsLoading, checkPreferences: checkPreferences };
+  return { search: search, currentBreeds: currentBreeds, preferences: preferences, breedsLoading: breedsLoading, checkPreferences: checkPreferences };
 }
 
 var Breeds = function (_Component) {

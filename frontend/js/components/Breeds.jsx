@@ -15,8 +15,8 @@ import { likeBreed, resetBreedList } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
 import { formatText } from 'infra/utils';
 
-function mapStateToProps({ currentBreeds, preferences, breedsLoading, checkPreferences }) {
-  return { currentBreeds, preferences, breedsLoading, checkPreferences };
+function mapStateToProps({ search, currentBreeds, preferences, breedsLoading, checkPreferences }) {
+  return { search, currentBreeds, preferences, breedsLoading, checkPreferences };
 }
 
 class Breeds extends Component {

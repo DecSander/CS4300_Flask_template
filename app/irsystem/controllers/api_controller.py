@@ -166,27 +166,25 @@ def get_dogs(request_json):
     search_scores = None
     if 'search' in request_json:
         search_scores = freetext_score(request_json['search'])
-    print structured_scores
-    print search_scores
 
     if structured_scores is None and search_scores is None:
         return 'Nothing supplied', 400
 
-    if structured_score is not None:
-        search_dog_names = sorted(search_scores.keys(), key=lambda x: search_scores[x], reverse=True)[:10]
     if search_scores is not None:
-        structured_dog_names = sorted(structured_scores.keys(), key=lambda x: structured_scores[x]["score"], reverse=True)[:10]
+        search_dog_names = sorted(search_scores.keys(), key=lambda x: search_scores[x], reverse=True)
+    if structured_scores is not None:
+        structured_dog_names = sorted(structured_scores.keys(), key=lambda x: structured_scores[x]["score"], reverse=True)
 
     if structured_scores is None:  # search only
-        return json.dumps({"dogs": get_json_from_dog_names(search_dog_names)})
+        return json.dumps({"dogs": get_json_from_dog_names(search_dog_names[:10])})
     elif search_scores is None:  # preferences only
-        return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names)})
+        return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names[:10])})
     else:  # both
         combined_scores = {}
         for dog in structured_dog_names:
-            if dog in 'structured_scores':
+            if dog in structured_scores:
                 combined_scores[dog] = search_scores[dog] + structured_scores[dog]['score']
-        combined_dog_names = sorted(combined_scores.keys(), key=lambda x: combined_scores[x]["score"], reverse=True)[:10]
+        combined_dog_names = sorted(combined_scores.keys(), key=lambda x: combined_scores[x], reverse=True)[:10]
         return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, structured_scores)})
 
 
