@@ -983,7 +983,7 @@ function buildImportance(preferences, id) {
       'Important'
     ),
     _react2.default.createElement('div', { style: { clear: 'both' } }),
-    _react2.default.createElement(_Slider2.default, { value: preferences.get(id + 'Importance'), step: 0.2, onChange: function onChange(e, v) {
+    _react2.default.createElement(_Slider2.default, { value: preferences.get(id + 'Importance'), onChange: function onChange(e, v) {
         return (0, _GlobalActions.updatePreference)(id + 'Importance', v);
       } })
   );

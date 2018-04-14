@@ -34,7 +34,7 @@ function buildImportance(preferences, id) {
       <span style={{float: 'left'}}>Not Important</span>
       <span style={{float: 'right'}}>Important</span>
       <div style={{clear: 'both'}}></div>
-      <Slider value={preferences.get(`${id}Importance`)} step={0.2} onChange={(e, v) => updatePreference(`${id}Importance`, v)} />
+      <Slider value={preferences.get(`${id}Importance`)} onChange={(e, v) => updatePreference(`${id}Importance`, v)} />
     </div>
   );
 }
