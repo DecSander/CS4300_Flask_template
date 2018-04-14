@@ -16,7 +16,7 @@ let preferencesDefaultBeforeMod = {
 };
 
 Object.keys(preferencesDefaultBeforeMod).forEach(k => {
-  preferencesDefaultBeforeMod[`${k}Importance`] = 0.5;
+  preferencesDefaultBeforeMod[`${k}Importance`] = 0;
 });
 
 export const preferencesDefault = Object.freeze(preferencesDefaultBeforeMod);

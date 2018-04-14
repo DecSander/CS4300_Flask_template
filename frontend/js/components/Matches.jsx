@@ -64,7 +64,7 @@ class Matches extends React.Component {
           <br />
           {`${selectedBreed.description}`}
           <br /><br /><br />
-          Why this is a good dog:
+          {selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null}
           <Contributions values={selectedBreed.contributions} />
         </Dialog>
       );

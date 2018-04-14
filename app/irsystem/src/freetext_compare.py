@@ -4,7 +4,7 @@ import os
 import collections
 import numpy as np
 import math
-import pickle
+import cPickle as pickle
 from nltk.tokenize import TreebankWordTokenizer
 import string
 import re
