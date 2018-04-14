@@ -6,6 +6,8 @@ import numpy as np
 import math
 import pickle
 from nltk.tokenize import TreebankWordTokenizer
+import string
+import re
 
 DATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "final_dataset.json")
 base_pickles = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data")
@@ -46,16 +48,15 @@ def calc_norms():
                         for text in tags:
                             if isinstance(text, unicode):
                                 text_data += text
-            doggo_data.append(text_data)
+            tokenizer = TreebankWordTokenizer()
+            text_tokens = tokenizer.tokenize(text_data.strip().replace('\n', ''))
+            doggo_data.append(text_tokens)
             dog_index.append(dog)
             inv_dog_index[dog] = i
             total_data += text_data
             i += 1
 
     inv_word_doc_matrix = {}
-    tokenizer = TreebankWordTokenizer()
-    tokenized_total_data = tokenizer.tokenize(total_data)
-    word_counts = collections.Counter()
     for i in range(len(doggo_data)):
         cnt = collections.Counter()
         for word in doggo_data[i]:
@@ -101,7 +102,7 @@ except IOError:
 
 def freetext_score(query):
     result = {}
-    q = query.lower()
+    q = re.sub('[' + string.punctuation + ']', '', query.lower())
     tokenizer = TreebankWordTokenizer()
     query = tokenizer.tokenize(q)
     query_norm = 0
@@ -128,4 +129,4 @@ def freetext_score(query):
 
 
 if __name__ == "__main__":
-    print freetext_score("friendly, happy, energetic, healthy, hound, fluffy")
+    print freetext_score("friendly")

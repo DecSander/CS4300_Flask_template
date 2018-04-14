@@ -62,7 +62,7 @@ def get_next_dog_names(uuid, preferences):
     return next_dog_names
 
 
-def get_json_from_dog_names(dog_names, structured_scores=None):
+def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=None):
     path = 'database/dog_urls.json'
     dog_urls = json.load(open(path, 'r'))['dogs']
     dogs = []
@@ -74,7 +74,16 @@ def get_json_from_dog_names(dog_names, structured_scores=None):
             dog_json["images"] = []
 
         dog_json["description"] = DOGGO_DATA[dog]["text"]["akc"]["blurb"]
-        dog_json["percent_match"] = structured_scores[dog]["score"] if structured_scores else None
+
+        if structured_scores and search_scores:
+            dog_json['percent_match'] = (structured_scores[dog]['score'] + search_scores[dog]) / 2
+        elif structured_scores:
+            dog_json['percent_match'] = structured_scores[dog]['score']
+        elif search_scores:
+            dog_json['percent_match'] = search_scores[dog]
+        else:
+            dog_json['percent_match'] = None
+
         if structured_scores is not None:
             contrib_data = structured_scores[dog]["contributions"]
             contributions = sorted(contrib_data.keys(), key=lambda x: contrib_data[x], reverse=True)[:3]
@@ -163,29 +172,30 @@ def get_dogs(request_json):
         preferences = reformatted_preferences
         structured_scores = get_structured_scores(preferences)
 
-    search_scores = None
+    normalized_search_scores = None
     if 'search' in request_json:
-        search_scores = freetext_score(request_json['search'])
+        _search_scores = freetext_score(request_json['search'])
+        max_search_value = max(_search_scores.values())
+        normalized_search_scores = {k: v * 0.99 / float(max_search_value) for k, v in _search_scores.items()}
 
-    if structured_scores is None and search_scores is None:
-        return 'Nothing supplied', 400
-
-    if search_scores is not None:
-        search_dog_names = sorted(search_scores.keys(), key=lambda x: search_scores[x], reverse=True)
+    if normalized_search_scores is not None:
+        search_dog_names = sorted(normalized_search_scores.keys(), key=lambda x: normalized_search_scores[x], reverse=True)
     if structured_scores is not None:
         structured_dog_names = sorted(structured_scores.keys(), key=lambda x: structured_scores[x]["score"], reverse=True)
 
-    if structured_scores is None:  # search only
-        return json.dumps({"dogs": get_json_from_dog_names(search_dog_names[:10])})
-    elif search_scores is None:  # preferences only
-        return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names[:10])})
+    if structured_scores is None and normalized_search_scores is None:
+        return 'Nothing supplied', 400
+    elif structured_scores is None:  # search only
+        return json.dumps({"dogs": get_json_from_dog_names(search_dog_names[:10], normalized_search_scores, None)})
+    elif normalized_search_scores is None:  # preferences only
+        return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names[:10], None, structured_scores)})
     else:  # both
         combined_scores = {}
         for dog in structured_dog_names:
             if dog in structured_scores:
-                combined_scores[dog] = search_scores[dog] + structured_scores[dog]['score']
+                combined_scores[dog] = (normalized_search_scores[dog] + structured_scores[dog]['score']) / 2
         combined_dog_names = sorted(combined_scores.keys(), key=lambda x: combined_scores[x], reverse=True)[:10]
-        return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, structured_scores)})
+        return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, combined_scores, structured_scores)})
 
 
 @irsystem.route('/liked_dog', methods=['POST'])
