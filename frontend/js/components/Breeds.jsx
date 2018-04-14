@@ -60,6 +60,7 @@ class Breeds extends Component {
     } else {
       return (
         <Dialog style={{marginTop: '-200px'}} title={formatText(selectedBreed.name)}
+            autoScrollBodyContent={true}
             modal={false} open={modalOpen} onRequestClose={this.handleClose} actions={actions}>
           {this.buildSlideshow()}
           <br />

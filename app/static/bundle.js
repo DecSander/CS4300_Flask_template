@@ -264,6 +264,7 @@ var Breeds = function (_Component) {
         return _react2.default.createElement(
           _Dialog2.default,
           { style: { marginTop: '-200px' }, title: (0, _utils.formatText)(selectedBreed.name),
+            autoScrollBodyContent: true,
             modal: false, open: modalOpen, onRequestClose: _this.handleClose, actions: actions },
           _this.buildSlideshow(),
           _react2.default.createElement('br', null),
@@ -799,6 +800,7 @@ var Matches = function (_React$Component) {
         return _react2.default.createElement(
           _Dialog2.default,
           { style: { marginTop: '-200px' }, title: (0, _utils.formatText)(selectedBreed.name),
+            autoScrollBodyContent: true,
             modal: false, open: modalOpen, onRequestClose: _this.handleClose },
           _this.buildSlideshow(),
           _react2.default.createElement('br', null),
