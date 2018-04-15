@@ -10,7 +10,7 @@ from app.irsystem import irsystem
 from app.irsystem.models.helpers import validate_json
 from app.irsystem.models import schemas
 from app.irsystem.src.structured_compare import structured_score
-from app.irsystem.src.freetext_compare import freetext_score
+from app.irsystem.src.freetext_compare import freetext_score, WEIGHT_EPSILON
 
 # allow imports from root
 sys.path.insert(0, os.path.dirname(__file__) + "/../")
@@ -180,7 +180,10 @@ def get_dogs(request_json):
     if 'search' in request_json:
         _search_scores = freetext_score(request_json['search'])
         max_search_value = max(_search_scores.values())
-        normalized_search_scores = {k: v * 0.99 / float(max_search_value) for k, v in _search_scores.items()}
+        if max_search_value == WEIGHT_EPSILON:
+            normalized_search_scores = {k: 0 for k, v in _search_scores.items()}
+        else:
+            normalized_search_scores = {k: v * 0.99 / float(max_search_value) for k, v in _search_scores.items()}
 
     if normalized_search_scores is not None:
         search_dog_names = sorted(normalized_search_scores.keys(), key=lambda x: normalized_search_scores[x], reverse=True)

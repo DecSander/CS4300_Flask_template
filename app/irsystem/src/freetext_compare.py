@@ -124,7 +124,7 @@ def freetext_score(query):
                 doc_scores[doc_count[0]] += doc_count[1] * (idf[term] ** 2) * query_tf[term]
     for i in range(len(doc_norms)):
         doc_scores[i] = doc_scores[i] / (doc_norms[i] * query_norm)
-        result[dog_index[i]] = doc_scores[i]
+        result[dog_index[i]] = doc_scores[i] if not np.isnan(doc_scores[i]) else WEIGHT_EPSILON
     return result
 
 
