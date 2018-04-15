@@ -26,6 +26,7 @@ dog_index = None
 
 
 def calc_norms():
+    print 'CALCULATING NORMS'
     global idf, norms, inv_word_doc_matrix, dog_index
     with open(DATA_FILE, 'r') as f:
         total_data = ""
@@ -84,6 +85,7 @@ def calc_norms():
     pickle.dump(norms, open(norms_path, 'wb'))
     pickle.dump(inv_word_doc_matrix, open(inv_word_doc_matrix_path, 'wb'))
     pickle.dump(dog_index, open(dog_index_path, 'wb'))
+    print 'FINISHED CALCULATING NORMS'
 
 
 def load_values():
@@ -92,6 +94,7 @@ def load_values():
     norms = pickle.load(open(norms_path, 'rb'))
     inv_word_doc_matrix = pickle.load(open(inv_word_doc_matrix_path, 'rb'))
     dog_index = pickle.load(open(dog_index_path, 'rb'))
+    print 'LOADED VALUES'
 
 
 try:

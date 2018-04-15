@@ -6,8 +6,10 @@ monkey.patch_all()
 import os
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from flask_socketio import SocketIO
 
 # Configure app
+socketio = SocketIO()
 app = Flask(__name__)
 app.config.from_object(os.environ["APP_SETTINGS"])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
@@ -16,11 +18,16 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 # Import + Register Blueprints
+from app.accounts import accounts as accounts
+app.register_blueprint(accounts)
 from app.irsystem import irsystem as irsystem
 app.register_blueprint(irsystem)
 
 from app.home.home_controller import home
 app.register_blueprint(home)
+
+# Initialize app w/SocketIO
+socketio.init_app(app)
 
 # HTTP error handling
 @app.errorhandler(404)
