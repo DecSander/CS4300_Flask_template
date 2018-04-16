@@ -8,8 +8,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__) + "../../.."))
 
 from app.irsystem.data.doggo_data import STRUCTURED_DATA
 
-# This is here in case all the weights are 0, we don't want to just fail
-WEIGHT_EPSILON = .00001
 CONFIDENCE_THRESHOLD = 0.1
 scaled_doggo_data = deepcopy(STRUCTURED_DATA)
 
@@ -37,13 +35,15 @@ _scale_val("walk_miles")
 
 
 def _score(preferences, dog):
-    total_weight = sum(v["importance"] + WEIGHT_EPSILON for k, v in preferences.items() if scaled_doggo_data[dog][k] is not None)
-    actual_weight = sum(v["importance"] + WEIGHT_EPSILON for k, v in preferences.items())
+    total_weight = sum(v["importance"] for k, v in preferences.items() if scaled_doggo_data[dog][k] is not None)
+    actual_weight = sum(v["importance"] for k, v in preferences.items())
+    if total_weight == 0:
+        return {"score": 0, "confidence": 0, "contributions": {k:0 for k in preferences}}
     score = 0
     contributions = {}
     for p in preferences:
         if scaled_doggo_data[dog][p] is not None:
-            importance = (preferences[p]["importance"] + WEIGHT_EPSILON) / total_weight
+            importance = (preferences[p]["importance"]) / total_weight
             similarity = 1 - abs(preferences[p]["value"] - scaled_doggo_data[dog][p])
             contributions[p] = (similarity * importance) / total_weight
             score += similarity * importance
