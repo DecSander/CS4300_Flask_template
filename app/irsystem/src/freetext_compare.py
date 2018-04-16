@@ -4,7 +4,6 @@ import os
 import collections
 import numpy as np
 import math
-import cPickle as pickle
 from nltk.tokenize import TreebankWordTokenizer
 import string
 import re
@@ -14,10 +13,10 @@ base_pickles = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "
 # This is here in case all the weights are 0, we don't want to just fail
 WEIGHT_EPSILON = .00001
 
-idf_path = os.path.join(base_pickles, 'idf.pickle')
-norms_path = os.path.join(base_pickles, 'norms.pickle')
-inv_word_doc_matrix_path = os.path.join(base_pickles, 'inv_word_doc_matrix.pickle')
-dog_index_path = os.path.join(base_pickles, 'dog_index.pickle')
+idf_path = os.path.join(base_pickles, 'idf.json')
+norms_path = os.path.join(base_pickles, 'norms.json')
+inv_word_doc_matrix_path = os.path.join(base_pickles, 'inv_word_doc_matrix.json')
+dog_index_path = os.path.join(base_pickles, 'dog_index.json')
 
 idf = None
 norms = None
@@ -80,18 +79,18 @@ def calc_norms():
     norms = np.array(norms)
     norms = np.sqrt(norms)
 
-    pickle.dump(idf, open(idf_path, 'wb'))
-    pickle.dump(norms, open(norms_path, 'wb'))
-    pickle.dump(inv_word_doc_matrix, open(inv_word_doc_matrix_path, 'wb'))
-    pickle.dump(dog_index, open(dog_index_path, 'wb'))
+    json.dump(idf, open(idf_path, 'wb'))
+    json.dump(norms.tolist(), open(norms_path, 'wb'))
+    json.dump(inv_word_doc_matrix, open(inv_word_doc_matrix_path, 'wb'))
+    json.dump(dog_index, open(dog_index_path, 'wb'))
 
 
 def load_values():
     global idf, norms, inv_word_doc_matrix, dog_index
-    idf = pickle.load(open(idf_path, 'rb'))
-    norms = pickle.load(open(norms_path, 'rb'))
-    inv_word_doc_matrix = pickle.load(open(inv_word_doc_matrix_path, 'rb'))
-    dog_index = pickle.load(open(dog_index_path, 'rb'))
+    idf = json.load(open(idf_path, 'rb'))
+    norms = np.array(json.load(open(norms_path, 'rb')))
+    inv_word_doc_matrix = json.load(open(inv_word_doc_matrix_path, 'rb'))
+    dog_index = json.load(open(dog_index_path, 'rb'))
 
 
 try:

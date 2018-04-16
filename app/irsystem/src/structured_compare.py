@@ -7,9 +7,16 @@ DATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "dat
 # This is here in case all the weights are 0, we don't want to just fail
 WEIGHT_EPSILON = .00001
 CONFIDENCE_THRESHOLD = 0.1
+doggo_data = None
 
-with open(DATA_FILE, 'r') as f:
-    doggo_data = {k: v["structured"] for k, v in json.load(f).iteritems()}
+
+def get_doggo_data():
+    with open(DATA_FILE, 'r') as f:
+        global doggo_data
+        doggo_data = {k: v["structured"] for k, v in json.load(f).iteritems()}
+
+
+get_doggo_data()
 
 
 def _scale_val(val_name):
