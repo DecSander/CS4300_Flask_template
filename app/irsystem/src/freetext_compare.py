@@ -7,8 +7,12 @@ import math
 from nltk.tokenize import TreebankWordTokenizer
 import string
 import re
+import sys
 
-DATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "final_dataset.json")
+sys.path.insert(0, os.path.join(os.path.dirname(__file__) + "../../.."))
+
+from app.irsystem.data.doggo_data import FREETEXT_DATA
+
 base_pickles = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data")
 # This is here in case all the weights are 0, we don't want to just fail
 WEIGHT_EPSILON = .00001
@@ -26,34 +30,33 @@ dog_index = None
 
 def calc_norms():
     global idf, norms, inv_word_doc_matrix, dog_index
-    with open(DATA_FILE, 'r') as f:
-        total_data = ""
-        doggo_data = []
-        inv_dog_index = {}
-        dog_index = []
-        i = 0
-        for dog, info in json.load(f).iteritems():
-            for website, tags in info['text'].iteritems():
-                text_data = ""
-                if website in ["akc", "wagwalking"]:
-                    for tag, text in tags.iteritems():
-                        if isinstance(text, list):
-                            for elem in text:
-                                text_data += elem
-                        elif isinstance(text, unicode):
+    total_data = ""
+    doggo_data = []
+    inv_dog_index = {}
+    dog_index = []
+    i = 0
+    for dog, info in FREETEXT_DATA.iteritems():
+        for website, tags in info['text'].iteritems():
+            text_data = ""
+            if website in ["akc", "wagwalking"]:
+                for tag, text in tags.iteritems():
+                    if isinstance(text, list):
+                        for elem in text:
+                            text_data += elem
+                    elif isinstance(text, unicode):
+                        text_data += text
+            else:
+                if tags is not None:
+                    for text in tags:
+                        if isinstance(text, unicode):
                             text_data += text
-                else:
-                    if tags is not None:
-                        for text in tags:
-                            if isinstance(text, unicode):
-                                text_data += text
-            tokenizer = TreebankWordTokenizer()
-            text_tokens = tokenizer.tokenize(text_data.strip().replace('\n', ''))
-            doggo_data.append(text_tokens)
-            dog_index.append(dog)
-            inv_dog_index[dog] = i
-            total_data += text_data
-            i += 1
+        tokenizer = TreebankWordTokenizer()
+        text_tokens = tokenizer.tokenize(text_data.strip().replace('\n', ''))
+        doggo_data.append(text_tokens)
+        dog_index.append(dog)
+        inv_dog_index[dog] = i
+        total_data += text_data
+        i += 1
 
     inv_word_doc_matrix = {}
     for i in range(len(doggo_data)):
