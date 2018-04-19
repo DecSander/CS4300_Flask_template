@@ -1,6 +1,6 @@
 .background { 
-  background-image: url(/static/img/home.jpg);
+  background-image: url(/static/img/home.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 92vh;
+  background-size: auto;
+  background-position: 40% 20%;
 }

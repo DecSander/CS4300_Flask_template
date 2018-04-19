@@ -15,8 +15,6 @@ const iconStyles = {
 const tabs = [{
   name: 'Home', value: '/'
 }, {
-  name: 'Prefs', value: '/preferences'
-}, {
   name: 'Breeds', value: '/breeds'
 }, {
   name: 'Matches', value: '/matches'
