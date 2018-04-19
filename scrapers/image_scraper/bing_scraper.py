@@ -22,7 +22,7 @@ def get_soup(url,header):
 def scrape_images(orig_query, DIR="scraped_images"):
     query= orig_query.split()
     query='+'.join(query + ["dog"])
-    url="http://www.bing.com/images/search?q=" + query + "&FORM=HDRSC2" + "&qft=+filterui:imagesize-custom_300_300+filterui:license-L2_L3_L4_L5_L6_L7"
+    url="http://www.bing.com/images/search?q=" + query + "&FORM=HDRSC2" + "&qft=+filterui:imagesize-custom_300_300+filterui:aspect-square&FORM=IRFLTR"
 
     if not os.path.exists(DIR):
         os.mkdir(DIR)
@@ -54,8 +54,8 @@ def scrape_images(orig_query, DIR="scraped_images"):
             _, ext = os.path.splitext(image_name)
             raw_img = urllib.request.urlopen(turl).read()
             size = Image.open(BytesIO(raw_img)).size
-            if abs(size[0] - size[1]) / min(size[0], size[1]) > .5:
-                continue
+            # if abs(size[0] - size[1]) / min(size[0], size[1]) > 0.2:
+            #     continue
 
             f = open(os.path.join(DIR, orig_query, str(i) + ext.lower()), 'wb')
             f.write(raw_img)
@@ -76,7 +76,7 @@ def scrape_images(orig_query, DIR="scraped_images"):
     return True
 
 if __name__ == "__main__":
-    with open("../final_dataset.json", 'r') as data:
+    with open("../structured_dataset.json", 'r') as data:
         dogs = json.load(data).keys()
 
     for dog in tqdm(dogs):
