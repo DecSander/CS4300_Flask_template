@@ -574,6 +574,10 @@ var _Toggle = require('material-ui/Toggle');
 
 var _Toggle2 = _interopRequireDefault(_Toggle);
 
+var _FontIcon = require('material-ui/FontIcon');
+
+var _FontIcon2 = _interopRequireDefault(_FontIcon);
+
 var _GlobalActions = require('infra/GlobalActions');
 
 var _api = require('infra/api');
@@ -583,6 +587,8 @@ var _Preferences = require('components/Preferences');
 var _Preferences2 = _interopRequireDefault(_Preferences);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -597,6 +603,14 @@ function mapStateToProps(_ref) {
 
   return { checkPreferences: checkPreferences, preferences: preferences, search: search };
 }
+
+var iconStyles = {
+  marginTop: 10,
+  marginLeft: 10,
+  marginRight: 0,
+  color: 'white',
+  cursor: 'pointer'
+};
 
 var Home = function (_React$Component) {
   _inherits(Home, _React$Component);
@@ -649,7 +663,8 @@ var Home = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _React$createElement,
+          _this2 = this;
 
       return _react2.default.createElement(
         _reactGridSystem.Container,
@@ -659,7 +674,7 @@ var Home = function (_React$Component) {
           { style: { marginBottom: '75vh' } },
           _react2.default.createElement(
             _reactGridSystem.Col,
-            { offset: { lg: 4 }, lg: 4, xs: 12 },
+            { offset: { lg: 3 }, lg: 6, xs: 12 },
             _react2.default.createElement(
               'div',
               { style: { textAlign: 'center', fontWeight: '200', fontFamily: 'roboto', color: 'black' } },
@@ -668,22 +683,29 @@ var Home = function (_React$Component) {
                 { style: { backgroundColor: 'white', fontSize: '56px' } },
                 'Who\'s A Good Dog?'
               ),
-              _react2.default.createElement(_TextField2.default, { floatingLabelStyle: { color: 'black' }, inputStyle: { color: 'black' },
-                style: { width: '500px', fontSize: '30px' }, value: this.props.search, floatingLabelText: 'What kind of dog do you want?', onChange: function onChange(e, v) {
+              _react2.default.createElement(_TextField2.default, { hintStyle: { width: '100%', color: 'black', textAlign: 'center' }, inputStyle: { color: 'black', marginTop: '-5px' },
+                style: { width: '50%', fontSize: '20px', marginRight: '20px' }, value: this.props.search, hintText: "What kind of dog do you want?", onChange: function onChange(e, v) {
                   return (0, _GlobalActions.changeSearch)(v);
                 } }),
+              _react2.default.createElement(
+                _RaisedButton2.default,
+                { secondary: true, overlayStyle: { color: 'white' },
+                  onClick: this.submitNoPrefs },
+                'Search'
+              ),
+              _react2.default.createElement('br', null),
               _react2.default.createElement('br', null),
               _react2.default.createElement(
                 _RaisedButton2.default,
-                { primary: true, overlayStyle: { color: 'white', paddingLeft: '50px', paddingRight: '50px' },
-                  style: { marginRight: '20px' }, onClick: this.submitWithPrefs },
-                'More Preferences'
-              ),
-              _react2.default.createElement(
-                _RaisedButton2.default,
-                { secondary: true, overlayStyle: { color: 'white', paddingLeft: '50px', paddingRight: '50px' },
-                  onClick: this.submitNoPrefs },
-                'Submit'
+                (_React$createElement = { primary: true, overlayStyle: { color: 'white', paddingRight: '20px', paddingLeft: '20px', marginTop: '-8px' }, buttonStyle: { height: '40px' }, style: { marginTop: '40px' }
+                }, _defineProperty(_React$createElement, 'style', { marginRight: '20px' }), _defineProperty(_React$createElement, 'onClick', this.submitWithPrefs), _React$createElement),
+                _react2.default.createElement(
+                  'span',
+                  { style: { fontSize: '24px' } },
+                  'More Preferences'
+                ),
+                ' ',
+                _react2.default.createElement(_FontIcon2.default, { style: iconStyles, className: 'fas fa-chevron-circle-down' })
               )
             )
           )
@@ -710,7 +732,7 @@ var Home = function (_React$Component) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouterDom.withRouter)(Home));
 
-},{"components/Preferences":9,"infra/GlobalActions":10,"infra/api":13,"material-ui/RaisedButton":243,"material-ui/TextField":266,"material-ui/Toggle":268,"react":405,"react-grid-system":333,"react-redux":370,"react-router-dom":387,"react-scroll-to-component":400}],8:[function(require,module,exports){
+},{"components/Preferences":9,"infra/GlobalActions":10,"infra/api":13,"material-ui/FontIcon":237,"material-ui/RaisedButton":243,"material-ui/TextField":266,"material-ui/Toggle":268,"react":405,"react-grid-system":333,"react-redux":370,"react-router-dom":387,"react-scroll-to-component":400}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

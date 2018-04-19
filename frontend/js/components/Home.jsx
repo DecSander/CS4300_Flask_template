@@ -6,6 +6,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
+import FontIcon from 'material-ui/FontIcon';
 
 import { updatePreference, changeCheckPreferences, changeSearch } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
@@ -14,6 +15,14 @@ import Preferences from 'components/Preferences';
 function mapStateToProps({ checkPreferences, preferences, search }) {
   return { checkPreferences, preferences, search };
 }
+
+const iconStyles = {
+  marginTop: 10,
+  marginLeft: 10,
+  marginRight: 0,
+  color: 'white',
+  cursor: 'pointer'
+};
 
 class Home extends React.Component {
 
@@ -52,16 +61,17 @@ class Home extends React.Component {
     return (
       <Container fluid>
         <Row style={{marginBottom: '75vh'}}>
-          <Col offset={{lg: 4}} lg={4} xs={12}>
+          <Col offset={{lg: 3}} lg={6} xs={12}>
             <div style={{textAlign: 'center', fontWeight: '200', fontFamily: 'roboto', color: 'black'}}>
               <h1 style={{backgroundColor: 'white', fontSize: '56px'}}>Who's A Good Dog?</h1>
-              <TextField floatingLabelStyle={{color: 'black'}} inputStyle={{color: 'black'}}
-                style={{width: '500px', fontSize: '30px'}} value={this.props.search} floatingLabelText="What kind of dog do you want?" onChange={(e, v) => changeSearch(v)} />
+              <TextField hintStyle={{width: '100%', color: 'black', textAlign: 'center'}} inputStyle={{color: 'black', marginTop: '-5px'}}
+                style={{width: '50%', fontSize: '20px', marginRight: '20px'}} value={this.props.search} hintText={"What kind of dog do you want?"} onChange={(e, v) => changeSearch(v)} />
+              <RaisedButton secondary={true} overlayStyle={{color: 'white'}}
+                onClick={this.submitNoPrefs}>Search</RaisedButton>
               <br />
-              <RaisedButton primary={true} overlayStyle={{color: 'white', paddingLeft: '50px', paddingRight: '50px'}}
-                style={{marginRight: '20px'}} onClick={this.submitWithPrefs}>More Preferences</RaisedButton>
-              <RaisedButton secondary={true} overlayStyle={{color: 'white', paddingLeft: '50px', paddingRight: '50px'}}
-                onClick={this.submitNoPrefs}>Submit</RaisedButton>
+              <br />
+              <RaisedButton primary={true} overlayStyle={{color: 'white', paddingRight: '20px', paddingLeft: '20px', marginTop: '-8px'}} buttonStyle={{height: '40px'}} style={{marginTop: '40px'}}
+                style={{marginRight: '20px'}} onClick={this.submitWithPrefs}><span style={{fontSize: '24px'}}>More Preferences</span> <FontIcon style={iconStyles} className="fas fa-chevron-circle-down" /></RaisedButton>
             </div>
           </Col>
         </Row>
