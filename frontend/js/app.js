@@ -26,4 +26,4 @@ getLikedDogs();
 
 // Pre-load home image
 const i = new Image();
-i.src = '/static/img/home.jpg';
+i.src = '/static/img/home.png';

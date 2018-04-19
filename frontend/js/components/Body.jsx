@@ -12,7 +12,6 @@ export default function Body() {
       <Route exact path='/' component={Home}/>
       <Route exact path='/breeds' component={Breeds}/>
       <Route exact path='/matches' component={Matches}/>
-      <Route exact path='/preferences' component={Preferences}/>
     </main>
   );
 }
