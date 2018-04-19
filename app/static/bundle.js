@@ -497,14 +497,11 @@ var iconStyles = {
   marginTop: 10,
   marginLeft: 10,
   marginRight: 15,
-  color: 'white'
+  color: 'white',
+  cursor: 'pointer'
 };
 
 var tabs = [{
-  name: 'Home', value: '/'
-}, {
-  name: 'Breeds', value: '/breeds'
-}, {
   name: 'Matches', value: '/matches'
 }];
 
@@ -514,7 +511,20 @@ function Header(_ref) {
 
   return _react2.default.createElement(
     _AppBar2.default,
-    { iconElementLeft: _react2.default.createElement(_FontIcon2.default, { style: iconStyles, className: 'fas fa-paw' }), title: 'Who\'s a good dog?' },
+    { iconElementLeft: _react2.default.createElement(
+        'span',
+        { onClick: function onClick() {
+            return history.push('/');
+          } },
+        _react2.default.createElement(_FontIcon2.default, { style: iconStyles, className: 'fas fa-paw' })
+      ),
+      title: _react2.default.createElement(
+        'span',
+        { style: { cursor: 'pointer' }, onClick: function onClick() {
+            return history.push('/');
+          } },
+        'Who\'s a good dog?'
+      ) },
     _react2.default.createElement(
       _Tabs.Tabs,
       { value: location.pathname, onChange: function onChange(v) {
