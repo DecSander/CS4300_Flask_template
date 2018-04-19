@@ -14,7 +14,8 @@ wagwalking_data = {k.lower(): v for k, v in wagwalking_data.items()}
 breedia_data = json.load(open("breedia_forum/output.json", 'r'))
 breedia_data = {k.lower(): v for k, v in breedia_data.items()}
 
-final_dataset = {}
+structured_dataset = {}
+freetext_dataset = {}
 
 akc_textual = ["nutrition", "temperament", "general_apperance", "about",
                "health", "exercise", "facts", "training", "grooming", "blurb"]
@@ -153,19 +154,20 @@ for doggo in akc_data:
     }
 
 
-    final_dataset[doggo] = {"text": {
+    structured_dataset[doggo] = structured_data
+    freetext_dataset[doggo] = {
         "breedia": b_text_data,
         "wagwalking": ww_text_data,
         "akc": akc_text_data,
-    },
-        "structured": structured_data
     }
 
-print len(final_dataset)
-with open("final_dataset.json", 'w') as f:
-    f.write(json.dumps(final_dataset, indent=2))
+with open("structured_dataset.json", 'w') as f:
+    f.write(json.dumps(structured_dataset, indent=2))
+
+with open("freetext_dataset.json", 'w') as f:
+    f.write(json.dumps(freetext_dataset, indent=2))
 
 with open("example.json", 'w') as f:
-    data = final_dataset["affenpinscher"]
+    data = {"text": freetext_dataset["affenpinscher"], "structured" : structured_dataset["affenpinscher"]}
     data["text"]["breedia"] = data["text"]["breedia"][:5]
     f.write(json.dumps(data, indent=2))

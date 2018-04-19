@@ -6,22 +6,16 @@ import random
 import sys
 import json
 
+# allow imports from root
+sys.path.insert(0, os.path.dirname(__file__) + "/../")
+
 from app.irsystem import irsystem
 from app.irsystem.models.helpers import validate_json
 from app.irsystem.models import schemas
 from app.irsystem.src.structured_compare import structured_score
 from app.irsystem.src.freetext_compare import freetext_score, WEIGHT_EPSILON
+from app.irsystem.data.doggo_data import STRUCTURED_DATA, FREETEXT_DATA, STRUCTURED_METADATA
 
-# allow imports from root
-sys.path.insert(0, os.path.dirname(__file__) + "/../")
-
-DOGGO_DATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "final_dataset.json")
-DOGGO_METADATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "structured_metadata.json")
-with open(DOGGO_DATA_FILE, 'r') as f:
-    DOGGO_DATA = json.load(f)
-
-with open(DOGGO_METADATA_FILE, 'r') as f:
-    STRUCTURED_METADATA = json.load(f)
 
 
 STRUCTURED_FACTORS = ["activity_minutes", "shedding", "coat_length", "weight", "energy_level", "food_monthly_cost", "lifespan", "height", "popularity", "trainability", "temperament", "health", "grooming_frequency", "walk_miles"]
@@ -75,7 +69,7 @@ def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=Non
         else:
             dog_json["images"] = []
 
-        dog_json["description"] = DOGGO_DATA[dog]["text"]["akc"]["blurb"]
+        dog_json["description"] = FREETEXT_DATA[dog]["akc"]["blurb"]
 
         if structured_scores and search_scores:
             dog_json['percent_match'] = (structured_scores[dog]['score'] + search_scores[dog]) / 2
@@ -95,7 +89,7 @@ def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=Non
                     continue
                 factor = {
                     "name": contrib,
-                    "value": DOGGO_DATA[dog]["structured"][contrib],
+                    "value": STRUCTURED_DATA[dog][contrib],
                     "units": STRUCTURED_METADATA[contrib]
                 }
                 contrib_vals.append(factor)
