@@ -12,8 +12,8 @@ import { updatePreference } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
 import { preferenceLabels } from 'infra/const';
 
-function mapStateToProps({ preferences, search }) {
-  return { preferences, search };
+function mapStateToProps({ preferences, search, compareBreed }) {
+  return { preferences, search, compareBreed };
 }
 
 function buildSlider(preferences, id) {
@@ -117,8 +117,8 @@ class Preferences extends React.Component {
   }
 
   submit = () => {
-    const { history, preferences, search } = this.props;
-    requestMoreBreeds(search, preferences, true);
+    const { history, preferences, search, compareBreed } = this.props;
+    requestMoreBreeds(search, preferences, compareBreed, true);
     history.push('/breeds');
   }
 

@@ -7,13 +7,17 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
 import FontIcon from 'material-ui/FontIcon';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
-import { updatePreference, changeCheckPreferences, changeSearch } from 'infra/GlobalActions';
+import { updatePreference, changeCheckPreferences, changeSearch, changeCompareBreed } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
 import Preferences from 'components/Preferences';
+import { breeds } from 'infra/const';
+import { formatText } from 'infra/utils';
 
-function mapStateToProps({ checkPreferences, preferences, search }) {
-  return { checkPreferences, preferences, search };
+function mapStateToProps({ checkPreferences, preferences, search, compareBreed }) {
+  return { checkPreferences, preferences, search, compareBreed };
 }
 
 const iconStyles = {
@@ -27,9 +31,9 @@ const iconStyles = {
 class Home extends React.Component {
 
   submitNoPrefs = () => {
-    const { history, preferences, search } = this.props;
+    const { history, preferences, search, compareBreed } = this.props;
     changeCheckPreferences(false);
-    requestMoreBreeds(search, preferences, false);
+    requestMoreBreeds(search, preferences, compareBreed, false);
     history.push('/breeds');
   }
 
@@ -58,6 +62,7 @@ class Home extends React.Component {
   }
 
   render() {
+    const { search, compareBreed } = this.props;
     return (
       <Container fluid>
         <Row style={{marginBottom: '75vh'}}>
@@ -65,7 +70,7 @@ class Home extends React.Component {
             <div style={{textAlign: 'center', fontWeight: '200', fontFamily: 'roboto', color: 'black'}}>
               <h1 style={{backgroundColor: 'white', fontSize: '56px'}}>Who's A Good Dog?</h1>
               <TextField hintStyle={{width: '100%', color: 'black', textAlign: 'center'}} inputStyle={{color: 'black', marginTop: '-5px'}}
-                style={{width: '50%', fontSize: '20px', marginRight: '20px'}} value={this.props.search} hintText={"What kind of dog do you want?"} onChange={(e, v) => changeSearch(v)} />
+                style={{width: '50%', fontSize: '20px', marginRight: '20px'}} value={search} hintText={"What kind of dog do you want?"} onChange={(e, v) => changeSearch(v)} />
               <RaisedButton secondary={true} overlayStyle={{color: 'white'}}
                 onClick={this.submitNoPrefs}>Search</RaisedButton>
               <br />
@@ -77,7 +82,19 @@ class Home extends React.Component {
         </Row>
         <Row>
           <Col style={{backgroundColor: 'white'}} offset={{lg: 2}} lg={8} xs={12}>
-            <Preferences ref={(section) => { this.Preferences = section; }} />
+            <SelectField ref={(section) => { this.Preferences = section; }}
+                listStyle={{textAlign: 'center'}} menuStyle={{textAlign: 'center'}}
+                style={{textAlign: 'center'}} selectedMenuItemStyle={{textAlign: 'center'}}
+                style={{width: '100%'}} hintText="Breeds You Like" hintStyle={{width: '100%', color: 'black', textAlign: 'center'}} value={compareBreed}
+                onChange={(e, k, v) => changeCompareBreed(v)}>
+              <MenuItem value={null} primaryText="" />
+              {breeds.slice().sort().map(breed => <MenuItem key={`${breed}-select`} value={breed} primaryText={formatText(breed)} />)}
+            </SelectField>
+          </Col>
+        </Row>
+        <Row>
+          <Col style={{backgroundColor: 'white'}} offset={{lg: 2}} lg={8} xs={12}>
+            <Preferences />
           </Col>
         </Row>
       </Container>

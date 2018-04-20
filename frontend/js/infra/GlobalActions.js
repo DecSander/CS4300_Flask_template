@@ -79,3 +79,10 @@ export function changeSearch(search) {
     search
   });
 }
+
+export function changeCompareBreed(breed) {
+  return GlobalStore.dispatch({
+    type: 'CHANGE_COMPARE_BREED',
+    breed
+  });
+}
