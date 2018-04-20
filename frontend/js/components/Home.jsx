@@ -81,16 +81,16 @@ class Home extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col style={{backgroundColor: 'white'}} offset={{lg: 2}} lg={8} xs={12}>
+          <div style={{backgroundColor: 'white', marginLeft: 'auto', marginRight: 'auto'}}>
             <SelectField ref={(section) => { this.Preferences = section; }}
                 listStyle={{textAlign: 'center'}} menuStyle={{textAlign: 'center'}}
-                style={{textAlign: 'center'}} selectedMenuItemStyle={{textAlign: 'center'}}
-                style={{width: '100%'}} hintText="Breeds You Like" hintStyle={{width: '100%', color: 'black', textAlign: 'center'}} value={compareBreed}
+                selectedMenuItemStyle={{textAlign: 'center'}}
+                style={{width: 500}} hintText="Breeds You Like" hintStyle={{width: '100%', color: 'black', textAlign: 'center'}} value={compareBreed}
                 onChange={(e, k, v) => changeCompareBreed(v)}>
               <MenuItem value={null} primaryText="" />
               {breeds.slice().sort().map(breed => <MenuItem key={`${breed}-select`} value={breed} primaryText={formatText(breed)} />)}
             </SelectField>
-          </Col>
+          </div>
         </Row>
         <Row>
           <Col style={{backgroundColor: 'white'}} offset={{lg: 2}} lg={8} xs={12}>

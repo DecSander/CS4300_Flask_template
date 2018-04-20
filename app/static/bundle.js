@@ -707,8 +707,7 @@ var Home = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _React$createElement,
-          _this2 = this,
-          _React$createElement2;
+          _this2 = this;
 
       var _props = this.props,
           search = _props.search,
@@ -762,18 +761,19 @@ var Home = function (_React$Component) {
           _reactGridSystem.Row,
           null,
           _react2.default.createElement(
-            _reactGridSystem.Col,
-            { style: { backgroundColor: 'white' }, offset: { lg: 2 }, lg: 8, xs: 12 },
+            'div',
+            { style: { backgroundColor: 'white', marginLeft: 'auto', marginRight: 'auto' } },
             _react2.default.createElement(
               _SelectField2.default,
-              (_React$createElement2 = { ref: function ref(section) {
+              { ref: function ref(section) {
                   _this2.Preferences = section;
                 },
                 listStyle: { textAlign: 'center' }, menuStyle: { textAlign: 'center' },
-                style: { textAlign: 'center' }, selectedMenuItemStyle: { textAlign: 'center' }
-              }, _defineProperty(_React$createElement2, 'style', { width: '100%' }), _defineProperty(_React$createElement2, 'hintText', 'Breeds You Like'), _defineProperty(_React$createElement2, 'hintStyle', { width: '100%', color: 'black', textAlign: 'center' }), _defineProperty(_React$createElement2, 'value', compareBreed), _defineProperty(_React$createElement2, 'onChange', function onChange(e, k, v) {
-                return (0, _GlobalActions.changeCompareBreed)(v);
-              }), _React$createElement2),
+                selectedMenuItemStyle: { textAlign: 'center' },
+                style: { width: 500 }, hintText: 'Breeds You Like', hintStyle: { width: '100%', color: 'black', textAlign: 'center' }, value: compareBreed,
+                onChange: function onChange(e, k, v) {
+                  return (0, _GlobalActions.changeCompareBreed)(v);
+                } },
               _react2.default.createElement(_MenuItem2.default, { value: null, primaryText: '' }),
               _const.breeds.slice().sort().map(function (breed) {
                 return _react2.default.createElement(_MenuItem2.default, { key: breed + '-select', value: breed, primaryText: (0, _utils.formatText)(breed) });
