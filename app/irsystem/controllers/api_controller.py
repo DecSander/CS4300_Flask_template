@@ -83,7 +83,6 @@ def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=Non
         # Don't include dogs that are bad matches
         if require_min and \
           (dog_json['percent_match'] is None or dog_json['percent_match'] < MIN_PERCENT_MATCH):
-            print "dog_json['percent_match']", dog_json['percent_match']
             continue
 
         if structured_scores is not None:
@@ -130,8 +129,8 @@ def get_likes(uuid):
     else:
         user_data = {'exclude': [], 'liked': set(), 'disliked': set()}
 
-    print 'uuid', uuid
     return {"liked": get_json_from_dog_names(list(user_data['liked']), require_min=False)}
+
 
 def unlike_dog(uuid, dog_name):
     path = 'database/' + str(uuid) + ".pickle"
@@ -141,7 +140,7 @@ def unlike_dog(uuid, dog_name):
     user_data = pickle.load(open(path, 'r'))
     if dog_name not in user_data['liked']:
         raise ValueError("Error: Can't remove dog, unknown UUID")
-    
+
     user_data['liked'].remove(dog_name)
     user_data['disliked'].add(dog_name)
 
