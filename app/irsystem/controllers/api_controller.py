@@ -42,18 +42,15 @@ def get_n_random_dogs(n, exclude=frozenset()):
     return output
 
 
-def get_next_dog_names(uuid, preferences):
+def write_dog_names(uuid, dog_names):
     path = 'database/' + str(uuid) + ".pickle"
     if os.path.isfile(path):
         user_data = pickle.load(open(path, 'r'))
     else:
         user_data = {'exclude': [], 'liked': set(), 'disliked': set()}
 
-    next_dog_names = get_n_random_dogs(10, user_data['exclude'])
-
-    user_data['exclude'] += list(next_dog_names)
+    user_data['exclude'] += list(dog_names)
     pickle.dump(user_data, open(path, 'w'))
-    return next_dog_names
 
 
 def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=None):
@@ -187,8 +184,12 @@ def get_dogs(request_json):
     if structured_scores is None and normalized_search_scores is None:
         return 'Nothing supplied', 400
     elif structured_scores is None:  # search only
+        # Update user session information
+        write_dog_names(session['uuid'], search_dog_names[:10])
         return json.dumps({"dogs": get_json_from_dog_names(search_dog_names[:10], normalized_search_scores, None)})
     elif normalized_search_scores is None:  # preferences only
+        # Update user session information
+        write_dog_names(session['uuid'], search_dog_names[:10])
         return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names[:10], None, structured_scores)})
     else:  # both
         combined_scores = {}
@@ -196,6 +197,8 @@ def get_dogs(request_json):
             if dog in structured_scores:
                 combined_scores[dog] = (normalized_search_scores[dog] + structured_scores[dog]['score']) / 2
         combined_dog_names = sorted(combined_scores.keys(), key=lambda x: combined_scores[x], reverse=True)[:10]
+        # Update user session information
+        write_dog_names(session['uuid'], combined_dog_names)
         return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, normalized_search_scores, structured_scores)})
 
 
