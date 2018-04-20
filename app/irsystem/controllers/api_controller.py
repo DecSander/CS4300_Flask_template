@@ -133,6 +133,20 @@ def get_likes(uuid):
     print 'uuid', uuid
     return {"liked": get_json_from_dog_names(list(user_data['liked']), require_min=False)}
 
+def unlike_dog(uuid, dog_name):
+    path = 'database/' + str(uuid) + ".pickle"
+    if not os.path.isfile(path):
+        raise ValueError("Error: Can't remove dog, unknown UUID")
+
+    user_data = pickle.load(open(path, 'r'))
+    if dog_name not in user_data['liked']:
+        raise ValueError("Error: Can't remove dog, unknown UUID")
+    
+    user_data['liked'].remove(dog_name)
+    user_data['disliked'].add(dog_name)
+
+    pickle.dump(user_data, open(path, 'w'))
+
 
 @irsystem.before_request
 def make_session_permanent():
@@ -211,15 +225,16 @@ def get_dogs(request_json):
         write_dog_names(session['uuid'], combined_dog_names)
         return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, normalized_search_scores, structured_scores)})
 
-@irsystem.route('/liked_dog', methods=['POST'])
+
+@irsystem.route('/unlike', methods=['DELETE'])
 @validate_json(schemas.liked_dog)
-def liked_dog(request_json):
+def unlike_dog_route(request_json):
     if 'uuid' not in session:
         print "error, no uuid in cookie"
         return "error, no uuid in cookie", 400
 
     uuid = session['uuid']
-    updated_liked_data(uuid, request_json['dog_name'])
+    unlike_dog(uuid, request_json['dog_name'])
     return 'Success', 200
 
 
