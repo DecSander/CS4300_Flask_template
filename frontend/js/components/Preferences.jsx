@@ -143,7 +143,7 @@ class Preferences extends React.Component {
         <Accordion onChange={(i) => this.setState({open: i})}>
           {allPrefs.map((obj, i) => buildPrefs(obj.name, obj.props.map(p => buildRow(p, preferences)), open === i))}
         </Accordion>
-        <RaisedButton secondary={true} onClick={this.submit}>Submit</RaisedButton>
+        <RaisedButton overlayStyle={{color: 'white'}} secondary={true} onClick={this.submit}>Submit</RaisedButton>
       </div>
     );
   }

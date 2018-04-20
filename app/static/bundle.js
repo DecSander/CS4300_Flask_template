@@ -64,6 +64,12 @@ var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
 
 var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
+var _getMuiTheme = require('material-ui/styles/getMuiTheme');
+
+var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
+
+var _colors = require('material-ui/styles/colors');
+
 var _Body = require('components/Body');
 
 var _Body2 = _interopRequireDefault(_Body);
@@ -74,13 +80,20 @@ var _Header2 = _interopRequireDefault(_Header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var muiTheme = (0, _getMuiTheme2.default)({
+  palette: {
+    primary1Color: _colors.grey900,
+    accent1Color: _colors.green900
+  }
+});
+
 function App() {
   return _react2.default.createElement(
     'div',
     null,
     _react2.default.createElement(
       _MuiThemeProvider2.default,
-      null,
+      { muiTheme: muiTheme },
       _react2.default.createElement(
         'div',
         null,
@@ -91,7 +104,7 @@ function App() {
   );
 }
 
-},{"components/Body":3,"components/Header":6,"material-ui/styles/MuiThemeProvider":281,"react":405}],3:[function(require,module,exports){
+},{"components/Body":3,"components/Header":6,"material-ui/styles/MuiThemeProvider":281,"material-ui/styles/colors":284,"material-ui/styles/getMuiTheme":285,"react":405}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -324,6 +337,15 @@ var Breeds = function (_Component) {
 
       var cards = currentBreeds.map(_this.buildBreedCard);
       var loading = breedsLoading ? _this.buildLoading() : null;
+      var noMatches = currentBreeds.size === 0 && !breedsLoading ? _react2.default.createElement(
+        _reactGridSystem.Col,
+        { lg: 4, xs: 12, style: { textAlign: 'center', paddingTop: '40px' } },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'No Breeds Found \uD83D\uDE2B'
+        )
+      ) : null;
 
       return _react2.default.createElement(
         _reactGridSystem.Container,
@@ -357,6 +379,7 @@ var Breeds = function (_Component) {
               _this.buildDialog()
             )
           ),
+          noMatches,
           loading
         )
       );
@@ -523,7 +546,7 @@ function Header(_ref) {
         { style: { cursor: 'pointer' }, onClick: function onClick() {
             return history.push('/');
           } },
-        'Who\'s a good dog?'
+        'Who\'s A Good Dog?'
       ) },
     _react2.default.createElement(
       _Tabs.Tabs,
@@ -1180,7 +1203,7 @@ var Preferences = function (_React$Component) {
         ),
         _react2.default.createElement(
           _RaisedButton2.default,
-          { secondary: true, onClick: this.submit },
+          { overlayStyle: { color: 'white' }, secondary: true, onClick: this.submit },
           'Submit'
         )
       );

@@ -106,6 +106,9 @@ class Breeds extends Component {
 
     const cards = currentBreeds.map(this.buildBreedCard);
     const loading = breedsLoading ? this.buildLoading() : null;
+    const noMatches = currentBreeds.size === 0 && !breedsLoading ?
+      <Col lg={4} xs={12} style={{textAlign: 'center', paddingTop: '40px'}}><h1>No Breeds Found 😫</h1></Col>
+      : null;
 
     return (
       <Container fluid>
@@ -130,6 +133,7 @@ class Breeds extends Component {
               {this.buildDialog()}
             </Card>
           </Col>
+          {noMatches}
           {loading}
         </Row>
       </Container>
