@@ -6,6 +6,9 @@ import random
 import sys
 import json
 
+
+MIN_PERCENT_MATCH = 0.10
+
 # allow imports from root
 sys.path.insert(0, os.path.dirname(__file__) + "/../")
 
@@ -53,7 +56,7 @@ def write_dog_names(uuid, dog_names):
     pickle.dump(user_data, open(path, 'w'))
 
 
-def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=None):
+def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=None, require_min=True):
     dogs = []
     for dog in dog_names:
         dog_json = {"dog_name": dog, }
@@ -76,6 +79,12 @@ def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=Non
             dog_json['percent_match'] = search_scores[dog]
         else:
             dog_json['percent_match'] = None
+
+        # Don't include dogs that are bad matches
+        if require_min and \
+          (dog_json['percent_match'] is None or dog_json['percent_match'] < MIN_PERCENT_MATCH):
+            print "dog_json['percent_match']", dog_json['percent_match']
+            continue
 
         if structured_scores is not None:
             contrib_data = structured_scores[dog]["contributions"]
@@ -121,7 +130,8 @@ def get_likes(uuid):
     else:
         user_data = {'exclude': [], 'liked': set(), 'disliked': set()}
 
-    return {"liked": get_json_from_dog_names(list(user_data['liked']))}
+    print 'uuid', uuid
+    return {"liked": get_json_from_dog_names(list(user_data['liked']), require_min=False)}
 
 
 @irsystem.before_request
@@ -200,6 +210,17 @@ def get_dogs(request_json):
         # Update user session information
         write_dog_names(session['uuid'], combined_dog_names)
         return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, normalized_search_scores, structured_scores)})
+
+@irsystem.route('/liked_dog', methods=['POST'])
+@validate_json(schemas.liked_dog)
+def liked_dog(request_json):
+    if 'uuid' not in session:
+        print "error, no uuid in cookie"
+        return "error, no uuid in cookie", 400
+
+    uuid = session['uuid']
+    updated_liked_data(uuid, request_json['dog_name'])
+    return 'Success', 200
 
 
 @irsystem.route('/liked_dog', methods=['POST'])
