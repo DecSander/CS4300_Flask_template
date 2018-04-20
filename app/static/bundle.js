@@ -82,7 +82,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var muiTheme = (0, _getMuiTheme2.default)({
   palette: {
-    primary1Color: _colors.grey700,
+    primary1Color: _colors.grey600,
     accent1Color: _colors.orange600
   },
   appBar: {
