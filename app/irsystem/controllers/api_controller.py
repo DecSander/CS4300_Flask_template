@@ -212,7 +212,7 @@ def get_dogs(request_json):
         return json.dumps({"dogs": get_json_from_dog_names(search_dog_names[:10], normalized_search_scores, None)})
     elif normalized_search_scores is None:  # preferences only
         # Update user session information
-        write_dog_names(session['uuid'], search_dog_names[:10])
+        write_dog_names(session['uuid'], structured_dog_names[:10])
         return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names[:10], None, structured_scores)})
     else:  # both
         combined_scores = {}
