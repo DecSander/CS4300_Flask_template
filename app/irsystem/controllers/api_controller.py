@@ -179,8 +179,8 @@ def get_normalized_search_score(request_json):
 
 def get_similar_search_score(request_json):
     if 'similar' in request_json:
-        similar_scores = get_similar(request_json['similar'])
-        return similar_scores
+        similar_scores = get_similar(request_json['similar'].lower())
+        return dict(similar_scores)
     return None
 
 
