@@ -15,8 +15,8 @@ import { likeBreed, resetBreedList } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
 import { formatText } from 'infra/utils';
 
-function mapStateToProps({ search, currentBreeds, preferences, breedsLoading, checkPreferences, compareBreed }) {
-  return { search, currentBreeds, preferences, breedsLoading, checkPreferences, compareBreed };
+function mapStateToProps({ search, currentBreeds, preferences, breedsLoading, checkPreferences, compareBreed, page }) {
+  return { search, currentBreeds, preferences, breedsLoading, checkPreferences, compareBreed, page };
 }
 
 class Breeds extends Component {
@@ -102,7 +102,7 @@ class Breeds extends Component {
   }
 
   buildBreedCards = () => {
-    const { currentBreeds, preferences, breedsLoading, checkPreferences, search, compareBreed } = this.props;
+    const { page, currentBreeds, preferences, breedsLoading, checkPreferences, search, compareBreed } = this.props;
 
     const cards = currentBreeds.map(this.buildBreedCard);
     const loading = breedsLoading ? this.buildLoading() : null;
@@ -122,7 +122,7 @@ class Breeds extends Component {
                 buttonStyle={{height: '100%'}}
                 overlayStyle={{height: '100%'}}
                 fullWidth={true}
-                secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(search, preferences, compareBreed, checkPreferences)} />
+                secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(page, search, preferences, compareBreed, checkPreferences)} />
               <RaisedButton
                 labelStyle={{height: '100%', fontSize: '40px'}}
                 style={{height: '100%', marginTop: '20px'}}

@@ -1,13 +1,13 @@
 import { receiveBreeds, receivePreferenceValues, requestMoreBreedsStart,
          requestMoreBreedsFailed, requestLikedDogsStart, requestLikedDogsFailed,
-         receiveLikedDogs } from 'infra/GlobalActions';
+         receiveLikedDogs, increasePageNumber } from 'infra/GlobalActions';
 
-export function requestMoreBreeds(search, preferences, compareBreed, sendPrefs = true) {
+export function requestMoreBreeds(page, search, preferences, compareBreed, sendPrefs = true) {
   requestMoreBreedsStart();
   const prefsObj = sendPrefs ? { preferences: preferences.toJS() } : {};
   const searchObj = search === '' ? {} : { search };
   const compareObj = compareBreed === null ? {} : { similar: compareBreed };
-  const prefs = Object.assign({}, prefsObj, searchObj, compareObj);
+  const prefs = Object.assign({page_number: page}, prefsObj, searchObj, compareObj);
   fetch('/api/get_dogs', {
       body: JSON.stringify(prefs),
       cache: 'no-cache',
@@ -22,6 +22,7 @@ export function requestMoreBreeds(search, preferences, compareBreed, sendPrefs =
     .then(JSON.parse)
     .then(result => result.dogs)
     .then(receiveBreeds)
+    .then(increasePageNumber)
     .catch(v => {
       requestMoreBreedsFailed();
       console.log(v);
@@ -34,9 +35,7 @@ export function sendLike(breed) {
     cache: 'no-cache',
     method: 'POST',
     credentials: 'include',
-    headers: {
-      'content-type': 'application/json'
-    }
+    headers: { 'content-type': 'application/json' }
   });
 }
 
@@ -64,9 +63,7 @@ export function sendResetBreeds() {
     cache: 'no-cache',
     method: 'DELETE',
     credentials: 'include',
-    headers: {
-      'content-type': 'application/json'
-    }
+    headers: { 'content-type': 'application/json' }
   });
 }
 
@@ -76,8 +73,6 @@ export function sendRemoveMatch(breed) {
     cache: 'no-cache',
     method: 'DELETE',
     credentials: 'include',
-    headers: {
-      'content-type': 'application/json'
-    }
+    headers: { 'content-type': 'application/json' }
   });
 }

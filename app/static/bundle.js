@@ -221,9 +221,10 @@ function mapStateToProps(_ref) {
       preferences = _ref.preferences,
       breedsLoading = _ref.breedsLoading,
       checkPreferences = _ref.checkPreferences,
-      compareBreed = _ref.compareBreed;
+      compareBreed = _ref.compareBreed,
+      page = _ref.page;
 
-  return { search: search, currentBreeds: currentBreeds, preferences: preferences, breedsLoading: breedsLoading, checkPreferences: checkPreferences, compareBreed: compareBreed };
+  return { search: search, currentBreeds: currentBreeds, preferences: preferences, breedsLoading: breedsLoading, checkPreferences: checkPreferences, compareBreed: compareBreed, page: page };
 }
 
 var Breeds = function (_Component) {
@@ -333,6 +334,7 @@ var Breeds = function (_Component) {
       );
     }, _this.buildBreedCards = function () {
       var _this$props = _this.props,
+          page = _this$props.page,
           currentBreeds = _this$props.currentBreeds,
           preferences = _this$props.preferences,
           breedsLoading = _this$props.breedsLoading,
@@ -373,7 +375,7 @@ var Breeds = function (_Component) {
                 overlayStyle: { height: '100%' },
                 fullWidth: true,
                 secondary: true, label: 'Get More Breeds', onClick: function onClick() {
-                  return (0, _api.requestMoreBreeds)(search, preferences, compareBreed, checkPreferences);
+                  return (0, _api.requestMoreBreeds)(page, search, preferences, compareBreed, checkPreferences);
                 } }),
               _react2.default.createElement(_RaisedButton2.default, {
                 labelStyle: { height: '100%', fontSize: '40px' },
@@ -641,9 +643,10 @@ function mapStateToProps(_ref) {
   var checkPreferences = _ref.checkPreferences,
       preferences = _ref.preferences,
       search = _ref.search,
-      compareBreed = _ref.compareBreed;
+      compareBreed = _ref.compareBreed,
+      page = _ref.page;
 
-  return { checkPreferences: checkPreferences, preferences: preferences, search: search, compareBreed: compareBreed };
+  return { checkPreferences: checkPreferences, preferences: preferences, search: search, compareBreed: compareBreed, page: page };
 }
 
 var iconStyles = {
@@ -673,10 +676,11 @@ var Home = function (_React$Component) {
           history = _this$props.history,
           preferences = _this$props.preferences,
           search = _this$props.search,
-          compareBreed = _this$props.compareBreed;
+          compareBreed = _this$props.compareBreed,
+          page = _this$props.page;
 
       (0, _GlobalActions.changeCheckPreferences)(false);
-      (0, _api.requestMoreBreeds)(search, preferences, compareBreed, false);
+      (0, _api.requestMoreBreeds)(page, search, preferences, compareBreed, false);
       history.push('/breeds');
     }, _this.submitWithPrefs = function () {
       (0, _GlobalActions.changeCheckPreferences)(true);
@@ -1058,9 +1062,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function mapStateToProps(_ref) {
   var preferences = _ref.preferences,
       search = _ref.search,
-      compareBreed = _ref.compareBreed;
+      compareBreed = _ref.compareBreed,
+      page = _ref.page;
 
-  return { preferences: preferences, search: search, compareBreed: compareBreed };
+  return { preferences: preferences, search: search, compareBreed: compareBreed, page: page };
 }
 
 function buildSlider(preferences, id) {
@@ -1207,9 +1212,10 @@ var Preferences = function (_React$Component) {
           history = _this$props.history,
           preferences = _this$props.preferences,
           search = _this$props.search,
-          compareBreed = _this$props.compareBreed;
+          compareBreed = _this$props.compareBreed,
+          page = _this$props.page;
 
-      (0, _api.requestMoreBreeds)(search, preferences, compareBreed, true);
+      (0, _api.requestMoreBreeds)(page, search, preferences, compareBreed, true);
       history.push('/breeds');
     }, _this.keypress = function (e) {
       if (e.keyCode === 13) _this.submit();
@@ -1282,6 +1288,7 @@ exports.resetBreedList = resetBreedList;
 exports.removeMatch = removeMatch;
 exports.changeSearch = changeSearch;
 exports.changeCompareBreed = changeCompareBreed;
+exports.increasePageNumber = increasePageNumber;
 
 var _GlobalStore = require('infra/GlobalStore');
 
@@ -1375,6 +1382,12 @@ function changeCompareBreed(breed) {
   });
 }
 
+function increasePageNumber() {
+  return _GlobalStore2.default.dispatch({
+    type: 'INCREASE_PAGE_NUMBER'
+  });
+}
+
 },{"infra/GlobalStore":12}],11:[function(require,module,exports){
 'use strict';
 
@@ -1413,7 +1426,8 @@ var GlobalState = (0, _immutable.Record)({
   breedsLoading: false,
   likedLoading: false,
   checkPreferences: false,
-  compareBreed: null
+  compareBreed: null,
+  page: 0
 });
 
 function buildDog(breed) {
@@ -1469,7 +1483,10 @@ function globalReducer() {
       return state.set('likedLoading', false);
     case 'RESET_BREED_LIST':
       (0, _api.sendResetBreeds)();
-      return state.set('currentBreeds', (0, _immutable.List)());
+      return state.set('page', 0).set('currentBreeds', (0, _immutable.List)());
+
+    case 'INCREASE_PAGE_NUMBER':
+      return state.set('page', state.page + 1);
     default:
       return state;
   }
@@ -1506,14 +1523,15 @@ exports.sendRemoveMatch = sendRemoveMatch;
 
 var _GlobalActions = require('infra/GlobalActions');
 
-function requestMoreBreeds(search, preferences, compareBreed) {
-  var sendPrefs = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+function requestMoreBreeds(page, search, preferences, compareBreed) {
+  var sendPrefs = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true;
 
+  console.log(page);
   (0, _GlobalActions.requestMoreBreedsStart)();
   var prefsObj = sendPrefs ? { preferences: preferences.toJS() } : {};
   var searchObj = search === '' ? {} : { search: search };
   var compareObj = compareBreed === null ? {} : { similar: compareBreed };
-  var prefs = Object.assign({}, prefsObj, searchObj, compareObj);
+  var prefs = Object.assign({ page_number: page }, prefsObj, searchObj, compareObj);
   fetch('/api/get_dogs', {
     body: JSON.stringify(prefs),
     cache: 'no-cache',
@@ -1524,7 +1542,7 @@ function requestMoreBreeds(search, preferences, compareBreed) {
     if (response.ok) return response.text();else throw Error(response.statusText);
   }).then(JSON.parse).then(function (result) {
     return result.dogs;
-  }).then(_GlobalActions.receiveBreeds).catch(function (v) {
+  }).then(_GlobalActions.receiveBreeds).then(_GlobalActions.increasePageNumber).catch(function (v) {
     (0, _GlobalActions.requestMoreBreedsFailed)();
     console.log(v);
   });
@@ -1536,9 +1554,7 @@ function sendLike(breed) {
     cache: 'no-cache',
     method: 'POST',
     credentials: 'include',
-    headers: {
-      'content-type': 'application/json'
-    }
+    headers: { 'content-type': 'application/json' }
   });
 }
 
@@ -1562,9 +1578,7 @@ function sendResetBreeds() {
     cache: 'no-cache',
     method: 'DELETE',
     credentials: 'include',
-    headers: {
-      'content-type': 'application/json'
-    }
+    headers: { 'content-type': 'application/json' }
   });
 }
 
@@ -1574,9 +1588,7 @@ function sendRemoveMatch(breed) {
     cache: 'no-cache',
     method: 'DELETE',
     credentials: 'include',
-    headers: {
-      'content-type': 'application/json'
-    }
+    headers: { 'content-type': 'application/json' }
   });
 }
 

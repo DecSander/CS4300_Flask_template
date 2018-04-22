@@ -86,3 +86,9 @@ export function changeCompareBreed(breed) {
     breed
   });
 }
+
+export function increasePageNumber() {
+  return GlobalStore.dispatch({
+    type: 'INCREASE_PAGE_NUMBER'
+  });
+}

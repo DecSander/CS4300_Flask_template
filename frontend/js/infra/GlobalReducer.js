@@ -1,6 +1,5 @@
 import { Record, List } from 'immutable';
-import { requestMoreBreeds, sendLike, sendDislike, sendResetBreeds,
-         sendRemoveMatch } from 'infra/api';
+import { sendLike, sendResetBreeds, sendRemoveMatch } from 'infra/api';
 import { preferencesDefault } from 'infra/const';
 
 const Breed = Record({
@@ -27,7 +26,8 @@ const GlobalState = Record({
   breedsLoading: false,
   likedLoading: false,
   checkPreferences: false,
-  compareBreed: null
+  compareBreed: null,
+  page: 0
 });
 
 function buildDog(breed) {
@@ -95,7 +95,12 @@ export default function globalReducer(state = initialState, action) {
   case 'RESET_BREED_LIST':
     sendResetBreeds();
     return state
+      .set('page', 0)
       .set('currentBreeds', List());
+
+  case 'INCREASE_PAGE_NUMBER':
+    return state
+      .set('page', state.page + 1);
   default:
     return state;
   }
