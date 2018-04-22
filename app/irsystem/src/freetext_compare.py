@@ -17,10 +17,7 @@ base_pickles = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "
 # This is here in case all the weights are 0, we don't want to just fail
 WEIGHT_EPSILON = .00001
 
-
-# We want the user to see novel results when they hit this button, so don't weight the original
-# query too highly
-ALPHA = 0.5 
+ALPHA = 0.8
 BETA = 1 - ALPHA
 
 
@@ -37,32 +34,32 @@ dog_index = None
 
 def calc_norms():
     global idf, norms, inv_word_doc_matrix, dog_index
-    total_data = ""
     doggo_data = []
     inv_dog_index = {}
     dog_index = []
     i = 0
     for dog, info in FREETEXT_DATA.iteritems():
-        for website, tags in info['text'].iteritems():
-            text_data = ""
+        text_data = []
+        for website, tags in info.iteritems():
             if website in ["akc", "wagwalking"]:
                 for tag, text in tags.iteritems():
                     if isinstance(text, list):
                         for elem in text:
-                            text_data += elem + "\n"
+                            text_data.append(elem)
                     elif isinstance(text, unicode):
-                        text_data += text + "\n"
+                        text_data.append(text)
             else:
                 if tags is not None:
                     for text in tags:
                         if isinstance(text, unicode):
-                            text_data += text
+                            text_data.append(text)
         tokenizer = TreebankWordTokenizer()
-        text_tokens = tokenizer.tokenize(text_data.strip().replace('\n', ''))
+        text_tokens = []
+        for s in text_data:
+            text_tokens.extend(tokenizer.tokenize(s.strip().replace('\n', ' ')))
         doggo_data.append(text_tokens)
         dog_index.append(dog)
         inv_dog_index[dog] = i
-        total_data += text_data
         i += 1
 
     inv_word_doc_matrix = {}
@@ -120,8 +117,8 @@ def calc_query_vector(query):
     return query_vector
 
 def calc_dog_vectors(dogs):
-    dog_vectors = {dog:collections.Counter() for d in dogs}
-    for word, scores in inv_word_doc_matrix:
+    dog_vectors = {dog:collections.Counter() for dog in dogs}
+    for word, scores in inv_word_doc_matrix.items():
         for dog_in, tf in scores:
             dog = dog_index[dog_in]
             if dog in dog_vectors:
@@ -134,11 +131,11 @@ def rocchio(original_query, liked_dogs):
     query_vector = calc_query_vector(original_query)
 
     new_vector = {}
-    all_words = [w for w in l for l in [query_vector.keys()] + [x.keys() for x in dog_vectors]]
+    all_words = [w for l in [query_vector.keys()] + [x.keys() for x in dog_vectors.values()] for w in l]
     for word in all_words:
-        relevant_score = BETA * (sum(d[word] for d in dog_vectors) / float(len(dog_vectors)))
+        relevant_score = BETA * (sum(d[word] for d in dog_vectors.values()) / float(len(dog_vectors)))
         original_score = ALPHA * query_vector[word]
-        new_vector[word] = relevant_score * original_score
+        new_vector[word] = relevant_score + original_score
 
     return new_vector
 
@@ -169,8 +166,11 @@ def freetext_score(query):
 
 
 def get_more_matches(original_query, liked_dogs):
+    print "RUnning Rocchio", liked_dogs
     new_query_vector = rocchio(original_query, liked_dogs)
     return score_vector(new_query_vector)
 
 if __name__ == "__main__":
-    print freetext_score("friendly")
+    print get_more_matches("Small cute fluffy", ["mastiff"])["mastiff"]
+    print "\n"
+    print freetext_score("Small cute fluffy")["mastiff"]

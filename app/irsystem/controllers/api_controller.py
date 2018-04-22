@@ -18,7 +18,7 @@ from app.irsystem.models.helpers import validate_json
 from app.irsystem.models import schemas
 from app.irsystem.src.dog_compare import get_similar
 from app.irsystem.src.structured_compare import structured_score
-from app.irsystem.src.freetext_compare import freetext_score, WEIGHT_EPSILON
+from app.irsystem.src.freetext_compare import freetext_score, get_more_matches, WEIGHT_EPSILON
 from app.irsystem.data.doggo_data import STRUCTURED_DATA, FREETEXT_DATA, STRUCTURED_METADATA
 
 
@@ -168,16 +168,21 @@ def get_preferences_score(request_json):
         return structured_scores
     return None
 
+def normalize_search_scores(scores):
+    max_search_value = max(scores.values())
+    if max_search_value == WEIGHT_EPSILON:
+        normalized_search_scores = {k: 0 for k, v in scores.items()}
+    else:
+        normalized_search_scores = {k: v * 0.99 / float(max_search_value) for k, v in scores.items()}
+    return normalized_search_scores
 
-def get_normalized_search_score(request_json):
+def get_normalized_search_score(request_json, liked_dogs):
     if 'search' in request_json:
-        _search_scores = freetext_score(request_json['search'])
-        max_search_value = max(_search_scores.values())
-        if max_search_value == WEIGHT_EPSILON:
-            normalized_search_scores = {k: 0 for k, v in _search_scores.items()}
+        if liked_dogs:
+            search_scores = get_more_matches(request_json['search'], liked_dogs)
         else:
-            normalized_search_scores = {k: v * 0.99 / float(max_search_value) for k, v in _search_scores.items()}
-        return normalized_search_scores
+            search_scores = freetext_score(request_json['search'])
+        return normalize_search_scores(search_scores)
     return None
 
 
@@ -199,24 +204,22 @@ def merge_scores(scores):
     output.sort(key=lambda x: x[1], reverse=True)
     return output
 
-
-def filter_liked_dogs(uuid, dogs_scores):
+def get_liked_dogs(uuid):
     path = 'database/' + str(uuid) + ".pickle"
     if not os.path.isfile(path):
-        print path
-        return dogs_scores
+        return []
     user_data = pickle.load(open(path, 'r'))
+    return user_data['liked']
 
-    print 'liked', user_data['liked']
+
+def filter_liked_dogs(uuid, dogs_scores):
+    liked = get_liked_dogs(uuid)
+    if not liked:
+        return dogs_scores
     output = []
     for dog, score in dogs_scores:
-        if dog not in user_data['liked']:
+        if dog not in liked:
             output.append((dog, score))
-        else:
-            print "FOUND", dog
-    # output = [dogscore for dogscore in dogs_scores.oitem if dogscore[0] not in user_data['liked']]
-    # print dogs_scores
-    print output[0: 5]
 
     return output
 
@@ -227,9 +230,12 @@ def get_dogs(request_json):
     if 'uuid' not in session:
         session['uuid'] = str(uuidmod.uuid1())
 
+    liked_dogs = get_liked_dogs(session['uuid'])
+
     structured_scores = get_preferences_score(request_json)
-    normalized_search_scores = get_normalized_search_score(request_json)
+    normalized_search_scores = get_normalized_search_score(request_json, liked_dogs)
     similar_search_scores = get_similar_search_score(request_json)
+
 
     dogs_scores_unfiltered = merge_scores([structured_scores, normalized_search_scores, similar_search_scores])
     dogs_scores = filter_liked_dogs(session['uuid'], dogs_scores_unfiltered)

@@ -37,6 +37,19 @@ get_dogs = {
     "required": []
 }
 
+matches = {
+    "type": "object",
+    "properties": {
+        "original_query" : {
+            "type": "string"
+        },
+        "matches": {
+            "type": "array"
+        }
+    },
+    "required": ["original_query", "matches"]
+}
+
 liked_dog = {
     "type": "object",
     "properties": {
