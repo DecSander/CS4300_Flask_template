@@ -8,6 +8,7 @@ import json
 
 
 MIN_PERCENT_MATCH = 0.10
+DOGS_PER_PAGE = 10 
 
 # allow imports from root
 sys.path.insert(0, os.path.dirname(__file__) + "/../")
@@ -204,22 +205,28 @@ def get_dogs(request_json):
     if structured_scores is not None:
         structured_dog_names = sorted(structured_scores.keys(), key=lambda x: structured_scores[x]["score"], reverse=True)
 
+    if 'page_number' in request_json:
+        start_index = (request_json['page_number'] - 1) * DOGS_PER_PAGE
+    else:
+        start_index = 0
+    end_index = start_index + DOGS_PER_PAGE
+
     if structured_scores is None and normalized_search_scores is None:
         return 'Nothing supplied', 400
     elif structured_scores is None:  # search only
         # Update user session information
-        write_dog_names(session['uuid'], search_dog_names[:10])
-        return json.dumps({"dogs": get_json_from_dog_names(search_dog_names[:10], normalized_search_scores, None)})
+        write_dog_names(session['uuid'], search_dog_names[start_index: end_index])
+        return json.dumps({"dogs": get_json_from_dog_names(search_dog_names[start_index: end_index], normalized_search_scores, None)})
     elif normalized_search_scores is None:  # preferences only
         # Update user session information
-        write_dog_names(session['uuid'], structured_dog_names[:10])
-        return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names[:10], None, structured_scores)})
+        write_dog_names(session['uuid'], structured_dog_names[start_index: end_index])
+        return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names[start_index: end_index], None, structured_scores)})
     else:  # both
         combined_scores = {}
         for dog in structured_dog_names:
             if dog in structured_scores:
                 combined_scores[dog] = (normalized_search_scores[dog] + structured_scores[dog]['score']) / 2
-        combined_dog_names = sorted(combined_scores.keys(), key=lambda x: combined_scores[x], reverse=True)[:10]
+        combined_dog_names = sorted(combined_scores.keys(), key=lambda x: combined_scores[x], reverse=True)[start_index: end_index]
         # Update user session information
         write_dog_names(session['uuid'], combined_dog_names)
         return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, normalized_search_scores, structured_scores)})
