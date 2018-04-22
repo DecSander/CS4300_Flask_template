@@ -103,6 +103,7 @@ export default function globalReducer(state = initialState, action) {
       .set('page', state.page + 1);
   case 'RESET_PAGE_NUMBER':
     return state
+      .set('currentBreeds', List())
       .set('page', 1);
   default:
     return state;

@@ -1497,7 +1497,7 @@ function globalReducer() {
     case 'INCREASE_PAGE_NUMBER':
       return state.set('page', state.page + 1);
     case 'RESET_PAGE_NUMBER':
-      return state.set('page', 1);
+      return state.set('currentBreeds', (0, _immutable.List)()).set('page', 1);
     default:
       return state;
   }
