@@ -1,6 +1,6 @@
 import pickle
 from flask import session
-import uuid
+import uuid as uuidmod
 import os
 import random
 import sys
@@ -30,14 +30,17 @@ def get_structured_scores(preferences):
     return structured_score(preferences)
 
 
-def write_dog_names(uuid, dog_names):
+def write_current_search_names(uuid, dog_names, is_new_search):
     path = 'database/' + str(uuid) + ".pickle"
     if os.path.isfile(path):
         user_data = pickle.load(open(path, 'r'))
     else:
         user_data = {'exclude': [], 'liked': set(), 'disliked': set()}
 
-    user_data['exclude'] += list(dog_names)
+    if is_new_search:
+        user_data['exclude'] = list(dog_names)
+    else:
+        user_data['exclude'] += list(dog_names)
     pickle.dump(user_data, open(path, 'w'))
 
 
@@ -107,7 +110,8 @@ def get_likes(uuid):
     else:
         user_data = {'exclude': [], 'liked': set(), 'disliked': set()}
 
-    return {"liked": get_json_from_dog_names(list(user_data['liked']), require_min=False)}
+    dogs_scores = ((dog, 0) for dog in user_data['liked'])
+    return {"liked": get_json_from_dog_names(dogs_scores, require_min=False)}
 
 
 def unlike_dog(uuid, dog_name):
@@ -196,17 +200,40 @@ def merge_scores(scores):
     return output
 
 
+def filter_liked_dogs(uuid, dogs_scores):
+    path = 'database/' + str(uuid) + ".pickle"
+    if not os.path.isfile(path):
+        print path
+        return dogs_scores
+    user_data = pickle.load(open(path, 'r'))
+
+    print 'liked', user_data['liked']
+    output = []
+    for dog, score in dogs_scores:
+        if dog not in user_data['liked']:
+            output.append((dog, score))
+        else:
+            print "FOUND", dog
+    # output = [dogscore for dogscore in dogs_scores.oitem if dogscore[0] not in user_data['liked']]
+    # print dogs_scores
+    print output[0: 5]
+
+    return output
+
+
 @irsystem.route('/get_dogs', methods=['POST'])
 @validate_json(schemas.get_dogs)
 def get_dogs(request_json):
     if 'uuid' not in session:
-        session['uuid'] = str(uuid.uuid1())
+        session['uuid'] = str(uuidmod.uuid1())
 
     structured_scores = get_preferences_score(request_json)
     normalized_search_scores = get_normalized_search_score(request_json)
     similar_search_scores = get_similar_search_score(request_json)
 
-    dogs_scores = merge_scores([structured_scores, normalized_search_scores, similar_search_scores])
+    dogs_scores_unfiltered = merge_scores([structured_scores, normalized_search_scores, similar_search_scores])
+    dogs_scores = filter_liked_dogs(session['uuid'], dogs_scores_unfiltered)
+
     dog_names = [dog_score[0] for dog_score in dogs_scores]
 
     if 'page_number' in request_json:
@@ -215,7 +242,8 @@ def get_dogs(request_json):
         start_index = 0
     end_index = start_index + DOGS_PER_PAGE
 
-    write_dog_names(session['uuid'], dog_names[start_index: end_index])
+    write_current_search_names(session['uuid'], dog_names[start_index: end_index], start_index is 0)
+    print 'again', dogs_scores[start_index: end_index]
     return json.dumps({"dogs": get_json_from_dog_names(dogs_scores[start_index: end_index], structured_scores)})
 
 
