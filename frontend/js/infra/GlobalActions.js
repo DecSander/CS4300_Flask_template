@@ -92,3 +92,9 @@ export function increasePageNumber() {
     type: 'INCREASE_PAGE_NUMBER'
   });
 }
+
+export function resetPageNumber() {
+  return GlobalStore.dispatch({
+    type: 'RESET_PAGE_NUMBER'
+  });
+}

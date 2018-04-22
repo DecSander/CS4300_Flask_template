@@ -679,11 +679,13 @@ var Home = function (_React$Component) {
           compareBreed = _this$props.compareBreed,
           page = _this$props.page;
 
+      (0, _GlobalActions.resetPageNumber)();
       (0, _GlobalActions.changeCheckPreferences)(false);
-      (0, _api.requestMoreBreeds)(page, search, preferences, compareBreed, false);
+      (0, _api.requestMoreBreeds)(1, search, preferences, compareBreed, false);
       history.push('/breeds');
     }, _this.submitWithPrefs = function () {
       (0, _GlobalActions.changeCheckPreferences)(true);
+      (0, _GlobalActions.resetPageNumber)();
       (0, _reactScrollToComponent2.default)(_this.Preferences, { offset: 0, align: 'top', duration: 400 });
     }, _this.keypress = function (e) {
       if (e.keyCode === 13) _this.submitNoPrefs();
@@ -1289,6 +1291,7 @@ exports.removeMatch = removeMatch;
 exports.changeSearch = changeSearch;
 exports.changeCompareBreed = changeCompareBreed;
 exports.increasePageNumber = increasePageNumber;
+exports.resetPageNumber = resetPageNumber;
 
 var _GlobalStore = require('infra/GlobalStore');
 
@@ -1388,6 +1391,12 @@ function increasePageNumber() {
   });
 }
 
+function resetPageNumber() {
+  return _GlobalStore2.default.dispatch({
+    type: 'RESET_PAGE_NUMBER'
+  });
+}
+
 },{"infra/GlobalStore":12}],11:[function(require,module,exports){
 'use strict';
 
@@ -1427,7 +1436,7 @@ var GlobalState = (0, _immutable.Record)({
   likedLoading: false,
   checkPreferences: false,
   compareBreed: null,
-  page: 0
+  page: 1
 });
 
 function buildDog(breed) {
@@ -1471,7 +1480,7 @@ function globalReducer() {
     case 'REQUEST_BREEDS_START':
       return state.set('breedsLoading', true);
     case 'RECEIVE_BREEDS':
-      return state.set('breedsLoading', false).set('currentBreeds', (0, _immutable.List)(action.breeds).map(buildDog));
+      return state.set('breedsLoading', false).set('currentBreeds', state.currentBreeds.concat((0, _immutable.List)(action.breeds).map(buildDog)));
     case 'REQUEST_BREEDS_FAILED':
       return state.set('breedsLoading', false);
 
@@ -1487,6 +1496,8 @@ function globalReducer() {
 
     case 'INCREASE_PAGE_NUMBER':
       return state.set('page', state.page + 1);
+    case 'RESET_PAGE_NUMBER':
+      return state.set('page', 1);
     default:
       return state;
   }
@@ -1526,7 +1537,6 @@ var _GlobalActions = require('infra/GlobalActions');
 function requestMoreBreeds(page, search, preferences, compareBreed) {
   var sendPrefs = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true;
 
-  console.log(page);
   (0, _GlobalActions.requestMoreBreedsStart)();
   var prefsObj = sendPrefs ? { preferences: preferences.toJS() } : {};
   var searchObj = search === '' ? {} : { search: search };

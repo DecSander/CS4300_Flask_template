@@ -27,7 +27,7 @@ const GlobalState = Record({
   likedLoading: false,
   checkPreferences: false,
   compareBreed: null,
-  page: 0
+  page: 1
 });
 
 function buildDog(breed) {
@@ -77,7 +77,7 @@ export default function globalReducer(state = initialState, action) {
   case 'RECEIVE_BREEDS':
     return state
       .set('breedsLoading', false)
-      .set('currentBreeds', List(action.breeds).map(buildDog));
+      .set('currentBreeds', state.currentBreeds.concat(List(action.breeds).map(buildDog)));
   case 'REQUEST_BREEDS_FAILED':
     return state
       .set('breedsLoading', false);
@@ -101,6 +101,9 @@ export default function globalReducer(state = initialState, action) {
   case 'INCREASE_PAGE_NUMBER':
     return state
       .set('page', state.page + 1);
+  case 'RESET_PAGE_NUMBER':
+    return state
+      .set('page', 1);
   default:
     return state;
   }
