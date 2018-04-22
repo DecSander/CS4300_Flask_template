@@ -16,8 +16,8 @@ import Preferences from 'components/Preferences';
 import { breeds } from 'infra/const';
 import { formatText } from 'infra/utils';
 
-function mapStateToProps({ checkPreferences, preferences, search, compareBreed }) {
-  return { checkPreferences, preferences, search, compareBreed };
+function mapStateToProps({ checkPreferences, preferences, search, compareBreed, page }) {
+  return { checkPreferences, preferences, search, compareBreed, page };
 }
 
 const iconStyles = {
@@ -31,9 +31,9 @@ const iconStyles = {
 class Home extends React.Component {
 
   submitNoPrefs = () => {
-    const { history, preferences, search, compareBreed } = this.props;
+    const { history, preferences, search, compareBreed, page } = this.props;
     changeCheckPreferences(false);
-    requestMoreBreeds(search, preferences, compareBreed, false);
+    requestMoreBreeds(page, search, preferences, compareBreed, false);
     history.push('/breeds');
   }
 
