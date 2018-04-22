@@ -1,62 +1,108 @@
 from __future__ import division
 import json
-import os
+import os, sys
+import string
+import unicodedata
+from copy import deepcopy
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__) + "../../.."))
 
-DATA_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "final_dataset.json")
+import freetext_compare as fc
 
-base_pickles = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data")
+from app.irsystem.data.doggo_data import STRUCTURED_DATA 
+from app.irsystem.data.doggo_data import FREETEXT_DATA 
 
 DELTA = 0.0001
 
+structured = deepcopy(STRUCTURED_DATA)
+free = deepcopy(FREETEXT_DATA)
 
-def compare_dogs(dog1, dog2):
-    with open(DATA_FILE, 'r') as f:
-        data = json.load(f)
-        if dog1 not in data or dog2 not in data:
-            return 0
-        dog1_data = data[dog1]
-        dog2_data = data[dog2] 
-        compare_structured = {}
+def get_similar(dog1):
+    dogs = {} 
+    out = []
+    
+    for dog, info in structured.iteritems():
+        if dog != dog1:
+            dogs[dog] = compare_dog_score(dog,dog1)
 
-        #converted scaled fields to integers
-        dog1_data['structured']['grooming_freq_score'] = grooming_freq_text_to_int(dog1_data['structured']['grooming_freq_text'])
-        dog2_data['structured']['grooming_freq_score'] = grooming_freq_text_to_int(dog2_data['structured']['grooming_freq_text'])
+    for key, score in sorted(dogs.items(), key=lambda (k,v): (v,k), reverse=True):
+        out.append((key, score)) 
 
-        dog1_data['structured']['activity_level_score'] = activity_level_to_int(dog1_data['structured']['activity_level'])
-        dog2_data['structured']['activity_level_score'] = activity_level_to_int(dog2_data['structured']['activity_level'])
-        
-        for name, val1 in dog1_data['structured'].iteritems():
-            val2 = dog2_data['structured'][name]
-            if val1 == None or val1 == "" or val2 == None or val2 == "":
-                continue            
-            if name == 'grooming_freq_text':
-                continue #calculate grooming_freq_score instead
-            if name == "activity_level":
-                continue #calculate activity_level_score instead
-            if isinstance(val1, int) or isinstance(val1, float):
-                if val1 == 0:
-                    val1 = DELTA
-                if val2 == 0:
-                    val2 = DELTA
-                compare_structured[name] = min(val1,val2) / max(val1,val2)
-            elif name == "group":
-                if val1 == val2:
-                    compare_structured[name] = 1
-                else:
-                    compare_structured[name] = 0
+    return out
+
+def compare_dogs_structured(dog1, dog2):
+    if dog1 not in structured or dog2 not in structured:
+        return 0
+    dog1_data = structured[dog1]
+    dog2_data = structured[dog2] 
+    compare_structured = {}
+
+    #converted scaled fields to integers
+    dog1_data['grooming_freq_score'] = grooming_freq_text_to_int(dog1_data['grooming_freq_text'])
+    dog2_data['grooming_freq_score'] = grooming_freq_text_to_int(dog2_data['grooming_freq_text'])
+
+    dog1_data['activity_level_score'] = activity_level_to_int(dog1_data['activity_level'])
+    dog2_data['activity_level_score'] = activity_level_to_int(dog2_data['activity_level'])
+    
+    for name, val1 in dog1_data.items():
+        val2 = dog2_data[name]
+        if val1 == None or val1 == "" or val2 == None or val2 == "":
+            continue            
+        if name == 'grooming_freq_text':
+            continue #calculate grooming_freq_score instead
+        if name == "activity_level":
+            continue #calculate activity_level_score instead
+        if isinstance(val1, int) or isinstance(val1, float):
+            if val1 == 0:
+                val1 = DELTA
+            if val2 == 0:
+                val2 = DELTA
+            compare_structured[name] = min(val1,val2) / max(val1,val2)
+        elif name == "group":
+            if val1 == val2:
+                compare_structured[name] = 1
+            else:
+                compare_structured[name] = 0
 
         count = 0
         data_sum = 0
-        for name, val in compare_structured.iteritems():
+        for name, val in compare_structured.items():
             count = count + 1
             data_sum = data_sum + val 
 
         compare_structured['final_score'] = data_sum / count
-        return compare_structured
+        
+    return compare_structured
+
+def compare_dogs_free(dog1, dog2):
+    dog1_data = free[dog1]
+    dog2_data = free[dog2]    
+
+    for website, tags in dog1_data.items():
+        text_data = ""
+        if website in ["akc", "wagwalking"]:
+            for tag, text in tags.iteritems():
+                if isinstance(text, list):
+                    for elem in text:
+                        text_data += elem + "\n"
+                elif isinstance(text, unicode):
+                    text_data += text + "\n"
+        else:
+            if tags is not None:
+                for text in tags:
+                    if isinstance(text, unicode):
+                        text_data+=text
+
+    text_data = text_data.strip().replace('\n', '') 
+    
+    text_data = "".join(i for i in text_data if ord(i)<128 and i not in set(string.punctuation))
+
+    text_data = unicodedata.normalize('NFKD', text_data).encode('ascii', 'ignore')
+    print(text_data)
+    print(fc.freetext_score(text_data))
 
 def compare_dog_score(dog1, dog2):
-    return compare_dogs(dog1, dog2)['final_score']
+    return compare_dogs_structured(dog1, dog2)['final_score']
              
 def grooming_freq_text_to_int(text):
     if text == "daily":
@@ -79,5 +125,9 @@ def activity_level_to_int(text):
         return None
 
 if __name__ == "__main__":
-    print(json.dumps(compare_dogs("miniature-pinscher","rottweiler"), indent=4))
-    print(compare_dog_score( "rottweiler", "miniature-pinscher"))
+    #print(fc.freetext_score("friendly"))
+    #compare_dogs_free("miniature-pinscher", "rottweiler")
+    #print(fc.freetext_score("beagledachs"))
+    #print(json.dumps(compare_dogs("miniature-pinscher","rottweiler"), indent=4))
+    #print(compare_dog_score( "rottweiler", "miniature-pinscher"))
+    print(get_similar("rottweiler")[0:10])
