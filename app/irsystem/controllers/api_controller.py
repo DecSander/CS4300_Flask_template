@@ -5,10 +5,10 @@ import os
 import random
 import sys
 import json
-
+from collections import defaultdict
 
 MIN_PERCENT_MATCH = 0.10
-DOGS_PER_PAGE = 10 
+DOGS_PER_PAGE = 10
 
 # allow imports from root
 sys.path.insert(0, os.path.dirname(__file__) + "/../")
@@ -16,34 +16,18 @@ sys.path.insert(0, os.path.dirname(__file__) + "/../")
 from app.irsystem import irsystem
 from app.irsystem.models.helpers import validate_json
 from app.irsystem.models import schemas
+from app.irsystem.src.dog_compare import get_similar
 from app.irsystem.src.structured_compare import structured_score
 from app.irsystem.src.freetext_compare import freetext_score, WEIGHT_EPSILON
 from app.irsystem.data.doggo_data import STRUCTURED_DATA, FREETEXT_DATA, STRUCTURED_METADATA
 
 
-
 STRUCTURED_FACTORS = ["activity_minutes", "shedding", "coat_length", "weight", "energy_level", "food_monthly_cost", "lifespan", "height", "popularity", "trainability", "temperament", "health", "grooming_frequency", "walk_miles"]
-
-breeds = ['rottweiler', 'labrador', 'wolfhound', 'cairn', 'samoyed', 'greyhound', 'vizsla', 'deerhound', 'akita', 'briard', 'hound', 'pinscher', 'bullterrier', 'malinois', 'setter', 'lhasa', 'collie', 'bluetick', 'saluki', 'groenendael', 'pyrenees', 'papillon', 'doberman', 'leonberg', 'poodle', 'whippet', 'basenji', 'beagle', 'kelpie', 'entlebucher', 'shihtz', 'pekinese', 'kuvasz', 'newfoundland', 'appenzeller', 'coonhound', 'keeshond', 'shiba', 'germanshepherd', 'weimaraner', 'pug', 'schipperke', 'pomeranian', 'mountain', 'bulldog', 'pointer', 'african', 'springer', 'spaniel', 'chihuahua', 'sheepdog', 'husky', 'maltese', 'clumber', 'eskimo', 'terrier', 'stbernard', 'retriever', 'schnauzer', 'pembroke', 'komondor', 'bouvier', 'dingo', 'mastiff', 'malamute', 'mexicanhairless', 'borzoi', 'elkhound', 'ridgeback', 'dhole', 'brabancon', 'boxer', 'dachshund', 'affenpinscher', 'otterhound', 'chow', 'redbone', 'corgi', 'dane', 'airedale']
-breedset = set(breeds)
 
 
 def get_structured_scores(preferences):
     preferences = {k: preferences[k] for k in STRUCTURED_FACTORS}
     return structured_score(preferences)
-
-
-def get_n_random_dogs(n, exclude=frozenset()):
-    output = []
-    exclude = set(exclude)
-    available = breedset - exclude
-    for i in range(0, 10):
-        if len(available) == 0:
-            return output
-        next_dog = random.sample(available, 1)[0]
-        available -= set([next_dog])
-        output.append(next_dog)
-    return output
 
 
 def write_dog_names(uuid, dog_names):
@@ -57,9 +41,14 @@ def write_dog_names(uuid, dog_names):
     pickle.dump(user_data, open(path, 'w'))
 
 
-def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=None, require_min=True):
+def get_json_from_dog_names(dogs_scores, structured_scores=None, require_min=True):
     dogs = []
-    for dog in dog_names:
+    for dog, score in dogs_scores:
+        # Don't include dogs that are bad matches
+        if require_min and score < MIN_PERCENT_MATCH:
+            print 'score', score
+            continue
+
         dog_json = {"dog_name": dog, }
         dog_images_path = 'app/static/img/scraped_images'
         dirs = os.listdir(dog_images_path)
@@ -72,19 +61,7 @@ def get_json_from_dog_names(dog_names, search_scores=None, structured_scores=Non
 
         dog_json["description"] = FREETEXT_DATA[dog]["akc"]["blurb"]
 
-        if structured_scores and search_scores:
-            dog_json['percent_match'] = (structured_scores[dog]['score'] + search_scores[dog]) / 2
-        elif structured_scores:
-            dog_json['percent_match'] = structured_scores[dog]['score']
-        elif search_scores:
-            dog_json['percent_match'] = search_scores[dog]
-        else:
-            dog_json['percent_match'] = None
-
-        # Don't include dogs that are bad matches
-        if require_min and \
-          (dog_json['percent_match'] is None or dog_json['percent_match'] < MIN_PERCENT_MATCH):
-            continue
+        dog_json['percent_match'] = score
 
         if structured_scores is not None:
             contrib_data = structured_scores[dog]["contributions"]
@@ -172,13 +149,7 @@ def reset_uuid():
     return 'Success'
 
 
-@irsystem.route('/get_dogs', methods=['POST'])
-@validate_json(schemas.get_dogs)
-def get_dogs(request_json):
-    if 'uuid' not in session:
-        session['uuid'] = str(uuid.uuid1())
-
-    structured_scores = None
+def get_preferences_score(request_json):
     if 'preferences' in request_json:
         preferences = request_json['preferences']
         reformatted_preferences = {}
@@ -190,8 +161,11 @@ def get_dogs(request_json):
                     reformatted_preferences[key] = preferences[key]
         preferences = reformatted_preferences
         structured_scores = get_structured_scores(preferences)
+        return structured_scores
+    return None
 
-    normalized_search_scores = None
+
+def get_normalized_search_score(request_json):
     if 'search' in request_json:
         _search_scores = freetext_score(request_json['search'])
         max_search_value = max(_search_scores.values())
@@ -199,11 +173,41 @@ def get_dogs(request_json):
             normalized_search_scores = {k: 0 for k, v in _search_scores.items()}
         else:
             normalized_search_scores = {k: v * 0.99 / float(max_search_value) for k, v in _search_scores.items()}
+        return normalized_search_scores
+    return None
 
-    if normalized_search_scores is not None:
-        search_dog_names = sorted(normalized_search_scores.keys(), key=lambda x: normalized_search_scores[x], reverse=True)
-    if structured_scores is not None:
-        structured_dog_names = sorted(structured_scores.keys(), key=lambda x: structured_scores[x]["score"], reverse=True)
+
+def get_similar_search_score(request_json):
+    if 'similar' in request_json:
+        similar_scores = get_similar(request_json['similar'])
+        return similar_scores
+    return None
+
+
+def merge_scores(scores):
+    scores = [score for score in scores if score is not None]
+    final_scores = defaultdict(int)
+    for score_type in scores:
+        for dog, score in score_type.items():
+            final_scores[dog] += score / float(len(scores))
+
+    output = final_scores.items()
+    output.sort(key=lambda x: x[1], reverse=True)
+    return output
+
+
+@irsystem.route('/get_dogs', methods=['POST'])
+@validate_json(schemas.get_dogs)
+def get_dogs(request_json):
+    if 'uuid' not in session:
+        session['uuid'] = str(uuid.uuid1())
+
+    structured_scores = get_preferences_score(request_json)
+    normalized_search_scores = get_normalized_search_score(request_json)
+    similar_search_scores = get_similar_search_score(request_json)
+
+    dogs_scores = merge_scores([structured_scores, normalized_search_scores, similar_search_scores])
+    dog_names = [dog_score[0] for dog_score in dogs_scores]
 
     if 'page_number' in request_json:
         start_index = (request_json['page_number'] - 1) * DOGS_PER_PAGE
@@ -211,25 +215,8 @@ def get_dogs(request_json):
         start_index = 0
     end_index = start_index + DOGS_PER_PAGE
 
-    if structured_scores is None and normalized_search_scores is None:
-        return 'Nothing supplied', 400
-    elif structured_scores is None:  # search only
-        # Update user session information
-        write_dog_names(session['uuid'], search_dog_names[start_index: end_index])
-        return json.dumps({"dogs": get_json_from_dog_names(search_dog_names[start_index: end_index], normalized_search_scores, None)})
-    elif normalized_search_scores is None:  # preferences only
-        # Update user session information
-        write_dog_names(session['uuid'], structured_dog_names[start_index: end_index])
-        return json.dumps({"dogs": get_json_from_dog_names(structured_dog_names[start_index: end_index], None, structured_scores)})
-    else:  # both
-        combined_scores = {}
-        for dog in structured_dog_names:
-            if dog in structured_scores:
-                combined_scores[dog] = (normalized_search_scores[dog] + structured_scores[dog]['score']) / 2
-        combined_dog_names = sorted(combined_scores.keys(), key=lambda x: combined_scores[x], reverse=True)[start_index: end_index]
-        # Update user session information
-        write_dog_names(session['uuid'], combined_dog_names)
-        return json.dumps({"dogs": get_json_from_dog_names(combined_dog_names, normalized_search_scores, structured_scores)})
+    write_dog_names(session['uuid'], dog_names[start_index: end_index])
+    return json.dumps({"dogs": get_json_from_dog_names(dogs_scores[start_index: end_index], structured_scores)})
 
 
 @irsystem.route('/unlike', methods=['DELETE'])
