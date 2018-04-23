@@ -3,6 +3,7 @@ import json
 import os, sys
 import string
 import unicodedata
+import time
 from copy import deepcopy
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__) + "../../.."))
@@ -21,7 +22,10 @@ def get_similar(dog1):
     dogs = {} 
     out = []
     
-    for dog, info in structured.iteritems():
+    count = 1
+    for dog, info in structured.items():
+        print(str(count) + "/" + str(len(structured.items())))
+        count = count + 1
         if dog != dog1:
             dogs[dog] = compare_dog_score(dog,dog1)
 
@@ -97,12 +101,22 @@ def compare_dogs_free(dog1, dog2):
     
     text_data = "".join(i for i in text_data if ord(i)<128 and i not in set(string.punctuation))
 
-    text_data = unicodedata.normalize('NFKD', text_data).encode('ascii', 'ignore')
-    print(text_data)
-    print(fc.freetext_score(text_data))
+    if isinstance(text_data, unicode):
+        text_data = unicodedata.normalize('NFKD', text_data).encode('ascii', 'ignore')
+    
+    free_compare = fc.freetext_score(text_data)
+
+    if dog2 in free_compare:
+        return free_compare[dog2]
+    else:
+        return 0
 
 def compare_dog_score(dog1, dog2):
-    return compare_dogs_structured(dog1, dog2)['final_score']
+    struct = compare_dogs_structured(dog1, dog2)['final_score']
+    free1 = compare_dogs_free(dog1, dog2)
+    free2 = compare_dogs_free(dog2, dog1)
+
+    return struct * .5 + free1 * .25 + free2 * .25
              
 def grooming_freq_text_to_int(text):
     if text == "daily":
@@ -125,9 +139,15 @@ def activity_level_to_int(text):
         return None
 
 if __name__ == "__main__":
-    #print(fc.freetext_score("friendly"))
-    #compare_dogs_free("miniature-pinscher", "rottweiler")
-    #print(fc.freetext_score("beagledachs"))
+    #try:
+    #    fc.load_values()
+    #except IOError:
+    #    fc.calc_norms()
+    #print(compare_dogs_free("miniature-pinscher", "rottweiler"))
+    #print(compare_dogs_free("rottweiler", "miniature-pinscher"))
     #print(json.dumps(compare_dogs("miniature-pinscher","rottweiler"), indent=4))
     #print(compare_dog_score( "rottweiler", "miniature-pinscher"))
-    print(get_similar("rottweiler")[0:10])
+    start = time.time()    
+    print(get_similar("rottweiler"))
+    end = time.time()
+    print end - start
