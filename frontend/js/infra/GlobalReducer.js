@@ -16,6 +16,11 @@ const Contribution = Record({
   value: 0
 });
 
+const SimilarDog = Record({
+  name: '',
+  img: ''
+});
+
 const Preferences = Record(preferencesDefault);
 
 const GlobalState = Record({
@@ -26,7 +31,11 @@ const GlobalState = Record({
   breedsLoading: false,
   likedLoading: false,
   checkPreferences: false,
-  page: 1
+  page: 1,
+  similarDogs: List(),
+  retrievingSimilarDogs: false,
+  failedRetrieveDogs: false,
+  retrievedBreed: null
 });
 
 function buildDog(breed) {
@@ -100,6 +109,20 @@ export default function globalReducer(state = initialState, action) {
     return state
       .set('currentBreeds', List())
       .set('page', 1);
+
+  case 'REQUEST_SIMILAR_DOGS_START':
+    return state
+      .set('retrievedBreed', action.name)
+      .set('retrievingSimilarDogs', true);
+  case 'REQUEST_SIMILAR_DOGS_FAILED':
+    return state
+      .set('failedRetrieveDogs', true)
+      .set('retrievingSimilarDogs', false);
+  case 'RECEIVE_SIMILAR_DOGS':
+    return state
+      .set('retrievingSimilarDogs', false)
+      .set('similarDogs', List(action.dogs.map(SimilarDog)));
+
   default:
     return state;
   }

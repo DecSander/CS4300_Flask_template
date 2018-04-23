@@ -84,7 +84,7 @@ class Home extends React.Component {
         </Row>
         <Row>
           <Col style={{backgroundColor: 'white'}} offset={{lg: 2}} lg={8} xs={12}>
-            <Preferences />
+            <Preferences ref={section => { this.Preferences = section; }} />
           </Col>
         </Row>
       </Container>

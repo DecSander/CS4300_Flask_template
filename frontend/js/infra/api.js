@@ -1,6 +1,7 @@
 import { receiveBreeds, receivePreferenceValues, requestMoreBreedsStart,
          requestMoreBreedsFailed, requestLikedDogsStart, requestLikedDogsFailed,
-         receiveLikedDogs, increasePageNumber } from 'infra/GlobalActions';
+         receiveLikedDogs, increasePageNumber, receiveSimilarDogs, requestSimilarDogsStart,
+         requestSimilarDogsFailed } from 'infra/GlobalActions';
 
 export function requestMoreBreeds(page, search, preferences, sendPrefs = true) {
   requestMoreBreedsStart();
@@ -74,4 +75,26 @@ export function sendRemoveMatch(breed) {
     credentials: 'include',
     headers: { 'content-type': 'application/json' }
   });
+}
+
+export function getSimilarDogs(dog_name) {
+  requestSimilarDogsStart(dog_name);
+  fetch('/api/dog_info', {
+      body: JSON.stringify({ dog: dog_name }),
+      cache: 'no-cache',
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'content-type': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) return response.text();
+      else throw Error(response.statusText)
+    })
+    .then(JSON.parse)
+    .then(dogs => dogs)
+    .then(receiveSimilarDogs)
+    .catch(v => {
+      requestSimilarDogsFailed();
+      console.log(v);
+    });
 }

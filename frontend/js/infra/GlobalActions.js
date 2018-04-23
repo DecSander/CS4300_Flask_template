@@ -91,3 +91,23 @@ export function resetPageNumber() {
     type: 'RESET_PAGE_NUMBER'
   });
 }
+
+export function requestSimilarDogsStart(name) {
+  return GlobalStore.dispatch({
+    type: 'REQUEST_SIMILAR_DOGS_START',
+    name
+  });
+}
+
+export function requestSimilarDogsFailed() {
+  return GlobalStore.dispatch({
+    type: 'REQUEST_SIMILAR_DOGS_FAILED'
+  });
+}
+
+export function receiveSimilarDogs(dogs) {
+  return GlobalStore.dispatch({
+    type: 'RECEIVE_SIMILAR_DOGS',
+    dogs
+  });
+}

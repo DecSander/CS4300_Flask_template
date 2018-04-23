@@ -8,15 +8,19 @@ import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import Dialog from 'material-ui/Dialog';
 import Badge from 'material-ui/Badge';
+import Chip from 'material-ui/Chip';
+import Avatar from 'material-ui/Avatar';
 import Carousel from 'nuka-carousel';
 
 import Contributions from 'components/Contributions';
 import { likeBreed, resetBreedList } from 'infra/GlobalActions';
-import { requestMoreBreeds } from 'infra/api';
+import { requestMoreBreeds, getSimilarDogs } from 'infra/api';
 import { formatText } from 'infra/utils';
 
-function mapStateToProps({ search, currentBreeds, preferences, breedsLoading, checkPreferences, page }) {
-  return { search, currentBreeds, preferences, breedsLoading, checkPreferences, page };
+function mapStateToProps({ search, currentBreeds, preferences, breedsLoading, checkPreferences,
+    retrievingSimilarDogs, page, similarDogs, failedRetrieveDogs, retrievedBreed }) {
+  return { search, currentBreeds, preferences, breedsLoading, checkPreferences,
+    retrievingSimilarDogs, page, similarDogs, failedRetrieveDogs, retrievedBreed };
 }
 
 class Breeds extends Component {
@@ -52,12 +56,29 @@ class Breeds extends Component {
     );
   }
 
+  buildSimilarDog = (dog) => {
+    return (
+      <Col lg={3}><Card>
+        <CardMedia style={{width: '100%', height: 100}}>
+          <img style={{width: '100%', height: 100}} src={dog.img} alt={dog.name} />
+        </CardMedia>
+      </Card>{dog.name}</Col>
+    );
+  }
+
   buildDialog = () => {
+    const { similarDogs, retrievingSimilarDogs, failedRetrieveDogs, retrievedBreed } = this.props;
     const { selectedBreed, modalOpen, selectedNumber } = this.state;
     const actions = [<FlatButton label="Save ❤️ " onClick={() => { likeBreed(selectedNumber); this.handleClose(); }} />];
     if (selectedBreed === null) {
       return null;
     } else {
+      if (!retrievingSimilarDogs && (selectedBreed !== retrievedBreed) && !failedRetrieveDogs) getSimilarDogs(selectedBreed.name);
+      const similarDogs2 = [{name: 'Dog1', img: '/static/img/corgi.jpg'}, {name: 'Dog2', img: '/static/img/husky.jpg'}]
+      const similarDogsComponent = retrievingSimilarDogs
+        ? <CircularProgress size={25} thickness={4} />
+        : <Row>{similarDogs2.slice(0, 4).map(this.buildSimilarDog)}</Row>;
+
       return (
         <Dialog style={{marginTop: '-200px'}} title={formatText(selectedBreed.name)}
             autoScrollBodyContent={true}
@@ -68,6 +89,9 @@ class Breeds extends Component {
           <br /><br /><br />
           {selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null}
           <Contributions values={selectedBreed.contributions} />
+          <br />
+          {similarDogs2.length > 0 ? 'Similar Dogs:' : null}
+          {similarDogsComponent}
         </Dialog>
       );
     }
