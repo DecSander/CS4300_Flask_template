@@ -80,13 +80,6 @@ export function changeSearch(search) {
   });
 }
 
-export function changeCompareBreed(breed) {
-  return GlobalStore.dispatch({
-    type: 'CHANGE_COMPARE_BREED',
-    breed
-  });
-}
-
 export function increasePageNumber() {
   return GlobalStore.dispatch({
     type: 'INCREASE_PAGE_NUMBER'
@@ -96,5 +89,25 @@ export function increasePageNumber() {
 export function resetPageNumber() {
   return GlobalStore.dispatch({
     type: 'RESET_PAGE_NUMBER'
+  });
+}
+
+export function requestSimilarDogsStart(name) {
+  return GlobalStore.dispatch({
+    type: 'REQUEST_SIMILAR_DOGS_START',
+    name
+  });
+}
+
+export function requestSimilarDogsFailed() {
+  return GlobalStore.dispatch({
+    type: 'REQUEST_SIMILAR_DOGS_FAILED'
+  });
+}
+
+export function receiveSimilarDogs(dogs) {
+  return GlobalStore.dispatch({
+    type: 'RECEIVE_SIMILAR_DOGS',
+    dogs
   });
 }

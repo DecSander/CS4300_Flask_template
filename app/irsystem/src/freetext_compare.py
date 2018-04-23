@@ -8,8 +8,10 @@ from nltk.tokenize import TreebankWordTokenizer
 import string
 import re
 import sys
-
+import operator
 sys.path.insert(0, os.path.join(os.path.dirname(__file__) + "../../.."))
+from structured_compare import structured_score
+
 
 from app.irsystem.data.doggo_data import FREETEXT_DATA
 
@@ -123,7 +125,9 @@ def calc_dog_vectors(dogs):
             dog = dog_index[dog_in]
             if dog in dog_vectors:
                 dog_vectors[dog][word] = tf * idf[word]
-
+    
+    sums = {d:float(sum(score for _,score in c.items())) for d, c in dog_vectors.items()}
+    dog_vectors = {d:collections.Counter({w:score/sums[d] for w, score in dog_vectors[d].items()}) for d in dog_vectors}
     return dog_vectors
 
 def rocchio(original_query, liked_dogs):
@@ -131,7 +135,7 @@ def rocchio(original_query, liked_dogs):
     query_vector = calc_query_vector(original_query)
 
     new_vector = {}
-    all_words = [w for l in [query_vector.keys()] + [x.keys() for x in dog_vectors.values()] for w in l]
+    all_words = set(w for l in [query_vector.keys()] + [x.keys() for x in dog_vectors.values()] for w in l)
     for word in all_words:
         relevant_score = BETA * (sum(d[word] for d in dog_vectors.values()) / float(len(dog_vectors)))
         original_score = ALPHA * query_vector[word]
@@ -162,8 +166,61 @@ def score_vector(query_vector):
 
 
 def freetext_score(query):
-    return score_vector(calc_query_vector(query))
+    structured_scores = structured_score(create_form_data(query))
+    free_text_scores =  score_vector(calc_query_vector(query))
+    final_scores = {}
+    free_weight = 0.6
+    for dog in structured_scores.keys():
+        final_scores[dog] = ((1-free_weight)*structured_scores[dog]["score"] + free_weight*free_text_scores[dog])/2
+    return final_scores
 
+def create_form_data(query):
+    large = ["big","large", "huge"]
+    small = ["small", "tiny", "little", "lapdog", "lap dog", "lap-dog"]
+    mid_sized = ["medium","medium sized", "medium-sized", "midsize", "mid-size", "mid-sized","midsized"]
+    chill = ["low energy", "low-energy", "chill", "lazy"]
+    preferences = {}
+
+    fields = ['activity_minutes','shedding','grooming_frequency','weight','temperament','food_monthly_cost','walk_miles','energy_level','trainability','lifespan','coat_length','popularity','health','height']
+    #big and small
+    for word in large:
+        if word in query:
+            preferences["weight"] = {"importance": 1, "value": 1}
+    for word in small:
+        if word in query:
+            preferences["weight"] = {"importance": 1, "value": 0}
+    for word in mid_sized:
+        if word in query:
+            preferences["weight"] = {"importance": 1, "value": 0.5}
+            
+    if "short" in query:
+        preferences["height"] = {"importance": 1, "value": 0}
+    if "tall" in query:
+        preferences["height"] = {"importance": 1, "value": 1}
+        
+    if "high-energy" in query or "high energy" in query:
+        preferences["energy_level"] = {"importance": 1, "value": 1}
+    for word in chill:
+        if word in query:
+            preferences["energy_level"] = {"importance": 1, "value": 0}
+            
+    if "low-maintenance" in query or "low maintenance" in query:
+        preferences["grooming_frequency"] = {"importance": 1, "value": 0}
+
+    if "calm" in query or "chill" in query:
+        preferences["temperament"] = {"importance": 1, "value": 0}
+        
+    if "excited" in query:
+        preferences["temperament"] = {"importance": 1, "value": 1}
+        
+    if "trainable" in query:
+        preferences["Train-ability"] = {"importance": 1, "value": 1}
+
+    for field in fields:
+        if field not in preferences:
+            preferences[field] = {"importance": 0, "value": 1}
+    return preferences
+    
 
 def get_more_matches(original_query, liked_dogs):
     new_query_vector = rocchio(original_query, liked_dogs)
@@ -172,4 +229,6 @@ def get_more_matches(original_query, liked_dogs):
 if __name__ == "__main__":
     print get_more_matches("Small cute fluffy", ["mastiff"])["mastiff"]
     print "\n"
-    print freetext_score("Small cute fluffy")["mastiff"]
+    scores = freetext_score("small")
+    sorted_scores = sorted(scores.items(), key=operator.itemgetter(1))
+    print(sorted_scores)
