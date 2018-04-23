@@ -8,6 +8,7 @@ from nltk.tokenize import TreebankWordTokenizer
 import string
 import re
 import sys
+import operator
 sys.path.insert(0, os.path.join(os.path.dirname(__file__) + "../../.."))
 from structured_compare import structured_score
 
@@ -169,6 +170,7 @@ def freetext_score(query):
     free_weight = 0.6
     for dog in structured_scores.keys():
         final_scores[dog] = ((1-free_weight)*structured_scores[dog]["score"] + free_weight*free_text_scores[dog])/2
+    return final_scores
 
 def create_form_data(query):
     large = ["big","large", "huge"]
@@ -179,18 +181,18 @@ def create_form_data(query):
 
     fields = ['activity_minutes','shedding','grooming_frequency','weight','temperament','food_monthly_cost','walk_miles','energy_level','trainability','lifespan','coat_length','popularity','health','height']
     #big and small
-    for word in big:
+    for word in large:
         if word in query:
             preferences["weight"] = {"importance": 1, "value": 1}
     for word in small:
         if word in query:
-            preferences["weight"] = {"importance": 1, "value": 1}
+            preferences["weight"] = {"importance": 1, "value": 0}
     for word in mid_sized:
         if word in query:
-            preferences["weight"] = {"importance": 1, "value": 1}
+            preferences["weight"] = {"importance": 1, "value": 0.5}
             
     if "short" in query:
-        preferences["height"] = {"importance": 1, "value": 1}
+        preferences["height"] = {"importance": 1, "value": 0}
     if "tall" in query:
         preferences["height"] = {"importance": 1, "value": 1}
         
@@ -214,7 +216,7 @@ def create_form_data(query):
 
     for field in fields:
         if field not in preferences:
-            preference[field] = {"importance": 0, "value": 1}
+            preferences[field] = {"importance": 0, "value": 1}
     return preferences
     
 
@@ -226,4 +228,6 @@ def get_more_matches(original_query, liked_dogs):
 if __name__ == "__main__":
     print get_more_matches("Small cute fluffy", ["mastiff"])["mastiff"]
     print "\n"
-    print freetext_score("big")["mastiff"]
+    scores = freetext_score("small")
+    sorted_scores = sorted(scores.items(), key=operator.itemgetter(1))
+    print(sorted_scores)
