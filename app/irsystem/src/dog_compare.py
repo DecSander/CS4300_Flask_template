@@ -24,7 +24,6 @@ def get_similar(dog1):
     
     count = 1
     for dog, info in structured.items():
-        print(str(count) + "/" + str(len(structured.items())))
         count = count + 1
         if dog != dog1:
             dogs[dog] = compare_dog_score(dog,dog1)
