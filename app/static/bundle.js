@@ -287,9 +287,13 @@ var Breeds = function (_Component) {
           _Card.Card,
           null,
           _react2.default.createElement(
-            _Card.CardMedia,
-            { style: { width: '100%', height: 100 } },
-            _react2.default.createElement('img', { style: { width: '100%', height: 100 }, src: dog.img, alt: dog.name })
+            'a',
+            { target: '_blank', href: 'https://www.google.com/search?q=' + (0, _utils.formatText)(dog.name) },
+            _react2.default.createElement(
+              _Card.CardMedia,
+              { style: { width: '100%', height: 100 } },
+              _react2.default.createElement('img', { style: { width: '100%', height: 100 }, src: dog.img, alt: dog.name })
+            )
           )
         ),
         dog.name
