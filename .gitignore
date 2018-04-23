@@ -11,3 +11,4 @@ database/*.pickle
 bundle.js.map
 link_cache.json
 words.txt
+#*#
