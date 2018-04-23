@@ -125,7 +125,9 @@ def calc_dog_vectors(dogs):
             dog = dog_index[dog_in]
             if dog in dog_vectors:
                 dog_vectors[dog][word] = tf * idf[word]
-
+    
+    sums = {d:float(sum(score for _,score in c.items())) for d, c in dog_vectors.items()}
+    dog_vectors = {d:collections.Counter({w:score/sums[d] for w, score in dog_vectors[d].items()}) for d in dog_vectors}
     return dog_vectors
 
 def rocchio(original_query, liked_dogs):
@@ -133,7 +135,7 @@ def rocchio(original_query, liked_dogs):
     query_vector = calc_query_vector(original_query)
 
     new_vector = {}
-    all_words = [w for l in [query_vector.keys()] + [x.keys() for x in dog_vectors.values()] for w in l]
+    all_words = set(w for l in [query_vector.keys()] + [x.keys() for x in dog_vectors.values()] for w in l)
     for word in all_words:
         relevant_score = BETA * (sum(d[word] for d in dog_vectors.values()) / float(len(dog_vectors)))
         original_score = ALPHA * query_vector[word]
@@ -221,7 +223,6 @@ def create_form_data(query):
     
 
 def get_more_matches(original_query, liked_dogs):
-    print "Running Rocchio", liked_dogs
     new_query_vector = rocchio(original_query, liked_dogs)
     return score_vector(new_query_vector)
 
