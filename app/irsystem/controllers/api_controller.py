@@ -49,7 +49,6 @@ def get_json_from_dog_names(dogs_scores, structured_scores=None, require_min=Tru
     for dog, score in dogs_scores:
         # Don't include dogs that are bad matches
         if require_min and score < MIN_PERCENT_MATCH:
-            print 'score', score
             continue
 
         dog_json = {"dog_name": dog, }
@@ -236,8 +235,8 @@ def get_dogs(request_json):
     normalized_search_scores = get_normalized_search_score(request_json, liked_dogs)
     similar_search_scores = get_similar_search_score(request_json)
 
-
-    dogs_scores_unfiltered = merge_scores([structured_scores, normalized_search_scores, similar_search_scores])
+    structured_num_score = {s:v["score"] for s, v in structured_scores.items()} if structured_scores is not None else None
+    dogs_scores_unfiltered = merge_scores([structured_num_score, normalized_search_scores, similar_search_scores])
     dogs_scores = filter_liked_dogs(session['uuid'], dogs_scores_unfiltered)
 
     dog_names = [dog_score[0] for dog_score in dogs_scores]
@@ -249,7 +248,6 @@ def get_dogs(request_json):
     end_index = start_index + DOGS_PER_PAGE
 
     write_current_search_names(session['uuid'], dog_names[start_index: end_index], start_index is 0)
-    print 'again', dogs_scores[start_index: end_index]
     return json.dumps({"dogs": get_json_from_dog_names(dogs_scores[start_index: end_index], structured_scores)})
 
 

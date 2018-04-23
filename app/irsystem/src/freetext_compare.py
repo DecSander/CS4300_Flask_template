@@ -110,7 +110,7 @@ def calc_query_vector(query):
     tokenizer = TreebankWordTokenizer()
     query = tokenizer.tokenize(q)
 
-    query_vector = collections.Counter(query)
+    query_vector = collections.Counter([w for w in query if w in idf])
     for w, c in query_vector.iteritems():
         query_vector[w] = c * idf[w]
 
@@ -166,7 +166,6 @@ def freetext_score(query):
 
 
 def get_more_matches(original_query, liked_dogs):
-    print "RUnning Rocchio", liked_dogs
     new_query_vector = rocchio(original_query, liked_dogs)
     return score_vector(new_query_vector)
 
