@@ -113,10 +113,11 @@ def compare_dogs_free(dog1, dog2):
 
 def compare_dog_score(dog1, dog2):
     struct = compare_dogs_structured(dog1, dog2)['final_score']
-    free1 = compare_dogs_free(dog1, dog2)
-    free2 = compare_dogs_free(dog2, dog1)
+    #free1 = compare_dogs_free(dog1, dog2)
+    #free2 = compare_dogs_free(dog2, dog1)
 
-    return struct * .5 + free1 * .25 + free2 * .25
+    #return struct * .5 + free1 * .25 + free2 * .25
+    return struct
              
 def grooming_freq_text_to_int(text):
     if text == "daily":
