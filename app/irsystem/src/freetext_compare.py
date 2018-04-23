@@ -8,9 +8,9 @@ from nltk.tokenize import TreebankWordTokenizer
 import string
 import re
 import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__) + "../../.."))
 from structured_compare import structured_score
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__) + "../../.."))
 
 from app.irsystem.data.doggo_data import FREETEXT_DATA
 
