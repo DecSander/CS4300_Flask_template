@@ -80,13 +80,6 @@ export function changeSearch(search) {
   });
 }
 
-export function changeCompareBreed(breed) {
-  return GlobalStore.dispatch({
-    type: 'CHANGE_COMPARE_BREED',
-    breed
-  });
-}
-
 export function increasePageNumber() {
   return GlobalStore.dispatch({
     type: 'INCREASE_PAGE_NUMBER'

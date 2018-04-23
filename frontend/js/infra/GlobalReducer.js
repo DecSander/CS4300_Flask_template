@@ -26,7 +26,6 @@ const GlobalState = Record({
   breedsLoading: false,
   likedLoading: false,
   checkPreferences: false,
-  compareBreed: null,
   page: 1
 });
 
@@ -66,10 +65,6 @@ export default function globalReducer(state = initialState, action) {
   case 'CHANGE_CHECK_PREFERENCES':
     return state
       .set('checkPreferences', action.selected);
-
-  case 'CHANGE_COMPARE_BREED':
-    return state
-      .set('compareBreed', action.breed);
 
   case 'REQUEST_BREEDS_START':
     return state

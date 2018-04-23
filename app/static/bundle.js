@@ -221,10 +221,9 @@ function mapStateToProps(_ref) {
       preferences = _ref.preferences,
       breedsLoading = _ref.breedsLoading,
       checkPreferences = _ref.checkPreferences,
-      compareBreed = _ref.compareBreed,
       page = _ref.page;
 
-  return { search: search, currentBreeds: currentBreeds, preferences: preferences, breedsLoading: breedsLoading, checkPreferences: checkPreferences, compareBreed: compareBreed, page: page };
+  return { search: search, currentBreeds: currentBreeds, preferences: preferences, breedsLoading: breedsLoading, checkPreferences: checkPreferences, page: page };
 }
 
 var Breeds = function (_Component) {
@@ -339,8 +338,7 @@ var Breeds = function (_Component) {
           preferences = _this$props.preferences,
           breedsLoading = _this$props.breedsLoading,
           checkPreferences = _this$props.checkPreferences,
-          search = _this$props.search,
-          compareBreed = _this$props.compareBreed;
+          search = _this$props.search;
 
 
       var cards = currentBreeds.map(_this.buildBreedCard);
@@ -375,7 +373,7 @@ var Breeds = function (_Component) {
                 overlayStyle: { height: '100%' },
                 fullWidth: true,
                 secondary: true, label: 'Get More Breeds', onClick: function onClick() {
-                  return (0, _api.requestMoreBreeds)(page, search, preferences, compareBreed, checkPreferences);
+                  return (0, _api.requestMoreBreeds)(page, search, preferences, checkPreferences);
                 } }),
               _react2.default.createElement(_RaisedButton2.default, {
                 labelStyle: { height: '100%', fontSize: '40px' },
@@ -643,10 +641,9 @@ function mapStateToProps(_ref) {
   var checkPreferences = _ref.checkPreferences,
       preferences = _ref.preferences,
       search = _ref.search,
-      compareBreed = _ref.compareBreed,
       page = _ref.page;
 
-  return { checkPreferences: checkPreferences, preferences: preferences, search: search, compareBreed: compareBreed, page: page };
+  return { checkPreferences: checkPreferences, preferences: preferences, search: search, page: page };
 }
 
 var iconStyles = {
@@ -676,12 +673,11 @@ var Home = function (_React$Component) {
           history = _this$props.history,
           preferences = _this$props.preferences,
           search = _this$props.search,
-          compareBreed = _this$props.compareBreed,
           page = _this$props.page;
 
       (0, _GlobalActions.resetPageNumber)();
       (0, _GlobalActions.changeCheckPreferences)(false);
-      (0, _api.requestMoreBreeds)(1, search, preferences, compareBreed, false);
+      (0, _api.requestMoreBreeds)(1, search, preferences, false);
       history.push('/breeds');
     }, _this.submitWithPrefs = function () {
       (0, _GlobalActions.changeCheckPreferences)(true);
@@ -712,12 +708,9 @@ var Home = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _React$createElement,
-          _this2 = this;
+      var _React$createElement;
 
-      var _props = this.props,
-          search = _props.search,
-          compareBreed = _props.compareBreed;
+      var search = this.props.search;
 
       return _react2.default.createElement(
         _reactGridSystem.Container,
@@ -760,30 +753,6 @@ var Home = function (_React$Component) {
                 ' ',
                 _react2.default.createElement(_FontIcon2.default, { style: iconStyles, className: 'fas fa-chevron-circle-down' })
               )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactGridSystem.Row,
-          null,
-          _react2.default.createElement(
-            'div',
-            { style: { backgroundColor: 'white', marginLeft: 'auto', marginRight: 'auto' } },
-            _react2.default.createElement(
-              _SelectField2.default,
-              { ref: function ref(section) {
-                  _this2.Preferences = section;
-                },
-                listStyle: { textAlign: 'center' }, menuStyle: { textAlign: 'center' },
-                selectedMenuItemStyle: { textAlign: 'center' },
-                style: { width: 500 }, hintText: 'Breeds You Like', hintStyle: { width: '100%', color: 'black', textAlign: 'center' }, value: compareBreed,
-                onChange: function onChange(e, k, v) {
-                  return (0, _GlobalActions.changeCompareBreed)(v);
-                } },
-              _react2.default.createElement(_MenuItem2.default, { value: null, primaryText: '' }),
-              _const.breeds.slice().sort().map(function (breed) {
-                return _react2.default.createElement(_MenuItem2.default, { key: breed + '-select', value: breed, primaryText: (0, _utils.formatText)(breed) });
-              })
             )
           )
         ),
@@ -1064,10 +1033,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function mapStateToProps(_ref) {
   var preferences = _ref.preferences,
       search = _ref.search,
-      compareBreed = _ref.compareBreed,
       page = _ref.page;
 
-  return { preferences: preferences, search: search, compareBreed: compareBreed, page: page };
+  return { preferences: preferences, search: search, page: page };
 }
 
 function buildSlider(preferences, id) {
@@ -1214,10 +1182,9 @@ var Preferences = function (_React$Component) {
           history = _this$props.history,
           preferences = _this$props.preferences,
           search = _this$props.search,
-          compareBreed = _this$props.compareBreed,
           page = _this$props.page;
 
-      (0, _api.requestMoreBreeds)(page, search, preferences, compareBreed, true);
+      (0, _api.requestMoreBreeds)(page, search, preferences, true);
       history.push('/breeds');
     }, _this.keypress = function (e) {
       if (e.keyCode === 13) _this.submit();
@@ -1289,7 +1256,6 @@ exports.changeCheckPreferences = changeCheckPreferences;
 exports.resetBreedList = resetBreedList;
 exports.removeMatch = removeMatch;
 exports.changeSearch = changeSearch;
-exports.changeCompareBreed = changeCompareBreed;
 exports.increasePageNumber = increasePageNumber;
 exports.resetPageNumber = resetPageNumber;
 
@@ -1378,13 +1344,6 @@ function changeSearch(search) {
   });
 }
 
-function changeCompareBreed(breed) {
-  return _GlobalStore2.default.dispatch({
-    type: 'CHANGE_COMPARE_BREED',
-    breed: breed
-  });
-}
-
 function increasePageNumber() {
   return _GlobalStore2.default.dispatch({
     type: 'INCREASE_PAGE_NUMBER'
@@ -1435,7 +1394,6 @@ var GlobalState = (0, _immutable.Record)({
   breedsLoading: false,
   likedLoading: false,
   checkPreferences: false,
-  compareBreed: null,
   page: 1
 });
 
@@ -1473,9 +1431,6 @@ function globalReducer() {
       return state.setIn(['preferences', action.field], action.value);
     case 'CHANGE_CHECK_PREFERENCES':
       return state.set('checkPreferences', action.selected);
-
-    case 'CHANGE_COMPARE_BREED':
-      return state.set('compareBreed', action.breed);
 
     case 'REQUEST_BREEDS_START':
       return state.set('breedsLoading', true);
@@ -1534,14 +1489,13 @@ exports.sendRemoveMatch = sendRemoveMatch;
 
 var _GlobalActions = require('infra/GlobalActions');
 
-function requestMoreBreeds(page, search, preferences, compareBreed) {
-  var sendPrefs = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true;
+function requestMoreBreeds(page, search, preferences) {
+  var sendPrefs = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
 
   (0, _GlobalActions.requestMoreBreedsStart)();
   var prefsObj = sendPrefs ? { preferences: preferences.toJS() } : {};
   var searchObj = search === '' ? {} : { search: search };
-  var compareObj = compareBreed === null ? {} : { similar: compareBreed };
-  var prefs = Object.assign({ page_number: page }, prefsObj, searchObj, compareObj);
+  var prefs = Object.assign({ page_number: page }, prefsObj, searchObj);
   fetch('/api/get_dogs', {
     body: JSON.stringify(prefs),
     cache: 'no-cache',

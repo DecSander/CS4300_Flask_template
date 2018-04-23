@@ -10,15 +10,14 @@ import FontIcon from 'material-ui/FontIcon';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-import { updatePreference, changeCheckPreferences, changeSearch,
-  changeCompareBreed, resetPageNumber } from 'infra/GlobalActions';
+import { updatePreference, changeCheckPreferences, changeSearch, resetPageNumber } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
 import Preferences from 'components/Preferences';
 import { breeds } from 'infra/const';
 import { formatText } from 'infra/utils';
 
-function mapStateToProps({ checkPreferences, preferences, search, compareBreed, page }) {
-  return { checkPreferences, preferences, search, compareBreed, page };
+function mapStateToProps({ checkPreferences, preferences, search, page }) {
+  return { checkPreferences, preferences, search, page };
 }
 
 const iconStyles = {
@@ -32,10 +31,10 @@ const iconStyles = {
 class Home extends React.Component {
 
   submitNoPrefs = () => {
-    const { history, preferences, search, compareBreed, page } = this.props;
+    const { history, preferences, search, page } = this.props;
     resetPageNumber();
     changeCheckPreferences(false);
-    requestMoreBreeds(1, search, preferences, compareBreed, false);
+    requestMoreBreeds(1, search, preferences, false);
     history.push('/breeds');
   }
 
@@ -65,7 +64,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const { search, compareBreed } = this.props;
+    const { search } = this.props;
     return (
       <Container fluid>
         <Row style={{marginBottom: '75vh'}}>
@@ -82,18 +81,6 @@ class Home extends React.Component {
                 style={{marginRight: '20px'}} onClick={this.submitWithPrefs}><span style={{fontSize: '24px'}}>More Preferences</span> <FontIcon style={iconStyles} className="fas fa-chevron-circle-down" /></RaisedButton>
             </div>
           </Col>
-        </Row>
-        <Row>
-          <div style={{backgroundColor: 'white', marginLeft: 'auto', marginRight: 'auto'}}>
-            <SelectField ref={(section) => { this.Preferences = section; }}
-                listStyle={{textAlign: 'center'}} menuStyle={{textAlign: 'center'}}
-                selectedMenuItemStyle={{textAlign: 'center'}}
-                style={{width: 500}} hintText="Breeds You Like" hintStyle={{width: '100%', color: 'black', textAlign: 'center'}} value={compareBreed}
-                onChange={(e, k, v) => changeCompareBreed(v)}>
-              <MenuItem value={null} primaryText="" />
-              {breeds.slice().sort().map(breed => <MenuItem key={`${breed}-select`} value={breed} primaryText={formatText(breed)} />)}
-            </SelectField>
-          </div>
         </Row>
         <Row>
           <Col style={{backgroundColor: 'white'}} offset={{lg: 2}} lg={8} xs={12}>

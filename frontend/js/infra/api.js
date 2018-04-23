@@ -2,12 +2,11 @@ import { receiveBreeds, receivePreferenceValues, requestMoreBreedsStart,
          requestMoreBreedsFailed, requestLikedDogsStart, requestLikedDogsFailed,
          receiveLikedDogs, increasePageNumber } from 'infra/GlobalActions';
 
-export function requestMoreBreeds(page, search, preferences, compareBreed, sendPrefs = true) {
+export function requestMoreBreeds(page, search, preferences, sendPrefs = true) {
   requestMoreBreedsStart();
   const prefsObj = sendPrefs ? { preferences: preferences.toJS() } : {};
   const searchObj = search === '' ? {} : { search };
-  const compareObj = compareBreed === null ? {} : { similar: compareBreed };
-  const prefs = Object.assign({page_number: page}, prefsObj, searchObj, compareObj);
+  const prefs = Object.assign({page_number: page}, prefsObj, searchObj);
   fetch('/api/get_dogs', {
       body: JSON.stringify(prefs),
       cache: 'no-cache',
