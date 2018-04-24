@@ -74,8 +74,7 @@ class Matches extends React.Component {
         : <Row>{similarDogs.slice(0, 4).map(this.buildSimilarDog)}</Row>;
 
       return (
-        <Dialog style={{marginTop: '-200px'}} title={formatText(selectedBreed.name)}
-            autoScrollBodyContent={true}
+        <Dialog title={formatText(selectedBreed.name)} autoScrollBodyContent={true}
             modal={false} open={modalOpen} onRequestClose={this.handleClose}>
           {this.buildSlideshow()}
           <br />
