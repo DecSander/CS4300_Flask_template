@@ -251,6 +251,14 @@ def get_dogs(request_json):
     return json.dumps({"dogs": get_json_from_dog_names(dogs_scores[start_index: end_index], structured_scores)})
 
 
+@irsystem.route('/get_similar', methods=['POST'])
+@validate_json(schemas.get_dogs)
+def get_similar_route(request_json):
+    similar_dogs = get_similar(request_json['similar'].lower())
+    output = {"dogs": get_json_from_dog_names(similar_dogs[0: 10])}
+    return json.dumps(output)
+
+
 @irsystem.route('/unlike', methods=['DELETE'])
 @validate_json(schemas.liked_dog)
 def unlike_dog_route(request_json):
