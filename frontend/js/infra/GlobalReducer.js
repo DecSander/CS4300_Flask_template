@@ -48,6 +48,10 @@ function buildDog(breed) {
   });
 }
 
+function buildSimilarDog(breed) {
+  return new SimilarDog({name: breed.dog_name, img: breed.images[0]});
+}
+
 const initialState = new GlobalState();
 
 export default function globalReducer(state = initialState, action) {
@@ -121,7 +125,7 @@ export default function globalReducer(state = initialState, action) {
   case 'RECEIVE_SIMILAR_DOGS':
     return state
       .set('retrievingSimilarDogs', false)
-      .set('similarDogs', List(action.dogs.map(SimilarDog)));
+      .set('similarDogs', List(action.dogs).map(buildSimilarDog));
 
   default:
     return state;

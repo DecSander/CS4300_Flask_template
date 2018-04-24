@@ -73,11 +73,11 @@ class Breeds extends Component {
     if (selectedBreed === null) {
       return null;
     } else {
-      if (!retrievingSimilarDogs && (selectedBreed !== retrievedBreed) && !failedRetrieveDogs) getSimilarDogs(selectedBreed.name);
-      const similarDogs2 = [{name: 'Dog1', img: '/static/img/corgi.jpg'}, {name: 'Dog2', img: '/static/img/husky.jpg'}]
+      console.log(retrievedBreed)
+      if (!retrievingSimilarDogs && (selectedBreed.name !== retrievedBreed) && !failedRetrieveDogs) getSimilarDogs(selectedBreed.name);
       const similarDogsComponent = retrievingSimilarDogs
         ? <CircularProgress size={25} thickness={4} />
-        : <Row>{similarDogs2.slice(0, 4).map(this.buildSimilarDog)}</Row>;
+        : <Row>{similarDogs.slice(0, 4).map(this.buildSimilarDog)}</Row>;
 
       return (
         <Dialog style={{marginTop: '-200px'}} title={formatText(selectedBreed.name)}
@@ -90,7 +90,7 @@ class Breeds extends Component {
           {selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null}
           <Contributions values={selectedBreed.contributions} />
           <br />
-          {similarDogs2.length > 0 ? 'Similar Dogs:' : null}
+          {similarDogs.size > 0 ? 'Similar Dogs:' : null}
           {similarDogsComponent}
         </Dialog>
       );

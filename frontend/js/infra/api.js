@@ -79,8 +79,8 @@ export function sendRemoveMatch(breed) {
 
 export function getSimilarDogs(dog_name) {
   requestSimilarDogsStart(dog_name);
-  fetch('/api/dog_info', {
-      body: JSON.stringify({ dog: dog_name }),
+  fetch('/api/get_similar', {
+      body: JSON.stringify({ similar: dog_name }),
       cache: 'no-cache',
       method: 'POST',
       credentials: 'include',
@@ -91,7 +91,7 @@ export function getSimilarDogs(dog_name) {
       else throw Error(response.statusText)
     })
     .then(JSON.parse)
-    .then(dogs => dogs)
+    .then(dogs => dogs.dogs)
     .then(receiveSimilarDogs)
     .catch(v => {
       requestSimilarDogsFailed();

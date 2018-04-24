@@ -315,12 +315,12 @@ var Breeds = function (_Component) {
       if (selectedBreed === null) {
         return null;
       } else {
-        if (!retrievingSimilarDogs && selectedBreed !== retrievedBreed && !failedRetrieveDogs) (0, _api.getSimilarDogs)(selectedBreed.name);
-        var similarDogs2 = [{ name: 'Dog1', img: '/static/img/corgi.jpg' }, { name: 'Dog2', img: '/static/img/husky.jpg' }];
+        console.log(retrievedBreed);
+        if (!retrievingSimilarDogs && selectedBreed.name !== retrievedBreed && !failedRetrieveDogs) (0, _api.getSimilarDogs)(selectedBreed.name);
         var similarDogsComponent = retrievingSimilarDogs ? _react2.default.createElement(_CircularProgress2.default, { size: 25, thickness: 4 }) : _react2.default.createElement(
           _reactGridSystem.Row,
           null,
-          similarDogs2.slice(0, 4).map(_this.buildSimilarDog)
+          similarDogs.slice(0, 4).map(_this.buildSimilarDog)
         );
 
         return _react2.default.createElement(
@@ -337,7 +337,7 @@ var Breeds = function (_Component) {
           selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null,
           _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions }),
           _react2.default.createElement('br', null),
-          similarDogs2.length > 0 ? 'Similar Dogs:' : null,
+          similarDogs.size > 0 ? 'Similar Dogs:' : null,
           similarDogsComponent
         );
       }
@@ -1490,6 +1490,10 @@ function buildDog(breed) {
   });
 }
 
+function buildSimilarDog(breed) {
+  return new SimilarDog({ name: breed.dog_name, img: breed.images[0] });
+}
+
 var initialState = new GlobalState();
 
 function globalReducer() {
@@ -1542,7 +1546,7 @@ function globalReducer() {
     case 'REQUEST_SIMILAR_DOGS_FAILED':
       return state.set('failedRetrieveDogs', true).set('retrievingSimilarDogs', false);
     case 'RECEIVE_SIMILAR_DOGS':
-      return state.set('retrievingSimilarDogs', false).set('similarDogs', (0, _immutable.List)(action.dogs.map(SimilarDog)));
+      return state.set('retrievingSimilarDogs', false).set('similarDogs', (0, _immutable.List)(action.dogs).map(buildSimilarDog));
 
     default:
       return state;
@@ -1650,8 +1654,8 @@ function sendRemoveMatch(breed) {
 
 function getSimilarDogs(dog_name) {
   (0, _GlobalActions.requestSimilarDogsStart)(dog_name);
-  fetch('/api/dog_info', {
-    body: JSON.stringify({ dog: dog_name }),
+  fetch('/api/get_similar', {
+    body: JSON.stringify({ similar: dog_name }),
     cache: 'no-cache',
     method: 'POST',
     credentials: 'include',
@@ -1659,7 +1663,7 @@ function getSimilarDogs(dog_name) {
   }).then(function (response) {
     if (response.ok) return response.text();else throw Error(response.statusText);
   }).then(JSON.parse).then(function (dogs) {
-    return dogs;
+    return dogs.dogs;
   }).then(_GlobalActions.receiveSimilarDogs).catch(function (v) {
     (0, _GlobalActions.requestSimilarDogsFailed)();
     console.log(v);
