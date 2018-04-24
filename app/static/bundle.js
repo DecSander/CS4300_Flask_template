@@ -282,7 +282,7 @@ var Breeds = function (_Component) {
     }, _this.buildSimilarDog = function (dog) {
       return _react2.default.createElement(
         _reactGridSystem.Col,
-        { lg: 3 },
+        { key: 'dog-' + dog.name, lg: 3 },
         _react2.default.createElement(
           _Card.Card,
           null,
@@ -315,7 +315,6 @@ var Breeds = function (_Component) {
       if (selectedBreed === null) {
         return null;
       } else {
-        console.log(retrievedBreed);
         if (!retrievingSimilarDogs && selectedBreed.name !== retrievedBreed && !failedRetrieveDogs) (0, _api.getSimilarDogs)(selectedBreed.name);
         var similarDogsComponent = retrievingSimilarDogs ? _react2.default.createElement(_CircularProgress2.default, { size: 25, thickness: 4 }) : _react2.default.createElement(
           _reactGridSystem.Row,
@@ -337,7 +336,7 @@ var Breeds = function (_Component) {
           selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null,
           _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions }),
           _react2.default.createElement('br', null),
-          similarDogs.size > 0 ? 'Similar Dogs:' : null,
+          similarDogs.size > 0 && !retrievingSimilarDogs ? 'Similar Dogs:' : null,
           similarDogsComponent
         );
       }
@@ -423,13 +422,6 @@ var Breeds = function (_Component) {
                 secondary: true, label: 'Get More Breeds', onClick: function onClick() {
                   return (0, _api.requestMoreBreeds)(page, search, preferences, checkPreferences);
                 } }),
-              _react2.default.createElement(_RaisedButton2.default, {
-                labelStyle: { height: '100%', fontSize: '40px' },
-                style: { height: '100%', marginTop: '20px' },
-                buttonStyle: { height: '100%' },
-                overlayStyle: { height: '100%' },
-                fullWidth: true,
-                primary: true, label: 'Reset Breeds', onClick: _GlobalActions.resetBreedList }),
               _this.buildDialog()
             )
           ),
@@ -872,6 +864,8 @@ var _Contributions2 = _interopRequireDefault(_Contributions);
 
 var _utils = require('infra/utils');
 
+var _api = require('infra/api');
+
 var _GlobalActions = require('infra/GlobalActions');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -884,9 +878,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function mapStateToProps(_ref) {
   var liked = _ref.liked,
-      likedLoading = _ref.likedLoading;
+      likedLoading = _ref.likedLoading,
+      retrievingSimilarDogs = _ref.retrievingSimilarDogs,
+      similarDogs = _ref.similarDogs,
+      failedRetrieveDogs = _ref.failedRetrieveDogs,
+      retrievedBreed = _ref.retrievedBreed;
 
-  return { liked: liked, likedLoading: likedLoading };
+  return { liked: liked, likedLoading: likedLoading, retrievingSimilarDogs: retrievingSimilarDogs, similarDogs: similarDogs, failedRetrieveDogs: failedRetrieveDogs, retrievedBreed: retrievedBreed };
 }
 
 var Matches = function (_React$Component) {
@@ -929,7 +927,31 @@ var Matches = function (_React$Component) {
           return _react2.default.createElement('img', { key: 'img-' + selectedBreed.name + '-' + i, style: { height: '300px', width: '400px' }, src: image });
         })
       );
+    }, _this.buildSimilarDog = function (dog) {
+      return _react2.default.createElement(
+        _reactGridSystem.Col,
+        { key: 'similar-' + dog.name, lg: 3 },
+        _react2.default.createElement(
+          _Card.Card,
+          null,
+          _react2.default.createElement(
+            'a',
+            { target: '_blank', href: 'https://www.google.com/search?q=' + (0, _utils.formatText)(dog.name) },
+            _react2.default.createElement(
+              _Card.CardMedia,
+              { style: { width: '100%', height: 100 } },
+              _react2.default.createElement('img', { style: { width: '100%', height: 100 }, src: dog.img, alt: dog.name })
+            )
+          )
+        ),
+        dog.name
+      );
     }, _this.buildDialog = function () {
+      var _this$props = _this.props,
+          similarDogs = _this$props.similarDogs,
+          retrievingSimilarDogs = _this$props.retrievingSimilarDogs,
+          failedRetrieveDogs = _this$props.failedRetrieveDogs,
+          retrievedBreed = _this$props.retrievedBreed;
       var _this$state = _this.state,
           selectedBreed = _this$state.selectedBreed,
           modalOpen = _this$state.modalOpen;
@@ -937,6 +959,13 @@ var Matches = function (_React$Component) {
       if (selectedBreed === null) {
         return null;
       } else {
+        if (!retrievingSimilarDogs && selectedBreed.name !== retrievedBreed && !failedRetrieveDogs) (0, _api.getSimilarDogs)(selectedBreed.name);
+        var similarDogsComponent = retrievingSimilarDogs ? _react2.default.createElement(_CircularProgress2.default, { size: 25, thickness: 4 }) : _react2.default.createElement(
+          _reactGridSystem.Row,
+          null,
+          similarDogs.slice(0, 4).map(_this.buildSimilarDog)
+        );
+
         return _react2.default.createElement(
           _Dialog2.default,
           { style: { marginTop: '-200px' }, title: (0, _utils.formatText)(selectedBreed.name),
@@ -949,13 +978,15 @@ var Matches = function (_React$Component) {
           _react2.default.createElement('br', null),
           _react2.default.createElement('br', null),
           selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null,
-          _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions })
+          _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions }),
+          similarDogs.size > 0 && !retrievingSimilarDogs ? 'Similar Dogs:' : null,
+          similarDogsComponent
         );
       }
     }, _this.buildLikedCards = function () {
-      var _this$props = _this.props,
-          liked = _this$props.liked,
-          likedLoading = _this$props.likedLoading;
+      var _this$props2 = _this.props,
+          liked = _this$props2.liked,
+          likedLoading = _this$props2.likedLoading;
 
       if (likedLoading) {
         return _react2.default.createElement(
@@ -1030,7 +1061,7 @@ var Matches = function (_React$Component) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Matches);
 
-},{"components/Contributions":5,"infra/GlobalActions":10,"infra/utils":15,"material-ui/Card":227,"material-ui/CircularProgress":233,"material-ui/Dialog":235,"material-ui/FlatButton":240,"nuka-carousel":336,"react":431,"react-grid-system":359,"react-infinite":372,"react-redux":396}],9:[function(require,module,exports){
+},{"components/Contributions":5,"infra/GlobalActions":10,"infra/api":13,"infra/utils":15,"material-ui/Card":227,"material-ui/CircularProgress":233,"material-ui/Dialog":235,"material-ui/FlatButton":240,"nuka-carousel":336,"react":431,"react-grid-system":359,"react-infinite":372,"react-redux":396}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

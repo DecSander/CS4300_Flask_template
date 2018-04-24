@@ -58,7 +58,7 @@ class Breeds extends Component {
 
   buildSimilarDog = (dog) => {
     return (
-      <Col lg={3}><Card><a target="_blank" href={`https://www.google.com/search?q=${formatText(dog.name)}`}>
+      <Col key={`dog-${dog.name}`} lg={3}><Card><a target="_blank" href={`https://www.google.com/search?q=${formatText(dog.name)}`}>
         <CardMedia style={{width: '100%', height: 100}}>
           <img style={{width: '100%', height: 100}} src={dog.img} alt={dog.name} />
         </CardMedia>
@@ -73,7 +73,6 @@ class Breeds extends Component {
     if (selectedBreed === null) {
       return null;
     } else {
-      console.log(retrievedBreed)
       if (!retrievingSimilarDogs && (selectedBreed.name !== retrievedBreed) && !failedRetrieveDogs) getSimilarDogs(selectedBreed.name);
       const similarDogsComponent = retrievingSimilarDogs
         ? <CircularProgress size={25} thickness={4} />
@@ -90,7 +89,7 @@ class Breeds extends Component {
           {selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null}
           <Contributions values={selectedBreed.contributions} />
           <br />
-          {similarDogs.size > 0 ? 'Similar Dogs:' : null}
+          {similarDogs.size > 0 && !retrievingSimilarDogs ? 'Similar Dogs:' : null}
           {similarDogsComponent}
         </Dialog>
       );
@@ -147,13 +146,6 @@ class Breeds extends Component {
                 overlayStyle={{height: '100%'}}
                 fullWidth={true}
                 secondary={true} label="Get More Breeds" onClick={() => requestMoreBreeds(page, search, preferences, checkPreferences)} />
-              <RaisedButton
-                labelStyle={{height: '100%', fontSize: '40px'}}
-                style={{height: '100%', marginTop: '20px'}}
-                buttonStyle={{height: '100%'}}
-                overlayStyle={{height: '100%'}}
-                fullWidth={true}
-                primary={true} label="Reset Breeds" onClick={resetBreedList} />
               {this.buildDialog()}
             </Card>
           </Col>

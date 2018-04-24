@@ -10,10 +10,11 @@ import Carousel from 'nuka-carousel';
 
 import Contributions from 'components/Contributions';
 import { formatText } from 'infra/utils';
+import { getSimilarDogs } from 'infra/api';
 import { removeMatch } from 'infra/GlobalActions';
 
-function mapStateToProps({ liked, likedLoading }) {
-  return { liked, likedLoading };
+function mapStateToProps({ liked, likedLoading, retrievingSimilarDogs, similarDogs, failedRetrieveDogs, retrievedBreed }) {
+  return { liked, likedLoading, retrievingSimilarDogs, similarDogs, failedRetrieveDogs, retrievedBreed };
 }
 
 class Matches extends React.Component {
@@ -51,11 +52,27 @@ class Matches extends React.Component {
     );
   }
 
+  buildSimilarDog = (dog) => {
+    return (
+      <Col key={`similar-${dog.name}`} lg={3}><Card><a target="_blank" href={`https://www.google.com/search?q=${formatText(dog.name)}`}>
+        <CardMedia style={{width: '100%', height: 100}}>
+          <img style={{width: '100%', height: 100}} src={dog.img} alt={dog.name} />
+        </CardMedia>
+      </a></Card>{dog.name}</Col>
+    );
+  }
+
   buildDialog = () => {
+    const { similarDogs, retrievingSimilarDogs, failedRetrieveDogs, retrievedBreed } = this.props;
     const { selectedBreed, modalOpen } = this.state;
     if (selectedBreed === null) {
       return null;
     } else {
+      if (!retrievingSimilarDogs && (selectedBreed.name !== retrievedBreed) && !failedRetrieveDogs) getSimilarDogs(selectedBreed.name);
+      const similarDogsComponent = retrievingSimilarDogs
+        ? <CircularProgress size={25} thickness={4} />
+        : <Row>{similarDogs.slice(0, 4).map(this.buildSimilarDog)}</Row>;
+
       return (
         <Dialog style={{marginTop: '-200px'}} title={formatText(selectedBreed.name)}
             autoScrollBodyContent={true}
@@ -66,6 +83,8 @@ class Matches extends React.Component {
           <br /><br /><br />
           {selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null}
           <Contributions values={selectedBreed.contributions} />
+          {similarDogs.size > 0 && !retrievingSimilarDogs ? 'Similar Dogs:' : null}
+          {similarDogsComponent}
         </Dialog>
       );
     }
