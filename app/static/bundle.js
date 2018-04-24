@@ -292,11 +292,11 @@ var Breeds = function (_Component) {
             _react2.default.createElement(
               _Card.CardMedia,
               { style: { width: '100%', height: 100 } },
-              _react2.default.createElement('img', { style: { width: '100%', height: 100 }, src: dog.img, alt: dog.name })
+              _react2.default.createElement('img', { style: { width: '100%', height: 100 }, src: dog.img, alt: (0, _utils.formatText)(dog.name) })
             )
           )
         ),
-        dog.name
+        (0, _utils.formatText)(dog.name)
       );
     }, _this.buildDialog = function () {
       var _this$props = _this.props,

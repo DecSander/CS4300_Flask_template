@@ -60,9 +60,9 @@ class Breeds extends Component {
     return (
       <Col key={`dog-${dog.name}`} lg={3}><Card><a target="_blank" href={`https://www.google.com/search?q=${formatText(dog.name)}`}>
         <CardMedia style={{width: '100%', height: 100}}>
-          <img style={{width: '100%', height: 100}} src={dog.img} alt={dog.name} />
+          <img style={{width: '100%', height: 100}} src={dog.img} alt={formatText(dog.name)} />
         </CardMedia>
-      </a></Card>{dog.name}</Col>
+      </a></Card>{formatText(dog.name)}</Col>
     );
   }
 
