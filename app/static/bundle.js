@@ -48,7 +48,7 @@ _const.preferenceKeys.forEach(function (key) {
 var i = new Image();
 i.src = '/static/img/home.png';
 
-},{"components/App":2,"infra/GlobalActions":10,"infra/GlobalStore":12,"infra/api":13,"infra/const":14,"react":431,"react-dom":350,"react-redux":396,"react-router-dom":413}],2:[function(require,module,exports){
+},{"components/App":2,"infra/GlobalActions":10,"infra/GlobalStore":12,"infra/api":13,"infra/const":14,"react":437,"react-dom":350,"react-redux":396,"react-router-dom":413}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -108,7 +108,7 @@ function App() {
   );
 }
 
-},{"components/Body":3,"components/Header":6,"material-ui/styles/MuiThemeProvider":302,"material-ui/styles/colors":305,"material-ui/styles/getMuiTheme":306,"react":431}],3:[function(require,module,exports){
+},{"components/Body":3,"components/Header":6,"material-ui/styles/MuiThemeProvider":303,"material-ui/styles/colors":306,"material-ui/styles/getMuiTheme":307,"react":437}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -150,7 +150,7 @@ function Body() {
   );
 }
 
-},{"components/Breeds":4,"components/Home":7,"components/Matches":8,"components/Preferences":9,"react":431,"react-router":423}],4:[function(require,module,exports){
+},{"components/Breeds":4,"components/Home":7,"components/Matches":8,"components/Preferences":9,"react":437,"react-router":423}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -443,7 +443,7 @@ var Breeds = function (_Component) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Breeds);
 
-},{"components/Contributions":5,"infra/GlobalActions":10,"infra/api":13,"infra/utils":15,"material-ui/Avatar":217,"material-ui/Badge":219,"material-ui/Card":227,"material-ui/Chip":231,"material-ui/CircularProgress":233,"material-ui/Dialog":235,"material-ui/FlatButton":240,"material-ui/RaisedButton":258,"nuka-carousel":336,"react":431,"react-grid-system":359,"react-infinite":372,"react-redux":396}],5:[function(require,module,exports){
+},{"components/Contributions":5,"infra/GlobalActions":10,"infra/api":13,"infra/utils":15,"material-ui/Avatar":218,"material-ui/Badge":220,"material-ui/Card":228,"material-ui/Chip":232,"material-ui/CircularProgress":234,"material-ui/Dialog":236,"material-ui/FlatButton":241,"material-ui/RaisedButton":259,"nuka-carousel":337,"react":437,"react-grid-system":359,"react-infinite":372,"react-redux":396}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -532,7 +532,7 @@ function Contributions(_ref) {
   );
 }
 
-},{"infra/const":14,"infra/utils":15,"material-ui-rating":213,"material-ui/Table":274,"react":431}],6:[function(require,module,exports){
+},{"infra/const":14,"infra/utils":15,"material-ui-rating":214,"material-ui/Table":275,"react":437}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -607,7 +607,7 @@ function Header(_ref) {
 
 exports.default = (0, _reactRouterDom.withRouter)(Header);
 
-},{"material-ui/AppBar":215,"material-ui/FontIcon":242,"material-ui/RaisedButton":258,"material-ui/Tabs":279,"react":431,"react-router-dom":413}],7:[function(require,module,exports){
+},{"material-ui/AppBar":216,"material-ui/FontIcon":243,"material-ui/RaisedButton":259,"material-ui/Tabs":280,"react":437,"react-router-dom":413}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -818,7 +818,7 @@ var Home = function (_React$Component) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouterDom.withRouter)(Home));
 
-},{"components/Preferences":9,"infra/GlobalActions":10,"infra/api":13,"infra/const":14,"infra/utils":15,"material-ui/FontIcon":242,"material-ui/MenuItem":251,"material-ui/RaisedButton":258,"material-ui/SelectField":260,"material-ui/TextField":285,"material-ui/Toggle":287,"react":431,"react-grid-system":359,"react-redux":396,"react-router-dom":413,"react-scroll-to-component":426}],8:[function(require,module,exports){
+},{"components/Preferences":9,"infra/GlobalActions":10,"infra/api":13,"infra/const":14,"infra/utils":15,"material-ui/FontIcon":243,"material-ui/MenuItem":252,"material-ui/RaisedButton":259,"material-ui/SelectField":261,"material-ui/TextField":286,"material-ui/Toggle":288,"react":437,"react-grid-system":359,"react-redux":396,"react-router-dom":413,"react-scroll-to-component":432}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1059,7 +1059,7 @@ var Matches = function (_React$Component) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Matches);
 
-},{"components/Contributions":5,"infra/GlobalActions":10,"infra/api":13,"infra/utils":15,"material-ui/Card":227,"material-ui/CircularProgress":233,"material-ui/Dialog":235,"material-ui/FlatButton":240,"nuka-carousel":336,"react":431,"react-grid-system":359,"react-infinite":372,"react-redux":396}],9:[function(require,module,exports){
+},{"components/Contributions":5,"infra/GlobalActions":10,"infra/api":13,"infra/utils":15,"material-ui/Card":228,"material-ui/CircularProgress":234,"material-ui/Dialog":236,"material-ui/FlatButton":241,"nuka-carousel":337,"react":437,"react-grid-system":359,"react-infinite":372,"react-redux":396}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1094,7 +1094,7 @@ var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
 var _Table = require('material-ui/Table');
 
-var _reactAccessibleAccordion = require('react-accessible-accordion');
+var _reactSanfona = require('react-sanfona');
 
 var _GlobalActions = require('infra/GlobalActions');
 
@@ -1195,45 +1195,36 @@ var behavior = [{ name: 'Train-ability', id: 'trainability' }, { name: 'Temperam
 
 var headerStyle = { fontSize: '20px', paddingBottom: '20px' };
 
-function buildPrefs(name, prefs, expanded) {
+function buildPrefs(name, prefs, i) {
   return _react2.default.createElement(
-    _reactAccessibleAccordion.AccordionItem,
-    { expanded: expanded, key: 'prefs-' + name },
+    _reactSanfona.AccordionItem,
+    { expanded: i === 0, key: 'prefs-' + name, title: name },
     _react2.default.createElement(
-      _reactAccessibleAccordion.AccordionItemTitle,
-      null,
-      name
-    ),
-    _react2.default.createElement(
-      _reactAccessibleAccordion.AccordionItemBody,
-      null,
+      _Table.Table,
+      { selectable: false },
       _react2.default.createElement(
-        _Table.Table,
-        { selectable: false },
+        _Table.TableHeader,
+        { displaySelectAll: false },
         _react2.default.createElement(
-          _Table.TableHeader,
-          { displaySelectAll: false },
+          _Table.TableRow,
+          null,
+          _react2.default.createElement(_Table.TableHeaderColumn, null),
           _react2.default.createElement(
-            _Table.TableRow,
-            null,
-            _react2.default.createElement(_Table.TableHeaderColumn, null),
-            _react2.default.createElement(
-              _Table.TableHeaderColumn,
-              { style: headerStyle },
-              'Preference'
-            ),
-            _react2.default.createElement(
-              _Table.TableHeaderColumn,
-              { style: headerStyle },
-              'Importance'
-            )
+            _Table.TableHeaderColumn,
+            { style: headerStyle },
+            'Preference'
+          ),
+          _react2.default.createElement(
+            _Table.TableHeaderColumn,
+            { style: headerStyle },
+            'Importance'
           )
-        ),
-        _react2.default.createElement(
-          _Table.TableBody,
-          { displayRowCheckbox: false },
-          prefs
         )
+      ),
+      _react2.default.createElement(
+        _Table.TableBody,
+        { displayRowCheckbox: false },
+        prefs
       )
     )
   );
@@ -1294,14 +1285,14 @@ var Preferences = function (_React$Component) {
         'div',
         { id: 'preferences' },
         _react2.default.createElement(
-          _reactAccessibleAccordion.Accordion,
+          _reactSanfona.Accordion,
           { onChange: function onChange(i) {
               return _this2.setState({ open: i });
-            } },
+            }, allowMultiple: true },
           allPrefs.map(function (obj, i) {
             return buildPrefs(obj.name, obj.props.map(function (p) {
               return buildRow(p, preferences);
-            }), open === i);
+            }), i);
           })
         ),
         _react2.default.createElement(
@@ -1318,7 +1309,7 @@ var Preferences = function (_React$Component) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouterDom.withRouter)(Preferences));
 
-},{"infra/GlobalActions":10,"infra/api":13,"infra/const":14,"material-ui/RaisedButton":258,"material-ui/Slider":262,"material-ui/Table":274,"material-ui/TextField":285,"material-ui/Toggle":287,"react":431,"react-accessible-accordion":347,"react-redux":396,"react-router-dom":413}],10:[function(require,module,exports){
+},{"infra/GlobalActions":10,"infra/api":13,"infra/const":14,"material-ui/RaisedButton":259,"material-ui/Slider":263,"material-ui/Table":275,"material-ui/TextField":286,"material-ui/Toggle":288,"react":437,"react-redux":396,"react-router-dom":413,"react-sanfona":431}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1582,7 +1573,7 @@ function globalReducer() {
   }
 }
 
-},{"immutable":163,"infra/api":13,"infra/const":14}],12:[function(require,module,exports){
+},{"immutable":164,"infra/api":13,"infra/const":14}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1599,7 +1590,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _redux.createStore)(_GlobalReducer2.default, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-},{"infra/GlobalReducer":11,"redux":445}],13:[function(require,module,exports){
+},{"infra/GlobalReducer":11,"redux":451}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1779,23 +1770,23 @@ function formatText(str) {
 
 },{}],16:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/array/from"), __esModule: true };
-},{"core-js/library/fn/array/from":42}],17:[function(require,module,exports){
+},{"core-js/library/fn/array/from":43}],17:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/assign"), __esModule: true };
-},{"core-js/library/fn/object/assign":43}],18:[function(require,module,exports){
+},{"core-js/library/fn/object/assign":44}],18:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
-},{"core-js/library/fn/object/create":44}],19:[function(require,module,exports){
+},{"core-js/library/fn/object/create":45}],19:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/define-property"), __esModule: true };
-},{"core-js/library/fn/object/define-property":45}],20:[function(require,module,exports){
+},{"core-js/library/fn/object/define-property":46}],20:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/get-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/get-prototype-of":46}],21:[function(require,module,exports){
+},{"core-js/library/fn/object/get-prototype-of":47}],21:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/keys"), __esModule: true };
-},{"core-js/library/fn/object/keys":47}],22:[function(require,module,exports){
+},{"core-js/library/fn/object/keys":48}],22:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/set-prototype-of":48}],23:[function(require,module,exports){
+},{"core-js/library/fn/object/set-prototype-of":49}],23:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol"), __esModule: true };
-},{"core-js/library/fn/symbol":49}],24:[function(require,module,exports){
+},{"core-js/library/fn/symbol":50}],24:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol/iterator"), __esModule: true };
-},{"core-js/library/fn/symbol/iterator":50}],25:[function(require,module,exports){
+},{"core-js/library/fn/symbol/iterator":51}],25:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -2653,6 +2644,56 @@ module.exports = function chain(){
 }
 
 },{}],37:[function(require,module,exports){
+/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+		// register as 'classnames', consistent with npm package name
+		define('classnames', [], function () {
+			return classNames;
+		});
+	} else {
+		window.classNames = classNames;
+	}
+}());
+
+},{}],38:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -2711,7 +2752,7 @@ function clone(obj){
   }
 }
 
-},{"component-type":41,"type":41}],38:[function(require,module,exports){
+},{"component-type":42,"type":42}],39:[function(require,module,exports){
 /**
  * Expose `requestAnimationFrame()`.
  */
@@ -2747,7 +2788,7 @@ exports.cancel = function(id){
   cancel.call(window, id);
 };
 
-},{}],39:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -2926,7 +2967,7 @@ Tween.prototype.update = function(fn){
   this._update = fn;
   return this;
 };
-},{"clone":37,"ease":135,"emitter":40,"type":41}],40:[function(require,module,exports){
+},{"clone":38,"ease":136,"emitter":41,"type":42}],41:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -3089,7 +3130,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],41:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 /**
  * toString ref.
  */
@@ -3125,70 +3166,70 @@ module.exports = function(val){
   return typeof val;
 };
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 require('../../modules/es6.string.iterator');
 require('../../modules/es6.array.from');
 module.exports = require('../../modules/_core').Array.from;
 
-},{"../../modules/_core":57,"../../modules/es6.array.from":115,"../../modules/es6.string.iterator":124}],43:[function(require,module,exports){
+},{"../../modules/_core":58,"../../modules/es6.array.from":116,"../../modules/es6.string.iterator":125}],44:[function(require,module,exports){
 require('../../modules/es6.object.assign');
 module.exports = require('../../modules/_core').Object.assign;
 
-},{"../../modules/_core":57,"../../modules/es6.object.assign":117}],44:[function(require,module,exports){
+},{"../../modules/_core":58,"../../modules/es6.object.assign":118}],45:[function(require,module,exports){
 require('../../modules/es6.object.create');
 var $Object = require('../../modules/_core').Object;
 module.exports = function create(P, D) {
   return $Object.create(P, D);
 };
 
-},{"../../modules/_core":57,"../../modules/es6.object.create":118}],45:[function(require,module,exports){
+},{"../../modules/_core":58,"../../modules/es6.object.create":119}],46:[function(require,module,exports){
 require('../../modules/es6.object.define-property');
 var $Object = require('../../modules/_core').Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
 };
 
-},{"../../modules/_core":57,"../../modules/es6.object.define-property":119}],46:[function(require,module,exports){
+},{"../../modules/_core":58,"../../modules/es6.object.define-property":120}],47:[function(require,module,exports){
 require('../../modules/es6.object.get-prototype-of');
 module.exports = require('../../modules/_core').Object.getPrototypeOf;
 
-},{"../../modules/_core":57,"../../modules/es6.object.get-prototype-of":120}],47:[function(require,module,exports){
+},{"../../modules/_core":58,"../../modules/es6.object.get-prototype-of":121}],48:[function(require,module,exports){
 require('../../modules/es6.object.keys');
 module.exports = require('../../modules/_core').Object.keys;
 
-},{"../../modules/_core":57,"../../modules/es6.object.keys":121}],48:[function(require,module,exports){
+},{"../../modules/_core":58,"../../modules/es6.object.keys":122}],49:[function(require,module,exports){
 require('../../modules/es6.object.set-prototype-of');
 module.exports = require('../../modules/_core').Object.setPrototypeOf;
 
-},{"../../modules/_core":57,"../../modules/es6.object.set-prototype-of":122}],49:[function(require,module,exports){
+},{"../../modules/_core":58,"../../modules/es6.object.set-prototype-of":123}],50:[function(require,module,exports){
 require('../../modules/es6.symbol');
 require('../../modules/es6.object.to-string');
 require('../../modules/es7.symbol.async-iterator');
 require('../../modules/es7.symbol.observable');
 module.exports = require('../../modules/_core').Symbol;
 
-},{"../../modules/_core":57,"../../modules/es6.object.to-string":123,"../../modules/es6.symbol":125,"../../modules/es7.symbol.async-iterator":126,"../../modules/es7.symbol.observable":127}],50:[function(require,module,exports){
+},{"../../modules/_core":58,"../../modules/es6.object.to-string":124,"../../modules/es6.symbol":126,"../../modules/es7.symbol.async-iterator":127,"../../modules/es7.symbol.observable":128}],51:[function(require,module,exports){
 require('../../modules/es6.string.iterator');
 require('../../modules/web.dom.iterable');
 module.exports = require('../../modules/_wks-ext').f('iterator');
 
-},{"../../modules/_wks-ext":112,"../../modules/es6.string.iterator":124,"../../modules/web.dom.iterable":128}],51:[function(require,module,exports){
+},{"../../modules/_wks-ext":113,"../../modules/es6.string.iterator":125,"../../modules/web.dom.iterable":129}],52:[function(require,module,exports){
 module.exports = function (it) {
   if (typeof it != 'function') throw TypeError(it + ' is not a function!');
   return it;
 };
 
-},{}],52:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 module.exports = function () { /* empty */ };
 
-},{}],53:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 var isObject = require('./_is-object');
 module.exports = function (it) {
   if (!isObject(it)) throw TypeError(it + ' is not an object!');
   return it;
 };
 
-},{"./_is-object":75}],54:[function(require,module,exports){
+},{"./_is-object":76}],55:[function(require,module,exports){
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = require('./_to-iobject');
@@ -3213,7 +3254,7 @@ module.exports = function (IS_INCLUDES) {
   };
 };
 
-},{"./_to-absolute-index":104,"./_to-iobject":106,"./_to-length":107}],55:[function(require,module,exports){
+},{"./_to-absolute-index":105,"./_to-iobject":107,"./_to-length":108}],56:[function(require,module,exports){
 // getting tag from 19.1.3.6 Object.prototype.toString()
 var cof = require('./_cof');
 var TAG = require('./_wks')('toStringTag');
@@ -3238,18 +3279,18 @@ module.exports = function (it) {
     : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
 };
 
-},{"./_cof":56,"./_wks":113}],56:[function(require,module,exports){
+},{"./_cof":57,"./_wks":114}],57:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = function (it) {
   return toString.call(it).slice(8, -1);
 };
 
-},{}],57:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 var core = module.exports = { version: '2.5.3' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
-},{}],58:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 'use strict';
 var $defineProperty = require('./_object-dp');
 var createDesc = require('./_property-desc');
@@ -3259,7 +3300,7 @@ module.exports = function (object, index, value) {
   else object[index] = value;
 };
 
-},{"./_object-dp":86,"./_property-desc":97}],59:[function(require,module,exports){
+},{"./_object-dp":87,"./_property-desc":98}],60:[function(require,module,exports){
 // optional / simple context binding
 var aFunction = require('./_a-function');
 module.exports = function (fn, that, length) {
@@ -3281,20 +3322,20 @@ module.exports = function (fn, that, length) {
   };
 };
 
-},{"./_a-function":51}],60:[function(require,module,exports){
+},{"./_a-function":52}],61:[function(require,module,exports){
 // 7.2.1 RequireObjectCoercible(argument)
 module.exports = function (it) {
   if (it == undefined) throw TypeError("Can't call method on  " + it);
   return it;
 };
 
-},{}],61:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 // Thank's IE8 for his funny defineProperty
 module.exports = !require('./_fails')(function () {
   return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
 });
 
-},{"./_fails":66}],62:[function(require,module,exports){
+},{"./_fails":67}],63:[function(require,module,exports){
 var isObject = require('./_is-object');
 var document = require('./_global').document;
 // typeof document.createElement is 'object' in old IE
@@ -3303,13 +3344,13 @@ module.exports = function (it) {
   return is ? document.createElement(it) : {};
 };
 
-},{"./_global":67,"./_is-object":75}],63:[function(require,module,exports){
+},{"./_global":68,"./_is-object":76}],64:[function(require,module,exports){
 // IE 8- don't enum bug keys
 module.exports = (
   'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
 ).split(',');
 
-},{}],64:[function(require,module,exports){
+},{}],65:[function(require,module,exports){
 // all enumerable object keys, includes symbols
 var getKeys = require('./_object-keys');
 var gOPS = require('./_object-gops');
@@ -3326,7 +3367,7 @@ module.exports = function (it) {
   } return result;
 };
 
-},{"./_object-gops":91,"./_object-keys":94,"./_object-pie":95}],65:[function(require,module,exports){
+},{"./_object-gops":92,"./_object-keys":95,"./_object-pie":96}],66:[function(require,module,exports){
 var global = require('./_global');
 var core = require('./_core');
 var ctx = require('./_ctx');
@@ -3389,7 +3430,7 @@ $export.U = 64;  // safe
 $export.R = 128; // real proto method for `library`
 module.exports = $export;
 
-},{"./_core":57,"./_ctx":59,"./_global":67,"./_hide":69}],66:[function(require,module,exports){
+},{"./_core":58,"./_ctx":60,"./_global":68,"./_hide":70}],67:[function(require,module,exports){
 module.exports = function (exec) {
   try {
     return !!exec();
@@ -3398,7 +3439,7 @@ module.exports = function (exec) {
   }
 };
 
-},{}],67:[function(require,module,exports){
+},{}],68:[function(require,module,exports){
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 var global = module.exports = typeof window != 'undefined' && window.Math == Math
   ? window : typeof self != 'undefined' && self.Math == Math ? self
@@ -3406,13 +3447,13 @@ var global = module.exports = typeof window != 'undefined' && window.Math == Mat
   : Function('return this')();
 if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 
-},{}],68:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 var hasOwnProperty = {}.hasOwnProperty;
 module.exports = function (it, key) {
   return hasOwnProperty.call(it, key);
 };
 
-},{}],69:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 var dP = require('./_object-dp');
 var createDesc = require('./_property-desc');
 module.exports = require('./_descriptors') ? function (object, key, value) {
@@ -3422,16 +3463,16 @@ module.exports = require('./_descriptors') ? function (object, key, value) {
   return object;
 };
 
-},{"./_descriptors":61,"./_object-dp":86,"./_property-desc":97}],70:[function(require,module,exports){
+},{"./_descriptors":62,"./_object-dp":87,"./_property-desc":98}],71:[function(require,module,exports){
 var document = require('./_global').document;
 module.exports = document && document.documentElement;
 
-},{"./_global":67}],71:[function(require,module,exports){
+},{"./_global":68}],72:[function(require,module,exports){
 module.exports = !require('./_descriptors') && !require('./_fails')(function () {
   return Object.defineProperty(require('./_dom-create')('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
-},{"./_descriptors":61,"./_dom-create":62,"./_fails":66}],72:[function(require,module,exports){
+},{"./_descriptors":62,"./_dom-create":63,"./_fails":67}],73:[function(require,module,exports){
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = require('./_cof');
 // eslint-disable-next-line no-prototype-builtins
@@ -3439,7 +3480,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
 
-},{"./_cof":56}],73:[function(require,module,exports){
+},{"./_cof":57}],74:[function(require,module,exports){
 // check on default Array iterator
 var Iterators = require('./_iterators');
 var ITERATOR = require('./_wks')('iterator');
@@ -3449,19 +3490,19 @@ module.exports = function (it) {
   return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
 };
 
-},{"./_iterators":81,"./_wks":113}],74:[function(require,module,exports){
+},{"./_iterators":82,"./_wks":114}],75:[function(require,module,exports){
 // 7.2.2 IsArray(argument)
 var cof = require('./_cof');
 module.exports = Array.isArray || function isArray(arg) {
   return cof(arg) == 'Array';
 };
 
-},{"./_cof":56}],75:[function(require,module,exports){
+},{"./_cof":57}],76:[function(require,module,exports){
 module.exports = function (it) {
   return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
 
-},{}],76:[function(require,module,exports){
+},{}],77:[function(require,module,exports){
 // call something on iterator step with safe closing on error
 var anObject = require('./_an-object');
 module.exports = function (iterator, fn, value, entries) {
@@ -3475,7 +3516,7 @@ module.exports = function (iterator, fn, value, entries) {
   }
 };
 
-},{"./_an-object":53}],77:[function(require,module,exports){
+},{"./_an-object":54}],78:[function(require,module,exports){
 'use strict';
 var create = require('./_object-create');
 var descriptor = require('./_property-desc');
@@ -3490,7 +3531,7 @@ module.exports = function (Constructor, NAME, next) {
   setToStringTag(Constructor, NAME + ' Iterator');
 };
 
-},{"./_hide":69,"./_object-create":85,"./_property-desc":97,"./_set-to-string-tag":100,"./_wks":113}],78:[function(require,module,exports){
+},{"./_hide":70,"./_object-create":86,"./_property-desc":98,"./_set-to-string-tag":101,"./_wks":114}],79:[function(require,module,exports){
 'use strict';
 var LIBRARY = require('./_library');
 var $export = require('./_export');
@@ -3562,7 +3603,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
   return methods;
 };
 
-},{"./_export":65,"./_has":68,"./_hide":69,"./_iter-create":77,"./_iterators":81,"./_library":82,"./_object-gpo":92,"./_redefine":98,"./_set-to-string-tag":100,"./_wks":113}],79:[function(require,module,exports){
+},{"./_export":66,"./_has":69,"./_hide":70,"./_iter-create":78,"./_iterators":82,"./_library":83,"./_object-gpo":93,"./_redefine":99,"./_set-to-string-tag":101,"./_wks":114}],80:[function(require,module,exports){
 var ITERATOR = require('./_wks')('iterator');
 var SAFE_CLOSING = false;
 
@@ -3586,18 +3627,18 @@ module.exports = function (exec, skipClosing) {
   return safe;
 };
 
-},{"./_wks":113}],80:[function(require,module,exports){
+},{"./_wks":114}],81:[function(require,module,exports){
 module.exports = function (done, value) {
   return { value: value, done: !!done };
 };
 
-},{}],81:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 module.exports = {};
 
-},{}],82:[function(require,module,exports){
+},{}],83:[function(require,module,exports){
 module.exports = true;
 
-},{}],83:[function(require,module,exports){
+},{}],84:[function(require,module,exports){
 var META = require('./_uid')('meta');
 var isObject = require('./_is-object');
 var has = require('./_has');
@@ -3652,7 +3693,7 @@ var meta = module.exports = {
   onFreeze: onFreeze
 };
 
-},{"./_fails":66,"./_has":68,"./_is-object":75,"./_object-dp":86,"./_uid":110}],84:[function(require,module,exports){
+},{"./_fails":67,"./_has":69,"./_is-object":76,"./_object-dp":87,"./_uid":111}],85:[function(require,module,exports){
 'use strict';
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys = require('./_object-keys');
@@ -3688,7 +3729,7 @@ module.exports = !$assign || require('./_fails')(function () {
   } return T;
 } : $assign;
 
-},{"./_fails":66,"./_iobject":72,"./_object-gops":91,"./_object-keys":94,"./_object-pie":95,"./_to-object":108}],85:[function(require,module,exports){
+},{"./_fails":67,"./_iobject":73,"./_object-gops":92,"./_object-keys":95,"./_object-pie":96,"./_to-object":109}],86:[function(require,module,exports){
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = require('./_an-object');
 var dPs = require('./_object-dps');
@@ -3731,7 +3772,7 @@ module.exports = Object.create || function create(O, Properties) {
   return Properties === undefined ? result : dPs(result, Properties);
 };
 
-},{"./_an-object":53,"./_dom-create":62,"./_enum-bug-keys":63,"./_html":70,"./_object-dps":87,"./_shared-key":101}],86:[function(require,module,exports){
+},{"./_an-object":54,"./_dom-create":63,"./_enum-bug-keys":64,"./_html":71,"./_object-dps":88,"./_shared-key":102}],87:[function(require,module,exports){
 var anObject = require('./_an-object');
 var IE8_DOM_DEFINE = require('./_ie8-dom-define');
 var toPrimitive = require('./_to-primitive');
@@ -3749,7 +3790,7 @@ exports.f = require('./_descriptors') ? Object.defineProperty : function defineP
   return O;
 };
 
-},{"./_an-object":53,"./_descriptors":61,"./_ie8-dom-define":71,"./_to-primitive":109}],87:[function(require,module,exports){
+},{"./_an-object":54,"./_descriptors":62,"./_ie8-dom-define":72,"./_to-primitive":110}],88:[function(require,module,exports){
 var dP = require('./_object-dp');
 var anObject = require('./_an-object');
 var getKeys = require('./_object-keys');
@@ -3764,7 +3805,7 @@ module.exports = require('./_descriptors') ? Object.defineProperties : function 
   return O;
 };
 
-},{"./_an-object":53,"./_descriptors":61,"./_object-dp":86,"./_object-keys":94}],88:[function(require,module,exports){
+},{"./_an-object":54,"./_descriptors":62,"./_object-dp":87,"./_object-keys":95}],89:[function(require,module,exports){
 var pIE = require('./_object-pie');
 var createDesc = require('./_property-desc');
 var toIObject = require('./_to-iobject');
@@ -3782,7 +3823,7 @@ exports.f = require('./_descriptors') ? gOPD : function getOwnPropertyDescriptor
   if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
 };
 
-},{"./_descriptors":61,"./_has":68,"./_ie8-dom-define":71,"./_object-pie":95,"./_property-desc":97,"./_to-iobject":106,"./_to-primitive":109}],89:[function(require,module,exports){
+},{"./_descriptors":62,"./_has":69,"./_ie8-dom-define":72,"./_object-pie":96,"./_property-desc":98,"./_to-iobject":107,"./_to-primitive":110}],90:[function(require,module,exports){
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 var toIObject = require('./_to-iobject');
 var gOPN = require('./_object-gopn').f;
@@ -3803,7 +3844,7 @@ module.exports.f = function getOwnPropertyNames(it) {
   return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
 };
 
-},{"./_object-gopn":90,"./_to-iobject":106}],90:[function(require,module,exports){
+},{"./_object-gopn":91,"./_to-iobject":107}],91:[function(require,module,exports){
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 var $keys = require('./_object-keys-internal');
 var hiddenKeys = require('./_enum-bug-keys').concat('length', 'prototype');
@@ -3812,10 +3853,10 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
   return $keys(O, hiddenKeys);
 };
 
-},{"./_enum-bug-keys":63,"./_object-keys-internal":93}],91:[function(require,module,exports){
+},{"./_enum-bug-keys":64,"./_object-keys-internal":94}],92:[function(require,module,exports){
 exports.f = Object.getOwnPropertySymbols;
 
-},{}],92:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has = require('./_has');
 var toObject = require('./_to-object');
@@ -3830,7 +3871,7 @@ module.exports = Object.getPrototypeOf || function (O) {
   } return O instanceof Object ? ObjectProto : null;
 };
 
-},{"./_has":68,"./_shared-key":101,"./_to-object":108}],93:[function(require,module,exports){
+},{"./_has":69,"./_shared-key":102,"./_to-object":109}],94:[function(require,module,exports){
 var has = require('./_has');
 var toIObject = require('./_to-iobject');
 var arrayIndexOf = require('./_array-includes')(false);
@@ -3849,7 +3890,7 @@ module.exports = function (object, names) {
   return result;
 };
 
-},{"./_array-includes":54,"./_has":68,"./_shared-key":101,"./_to-iobject":106}],94:[function(require,module,exports){
+},{"./_array-includes":55,"./_has":69,"./_shared-key":102,"./_to-iobject":107}],95:[function(require,module,exports){
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
 var $keys = require('./_object-keys-internal');
 var enumBugKeys = require('./_enum-bug-keys');
@@ -3858,10 +3899,10 @@ module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
 };
 
-},{"./_enum-bug-keys":63,"./_object-keys-internal":93}],95:[function(require,module,exports){
+},{"./_enum-bug-keys":64,"./_object-keys-internal":94}],96:[function(require,module,exports){
 exports.f = {}.propertyIsEnumerable;
 
-},{}],96:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 // most Object methods by ES6 should accept primitives
 var $export = require('./_export');
 var core = require('./_core');
@@ -3873,7 +3914,7 @@ module.exports = function (KEY, exec) {
   $export($export.S + $export.F * fails(function () { fn(1); }), 'Object', exp);
 };
 
-},{"./_core":57,"./_export":65,"./_fails":66}],97:[function(require,module,exports){
+},{"./_core":58,"./_export":66,"./_fails":67}],98:[function(require,module,exports){
 module.exports = function (bitmap, value) {
   return {
     enumerable: !(bitmap & 1),
@@ -3883,10 +3924,10 @@ module.exports = function (bitmap, value) {
   };
 };
 
-},{}],98:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 module.exports = require('./_hide');
 
-},{"./_hide":69}],99:[function(require,module,exports){
+},{"./_hide":70}],100:[function(require,module,exports){
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
 var isObject = require('./_is-object');
@@ -3913,7 +3954,7 @@ module.exports = {
   check: check
 };
 
-},{"./_an-object":53,"./_ctx":59,"./_is-object":75,"./_object-gopd":88}],100:[function(require,module,exports){
+},{"./_an-object":54,"./_ctx":60,"./_is-object":76,"./_object-gopd":89}],101:[function(require,module,exports){
 var def = require('./_object-dp').f;
 var has = require('./_has');
 var TAG = require('./_wks')('toStringTag');
@@ -3922,14 +3963,14 @@ module.exports = function (it, tag, stat) {
   if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
 };
 
-},{"./_has":68,"./_object-dp":86,"./_wks":113}],101:[function(require,module,exports){
+},{"./_has":69,"./_object-dp":87,"./_wks":114}],102:[function(require,module,exports){
 var shared = require('./_shared')('keys');
 var uid = require('./_uid');
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
 
-},{"./_shared":102,"./_uid":110}],102:[function(require,module,exports){
+},{"./_shared":103,"./_uid":111}],103:[function(require,module,exports){
 var global = require('./_global');
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
@@ -3937,7 +3978,7 @@ module.exports = function (key) {
   return store[key] || (store[key] = {});
 };
 
-},{"./_global":67}],103:[function(require,module,exports){
+},{"./_global":68}],104:[function(require,module,exports){
 var toInteger = require('./_to-integer');
 var defined = require('./_defined');
 // true  -> String#at
@@ -3956,7 +3997,7 @@ module.exports = function (TO_STRING) {
   };
 };
 
-},{"./_defined":60,"./_to-integer":105}],104:[function(require,module,exports){
+},{"./_defined":61,"./_to-integer":106}],105:[function(require,module,exports){
 var toInteger = require('./_to-integer');
 var max = Math.max;
 var min = Math.min;
@@ -3965,7 +4006,7 @@ module.exports = function (index, length) {
   return index < 0 ? max(index + length, 0) : min(index, length);
 };
 
-},{"./_to-integer":105}],105:[function(require,module,exports){
+},{"./_to-integer":106}],106:[function(require,module,exports){
 // 7.1.4 ToInteger
 var ceil = Math.ceil;
 var floor = Math.floor;
@@ -3973,7 +4014,7 @@ module.exports = function (it) {
   return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
 };
 
-},{}],106:[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 // to indexed object, toObject with fallback for non-array-like ES3 strings
 var IObject = require('./_iobject');
 var defined = require('./_defined');
@@ -3981,7 +4022,7 @@ module.exports = function (it) {
   return IObject(defined(it));
 };
 
-},{"./_defined":60,"./_iobject":72}],107:[function(require,module,exports){
+},{"./_defined":61,"./_iobject":73}],108:[function(require,module,exports){
 // 7.1.15 ToLength
 var toInteger = require('./_to-integer');
 var min = Math.min;
@@ -3989,14 +4030,14 @@ module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 };
 
-},{"./_to-integer":105}],108:[function(require,module,exports){
+},{"./_to-integer":106}],109:[function(require,module,exports){
 // 7.1.13 ToObject(argument)
 var defined = require('./_defined');
 module.exports = function (it) {
   return Object(defined(it));
 };
 
-},{"./_defined":60}],109:[function(require,module,exports){
+},{"./_defined":61}],110:[function(require,module,exports){
 // 7.1.1 ToPrimitive(input [, PreferredType])
 var isObject = require('./_is-object');
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
@@ -4010,14 +4051,14 @@ module.exports = function (it, S) {
   throw TypeError("Can't convert object to primitive value");
 };
 
-},{"./_is-object":75}],110:[function(require,module,exports){
+},{"./_is-object":76}],111:[function(require,module,exports){
 var id = 0;
 var px = Math.random();
 module.exports = function (key) {
   return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
 };
 
-},{}],111:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 var global = require('./_global');
 var core = require('./_core');
 var LIBRARY = require('./_library');
@@ -4028,10 +4069,10 @@ module.exports = function (name) {
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
 };
 
-},{"./_core":57,"./_global":67,"./_library":82,"./_object-dp":86,"./_wks-ext":112}],112:[function(require,module,exports){
+},{"./_core":58,"./_global":68,"./_library":83,"./_object-dp":87,"./_wks-ext":113}],113:[function(require,module,exports){
 exports.f = require('./_wks');
 
-},{"./_wks":113}],113:[function(require,module,exports){
+},{"./_wks":114}],114:[function(require,module,exports){
 var store = require('./_shared')('wks');
 var uid = require('./_uid');
 var Symbol = require('./_global').Symbol;
@@ -4044,7 +4085,7 @@ var $exports = module.exports = function (name) {
 
 $exports.store = store;
 
-},{"./_global":67,"./_shared":102,"./_uid":110}],114:[function(require,module,exports){
+},{"./_global":68,"./_shared":103,"./_uid":111}],115:[function(require,module,exports){
 var classof = require('./_classof');
 var ITERATOR = require('./_wks')('iterator');
 var Iterators = require('./_iterators');
@@ -4054,7 +4095,7 @@ module.exports = require('./_core').getIteratorMethod = function (it) {
     || Iterators[classof(it)];
 };
 
-},{"./_classof":55,"./_core":57,"./_iterators":81,"./_wks":113}],115:[function(require,module,exports){
+},{"./_classof":56,"./_core":58,"./_iterators":82,"./_wks":114}],116:[function(require,module,exports){
 'use strict';
 var ctx = require('./_ctx');
 var $export = require('./_export');
@@ -4093,7 +4134,7 @@ $export($export.S + $export.F * !require('./_iter-detect')(function (iter) { Arr
   }
 });
 
-},{"./_create-property":58,"./_ctx":59,"./_export":65,"./_is-array-iter":73,"./_iter-call":76,"./_iter-detect":79,"./_to-length":107,"./_to-object":108,"./core.get-iterator-method":114}],116:[function(require,module,exports){
+},{"./_create-property":59,"./_ctx":60,"./_export":66,"./_is-array-iter":74,"./_iter-call":77,"./_iter-detect":80,"./_to-length":108,"./_to-object":109,"./core.get-iterator-method":115}],117:[function(require,module,exports){
 'use strict';
 var addToUnscopables = require('./_add-to-unscopables');
 var step = require('./_iter-step');
@@ -4129,23 +4170,23 @@ addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
 
-},{"./_add-to-unscopables":52,"./_iter-define":78,"./_iter-step":80,"./_iterators":81,"./_to-iobject":106}],117:[function(require,module,exports){
+},{"./_add-to-unscopables":53,"./_iter-define":79,"./_iter-step":81,"./_iterators":82,"./_to-iobject":107}],118:[function(require,module,exports){
 // 19.1.3.1 Object.assign(target, source)
 var $export = require('./_export');
 
 $export($export.S + $export.F, 'Object', { assign: require('./_object-assign') });
 
-},{"./_export":65,"./_object-assign":84}],118:[function(require,module,exports){
+},{"./_export":66,"./_object-assign":85}],119:[function(require,module,exports){
 var $export = require('./_export');
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 $export($export.S, 'Object', { create: require('./_object-create') });
 
-},{"./_export":65,"./_object-create":85}],119:[function(require,module,exports){
+},{"./_export":66,"./_object-create":86}],120:[function(require,module,exports){
 var $export = require('./_export');
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 $export($export.S + $export.F * !require('./_descriptors'), 'Object', { defineProperty: require('./_object-dp').f });
 
-},{"./_descriptors":61,"./_export":65,"./_object-dp":86}],120:[function(require,module,exports){
+},{"./_descriptors":62,"./_export":66,"./_object-dp":87}],121:[function(require,module,exports){
 // 19.1.2.9 Object.getPrototypeOf(O)
 var toObject = require('./_to-object');
 var $getPrototypeOf = require('./_object-gpo');
@@ -4156,7 +4197,7 @@ require('./_object-sap')('getPrototypeOf', function () {
   };
 });
 
-},{"./_object-gpo":92,"./_object-sap":96,"./_to-object":108}],121:[function(require,module,exports){
+},{"./_object-gpo":93,"./_object-sap":97,"./_to-object":109}],122:[function(require,module,exports){
 // 19.1.2.14 Object.keys(O)
 var toObject = require('./_to-object');
 var $keys = require('./_object-keys');
@@ -4167,14 +4208,14 @@ require('./_object-sap')('keys', function () {
   };
 });
 
-},{"./_object-keys":94,"./_object-sap":96,"./_to-object":108}],122:[function(require,module,exports){
+},{"./_object-keys":95,"./_object-sap":97,"./_to-object":109}],123:[function(require,module,exports){
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = require('./_export');
 $export($export.S, 'Object', { setPrototypeOf: require('./_set-proto').set });
 
-},{"./_export":65,"./_set-proto":99}],123:[function(require,module,exports){
+},{"./_export":66,"./_set-proto":100}],124:[function(require,module,exports){
 
-},{}],124:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 'use strict';
 var $at = require('./_string-at')(true);
 
@@ -4193,7 +4234,7 @@ require('./_iter-define')(String, 'String', function (iterated) {
   return { value: point, done: false };
 });
 
-},{"./_iter-define":78,"./_string-at":103}],125:[function(require,module,exports){
+},{"./_iter-define":79,"./_string-at":104}],126:[function(require,module,exports){
 'use strict';
 // ECMAScript 6 symbols shim
 var global = require('./_global');
@@ -4429,13 +4470,13 @@ setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 setToStringTag(global.JSON, 'JSON', true);
 
-},{"./_an-object":53,"./_descriptors":61,"./_enum-keys":64,"./_export":65,"./_fails":66,"./_global":67,"./_has":68,"./_hide":69,"./_is-array":74,"./_is-object":75,"./_library":82,"./_meta":83,"./_object-create":85,"./_object-dp":86,"./_object-gopd":88,"./_object-gopn":90,"./_object-gopn-ext":89,"./_object-gops":91,"./_object-keys":94,"./_object-pie":95,"./_property-desc":97,"./_redefine":98,"./_set-to-string-tag":100,"./_shared":102,"./_to-iobject":106,"./_to-primitive":109,"./_uid":110,"./_wks":113,"./_wks-define":111,"./_wks-ext":112}],126:[function(require,module,exports){
+},{"./_an-object":54,"./_descriptors":62,"./_enum-keys":65,"./_export":66,"./_fails":67,"./_global":68,"./_has":69,"./_hide":70,"./_is-array":75,"./_is-object":76,"./_library":83,"./_meta":84,"./_object-create":86,"./_object-dp":87,"./_object-gopd":89,"./_object-gopn":91,"./_object-gopn-ext":90,"./_object-gops":92,"./_object-keys":95,"./_object-pie":96,"./_property-desc":98,"./_redefine":99,"./_set-to-string-tag":101,"./_shared":103,"./_to-iobject":107,"./_to-primitive":110,"./_uid":111,"./_wks":114,"./_wks-define":112,"./_wks-ext":113}],127:[function(require,module,exports){
 require('./_wks-define')('asyncIterator');
 
-},{"./_wks-define":111}],127:[function(require,module,exports){
+},{"./_wks-define":112}],128:[function(require,module,exports){
 require('./_wks-define')('observable');
 
-},{"./_wks-define":111}],128:[function(require,module,exports){
+},{"./_wks-define":112}],129:[function(require,module,exports){
 require('./es6.array.iterator');
 var global = require('./_global');
 var hide = require('./_hide');
@@ -4456,7 +4497,7 @@ for (var i = 0; i < DOMIterables.length; i++) {
   Iterators[NAME] = Iterators.Array;
 }
 
-},{"./_global":67,"./_hide":69,"./_iterators":81,"./_wks":113,"./es6.array.iterator":116}],129:[function(require,module,exports){
+},{"./_global":68,"./_hide":70,"./_iterators":82,"./_wks":114,"./es6.array.iterator":117}],130:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4474,7 +4515,7 @@ function hyphenateProperty(property) {
   return (0, _hyphenateStyleName2.default)(property);
 }
 module.exports = exports['default'];
-},{"hyphenate-style-name":162}],130:[function(require,module,exports){
+},{"hyphenate-style-name":163}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4487,7 +4528,7 @@ function isPrefixedValue(value) {
   return typeof value === 'string' && regex.test(value);
 }
 module.exports = exports['default'];
-},{}],131:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 // https://d3js.org/d3-color/ Version 1.0.3. Copyright 2017 Mike Bostock.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -5012,7 +5053,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-},{}],132:[function(require,module,exports){
+},{}],133:[function(require,module,exports){
 // https://d3js.org/d3-ease/ Version 1.0.3. Copyright 2017 Mike Bostock.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -5273,7 +5314,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-},{}],133:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 // https://d3js.org/d3-interpolate/ Version 1.1.6. Copyright 2017 Mike Bostock.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('d3-color')) :
@@ -5820,7 +5861,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-},{"d3-color":131}],134:[function(require,module,exports){
+},{"d3-color":132}],135:[function(require,module,exports){
 // https://d3js.org/d3-timer/ Version 1.0.7. Copyright 2017 Mike Bostock.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -5971,7 +6012,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-},{}],135:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 
 // easing functions from "Tween.js"
 
@@ -6143,7 +6184,7 @@ exports['in-bounce'] = exports.inBounce;
 exports['out-bounce'] = exports.outBounce;
 exports['in-out-bounce'] = exports.inOutBounce;
 
-},{}],136:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 /*!
   Copyright (c) 2015 Jed Watson.
   Based on code that is Copyright 2013-2015, Facebook, Inc.
@@ -6185,7 +6226,7 @@ exports['in-out-bounce'] = exports.inOutBounce;
 
 }());
 
-},{}],137:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -6263,7 +6304,7 @@ var EventListener = {
 module.exports = EventListener;
 }).call(this,require('_process'))
 
-},{"./emptyFunction":142,"_process":341}],138:[function(require,module,exports){
+},{"./emptyFunction":143,"_process":342}],139:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -6297,7 +6338,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],139:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6327,7 +6368,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],140:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -6365,7 +6406,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":139}],141:[function(require,module,exports){
+},{"./camelize":140}],142:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6403,7 +6444,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":150}],142:[function(require,module,exports){
+},{"./isTextNode":151}],143:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6440,7 +6481,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],143:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -6461,7 +6502,7 @@ if ("development" !== 'production') {
 module.exports = emptyObject;
 }).call(this,require('_process'))
 
-},{"_process":341}],144:[function(require,module,exports){
+},{"_process":342}],145:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -6486,7 +6527,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],145:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6523,7 +6564,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],146:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6554,7 +6595,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],147:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -6591,7 +6632,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":146}],148:[function(require,module,exports){
+},{"./hyphenate":147}],149:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -6648,7 +6689,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 }).call(this,require('_process'))
 
-},{"_process":341}],149:[function(require,module,exports){
+},{"_process":342}],150:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6671,7 +6712,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],150:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6694,7 +6735,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":149}],151:[function(require,module,exports){
+},{"./isNode":150}],152:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -6760,7 +6801,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],152:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -6826,7 +6867,7 @@ if ("development" !== 'production') {
 module.exports = warning;
 }).call(this,require('_process'))
 
-},{"./emptyFunction":142,"_process":341}],153:[function(require,module,exports){
+},{"./emptyFunction":143,"_process":342}],154:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -6882,7 +6923,7 @@ var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash 
 var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
   return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
 };
-},{}],154:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -6961,7 +7002,7 @@ var createLocation = exports.createLocation = function createLocation(path, stat
 var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
 };
-},{"./PathUtils":155,"resolve-pathname":447,"value-equal":452}],155:[function(require,module,exports){
+},{"./PathUtils":156,"resolve-pathname":453,"value-equal":463}],156:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -7023,7 +7064,7 @@ var createPath = exports.createPath = function createPath(location) {
 
   return path;
 };
-},{}],156:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -7331,7 +7372,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"./DOMUtils":153,"./LocationUtils":154,"./PathUtils":155,"./createTransitionManager":159,"invariant":188,"warning":453}],157:[function(require,module,exports){
+},{"./DOMUtils":154,"./LocationUtils":155,"./PathUtils":156,"./createTransitionManager":160,"invariant":189,"warning":464}],158:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -7656,7 +7697,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"./DOMUtils":153,"./LocationUtils":154,"./PathUtils":155,"./createTransitionManager":159,"invariant":188,"warning":453}],158:[function(require,module,exports){
+},{"./DOMUtils":154,"./LocationUtils":155,"./PathUtils":156,"./createTransitionManager":160,"invariant":189,"warning":464}],159:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -7827,7 +7868,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"./LocationUtils":154,"./PathUtils":155,"./createTransitionManager":159,"warning":453}],159:[function(require,module,exports){
+},{"./LocationUtils":155,"./PathUtils":156,"./createTransitionManager":160,"warning":464}],160:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -7913,7 +7954,7 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 exports.default = createTransitionManager;
-},{"warning":453}],160:[function(require,module,exports){
+},{"warning":464}],161:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -7966,7 +8007,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.createBrowserHistory = _createBrowserHistory3.default;
 exports.createHashHistory = _createHashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
-},{"./LocationUtils":154,"./PathUtils":155,"./createBrowserHistory":156,"./createHashHistory":157,"./createMemoryHistory":158}],161:[function(require,module,exports){
+},{"./LocationUtils":155,"./PathUtils":156,"./createBrowserHistory":157,"./createHashHistory":158,"./createMemoryHistory":159}],162:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -8040,7 +8081,7 @@ exports.createMemoryHistory = _createMemoryHistory3.default;
     };
 })));
 
-},{}],162:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 'use strict';
 
 var uppercasePattern = /[A-Z]/g;
@@ -8058,7 +8099,7 @@ function hyphenateStyleName(string) {
 
 module.exports = hyphenateStyleName;
 
-},{}],163:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -13036,7 +13077,7 @@ module.exports = hyphenateStyleName;
   return Immutable;
 
 }));
-},{}],164:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13212,7 +13253,7 @@ function createPrefixer(_ref) {
   }();
 }
 module.exports = exports['default'];
-},{"../utils/addNewValuesOnly":180,"../utils/capitalizeString":181,"../utils/getBrowserInformation":182,"../utils/getPrefixedKeyframes":183,"../utils/isObject":185,"../utils/prefixValue":187}],165:[function(require,module,exports){
+},{"../utils/addNewValuesOnly":181,"../utils/capitalizeString":182,"../utils/getBrowserInformation":183,"../utils/getPrefixedKeyframes":184,"../utils/isObject":186,"../utils/prefixValue":188}],166:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13237,7 +13278,7 @@ function calc(property, value, style, _ref) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/getPrefixedValue":184}],166:[function(require,module,exports){
+},{"../../utils/getPrefixedValue":185}],167:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13266,7 +13307,7 @@ function flex(property, value, style, _ref) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/getPrefixedValue":184}],167:[function(require,module,exports){
+},{"../../utils/getPrefixedValue":185}],168:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13322,7 +13363,7 @@ function flexboxIE(property, value, style, _ref) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/getPrefixedValue":184}],168:[function(require,module,exports){
+},{"../../utils/getPrefixedValue":185}],169:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13391,7 +13432,7 @@ function flexboxOld(property, value, style, _ref) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/getPrefixedValue":184}],169:[function(require,module,exports){
+},{"../../utils/getPrefixedValue":185}],170:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13417,7 +13458,7 @@ function gradient(property, value, style, _ref) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/getPrefixedValue":184}],170:[function(require,module,exports){
+},{"../../utils/getPrefixedValue":185}],171:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13460,7 +13501,7 @@ var values = {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/getPrefixedValue":184}],171:[function(require,module,exports){
+},{"../../utils/getPrefixedValue":185}],172:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13514,7 +13555,7 @@ function transition(property, value, style, _ref) {
   }
 }
 module.exports = exports['default'];
-},{"css-in-js-utils/lib/hyphenateProperty":129}],172:[function(require,module,exports){
+},{"css-in-js-utils/lib/hyphenateProperty":130}],173:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13584,7 +13625,7 @@ function createPrefixer(_ref) {
   return prefixAll;
 }
 module.exports = exports['default'];
-},{"../utils/addNewValuesOnly":180,"../utils/isObject":185,"../utils/prefixProperty":186,"../utils/prefixValue":187}],173:[function(require,module,exports){
+},{"../utils/addNewValuesOnly":181,"../utils/isObject":186,"../utils/prefixProperty":187,"../utils/prefixValue":188}],174:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13607,7 +13648,7 @@ function calc(property, value) {
   }
 }
 module.exports = exports['default'];
-},{"css-in-js-utils/lib/isPrefixedValue":130}],174:[function(require,module,exports){
+},{"css-in-js-utils/lib/isPrefixedValue":131}],175:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13625,7 +13666,7 @@ function flex(property, value) {
   }
 }
 module.exports = exports['default'];
-},{}],175:[function(require,module,exports){
+},{}],176:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13655,7 +13696,7 @@ function flexboxIE(property, value, style) {
   }
 }
 module.exports = exports['default'];
-},{}],176:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13695,7 +13736,7 @@ function flexboxOld(property, value, style) {
   }
 }
 module.exports = exports['default'];
-},{}],177:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13721,7 +13762,7 @@ function gradient(property, value) {
   }
 }
 module.exports = exports['default'];
-},{"css-in-js-utils/lib/isPrefixedValue":130}],178:[function(require,module,exports){
+},{"css-in-js-utils/lib/isPrefixedValue":131}],179:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13755,7 +13796,7 @@ function sizing(property, value) {
   }
 }
 module.exports = exports['default'];
-},{}],179:[function(require,module,exports){
+},{}],180:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13849,7 +13890,7 @@ function transition(property, value, style, propertyPrefixMap) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/capitalizeString":181,"css-in-js-utils/lib/hyphenateProperty":129,"css-in-js-utils/lib/isPrefixedValue":130}],180:[function(require,module,exports){
+},{"../../utils/capitalizeString":182,"css-in-js-utils/lib/hyphenateProperty":130,"css-in-js-utils/lib/isPrefixedValue":131}],181:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13872,7 +13913,7 @@ function addNewValuesOnly(list, values) {
   }
 }
 module.exports = exports["default"];
-},{}],181:[function(require,module,exports){
+},{}],182:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13883,7 +13924,7 @@ function capitalizeString(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 module.exports = exports["default"];
-},{}],182:[function(require,module,exports){
+},{}],183:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14015,7 +14056,7 @@ function getBrowserInformation(userAgent) {
   return browserInfo;
 }
 module.exports = exports['default'];
-},{"bowser":35}],183:[function(require,module,exports){
+},{"bowser":35}],184:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14031,7 +14072,7 @@ function getPrefixedKeyframes(browserName, browserVersion, cssPrefix) {
   return prefixedKeyframes;
 }
 module.exports = exports['default'];
-},{}],184:[function(require,module,exports){
+},{}],185:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14045,7 +14086,7 @@ function getPrefixedValue(prefixedValue, value, keepUnprefixed) {
   return prefixedValue;
 }
 module.exports = exports["default"];
-},{}],185:[function(require,module,exports){
+},{}],186:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14056,7 +14097,7 @@ function isObject(value) {
   return value instanceof Object && !Array.isArray(value);
 }
 module.exports = exports["default"];
-},{}],186:[function(require,module,exports){
+},{}],187:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14079,7 +14120,7 @@ function prefixProperty(prefixProperties, property, style) {
   }
 }
 module.exports = exports['default'];
-},{"./capitalizeString":181}],187:[function(require,module,exports){
+},{"./capitalizeString":182}],188:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14098,7 +14139,7 @@ function prefixValue(plugins, property, value, style, metaData) {
   }
 }
 module.exports = exports["default"];
-},{}],188:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -14152,12 +14193,12 @@ module.exports = invariant;
 
 }).call(this,require('_process'))
 
-},{"_process":341}],189:[function(require,module,exports){
+},{"_process":342}],190:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],190:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 // Source: http://jsfiddle.net/vWx8V/
 // http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
 
@@ -14334,7 +14375,7 @@ for (var alias in aliases) {
   codes[alias] = aliases[alias]
 }
 
-},{}],191:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 /**
  * lodash 3.0.4 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -14516,7 +14557,7 @@ function isNative(value) {
 
 module.exports = isArray;
 
-},{}],192:[function(require,module,exports){
+},{}],193:[function(require,module,exports){
 (function (global){
 /**
  * lodash 3.2.0 (Custom Build) <https://lodash.com/>
@@ -14565,7 +14606,7 @@ module.exports = isFinite;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],193:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 (function (global){
 /**
  * Lodash (Custom Build) <https://lodash.com/>
@@ -16533,7 +16574,7 @@ module.exports = merge;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],194:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -16977,7 +17018,7 @@ module.exports = throttle;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],195:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -16985,7 +17026,7 @@ var Symbol = root.Symbol;
 
 module.exports = Symbol;
 
-},{"./_root":202}],196:[function(require,module,exports){
+},{"./_root":203}],197:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     getRawTag = require('./_getRawTag'),
     objectToString = require('./_objectToString');
@@ -17015,7 +17056,7 @@ function baseGetTag(value) {
 
 module.exports = baseGetTag;
 
-},{"./_Symbol":195,"./_getRawTag":199,"./_objectToString":200}],197:[function(require,module,exports){
+},{"./_Symbol":196,"./_getRawTag":200,"./_objectToString":201}],198:[function(require,module,exports){
 (function (global){
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -17024,7 +17065,7 @@ module.exports = freeGlobal;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],198:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 var overArg = require('./_overArg');
 
 /** Built-in value references. */
@@ -17032,7 +17073,7 @@ var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 module.exports = getPrototype;
 
-},{"./_overArg":201}],199:[function(require,module,exports){
+},{"./_overArg":202}],200:[function(require,module,exports){
 var Symbol = require('./_Symbol');
 
 /** Used for built-in method references. */
@@ -17080,7 +17121,7 @@ function getRawTag(value) {
 
 module.exports = getRawTag;
 
-},{"./_Symbol":195}],200:[function(require,module,exports){
+},{"./_Symbol":196}],201:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -17104,7 +17145,7 @@ function objectToString(value) {
 
 module.exports = objectToString;
 
-},{}],201:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 /**
  * Creates a unary function that invokes `func` with its argument transformed.
  *
@@ -17121,7 +17162,7 @@ function overArg(func, transform) {
 
 module.exports = overArg;
 
-},{}],202:[function(require,module,exports){
+},{}],203:[function(require,module,exports){
 var freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `self`. */
@@ -17132,7 +17173,7 @@ var root = freeGlobal || freeSelf || Function('return this')();
 
 module.exports = root;
 
-},{"./_freeGlobal":197}],203:[function(require,module,exports){
+},{"./_freeGlobal":198}],204:[function(require,module,exports){
 var isObject = require('./isObject'),
     now = require('./now'),
     toNumber = require('./toNumber');
@@ -17324,7 +17365,7 @@ function debounce(func, wait, options) {
 
 module.exports = debounce;
 
-},{"./isObject":204,"./now":208,"./toNumber":210}],204:[function(require,module,exports){
+},{"./isObject":205,"./now":209,"./toNumber":211}],205:[function(require,module,exports){
 /**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
@@ -17357,7 +17398,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],205:[function(require,module,exports){
+},{}],206:[function(require,module,exports){
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -17388,7 +17429,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],206:[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     getPrototype = require('./_getPrototype'),
     isObjectLike = require('./isObjectLike');
@@ -17452,7 +17493,7 @@ function isPlainObject(value) {
 
 module.exports = isPlainObject;
 
-},{"./_baseGetTag":196,"./_getPrototype":198,"./isObjectLike":205}],207:[function(require,module,exports){
+},{"./_baseGetTag":197,"./_getPrototype":199,"./isObjectLike":206}],208:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -17483,7 +17524,7 @@ function isSymbol(value) {
 
 module.exports = isSymbol;
 
-},{"./_baseGetTag":196,"./isObjectLike":205}],208:[function(require,module,exports){
+},{"./_baseGetTag":197,"./isObjectLike":206}],209:[function(require,module,exports){
 var root = require('./_root');
 
 /**
@@ -17508,7 +17549,7 @@ var now = function() {
 
 module.exports = now;
 
-},{"./_root":202}],209:[function(require,module,exports){
+},{"./_root":203}],210:[function(require,module,exports){
 var debounce = require('./debounce'),
     isObject = require('./isObject');
 
@@ -17579,7 +17620,7 @@ function throttle(func, wait, options) {
 
 module.exports = throttle;
 
-},{"./debounce":203,"./isObject":204}],210:[function(require,module,exports){
+},{"./debounce":204,"./isObject":205}],211:[function(require,module,exports){
 var isObject = require('./isObject'),
     isSymbol = require('./isSymbol');
 
@@ -17647,7 +17688,7 @@ function toNumber(value) {
 
 module.exports = toNumber;
 
-},{"./isObject":204,"./isSymbol":207}],211:[function(require,module,exports){
+},{"./isObject":205,"./isSymbol":208}],212:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17820,7 +17861,7 @@ Rating.propTypes = {
   style: _propTypes2.default.object,
   value: _propTypes2.default.number
 };
-},{"material-ui/IconButton":244,"material-ui/styles":307,"material-ui/svg-icons/toggle/star":324,"material-ui/svg-icons/toggle/star-border":323,"prop-types":345,"react":431}],212:[function(require,module,exports){
+},{"material-ui/IconButton":245,"material-ui/styles":308,"material-ui/svg-icons/toggle/star":325,"material-ui/svg-icons/toggle/star-border":324,"prop-types":346,"react":437}],213:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17835,7 +17876,7 @@ var _Rating2 = _interopRequireDefault(_Rating);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Rating2.default;
-},{"./Rating":211}],213:[function(require,module,exports){
+},{"./Rating":212}],214:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17850,7 +17891,7 @@ var _Rating3 = _interopRequireDefault(_Rating2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Rating = _Rating3.default;
-},{"./components/Rating":212}],214:[function(require,module,exports){
+},{"./components/Rating":213}],215:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -18238,7 +18279,7 @@ AppBar.propTypes = "development" !== "production" ? {
 exports.default = AppBar;
 }).call(this,require('_process'))
 
-},{"../IconButton":244,"../Paper":253,"../svg-icons/navigation/menu":320,"../utils/propTypes":334,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/core-js/object/keys":21,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449,"warning":453}],215:[function(require,module,exports){
+},{"../IconButton":245,"../Paper":254,"../svg-icons/navigation/menu":321,"../utils/propTypes":335,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/core-js/object/keys":21,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455,"warning":464}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18253,7 +18294,7 @@ var _AppBar2 = _interopRequireDefault(_AppBar);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _AppBar2.default;
-},{"./AppBar":214}],216:[function(require,module,exports){
+},{"./AppBar":215}],217:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -18427,7 +18468,7 @@ Avatar.propTypes = "development" !== "production" ? {
 exports.default = Avatar;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],217:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],218:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18442,7 +18483,7 @@ var _Avatar2 = _interopRequireDefault(_Avatar);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Avatar2.default;
-},{"./Avatar":216}],218:[function(require,module,exports){
+},{"./Avatar":217}],219:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -18620,7 +18661,7 @@ Badge.propTypes = "development" !== "production" ? {
 exports.default = Badge;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],219:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],220:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18635,7 +18676,7 @@ var _Badge2 = _interopRequireDefault(_Badge);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Badge2.default;
-},{"./Badge":218}],220:[function(require,module,exports){
+},{"./Badge":219}],221:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -18858,7 +18899,7 @@ Card.propTypes = "development" !== "production" ? {
 exports.default = Card;
 }).call(this,require('_process'))
 
-},{"../Paper":253,"./CardExpandable":222,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],221:[function(require,module,exports){
+},{"../Paper":254,"./CardExpandable":223,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],222:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -18988,7 +19029,7 @@ CardActions.propTypes = "development" !== "production" ? {
 exports.default = CardActions;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],222:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],223:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19099,7 +19140,7 @@ CardExpandable.propTypes = "development" !== "production" ? {
 exports.default = CardExpandable;
 }).call(this,require('_process'))
 
-},{"../IconButton":244,"../svg-icons/hardware/keyboard-arrow-down":313,"../svg-icons/hardware/keyboard-arrow-up":314,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],223:[function(require,module,exports){
+},{"../IconButton":245,"../svg-icons/hardware/keyboard-arrow-down":314,"../svg-icons/hardware/keyboard-arrow-up":315,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],224:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19333,7 +19374,7 @@ CardHeader.propTypes = "development" !== "production" ? {
 exports.default = CardHeader;
 }).call(this,require('_process'))
 
-},{"../Avatar":217,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],224:[function(require,module,exports){
+},{"../Avatar":218,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],225:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19552,7 +19593,7 @@ CardMedia.propTypes = "development" !== "production" ? {
 exports.default = CardMedia;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],225:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],226:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19677,7 +19718,7 @@ CardText.propTypes = "development" !== "production" ? {
 exports.default = CardText;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],226:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],227:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19859,7 +19900,7 @@ CardTitle.propTypes = "development" !== "production" ? {
 exports.default = CardTitle;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],227:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],228:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19905,7 +19946,7 @@ exports.CardText = _CardText3.default;
 exports.CardActions = _CardActions3.default;
 exports.CardExpandable = _CardExpandable3.default;
 exports.default = _Card3.default;
-},{"./Card":220,"./CardActions":221,"./CardExpandable":222,"./CardHeader":223,"./CardMedia":224,"./CardText":225,"./CardTitle":226}],228:[function(require,module,exports){
+},{"./Card":221,"./CardActions":222,"./CardExpandable":223,"./CardHeader":224,"./CardMedia":225,"./CardText":226,"./CardTitle":227}],229:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -20203,7 +20244,7 @@ Checkbox.propTypes = "development" !== "production" ? {
 exports.default = Checkbox;
 }).call(this,require('_process'))
 
-},{"../internal/EnhancedSwitch":294,"../styles/transitions":310,"../svg-icons/toggle/check-box":322,"../svg-icons/toggle/check-box-outline-blank":321,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],229:[function(require,module,exports){
+},{"../internal/EnhancedSwitch":295,"../styles/transitions":311,"../svg-icons/toggle/check-box":323,"../svg-icons/toggle/check-box-outline-blank":322,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],230:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20218,7 +20259,7 @@ var _Checkbox2 = _interopRequireDefault(_Checkbox);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Checkbox2.default;
-},{"./Checkbox":228}],230:[function(require,module,exports){
+},{"./Checkbox":229}],231:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -20574,7 +20615,7 @@ Chip.propTypes = "development" !== "production" ? {
 exports.default = Chip;
 }).call(this,require('_process'))
 
-},{"../internal/EnhancedButton":293,"../svg-icons/navigation/cancel":316,"../utils/colorManipulator":331,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":190,"prop-types":345,"react":431,"simple-assign":449}],231:[function(require,module,exports){
+},{"../internal/EnhancedButton":294,"../svg-icons/navigation/cancel":317,"../utils/colorManipulator":332,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":191,"prop-types":346,"react":437,"simple-assign":455}],232:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20589,7 +20630,7 @@ var _Chip2 = _interopRequireDefault(_Chip);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Chip2.default;
-},{"./Chip":230}],232:[function(require,module,exports){
+},{"./Chip":231}],233:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -20864,7 +20905,7 @@ CircularProgress.propTypes = "development" !== "production" ? {
 exports.default = CircularProgress;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"../utils/autoPrefix":325,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],233:[function(require,module,exports){
+},{"../styles/transitions":311,"../utils/autoPrefix":326,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],234:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20879,7 +20920,7 @@ var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _CircularProgress2.default;
-},{"./CircularProgress":232}],234:[function(require,module,exports){
+},{"./CircularProgress":233}],235:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -21490,7 +21531,7 @@ Dialog.propTypes = "development" !== "production" ? {
 exports.default = Dialog;
 }).call(this,require('_process'))
 
-},{"../Paper":253,"../internal/Overlay":296,"../internal/RenderToLayer":297,"../styles/transitions":310,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":190,"prop-types":345,"react":431,"react-dom":350,"react-event-listener":351,"react-transition-group/TransitionGroup":427,"simple-assign":449}],235:[function(require,module,exports){
+},{"../Paper":254,"../internal/Overlay":297,"../internal/RenderToLayer":298,"../styles/transitions":311,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":191,"prop-types":346,"react":437,"react-dom":350,"react-event-listener":351,"react-transition-group/TransitionGroup":433,"simple-assign":455}],236:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21505,7 +21546,7 @@ var _Dialog2 = _interopRequireDefault(_Dialog);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Dialog2.default;
-},{"./Dialog":234}],236:[function(require,module,exports){
+},{"./Dialog":235}],237:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -22101,7 +22142,7 @@ DropDownMenu.propTypes = "development" !== "production" ? {
 exports.default = DropDownMenu;
 }).call(this,require('_process'))
 
-},{"../IconButton":244,"../Menu/Menu":248,"../Popover/Popover":254,"../Popover/PopoverAnimationVertical":256,"../internal/ClearFix":291,"../styles/transitions":310,"../svg-icons/navigation/arrow-drop-down":315,"../utils/events":333,"../utils/propTypes":334,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":190,"prop-types":345,"react":431,"react-dom":350,"simple-assign":449}],237:[function(require,module,exports){
+},{"../IconButton":245,"../Menu/Menu":249,"../Popover/Popover":255,"../Popover/PopoverAnimationVertical":257,"../internal/ClearFix":292,"../styles/transitions":311,"../svg-icons/navigation/arrow-drop-down":316,"../utils/events":334,"../utils/propTypes":335,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":191,"prop-types":346,"react":437,"react-dom":350,"simple-assign":455}],238:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22122,7 +22163,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.DropDownMenu = _DropDownMenu3.default;
 exports.MenuItem = _MenuItem3.default;
 exports.default = _DropDownMenu3.default;
-},{"../MenuItem/MenuItem":250,"./DropDownMenu":236}],238:[function(require,module,exports){
+},{"../MenuItem/MenuItem":251,"./DropDownMenu":237}],239:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -22472,7 +22513,7 @@ FlatButton.propTypes = "development" !== "production" ? {
 exports.default = FlatButton;
 }).call(this,require('_process'))
 
-},{"../internal/EnhancedButton":293,"../styles/transitions":310,"../utils/colorManipulator":331,"./FlatButtonLabel":239,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],239:[function(require,module,exports){
+},{"../internal/EnhancedButton":294,"../styles/transitions":311,"../utils/colorManipulator":332,"./FlatButtonLabel":240,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],240:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -22566,7 +22607,7 @@ FlatButtonLabel.propTypes = "development" !== "production" ? {
 exports.default = FlatButtonLabel;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],240:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],241:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22581,7 +22622,7 @@ var _FlatButton2 = _interopRequireDefault(_FlatButton);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _FlatButton2.default;
-},{"./FlatButton":238}],241:[function(require,module,exports){
+},{"./FlatButton":239}],242:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -22743,7 +22784,7 @@ FontIcon.propTypes = "development" !== "production" ? {
 exports.default = FontIcon;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],242:[function(require,module,exports){
+},{"../styles/transitions":311,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],243:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22758,7 +22799,7 @@ var _FontIcon2 = _interopRequireDefault(_FontIcon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _FontIcon2.default;
-},{"./FontIcon":241}],243:[function(require,module,exports){
+},{"./FontIcon":242}],244:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -23146,7 +23187,7 @@ IconButton.propTypes = "development" !== "production" ? {
 exports.default = IconButton;
 }).call(this,require('_process'))
 
-},{"../FontIcon":242,"../internal/EnhancedButton":293,"../internal/Tooltip":300,"../styles/transitions":310,"../utils/childUtils":330,"../utils/propTypes":334,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],244:[function(require,module,exports){
+},{"../FontIcon":243,"../internal/EnhancedButton":294,"../internal/Tooltip":301,"../styles/transitions":311,"../utils/childUtils":331,"../utils/propTypes":335,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],245:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23161,7 +23202,7 @@ var _IconButton2 = _interopRequireDefault(_IconButton);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _IconButton2.default;
-},{"./IconButton":243}],245:[function(require,module,exports){
+},{"./IconButton":244}],246:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -23273,7 +23314,7 @@ List.propTypes = "development" !== "production" ? {
 exports.default = List;
 }).call(this,require('_process'))
 
-},{"../Subheader":264,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],246:[function(require,module,exports){
+},{"../Subheader":265,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],247:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -24033,7 +24074,7 @@ ListItem.propTypes = "development" !== "production" ? {
 exports.default = ListItem;
 }).call(this,require('_process'))
 
-},{"../IconButton":244,"../internal/EnhancedButton":293,"../styles/transitions":310,"../svg-icons/navigation/expand-less":318,"../svg-icons/navigation/expand-more":319,"../utils/colorManipulator":331,"./NestedList":247,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-dom":350,"recompose/shallowEqual":437,"simple-assign":449}],247:[function(require,module,exports){
+},{"../IconButton":245,"../internal/EnhancedButton":294,"../styles/transitions":311,"../svg-icons/navigation/expand-less":319,"../svg-icons/navigation/expand-more":320,"../utils/colorManipulator":332,"./NestedList":248,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-dom":350,"recompose/shallowEqual":443,"simple-assign":455}],248:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -24090,7 +24131,7 @@ NestedList.propTypes = "development" !== "production" ? {
 exports.default = NestedList;
 }).call(this,require('_process'))
 
-},{"./List":245,"_process":341,"prop-types":345,"react":431}],248:[function(require,module,exports){
+},{"./List":246,"_process":342,"prop-types":346,"react":437}],249:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -24803,7 +24844,7 @@ Menu.propTypes = "development" !== "production" ? {
 exports.default = Menu;
 }).call(this,require('_process'))
 
-},{"../List/List":245,"../internal/ClickAwayListener":292,"../utils/propTypes":334,"./menuUtils":249,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/toArray":32,"keycode":190,"prop-types":345,"react":431,"react-dom":350,"recompose/shallowEqual":437,"simple-assign":449}],249:[function(require,module,exports){
+},{"../List/List":246,"../internal/ClickAwayListener":293,"../utils/propTypes":335,"./menuUtils":250,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/toArray":32,"keycode":191,"prop-types":346,"react":437,"react-dom":350,"recompose/shallowEqual":443,"simple-assign":455}],250:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24843,7 +24884,7 @@ var HotKeyHolder = exports.HotKeyHolder = function () {
   }]);
   return HotKeyHolder;
 }();
-},{"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26}],250:[function(require,module,exports){
+},{"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26}],251:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -25253,7 +25294,7 @@ MenuItem.propTypes = "development" !== "production" ? {
 exports.default = MenuItem;
 }).call(this,require('_process'))
 
-},{"../List/ListItem":246,"../Menu/Menu":248,"../Popover/Popover":254,"../svg-icons/navigation/check":317,"../utils/propTypes":334,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-dom":350,"recompose/shallowEqual":437,"simple-assign":449}],251:[function(require,module,exports){
+},{"../List/ListItem":247,"../Menu/Menu":249,"../Popover/Popover":255,"../svg-icons/navigation/check":318,"../utils/propTypes":335,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-dom":350,"recompose/shallowEqual":443,"simple-assign":455}],252:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25268,7 +25309,7 @@ var _MenuItem2 = _interopRequireDefault(_MenuItem);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _MenuItem2.default;
-},{"./MenuItem":250}],252:[function(require,module,exports){
+},{"./MenuItem":251}],253:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -25423,7 +25464,7 @@ Paper.propTypes = "development" !== "production" ? {
 exports.default = Paper;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"../utils/propTypes":334,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],253:[function(require,module,exports){
+},{"../styles/transitions":311,"../utils/propTypes":335,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],254:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25438,7 +25479,7 @@ var _Paper2 = _interopRequireDefault(_Paper);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Paper2.default;
-},{"./Paper":252}],254:[function(require,module,exports){
+},{"./Paper":253}],255:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -25967,7 +26008,7 @@ Popover.propTypes = "development" !== "production" ? {
 exports.default = Popover;
 }).call(this,require('_process'))
 
-},{"../Paper":253,"../internal/RenderToLayer":297,"../utils/propTypes":334,"./PopoverAnimationDefault":255,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"lodash.throttle":194,"prop-types":345,"react":431,"react-dom":350,"react-event-listener":351,"simple-assign":449}],255:[function(require,module,exports){
+},{"../Paper":254,"../internal/RenderToLayer":298,"../utils/propTypes":335,"./PopoverAnimationDefault":256,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"lodash.throttle":195,"prop-types":346,"react":437,"react-dom":350,"react-event-listener":351,"simple-assign":455}],256:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -26143,7 +26184,7 @@ PopoverAnimationDefault.propTypes = "development" !== "production" ? {
 exports.default = PopoverAnimationDefault;
 }).call(this,require('_process'))
 
-},{"../Paper":253,"../styles/transitions":310,"../utils/propTypes":334,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],256:[function(require,module,exports){
+},{"../Paper":254,"../styles/transitions":311,"../utils/propTypes":335,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],257:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -26294,7 +26335,7 @@ PopoverAnimationVertical.propTypes = "development" !== "production" ? {
 exports.default = PopoverAnimationVertical;
 }).call(this,require('_process'))
 
-},{"../Paper":253,"../styles/transitions":310,"../utils/propTypes":334,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],257:[function(require,module,exports){
+},{"../Paper":254,"../styles/transitions":311,"../utils/propTypes":335,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],258:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -26783,7 +26824,7 @@ RaisedButton.propTypes = "development" !== "production" ? {
 exports.default = RaisedButton;
 }).call(this,require('_process'))
 
-},{"../Paper":253,"../internal/EnhancedButton":293,"../styles/transitions":310,"../utils/colorManipulator":331,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],258:[function(require,module,exports){
+},{"../Paper":254,"../internal/EnhancedButton":294,"../styles/transitions":311,"../utils/colorManipulator":332,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],259:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26798,7 +26839,7 @@ var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _RaisedButton2.default;
-},{"./RaisedButton":257}],259:[function(require,module,exports){
+},{"./RaisedButton":258}],260:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27123,7 +27164,7 @@ SelectField.propTypes = "development" !== "production" ? {
 exports.default = SelectField;
 }).call(this,require('_process'))
 
-},{"../DropDownMenu":237,"../TextField":285,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],260:[function(require,module,exports){
+},{"../DropDownMenu":238,"../TextField":286,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],261:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27138,7 +27179,7 @@ var _SelectField2 = _interopRequireDefault(_SelectField);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _SelectField2.default;
-},{"./SelectField":259}],261:[function(require,module,exports){
+},{"./SelectField":260}],262:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -28024,7 +28065,7 @@ Slider.propTypes = "development" !== "production" ? {
 exports.default = Slider;
 }).call(this,require('_process'))
 
-},{"../internal/FocusRipple":295,"../styles/transitions":310,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/defineProperty":27,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":190,"prop-types":345,"react":431,"simple-assign":449,"warning":453}],262:[function(require,module,exports){
+},{"../internal/FocusRipple":296,"../styles/transitions":311,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/defineProperty":27,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":191,"prop-types":346,"react":437,"simple-assign":455,"warning":464}],263:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28039,7 +28080,7 @@ var _Slider2 = _interopRequireDefault(_Slider);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Slider2.default;
-},{"./Slider":261}],263:[function(require,module,exports){
+},{"./Slider":262}],264:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -28126,7 +28167,7 @@ Subheader.contextTypes = {
 exports.default = Subheader;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/objectWithoutProperties":30,"prop-types":345,"react":431,"simple-assign":449}],264:[function(require,module,exports){
+},{"_process":342,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/objectWithoutProperties":30,"prop-types":346,"react":437,"simple-assign":455}],265:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28141,7 +28182,7 @@ var _Subheader2 = _interopRequireDefault(_Subheader);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Subheader2.default;
-},{"./Subheader":263}],265:[function(require,module,exports){
+},{"./Subheader":264}],266:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -28310,7 +28351,7 @@ SvgIcon.propTypes = "development" !== "production" ? {
 exports.default = SvgIcon;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],266:[function(require,module,exports){
+},{"../styles/transitions":311,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],267:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28325,7 +28366,7 @@ var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _SvgIcon2.default;
-},{"./SvgIcon":265}],267:[function(require,module,exports){
+},{"./SvgIcon":266}],268:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -28705,7 +28746,7 @@ Table.propTypes = "development" !== "production" ? {
 exports.default = Table;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449,"warning":453}],268:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455,"warning":464}],269:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -29250,7 +29291,7 @@ TableBody.propTypes = "development" !== "production" ? {
 exports.default = TableBody;
 }).call(this,require('_process'))
 
-},{"../Checkbox":229,"../internal/ClickAwayListener":292,"./TableRowColumn":273,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/toConsumableArray":33,"babel-runtime/helpers/typeof":34,"prop-types":345,"react":431,"simple-assign":449}],269:[function(require,module,exports){
+},{"../Checkbox":230,"../internal/ClickAwayListener":293,"./TableRowColumn":274,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/toConsumableArray":33,"babel-runtime/helpers/typeof":34,"prop-types":346,"react":437,"simple-assign":455}],270:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -29408,7 +29449,7 @@ TableFooter.propTypes = "development" !== "production" ? {
 exports.default = TableFooter;
 }).call(this,require('_process'))
 
-},{"./TableRowColumn":273,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/toConsumableArray":33,"prop-types":345,"react":431,"simple-assign":449}],270:[function(require,module,exports){
+},{"./TableRowColumn":274,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/toConsumableArray":33,"prop-types":346,"react":437,"simple-assign":455}],271:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -29670,7 +29711,7 @@ TableHeader.propTypes = "development" !== "production" ? {
 exports.default = TableHeader;
 }).call(this,require('_process'))
 
-},{"../Checkbox":229,"./TableHeaderColumn":271,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],271:[function(require,module,exports){
+},{"../Checkbox":230,"./TableHeaderColumn":272,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],272:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -29876,7 +29917,7 @@ TableHeaderColumn.propTypes = "development" !== "production" ? {
 exports.default = TableHeaderColumn;
 }).call(this,require('_process'))
 
-},{"../internal/Tooltip":300,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],272:[function(require,module,exports){
+},{"../internal/Tooltip":301,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],273:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -30163,7 +30204,7 @@ TableRow.propTypes = "development" !== "production" ? {
 exports.default = TableRow;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],273:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],274:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -30350,7 +30391,7 @@ TableRowColumn.propTypes = "development" !== "production" ? {
 exports.default = TableRowColumn;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],274:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],275:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30396,7 +30437,7 @@ exports.TableHeaderColumn = _TableHeaderColumn3.default;
 exports.TableRow = _TableRow3.default;
 exports.TableRowColumn = _TableRowColumn3.default;
 exports.default = _Table3.default;
-},{"./Table":267,"./TableBody":268,"./TableFooter":269,"./TableHeader":270,"./TableHeaderColumn":271,"./TableRow":272,"./TableRowColumn":273}],275:[function(require,module,exports){
+},{"./Table":268,"./TableBody":269,"./TableFooter":270,"./TableHeader":271,"./TableHeaderColumn":272,"./TableRow":273,"./TableRowColumn":274}],276:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -30500,7 +30541,7 @@ InkBar.propTypes = "development" !== "production" ? {
 exports.default = InkBar;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],276:[function(require,module,exports){
+},{"../styles/transitions":311,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],277:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -30714,7 +30755,7 @@ Tab.propTypes = "development" !== "production" ? {
 exports.default = Tab;
 }).call(this,require('_process'))
 
-},{"../internal/EnhancedButton":293,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],277:[function(require,module,exports){
+},{"../internal/EnhancedButton":294,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],278:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -30769,7 +30810,7 @@ TabTemplate.propTypes = "development" !== "production" ? {
 exports.default = TabTemplate;
 }).call(this,require('_process'))
 
-},{"_process":341,"prop-types":345,"react":431,"simple-assign":449}],278:[function(require,module,exports){
+},{"_process":342,"prop-types":346,"react":437,"simple-assign":455}],279:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31094,7 +31135,7 @@ Tabs.propTypes = "development" !== "production" ? {
 exports.default = Tabs;
 }).call(this,require('_process'))
 
-},{"./InkBar":275,"./TabTemplate":277,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449,"warning":453}],279:[function(require,module,exports){
+},{"./InkBar":276,"./TabTemplate":278,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455,"warning":464}],280:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31115,7 +31156,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.Tab = _Tab3.default;
 exports.Tabs = _Tabs3.default;
 exports.default = _Tabs3.default;
-},{"./Tab":276,"./Tabs":278}],280:[function(require,module,exports){
+},{"./Tab":277,"./Tabs":279}],281:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31376,7 +31417,7 @@ EnhancedTextarea.propTypes = "development" !== "production" ? {
 exports.default = EnhancedTextarea;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-event-listener":351,"simple-assign":449}],281:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-event-listener":351,"simple-assign":455}],282:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31971,7 +32012,7 @@ TextField.propTypes = "development" !== "production" ? {
 exports.default = TextField;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"./EnhancedTextarea":280,"./TextFieldHint":282,"./TextFieldLabel":283,"./TextFieldUnderline":284,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-dom":350,"recompose/shallowEqual":437,"simple-assign":449,"warning":453}],282:[function(require,module,exports){
+},{"../styles/transitions":311,"./EnhancedTextarea":281,"./TextFieldHint":283,"./TextFieldLabel":284,"./TextFieldUnderline":285,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-dom":350,"recompose/shallowEqual":443,"simple-assign":455,"warning":464}],283:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -32055,7 +32096,7 @@ TextFieldHint.defaultProps = {
 exports.default = TextFieldHint;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"_process":341,"prop-types":345,"react":431,"simple-assign":449}],283:[function(require,module,exports){
+},{"../styles/transitions":311,"_process":342,"prop-types":346,"react":437,"simple-assign":455}],284:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -32176,7 +32217,7 @@ TextFieldLabel.defaultProps = {
 exports.default = TextFieldLabel;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"_process":341,"prop-types":345,"react":431,"simple-assign":449}],284:[function(require,module,exports){
+},{"../styles/transitions":311,"_process":342,"prop-types":346,"react":437,"simple-assign":455}],285:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -32319,7 +32360,7 @@ TextFieldUnderline.defaultProps = defaultProps;
 exports.default = TextFieldUnderline;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"_process":341,"prop-types":345,"react":431,"simple-assign":449}],285:[function(require,module,exports){
+},{"../styles/transitions":311,"_process":342,"prop-types":346,"react":437,"simple-assign":455}],286:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32334,7 +32375,7 @@ var _TextField2 = _interopRequireDefault(_TextField);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _TextField2.default;
-},{"./TextField":281}],286:[function(require,module,exports){
+},{"./TextField":282}],287:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -32671,7 +32712,7 @@ Toggle.propTypes = "development" !== "production" ? {
 exports.default = Toggle;
 }).call(this,require('_process'))
 
-},{"../Paper":253,"../internal/EnhancedSwitch":294,"../styles/transitions":310,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],287:[function(require,module,exports){
+},{"../Paper":254,"../internal/EnhancedSwitch":295,"../styles/transitions":311,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],288:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32686,7 +32727,7 @@ var _Toggle2 = _interopRequireDefault(_Toggle);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Toggle2.default;
-},{"./Toggle":286}],288:[function(require,module,exports){
+},{"./Toggle":287}],289:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -32814,7 +32855,7 @@ AutoLockScrolling.propTypes = "development" !== "production" ? {
 exports.default = AutoLockScrolling;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431}],289:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437}],290:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -32972,7 +33013,7 @@ BeforeAfterWrapper.propTypes = "development" !== "production" ? {
 exports.default = BeforeAfterWrapper;
 }).call(this,require('_process'))
 
-},{"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],290:[function(require,module,exports){
+},{"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],291:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -33148,7 +33189,7 @@ CircleRipple.propTypes = "development" !== "production" ? {
 exports.default = CircleRipple;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"../utils/autoPrefix":325,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-dom":350,"recompose/shallowEqual":437,"simple-assign":449}],291:[function(require,module,exports){
+},{"../styles/transitions":311,"../utils/autoPrefix":326,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-dom":350,"recompose/shallowEqual":443,"simple-assign":455}],292:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -33218,7 +33259,7 @@ ClearFix.propTypes = "development" !== "production" ? {
 exports.default = ClearFix;
 }).call(this,require('_process'))
 
-},{"./BeforeAfterWrapper":289,"_process":341,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/objectWithoutProperties":30,"prop-types":345,"react":431}],292:[function(require,module,exports){
+},{"./BeforeAfterWrapper":290,"_process":342,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/objectWithoutProperties":30,"prop-types":346,"react":437}],293:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -33351,7 +33392,7 @@ ClickAwayListener.propTypes = "development" !== "production" ? {
 exports.default = ClickAwayListener;
 }).call(this,require('_process'))
 
-},{"../utils/events":333,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-dom":350}],293:[function(require,module,exports){
+},{"../utils/events":334,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-dom":350}],294:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -33752,7 +33793,7 @@ EnhancedButton.propTypes = "development" !== "production" ? {
 exports.default = EnhancedButton;
 }).call(this,require('_process'))
 
-},{"../utils/events":333,"./FocusRipple":295,"./TouchRipple":301,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":190,"prop-types":345,"react":431,"simple-assign":449}],294:[function(require,module,exports){
+},{"../utils/events":334,"./FocusRipple":296,"./TouchRipple":302,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":191,"prop-types":346,"react":437,"simple-assign":455}],295:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -34220,7 +34261,7 @@ EnhancedSwitch.propTypes = "development" !== "production" ? {
 exports.default = EnhancedSwitch;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"./../Paper":253,"./FocusRipple":295,"./TouchRipple":301,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":190,"prop-types":345,"react":431,"react-event-listener":351,"simple-assign":449,"warning":453}],295:[function(require,module,exports){
+},{"../styles/transitions":311,"./../Paper":254,"./FocusRipple":296,"./TouchRipple":302,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"keycode":191,"prop-types":346,"react":437,"react-event-listener":351,"simple-assign":455,"warning":464}],296:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -34423,7 +34464,7 @@ FocusRipple.propTypes = "development" !== "production" ? {
 exports.default = FocusRipple;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"../utils/autoPrefix":325,"./ScaleIn":298,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-dom":350,"recompose/shallowEqual":437,"simple-assign":449}],296:[function(require,module,exports){
+},{"../styles/transitions":311,"../utils/autoPrefix":326,"./ScaleIn":299,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-dom":350,"recompose/shallowEqual":443,"simple-assign":455}],297:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -34571,7 +34612,7 @@ Overlay.propTypes = "development" !== "production" ? {
 exports.default = Overlay;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"./AutoLockScrolling":288,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],297:[function(require,module,exports){
+},{"../styles/transitions":311,"./AutoLockScrolling":289,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],298:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -34754,7 +34795,7 @@ RenderToLayer.propTypes = "development" !== "production" ? {
 exports.default = RenderToLayer;
 }).call(this,require('_process'))
 
-},{"../utils/dom":332,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-dom":350}],298:[function(require,module,exports){
+},{"../utils/dom":333,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-dom":350}],299:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -34886,7 +34927,7 @@ ScaleIn.propTypes = "development" !== "production" ? {
 exports.default = ScaleIn;
 }).call(this,require('_process'))
 
-},{"./ScaleInChild":299,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-transition-group/TransitionGroup":427,"simple-assign":449}],299:[function(require,module,exports){
+},{"./ScaleInChild":300,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-transition-group/TransitionGroup":433,"simple-assign":455}],300:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -35060,7 +35101,7 @@ ScaleInChild.propTypes = "development" !== "production" ? {
 exports.default = ScaleInChild;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"../utils/autoPrefix":325,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"react-dom":350,"simple-assign":449}],300:[function(require,module,exports){
+},{"../styles/transitions":311,"../utils/autoPrefix":326,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"react-dom":350,"simple-assign":455}],301:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -35292,7 +35333,7 @@ Tooltip.propTypes = "development" !== "production" ? {
 exports.default = Tooltip;
 }).call(this,require('_process'))
 
-},{"../styles/transitions":310,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431,"simple-assign":449}],301:[function(require,module,exports){
+},{"../styles/transitions":311,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/extends":28,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437,"simple-assign":455}],302:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -35607,7 +35648,7 @@ TouchRipple.propTypes = "development" !== "production" ? {
 exports.default = TouchRipple;
 }).call(this,require('_process'))
 
-},{"../utils/dom":332,"./CircleRipple":290,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/toArray":32,"babel-runtime/helpers/toConsumableArray":33,"prop-types":345,"react":431,"react-dom":350,"react-transition-group/TransitionGroup":427,"simple-assign":449}],302:[function(require,module,exports){
+},{"../utils/dom":333,"./CircleRipple":291,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/toArray":32,"babel-runtime/helpers/toConsumableArray":33,"prop-types":346,"react":437,"react-dom":350,"react-transition-group/TransitionGroup":433,"simple-assign":455}],303:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -35681,7 +35722,7 @@ MuiThemeProvider.propTypes = "development" !== "production" ? {
 exports.default = MuiThemeProvider;
 }).call(this,require('_process'))
 
-},{"./getMuiTheme":306,"_process":341,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":345,"react":431}],303:[function(require,module,exports){
+},{"./getMuiTheme":307,"_process":342,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/possibleConstructorReturn":31,"prop-types":346,"react":437}],304:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35719,7 +35760,7 @@ exports.default = {
     clockCircleColor: (0, _colorManipulator.fade)(_colors.fullWhite, 0.12)
   }
 };
-},{"../../utils/colorManipulator":331,"../colors":305,"../spacing":309}],304:[function(require,module,exports){
+},{"../../utils/colorManipulator":332,"../colors":306,"../spacing":310}],305:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35765,7 +35806,7 @@ exports.default = {
 }; /**
     * NB: If you update this file, please also update `docs/src/app/customization/Themes.js`
     */
-},{"../../utils/colorManipulator":331,"../colors":305,"../spacing":309}],305:[function(require,module,exports){
+},{"../../utils/colorManipulator":332,"../colors":306,"../spacing":310}],306:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36056,7 +36097,7 @@ var faintBlack = exports.faintBlack = 'rgba(0, 0, 0, 0.12)';
 var fullWhite = exports.fullWhite = 'rgba(255, 255, 255, 1)';
 var darkWhite = exports.darkWhite = 'rgba(255, 255, 255, 0.87)';
 var lightWhite = exports.lightWhite = 'rgba(255, 255, 255, 0.54)';
-},{}],306:[function(require,module,exports){
+},{}],307:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36439,7 +36480,7 @@ function getMuiTheme(muiTheme) {
 
   return muiTheme;
 }
-},{"../utils/autoprefixer":326,"../utils/callOnce":329,"../utils/colorManipulator":331,"../utils/rtl":335,"./baseThemes/lightBaseTheme":304,"./colors":305,"./typography":311,"./zIndex":312,"babel-runtime/helpers/toConsumableArray":33,"lodash.merge":193,"recompose/compose":432}],307:[function(require,module,exports){
+},{"../utils/autoprefixer":327,"../utils/callOnce":330,"../utils/colorManipulator":332,"../utils/rtl":336,"./baseThemes/lightBaseTheme":305,"./colors":306,"./typography":312,"./zIndex":313,"babel-runtime/helpers/toConsumableArray":33,"lodash.merge":194,"recompose/compose":438}],308:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36503,7 +36544,7 @@ exports.spacing = _spacing3.default;
 exports.transitions = _transitions3.default;
 exports.typography = _typography3.default;
 exports.zIndex = _zIndex3.default;
-},{"./MuiThemeProvider":302,"./baseThemes/darkBaseTheme":303,"./baseThemes/lightBaseTheme":304,"./colors":305,"./getMuiTheme":306,"./muiThemeable":308,"./spacing":309,"./transitions":310,"./typography":311,"./zIndex":312}],308:[function(require,module,exports){
+},{"./MuiThemeProvider":303,"./baseThemes/darkBaseTheme":304,"./baseThemes/lightBaseTheme":305,"./colors":306,"./getMuiTheme":307,"./muiThemeable":309,"./spacing":310,"./transitions":311,"./typography":312,"./zIndex":313}],309:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36556,7 +36597,7 @@ function muiThemeable() {
     return MuiComponent;
   };
 }
-},{"./getMuiTheme":306,"babel-runtime/helpers/extends":28,"prop-types":345,"react":431}],309:[function(require,module,exports){
+},{"./getMuiTheme":307,"babel-runtime/helpers/extends":28,"prop-types":346,"react":437}],310:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36576,7 +36617,7 @@ exports.default = {
   desktopSubheaderHeight: 48,
   desktopToolbarHeight: 56
 };
-},{}],310:[function(require,module,exports){
+},{}],311:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36611,7 +36652,7 @@ exports.default = {
     return property + ' ' + duration + ' ' + easeFunction + ' ' + delay;
   }
 };
-},{}],311:[function(require,module,exports){
+},{}],312:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36647,7 +36688,7 @@ var Typography = function Typography() {
 };
 
 exports.default = new Typography();
-},{"./colors":305,"babel-runtime/helpers/classCallCheck":25}],312:[function(require,module,exports){
+},{"./colors":306,"babel-runtime/helpers/classCallCheck":25}],313:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36665,7 +36706,7 @@ exports.default = {
   snackbar: 2900,
   tooltip: 3000
 };
-},{}],313:[function(require,module,exports){
+},{}],314:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36698,7 +36739,7 @@ HardwareKeyboardArrowDown.displayName = 'HardwareKeyboardArrowDown';
 HardwareKeyboardArrowDown.muiName = 'SvgIcon';
 
 exports.default = HardwareKeyboardArrowDown;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],314:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],315:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36731,7 +36772,7 @@ HardwareKeyboardArrowUp.displayName = 'HardwareKeyboardArrowUp';
 HardwareKeyboardArrowUp.muiName = 'SvgIcon';
 
 exports.default = HardwareKeyboardArrowUp;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],315:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],316:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36764,7 +36805,7 @@ NavigationArrowDropDown.displayName = 'NavigationArrowDropDown';
 NavigationArrowDropDown.muiName = 'SvgIcon';
 
 exports.default = NavigationArrowDropDown;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],316:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],317:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36797,7 +36838,7 @@ NavigationCancel.displayName = 'NavigationCancel';
 NavigationCancel.muiName = 'SvgIcon';
 
 exports.default = NavigationCancel;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],317:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],318:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36830,7 +36871,7 @@ NavigationCheck.displayName = 'NavigationCheck';
 NavigationCheck.muiName = 'SvgIcon';
 
 exports.default = NavigationCheck;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],318:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],319:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36863,7 +36904,7 @@ NavigationExpandLess.displayName = 'NavigationExpandLess';
 NavigationExpandLess.muiName = 'SvgIcon';
 
 exports.default = NavigationExpandLess;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],319:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],320:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36896,7 +36937,7 @@ NavigationExpandMore.displayName = 'NavigationExpandMore';
 NavigationExpandMore.muiName = 'SvgIcon';
 
 exports.default = NavigationExpandMore;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],320:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],321:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36929,7 +36970,7 @@ NavigationMenu.displayName = 'NavigationMenu';
 NavigationMenu.muiName = 'SvgIcon';
 
 exports.default = NavigationMenu;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],321:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],322:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36962,7 +37003,7 @@ ToggleCheckBoxOutlineBlank.displayName = 'ToggleCheckBoxOutlineBlank';
 ToggleCheckBoxOutlineBlank.muiName = 'SvgIcon';
 
 exports.default = ToggleCheckBoxOutlineBlank;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],322:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],323:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36995,7 +37036,7 @@ ToggleCheckBox.displayName = 'ToggleCheckBox';
 ToggleCheckBox.muiName = 'SvgIcon';
 
 exports.default = ToggleCheckBox;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],323:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],324:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37028,7 +37069,7 @@ ToggleStarBorder.displayName = 'ToggleStarBorder';
 ToggleStarBorder.muiName = 'SvgIcon';
 
 exports.default = ToggleStarBorder;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],324:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],325:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37061,7 +37102,7 @@ ToggleStar.displayName = 'ToggleStar';
 ToggleStar.muiName = 'SvgIcon';
 
 exports.default = ToggleStar;
-},{"../../SvgIcon":266,"react":431,"recompose/pure":434}],325:[function(require,module,exports){
+},{"../../SvgIcon":267,"react":437,"recompose/pure":440}],326:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37072,7 +37113,7 @@ exports.default = {
     style[key] = value;
   }
 };
-},{}],326:[function(require,module,exports){
+},{}],327:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -37155,7 +37196,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var hasWarnedAboutUserAgent = false;
 }).call(this,require('_process'))
 
-},{"./autoprefixerDynamic":327,"./autoprefixerStatic":328,"_process":341,"inline-style-prefixer/dynamic/createPrefixer":164,"inline-style-prefixer/static/createPrefixer":172,"warning":453}],327:[function(require,module,exports){
+},{"./autoprefixerDynamic":328,"./autoprefixerStatic":329,"_process":342,"inline-style-prefixer/dynamic/createPrefixer":165,"inline-style-prefixer/static/createPrefixer":173,"warning":464}],328:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37196,7 +37237,7 @@ exports.default = {
   plugins: [_calc2.default, _flex2.default, _flexboxIE2.default, _flexboxOld2.default, _gradient2.default, _sizing2.default, _transition2.default],
   prefixMap: { "chrome": { "transform": 35, "transformOrigin": 35, "transformOriginX": 35, "transformOriginY": 35, "backfaceVisibility": 35, "perspective": 35, "perspectiveOrigin": 35, "transformStyle": 35, "transformOriginZ": 35, "animation": 42, "animationDelay": 42, "animationDirection": 42, "animationFillMode": 42, "animationDuration": 42, "animationIterationCount": 42, "animationName": 42, "animationPlayState": 42, "animationTimingFunction": 42, "appearance": 60, "userSelect": 53, "fontKerning": 32, "textEmphasisPosition": 60, "textEmphasis": 60, "textEmphasisStyle": 60, "textEmphasisColor": 60, "boxDecorationBreak": 60, "clipPath": 54, "maskImage": 60, "maskMode": 60, "maskRepeat": 60, "maskPosition": 60, "maskClip": 60, "maskOrigin": 60, "maskSize": 60, "maskComposite": 60, "mask": 60, "maskBorderSource": 60, "maskBorderMode": 60, "maskBorderSlice": 60, "maskBorderWidth": 60, "maskBorderOutset": 60, "maskBorderRepeat": 60, "maskBorder": 60, "maskType": 60, "textDecorationStyle": 56, "textDecorationSkip": 56, "textDecorationLine": 56, "textDecorationColor": 56, "filter": 52, "fontFeatureSettings": 47, "breakAfter": 49, "breakBefore": 49, "breakInside": 49, "columnCount": 49, "columnFill": 49, "columnGap": 49, "columnRule": 49, "columnRuleColor": 49, "columnRuleStyle": 49, "columnRuleWidth": 49, "columns": 49, "columnSpan": 49, "columnWidth": 49 }, "safari": { "flex": 8, "flexBasis": 8, "flexDirection": 8, "flexGrow": 8, "flexFlow": 8, "flexShrink": 8, "flexWrap": 8, "alignContent": 8, "alignItems": 8, "alignSelf": 8, "justifyContent": 8, "order": 8, "transition": 6, "transitionDelay": 6, "transitionDuration": 6, "transitionProperty": 6, "transitionTimingFunction": 6, "transform": 8, "transformOrigin": 8, "transformOriginX": 8, "transformOriginY": 8, "backfaceVisibility": 8, "perspective": 8, "perspectiveOrigin": 8, "transformStyle": 8, "transformOriginZ": 8, "animation": 8, "animationDelay": 8, "animationDirection": 8, "animationFillMode": 8, "animationDuration": 8, "animationIterationCount": 8, "animationName": 8, "animationPlayState": 8, "animationTimingFunction": 8, "appearance": 10.1, "userSelect": 10.1, "backdropFilter": 10.1, "fontKerning": 9, "scrollSnapType": 10, "scrollSnapPointsX": 10, "scrollSnapPointsY": 10, "scrollSnapDestination": 10, "scrollSnapCoordinate": 10, "textEmphasisPosition": 7, "textEmphasis": 7, "textEmphasisStyle": 7, "textEmphasisColor": 7, "boxDecorationBreak": 10.1, "clipPath": 10.1, "maskImage": 10.1, "maskMode": 10.1, "maskRepeat": 10.1, "maskPosition": 10.1, "maskClip": 10.1, "maskOrigin": 10.1, "maskSize": 10.1, "maskComposite": 10.1, "mask": 10.1, "maskBorderSource": 10.1, "maskBorderMode": 10.1, "maskBorderSlice": 10.1, "maskBorderWidth": 10.1, "maskBorderOutset": 10.1, "maskBorderRepeat": 10.1, "maskBorder": 10.1, "maskType": 10.1, "textDecorationStyle": 10.1, "textDecorationSkip": 10.1, "textDecorationLine": 10.1, "textDecorationColor": 10.1, "shapeImageThreshold": 10, "shapeImageMargin": 10, "shapeImageOutside": 10, "filter": 9, "hyphens": 10.1, "flowInto": 10.1, "flowFrom": 10.1, "breakBefore": 8, "breakAfter": 8, "breakInside": 8, "regionFragment": 10.1, "columnCount": 8, "columnFill": 8, "columnGap": 8, "columnRule": 8, "columnRuleColor": 8, "columnRuleStyle": 8, "columnRuleWidth": 8, "columns": 8, "columnSpan": 8, "columnWidth": 8 }, "firefox": { "appearance": 55, "userSelect": 55, "boxSizing": 28, "textAlignLast": 48, "textDecorationStyle": 35, "textDecorationSkip": 35, "textDecorationLine": 35, "textDecorationColor": 35, "tabSize": 55, "hyphens": 42, "fontFeatureSettings": 33, "breakAfter": 51, "breakBefore": 51, "breakInside": 51, "columnCount": 51, "columnFill": 51, "columnGap": 51, "columnRule": 51, "columnRuleColor": 51, "columnRuleStyle": 51, "columnRuleWidth": 51, "columns": 51, "columnSpan": 51, "columnWidth": 51 }, "opera": { "flex": 16, "flexBasis": 16, "flexDirection": 16, "flexGrow": 16, "flexFlow": 16, "flexShrink": 16, "flexWrap": 16, "alignContent": 16, "alignItems": 16, "alignSelf": 16, "justifyContent": 16, "order": 16, "transform": 22, "transformOrigin": 22, "transformOriginX": 22, "transformOriginY": 22, "backfaceVisibility": 22, "perspective": 22, "perspectiveOrigin": 22, "transformStyle": 22, "transformOriginZ": 22, "animation": 29, "animationDelay": 29, "animationDirection": 29, "animationFillMode": 29, "animationDuration": 29, "animationIterationCount": 29, "animationName": 29, "animationPlayState": 29, "animationTimingFunction": 29, "appearance": 45, "userSelect": 40, "fontKerning": 19, "textEmphasisPosition": 45, "textEmphasis": 45, "textEmphasisStyle": 45, "textEmphasisColor": 45, "boxDecorationBreak": 45, "clipPath": 41, "maskImage": 45, "maskMode": 45, "maskRepeat": 45, "maskPosition": 45, "maskClip": 45, "maskOrigin": 45, "maskSize": 45, "maskComposite": 45, "mask": 45, "maskBorderSource": 45, "maskBorderMode": 45, "maskBorderSlice": 45, "maskBorderWidth": 45, "maskBorderOutset": 45, "maskBorderRepeat": 45, "maskBorder": 45, "maskType": 45, "textDecorationStyle": 43, "textDecorationSkip": 43, "textDecorationLine": 43, "textDecorationColor": 43, "filter": 39, "fontFeatureSettings": 34, "breakAfter": 36, "breakBefore": 36, "breakInside": 36, "columnCount": 36, "columnFill": 36, "columnGap": 36, "columnRule": 36, "columnRuleColor": 36, "columnRuleStyle": 36, "columnRuleWidth": 36, "columns": 36, "columnSpan": 36, "columnWidth": 36 }, "ie": { "flex": 10, "flexDirection": 10, "flexFlow": 10, "flexWrap": 10, "transform": 9, "transformOrigin": 9, "transformOriginX": 9, "transformOriginY": 9, "userSelect": 11, "wrapFlow": 11, "wrapThrough": 11, "wrapMargin": 11, "scrollSnapType": 11, "scrollSnapPointsX": 11, "scrollSnapPointsY": 11, "scrollSnapDestination": 11, "scrollSnapCoordinate": 11, "touchAction": 10, "hyphens": 11, "flowInto": 11, "flowFrom": 11, "breakBefore": 11, "breakAfter": 11, "breakInside": 11, "regionFragment": 11, "gridTemplateColumns": 11, "gridTemplateRows": 11, "gridTemplateAreas": 11, "gridTemplate": 11, "gridAutoColumns": 11, "gridAutoRows": 11, "gridAutoFlow": 11, "grid": 11, "gridRowStart": 11, "gridColumnStart": 11, "gridRowEnd": 11, "gridRow": 11, "gridColumn": 11, "gridColumnEnd": 11, "gridColumnGap": 11, "gridRowGap": 11, "gridArea": 11, "gridGap": 11, "textSizeAdjust": 11 }, "edge": { "userSelect": 15, "wrapFlow": 15, "wrapThrough": 15, "wrapMargin": 15, "scrollSnapType": 15, "scrollSnapPointsX": 15, "scrollSnapPointsY": 15, "scrollSnapDestination": 15, "scrollSnapCoordinate": 15, "hyphens": 15, "flowInto": 15, "flowFrom": 15, "breakBefore": 15, "breakAfter": 15, "breakInside": 15, "regionFragment": 15, "gridTemplateColumns": 15, "gridTemplateRows": 15, "gridTemplateAreas": 15, "gridTemplate": 15, "gridAutoColumns": 15, "gridAutoRows": 15, "gridAutoFlow": 15, "grid": 15, "gridRowStart": 15, "gridColumnStart": 15, "gridRowEnd": 15, "gridRow": 15, "gridColumn": 15, "gridColumnEnd": 15, "gridColumnGap": 15, "gridRowGap": 15, "gridArea": 15, "gridGap": 15 }, "ios_saf": { "flex": 8.1, "flexBasis": 8.1, "flexDirection": 8.1, "flexGrow": 8.1, "flexFlow": 8.1, "flexShrink": 8.1, "flexWrap": 8.1, "alignContent": 8.1, "alignItems": 8.1, "alignSelf": 8.1, "justifyContent": 8.1, "order": 8.1, "transition": 6, "transitionDelay": 6, "transitionDuration": 6, "transitionProperty": 6, "transitionTimingFunction": 6, "transform": 8.1, "transformOrigin": 8.1, "transformOriginX": 8.1, "transformOriginY": 8.1, "backfaceVisibility": 8.1, "perspective": 8.1, "perspectiveOrigin": 8.1, "transformStyle": 8.1, "transformOriginZ": 8.1, "animation": 8.1, "animationDelay": 8.1, "animationDirection": 8.1, "animationFillMode": 8.1, "animationDuration": 8.1, "animationIterationCount": 8.1, "animationName": 8.1, "animationPlayState": 8.1, "animationTimingFunction": 8.1, "appearance": 10, "userSelect": 10, "backdropFilter": 10, "fontKerning": 10, "scrollSnapType": 10, "scrollSnapPointsX": 10, "scrollSnapPointsY": 10, "scrollSnapDestination": 10, "scrollSnapCoordinate": 10, "boxDecorationBreak": 10, "clipPath": 10, "maskImage": 10, "maskMode": 10, "maskRepeat": 10, "maskPosition": 10, "maskClip": 10, "maskOrigin": 10, "maskSize": 10, "maskComposite": 10, "mask": 10, "maskBorderSource": 10, "maskBorderMode": 10, "maskBorderSlice": 10, "maskBorderWidth": 10, "maskBorderOutset": 10, "maskBorderRepeat": 10, "maskBorder": 10, "maskType": 10, "textSizeAdjust": 10, "textDecorationStyle": 10, "textDecorationSkip": 10, "textDecorationLine": 10, "textDecorationColor": 10, "shapeImageThreshold": 10, "shapeImageMargin": 10, "shapeImageOutside": 10, "filter": 9, "hyphens": 10, "flowInto": 10, "flowFrom": 10, "breakBefore": 8.1, "breakAfter": 8.1, "breakInside": 8.1, "regionFragment": 10, "columnCount": 8.1, "columnFill": 8.1, "columnGap": 8.1, "columnRule": 8.1, "columnRuleColor": 8.1, "columnRuleStyle": 8.1, "columnRuleWidth": 8.1, "columns": 8.1, "columnSpan": 8.1, "columnWidth": 8.1 }, "android": { "borderImage": 4.2, "borderImageOutset": 4.2, "borderImageRepeat": 4.2, "borderImageSlice": 4.2, "borderImageSource": 4.2, "borderImageWidth": 4.2, "flex": 4.2, "flexBasis": 4.2, "flexDirection": 4.2, "flexGrow": 4.2, "flexFlow": 4.2, "flexShrink": 4.2, "flexWrap": 4.2, "alignContent": 4.2, "alignItems": 4.2, "alignSelf": 4.2, "justifyContent": 4.2, "order": 4.2, "transition": 4.2, "transitionDelay": 4.2, "transitionDuration": 4.2, "transitionProperty": 4.2, "transitionTimingFunction": 4.2, "transform": 4.4, "transformOrigin": 4.4, "transformOriginX": 4.4, "transformOriginY": 4.4, "backfaceVisibility": 4.4, "perspective": 4.4, "perspectiveOrigin": 4.4, "transformStyle": 4.4, "transformOriginZ": 4.4, "animation": 4.4, "animationDelay": 4.4, "animationDirection": 4.4, "animationFillMode": 4.4, "animationDuration": 4.4, "animationIterationCount": 4.4, "animationName": 4.4, "animationPlayState": 4.4, "animationTimingFunction": 4.4, "appearance": 53, "userSelect": 53, "fontKerning": 4.4, "textEmphasisPosition": 53, "textEmphasis": 53, "textEmphasisStyle": 53, "textEmphasisColor": 53, "boxDecorationBreak": 53, "clipPath": 53, "maskImage": 53, "maskMode": 53, "maskRepeat": 53, "maskPosition": 53, "maskClip": 53, "maskOrigin": 53, "maskSize": 53, "maskComposite": 53, "mask": 53, "maskBorderSource": 53, "maskBorderMode": 53, "maskBorderSlice": 53, "maskBorderWidth": 53, "maskBorderOutset": 53, "maskBorderRepeat": 53, "maskBorder": 53, "maskType": 53, "filter": 4.4, "fontFeatureSettings": 4.4, "breakAfter": 53, "breakBefore": 53, "breakInside": 53, "columnCount": 53, "columnFill": 53, "columnGap": 53, "columnRule": 53, "columnRuleColor": 53, "columnRuleStyle": 53, "columnRuleWidth": 53, "columns": 53, "columnSpan": 53, "columnWidth": 53 }, "and_chr": { "appearance": 56, "textEmphasisPosition": 56, "textEmphasis": 56, "textEmphasisStyle": 56, "textEmphasisColor": 56, "boxDecorationBreak": 56, "maskImage": 56, "maskMode": 56, "maskRepeat": 56, "maskPosition": 56, "maskClip": 56, "maskOrigin": 56, "maskSize": 56, "maskComposite": 56, "mask": 56, "maskBorderSource": 56, "maskBorderMode": 56, "maskBorderSlice": 56, "maskBorderWidth": 56, "maskBorderOutset": 56, "maskBorderRepeat": 56, "maskBorder": 56, "maskType": 56, "textDecorationStyle": 56, "textDecorationSkip": 56, "textDecorationLine": 56, "textDecorationColor": 56 }, "and_uc": { "flex": 11, "flexBasis": 11, "flexDirection": 11, "flexGrow": 11, "flexFlow": 11, "flexShrink": 11, "flexWrap": 11, "alignContent": 11, "alignItems": 11, "alignSelf": 11, "justifyContent": 11, "order": 11, "transition": 11, "transitionDelay": 11, "transitionDuration": 11, "transitionProperty": 11, "transitionTimingFunction": 11, "transform": 11, "transformOrigin": 11, "transformOriginX": 11, "transformOriginY": 11, "backfaceVisibility": 11, "perspective": 11, "perspectiveOrigin": 11, "transformStyle": 11, "transformOriginZ": 11, "animation": 11, "animationDelay": 11, "animationDirection": 11, "animationFillMode": 11, "animationDuration": 11, "animationIterationCount": 11, "animationName": 11, "animationPlayState": 11, "animationTimingFunction": 11, "appearance": 11, "userSelect": 11, "fontKerning": 11, "textEmphasisPosition": 11, "textEmphasis": 11, "textEmphasisStyle": 11, "textEmphasisColor": 11, "maskImage": 11, "maskMode": 11, "maskRepeat": 11, "maskPosition": 11, "maskClip": 11, "maskOrigin": 11, "maskSize": 11, "maskComposite": 11, "mask": 11, "maskBorderSource": 11, "maskBorderMode": 11, "maskBorderSlice": 11, "maskBorderWidth": 11, "maskBorderOutset": 11, "maskBorderRepeat": 11, "maskBorder": 11, "maskType": 11, "textSizeAdjust": 11, "filter": 11, "hyphens": 11, "flowInto": 11, "flowFrom": 11, "breakBefore": 11, "breakAfter": 11, "breakInside": 11, "regionFragment": 11, "fontFeatureSettings": 11, "columnCount": 11, "columnFill": 11, "columnGap": 11, "columnRule": 11, "columnRuleColor": 11, "columnRuleStyle": 11, "columnRuleWidth": 11, "columns": 11, "columnSpan": 11, "columnWidth": 11 }, "op_mini": {} }
 }; /* eslint-disable */
-},{"inline-style-prefixer/dynamic/plugins/calc":165,"inline-style-prefixer/dynamic/plugins/flex":166,"inline-style-prefixer/dynamic/plugins/flexboxIE":167,"inline-style-prefixer/dynamic/plugins/flexboxOld":168,"inline-style-prefixer/dynamic/plugins/gradient":169,"inline-style-prefixer/dynamic/plugins/sizing":170,"inline-style-prefixer/dynamic/plugins/transition":171}],328:[function(require,module,exports){
+},{"inline-style-prefixer/dynamic/plugins/calc":166,"inline-style-prefixer/dynamic/plugins/flex":167,"inline-style-prefixer/dynamic/plugins/flexboxIE":168,"inline-style-prefixer/dynamic/plugins/flexboxOld":169,"inline-style-prefixer/dynamic/plugins/gradient":170,"inline-style-prefixer/dynamic/plugins/sizing":171,"inline-style-prefixer/dynamic/plugins/transition":172}],329:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37237,7 +37278,7 @@ exports.default = {
   plugins: [_calc2.default, _flex2.default, _flexboxIE2.default, _flexboxOld2.default, _gradient2.default, _sizing2.default, _transition2.default],
   prefixMap: { "transform": ["Webkit", "ms"], "transformOrigin": ["Webkit", "ms"], "transformOriginX": ["Webkit", "ms"], "transformOriginY": ["Webkit", "ms"], "backfaceVisibility": ["Webkit"], "perspective": ["Webkit"], "perspectiveOrigin": ["Webkit"], "transformStyle": ["Webkit"], "transformOriginZ": ["Webkit"], "animation": ["Webkit"], "animationDelay": ["Webkit"], "animationDirection": ["Webkit"], "animationFillMode": ["Webkit"], "animationDuration": ["Webkit"], "animationIterationCount": ["Webkit"], "animationName": ["Webkit"], "animationPlayState": ["Webkit"], "animationTimingFunction": ["Webkit"], "appearance": ["Webkit", "Moz"], "userSelect": ["Webkit", "Moz", "ms"], "fontKerning": ["Webkit"], "textEmphasisPosition": ["Webkit"], "textEmphasis": ["Webkit"], "textEmphasisStyle": ["Webkit"], "textEmphasisColor": ["Webkit"], "boxDecorationBreak": ["Webkit"], "clipPath": ["Webkit"], "maskImage": ["Webkit"], "maskMode": ["Webkit"], "maskRepeat": ["Webkit"], "maskPosition": ["Webkit"], "maskClip": ["Webkit"], "maskOrigin": ["Webkit"], "maskSize": ["Webkit"], "maskComposite": ["Webkit"], "mask": ["Webkit"], "maskBorderSource": ["Webkit"], "maskBorderMode": ["Webkit"], "maskBorderSlice": ["Webkit"], "maskBorderWidth": ["Webkit"], "maskBorderOutset": ["Webkit"], "maskBorderRepeat": ["Webkit"], "maskBorder": ["Webkit"], "maskType": ["Webkit"], "textDecorationStyle": ["Webkit", "Moz"], "textDecorationSkip": ["Webkit", "Moz"], "textDecorationLine": ["Webkit", "Moz"], "textDecorationColor": ["Webkit", "Moz"], "filter": ["Webkit"], "fontFeatureSettings": ["Webkit", "Moz"], "breakAfter": ["Webkit", "Moz", "ms"], "breakBefore": ["Webkit", "Moz", "ms"], "breakInside": ["Webkit", "Moz", "ms"], "columnCount": ["Webkit", "Moz"], "columnFill": ["Webkit", "Moz"], "columnGap": ["Webkit", "Moz"], "columnRule": ["Webkit", "Moz"], "columnRuleColor": ["Webkit", "Moz"], "columnRuleStyle": ["Webkit", "Moz"], "columnRuleWidth": ["Webkit", "Moz"], "columns": ["Webkit", "Moz"], "columnSpan": ["Webkit", "Moz"], "columnWidth": ["Webkit", "Moz"], "flex": ["Webkit", "ms"], "flexBasis": ["Webkit"], "flexDirection": ["Webkit", "ms"], "flexGrow": ["Webkit"], "flexFlow": ["Webkit", "ms"], "flexShrink": ["Webkit"], "flexWrap": ["Webkit", "ms"], "alignContent": ["Webkit"], "alignItems": ["Webkit"], "alignSelf": ["Webkit"], "justifyContent": ["Webkit"], "order": ["Webkit"], "transitionDelay": ["Webkit"], "transitionDuration": ["Webkit"], "transitionProperty": ["Webkit"], "transitionTimingFunction": ["Webkit"], "backdropFilter": ["Webkit"], "scrollSnapType": ["Webkit", "ms"], "scrollSnapPointsX": ["Webkit", "ms"], "scrollSnapPointsY": ["Webkit", "ms"], "scrollSnapDestination": ["Webkit", "ms"], "scrollSnapCoordinate": ["Webkit", "ms"], "shapeImageThreshold": ["Webkit"], "shapeImageMargin": ["Webkit"], "shapeImageOutside": ["Webkit"], "hyphens": ["Webkit", "Moz", "ms"], "flowInto": ["Webkit", "ms"], "flowFrom": ["Webkit", "ms"], "regionFragment": ["Webkit", "ms"], "boxSizing": ["Moz"], "textAlignLast": ["Moz"], "tabSize": ["Moz"], "wrapFlow": ["ms"], "wrapThrough": ["ms"], "wrapMargin": ["ms"], "touchAction": ["ms"], "gridTemplateColumns": ["ms"], "gridTemplateRows": ["ms"], "gridTemplateAreas": ["ms"], "gridTemplate": ["ms"], "gridAutoColumns": ["ms"], "gridAutoRows": ["ms"], "gridAutoFlow": ["ms"], "grid": ["ms"], "gridRowStart": ["ms"], "gridColumnStart": ["ms"], "gridRowEnd": ["ms"], "gridRow": ["ms"], "gridColumn": ["ms"], "gridColumnEnd": ["ms"], "gridColumnGap": ["ms"], "gridRowGap": ["ms"], "gridArea": ["ms"], "gridGap": ["ms"], "textSizeAdjust": ["Webkit", "ms"], "borderImage": ["Webkit"], "borderImageOutset": ["Webkit"], "borderImageRepeat": ["Webkit"], "borderImageSlice": ["Webkit"], "borderImageSource": ["Webkit"], "borderImageWidth": ["Webkit"] }
 }; /* eslint-disable */
-},{"inline-style-prefixer/static/plugins/calc":173,"inline-style-prefixer/static/plugins/flex":174,"inline-style-prefixer/static/plugins/flexboxIE":175,"inline-style-prefixer/static/plugins/flexboxOld":176,"inline-style-prefixer/static/plugins/gradient":177,"inline-style-prefixer/static/plugins/sizing":178,"inline-style-prefixer/static/plugins/transition":179}],329:[function(require,module,exports){
+},{"inline-style-prefixer/static/plugins/calc":174,"inline-style-prefixer/static/plugins/flex":175,"inline-style-prefixer/static/plugins/flexboxIE":176,"inline-style-prefixer/static/plugins/flexboxOld":177,"inline-style-prefixer/static/plugins/gradient":178,"inline-style-prefixer/static/plugins/sizing":179,"inline-style-prefixer/static/plugins/transition":180}],330:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -37267,7 +37308,7 @@ function callOnce() {
 }
 }).call(this,require('_process'))
 
-},{"_process":341,"warning":453}],330:[function(require,module,exports){
+},{"_process":342,"warning":464}],331:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37294,7 +37335,7 @@ function extendChildren(children, extendedProps, extendedChildren) {
     return _react2.default.cloneElement(child, newProps, newChildren);
   });
 }
-},{"react":431}],331:[function(require,module,exports){
+},{"react":437}],332:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -37540,7 +37581,7 @@ function lighten(color, coefficient) {
 }
 }).call(this,require('_process'))
 
-},{"_process":341,"warning":453}],332:[function(require,module,exports){
+},{"_process":342,"warning":464}],333:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37565,7 +37606,7 @@ exports.default = {
     };
   }
 };
-},{}],333:[function(require,module,exports){
+},{}],334:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37605,7 +37646,7 @@ exports.default = {
     return ['keydown', 'keypress', 'keyup'].indexOf(event.type) !== -1;
   }
 };
-},{}],334:[function(require,module,exports){
+},{}],335:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37641,7 +37682,7 @@ exports.default = {
   zDepth: _propTypes2.default.oneOf([0, 1, 2, 3, 4, 5])
 
 };
-},{"prop-types":345}],335:[function(require,module,exports){
+},{"prop-types":346}],336:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37739,11 +37780,11 @@ function rtl(muiTheme) {
     };
   }
 }
-},{"babel-runtime/core-js/object/keys":21}],336:[function(require,module,exports){
+},{"babel-runtime/core-js/object/keys":21}],337:[function(require,module,exports){
 module.exports = require('./lib').default;
 module.exports.default = module.exports;
 
-},{"./lib":338}],337:[function(require,module,exports){
+},{"./lib":339}],338:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37935,7 +37976,7 @@ function (_React$Component3) {
 }(_react.default.Component);
 
 exports.PagingDots = PagingDots;
-},{"react":431}],338:[function(require,module,exports){
+},{"react":437}],339:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39128,7 +39169,7 @@ Carousel.defaultProps = {
   width: '100%',
   wrapAround: false
 };
-},{"./default-controls":337,"d3-ease":132,"exenv":136,"prop-types":345,"react":431,"react-move/Animate":381}],339:[function(require,module,exports){
+},{"./default-controls":338,"d3-ease":133,"exenv":137,"prop-types":346,"react":437,"react-move/Animate":381}],340:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -39220,7 +39261,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],340:[function(require,module,exports){
+},{}],341:[function(require,module,exports){
 var isarray = require('isarray')
 
 /**
@@ -39648,7 +39689,7 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":189}],341:[function(require,module,exports){
+},{"isarray":190}],342:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -39834,7 +39875,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],342:[function(require,module,exports){
+},{}],343:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -39898,7 +39939,7 @@ module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
 
-},{"./lib/ReactPropTypesSecret":346,"_process":341,"fbjs/lib/invariant":148,"fbjs/lib/warning":152}],343:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":347,"_process":342,"fbjs/lib/invariant":149,"fbjs/lib/warning":153}],344:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39958,7 +39999,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"./lib/ReactPropTypesSecret":346,"fbjs/lib/emptyFunction":142,"fbjs/lib/invariant":148}],344:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":347,"fbjs/lib/emptyFunction":143,"fbjs/lib/invariant":149}],345:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -40505,7 +40546,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 }).call(this,require('_process'))
 
-},{"./checkPropTypes":342,"./lib/ReactPropTypesSecret":346,"_process":341,"fbjs/lib/emptyFunction":142,"fbjs/lib/invariant":148,"fbjs/lib/warning":152,"object-assign":339}],345:[function(require,module,exports){
+},{"./checkPropTypes":343,"./lib/ReactPropTypesSecret":347,"_process":342,"fbjs/lib/emptyFunction":143,"fbjs/lib/invariant":149,"fbjs/lib/warning":153,"object-assign":340}],346:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -40538,7 +40579,7 @@ if ("development" !== 'production') {
 
 }).call(this,require('_process'))
 
-},{"./factoryWithThrowingShims":343,"./factoryWithTypeCheckers":344,"_process":341}],346:[function(require,module,exports){
+},{"./factoryWithThrowingShims":344,"./factoryWithTypeCheckers":345,"_process":342}],347:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -40552,4718 +40593,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],347:[function(require,module,exports){
-(function (global){
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('react-dom')) :
-	typeof define === 'function' && define.amd ? define(['exports', 'react', 'react-dom'], factory) :
-	(factory((global.reactAccessibleAccordion = {}),global.React,global.reactDom));
-}(this, (function (exports,React,reactDom) { 'use strict';
-
-var React__default = 'default' in React ? React['default'] : React;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-/** MobX - (c) Michel Weststrate 2015, 2016 - MIT Licensed */
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
-    d.__proto__ = b;
-} || function (d, b) {
-    for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
-    }
-};
-
-function __extends(d, b) {
-    extendStatics(d, b);
-    function __() {
-        this.constructor = d;
-    }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-/**
- * Anything that can be used to _store_ state is an Atom in mobx. Atoms have two important jobs
- *
- * 1) detect when they are being _used_ and report this (using reportObserved). This allows mobx to make the connection between running functions and the data they used
- * 2) they should notify mobx whenever they have _changed_. This way mobx can re-run any functions (derivations) that are using this atom.
- */
-var BaseAtom = function () {
-    /**
-     * Create a new atom. For debugging purposes it is recommended to give it a name.
-     * The onBecomeObserved and onBecomeUnobserved callbacks can be used for resource management.
-     */
-    function BaseAtom(name) {
-        if (name === void 0) {
-            name = "Atom@" + getNextId();
-        }
-        this.name = name;
-        this.isPendingUnobservation = true; // for effective unobserving. BaseAtom has true, for extra optimization, so its onBecomeUnobserved never gets called, because it's not needed
-        this.observers = [];
-        this.observersIndexes = {};
-        this.diffValue = 0;
-        this.lastAccessedBy = 0;
-        this.lowestObserverState = IDerivationState.NOT_TRACKING;
-    }
-    BaseAtom.prototype.onBecomeUnobserved = function () {
-        // noop
-    };
-    /**
-     * Invoke this method to notify mobx that your atom has been used somehow.
-     */
-    BaseAtom.prototype.reportObserved = function () {
-        reportObserved(this);
-    };
-    /**
-     * Invoke this method _after_ this method has changed to signal mobx that all its observers should invalidate.
-     */
-    BaseAtom.prototype.reportChanged = function () {
-        startBatch();
-        propagateChanged(this);
-        endBatch();
-    };
-    BaseAtom.prototype.toString = function () {
-        return this.name;
-    };
-    return BaseAtom;
-}();
-var Atom = function (_super) {
-    __extends(Atom, _super);
-    /**
-     * Create a new atom. For debugging purposes it is recommended to give it a name.
-     * The onBecomeObserved and onBecomeUnobserved callbacks can be used for resource management.
-     */
-    function Atom(name, onBecomeObservedHandler, onBecomeUnobservedHandler) {
-        if (name === void 0) {
-            name = "Atom@" + getNextId();
-        }
-        if (onBecomeObservedHandler === void 0) {
-            onBecomeObservedHandler = noop;
-        }
-        if (onBecomeUnobservedHandler === void 0) {
-            onBecomeUnobservedHandler = noop;
-        }
-        var _this = _super.call(this, name) || this;
-        _this.name = name;
-        _this.onBecomeObservedHandler = onBecomeObservedHandler;
-        _this.onBecomeUnobservedHandler = onBecomeUnobservedHandler;
-        _this.isPendingUnobservation = false; // for effective unobserving.
-        _this.isBeingTracked = false;
-        return _this;
-    }
-    Atom.prototype.reportObserved = function () {
-        startBatch();
-        _super.prototype.reportObserved.call(this);
-        if (!this.isBeingTracked) {
-            this.isBeingTracked = true;
-            this.onBecomeObservedHandler();
-        }
-        endBatch();
-        return !!globalState.trackingDerivation;
-        // return doesn't really give useful info, because it can be as well calling computed which calls atom (no reactions)
-        // also it could not trigger when calculating reaction dependent on Atom because Atom's value was cached by computed called by given reaction.
-    };
-    Atom.prototype.onBecomeUnobserved = function () {
-        this.isBeingTracked = false;
-        this.onBecomeUnobservedHandler();
-    };
-    return Atom;
-}(BaseAtom);
-var isAtom = createInstanceofPredicate("Atom", BaseAtom);
-
-function hasInterceptors(interceptable) {
-    return interceptable.interceptors && interceptable.interceptors.length > 0;
-}
-function registerInterceptor(interceptable, handler) {
-    var interceptors = interceptable.interceptors || (interceptable.interceptors = []);
-    interceptors.push(handler);
-    return once(function () {
-        var idx = interceptors.indexOf(handler);
-        if (idx !== -1) interceptors.splice(idx, 1);
-    });
-}
-function interceptChange(interceptable, change) {
-    var prevU = untrackedStart();
-    try {
-        var interceptors = interceptable.interceptors;
-        if (interceptors) for (var i = 0, l = interceptors.length; i < l; i++) {
-            change = interceptors[i](change);
-            invariant(!change || change.type, "Intercept handlers should return nothing or a change object");
-            if (!change) break;
-        }
-        return change;
-    } finally {
-        untrackedEnd(prevU);
-    }
-}
-
-function hasListeners(listenable) {
-    return listenable.changeListeners && listenable.changeListeners.length > 0;
-}
-function registerListener(listenable, handler) {
-    var listeners = listenable.changeListeners || (listenable.changeListeners = []);
-    listeners.push(handler);
-    return once(function () {
-        var idx = listeners.indexOf(handler);
-        if (idx !== -1) listeners.splice(idx, 1);
-    });
-}
-function notifyListeners(listenable, change) {
-    var prevU = untrackedStart();
-    var listeners = listenable.changeListeners;
-    if (!listeners) return;
-    listeners = listeners.slice();
-    for (var i = 0, l = listeners.length; i < l; i++) {
-        listeners[i](change);
-    }
-    untrackedEnd(prevU);
-}
-
-function isSpyEnabled() {
-    return !!globalState.spyListeners.length;
-}
-function spyReport(event) {
-    if (!globalState.spyListeners.length) return;
-    var listeners = globalState.spyListeners;
-    for (var i = 0, l = listeners.length; i < l; i++) {
-        listeners[i](event);
-    }
-}
-function spyReportStart(event) {
-    var change = objectAssign({}, event, { spyReportStart: true });
-    spyReport(change);
-}
-var END_EVENT = { spyReportEnd: true };
-function spyReportEnd(change) {
-    if (change) spyReport(objectAssign({}, change, END_EVENT));else spyReport(END_EVENT);
-}
-function spy(listener) {
-    globalState.spyListeners.push(listener);
-    return once(function () {
-        var idx = globalState.spyListeners.indexOf(listener);
-        if (idx !== -1) globalState.spyListeners.splice(idx, 1);
-    });
-}
-
-function iteratorSymbol() {
-    return typeof Symbol === "function" && Symbol.iterator || "@@iterator";
-}
-var IS_ITERATING_MARKER = "__$$iterating";
-function arrayAsIterator(array) {
-    // returning an array for entries(), values() etc for maps was a mis-interpretation of the specs..,
-    // yet it is quite convenient to be able to use the response both as array directly and as iterator
-    // it is suboptimal, but alas...
-    invariant(array[IS_ITERATING_MARKER] !== true, "Illegal state: cannot recycle array as iterator");
-    addHiddenFinalProp(array, IS_ITERATING_MARKER, true);
-    var idx = -1;
-    addHiddenFinalProp(array, "next", function next() {
-        idx++;
-        return {
-            done: idx >= this.length,
-            value: idx < this.length ? this[idx] : undefined
-        };
-    });
-    return array;
-}
-function declareIterator(prototType, iteratorFactory) {
-    addHiddenFinalProp(prototType, iteratorSymbol(), iteratorFactory);
-}
-
-var MAX_SPLICE_SIZE = 10000; // See e.g. https://github.com/mobxjs/mobx/issues/859
-// Detects bug in safari 9.1.1 (or iOS 9 safari mobile). See #364
-var safariPrototypeSetterInheritanceBug = function () {
-    var v = false;
-    var p = {};
-    Object.defineProperty(p, "0", {
-        set: function set() {
-            v = true;
-        }
-    });
-    Object.create(p)["0"] = 1;
-    return v === false;
-}();
-/**
- * This array buffer contains two lists of properties, so that all arrays
- * can recycle their property definitions, which significantly improves performance of creating
- * properties on the fly.
- */
-var OBSERVABLE_ARRAY_BUFFER_SIZE = 0;
-// Typescript workaround to make sure ObservableArray extends Array
-var StubArray = function () {
-    function StubArray() {}
-    return StubArray;
-}();
-function inherit(ctor, proto) {
-    if (typeof Object["setPrototypeOf"] !== "undefined") {
-        Object["setPrototypeOf"](ctor.prototype, proto);
-    } else if (typeof ctor.prototype.__proto__ !== "undefined") {
-        ctor.prototype.__proto__ = proto;
-    } else {
-        ctor["prototype"] = proto;
-    }
-}
-inherit(StubArray, Array.prototype);
-// Weex freeze Array.prototype
-// Make them writeable and configurable in prototype chain
-// https://github.com/alibaba/weex/pull/1529
-if (Object.isFrozen(Array)) {
-
-    ["constructor", "push", "shift", "concat", "pop", "unshift", "replace", "find", "findIndex", "splice", "reverse", "sort"].forEach(function (key) {
-        Object.defineProperty(StubArray.prototype, key, {
-            configurable: true,
-            writable: true,
-            value: Array.prototype[key]
-        });
-    });
-}
-var ObservableArrayAdministration = function () {
-    function ObservableArrayAdministration(name, enhancer, array, owned) {
-        this.array = array;
-        this.owned = owned;
-        this.values = [];
-        this.lastKnownLength = 0;
-        this.interceptors = null;
-        this.changeListeners = null;
-        this.atom = new BaseAtom(name || "ObservableArray@" + getNextId());
-        this.enhancer = function (newV, oldV) {
-            return enhancer(newV, oldV, name + "[..]");
-        };
-    }
-    ObservableArrayAdministration.prototype.dehanceValue = function (value) {
-        if (this.dehancer !== undefined) return this.dehancer(value);
-        return value;
-    };
-    ObservableArrayAdministration.prototype.dehanceValues = function (values) {
-        if (this.dehancer !== undefined) return values.map(this.dehancer);
-        return values;
-    };
-    ObservableArrayAdministration.prototype.intercept = function (handler) {
-        return registerInterceptor(this, handler);
-    };
-    ObservableArrayAdministration.prototype.observe = function (listener, fireImmediately) {
-        if (fireImmediately === void 0) {
-            fireImmediately = false;
-        }
-        if (fireImmediately) {
-            listener({
-                object: this.array,
-                type: "splice",
-                index: 0,
-                added: this.values.slice(),
-                addedCount: this.values.length,
-                removed: [],
-                removedCount: 0
-            });
-        }
-        return registerListener(this, listener);
-    };
-    ObservableArrayAdministration.prototype.getArrayLength = function () {
-        this.atom.reportObserved();
-        return this.values.length;
-    };
-    ObservableArrayAdministration.prototype.setArrayLength = function (newLength) {
-        if (typeof newLength !== "number" || newLength < 0) throw new Error("[mobx.array] Out of range: " + newLength);
-        var currentLength = this.values.length;
-        if (newLength === currentLength) return;else if (newLength > currentLength) {
-            var newItems = new Array(newLength - currentLength);
-            for (var i = 0; i < newLength - currentLength; i++) {
-                newItems[i] = undefined;
-            } // No Array.fill everywhere...
-            this.spliceWithArray(currentLength, 0, newItems);
-        } else this.spliceWithArray(newLength, currentLength - newLength);
-    };
-    // adds / removes the necessary numeric properties to this object
-    ObservableArrayAdministration.prototype.updateArrayLength = function (oldLength, delta) {
-        if (oldLength !== this.lastKnownLength) throw new Error("[mobx] Modification exception: the internal structure of an observable array was changed. Did you use peek() to change it?");
-        this.lastKnownLength += delta;
-        if (delta > 0 && oldLength + delta + 1 > OBSERVABLE_ARRAY_BUFFER_SIZE) reserveArrayBuffer(oldLength + delta + 1);
-    };
-    ObservableArrayAdministration.prototype.spliceWithArray = function (index, deleteCount, newItems) {
-        var _this = this;
-        checkIfStateModificationsAreAllowed(this.atom);
-        var length = this.values.length;
-        if (index === undefined) index = 0;else if (index > length) index = length;else if (index < 0) index = Math.max(0, length + index);
-        if (arguments.length === 1) deleteCount = length - index;else if (deleteCount === undefined || deleteCount === null) deleteCount = 0;else deleteCount = Math.max(0, Math.min(deleteCount, length - index));
-        if (newItems === undefined) newItems = [];
-        if (hasInterceptors(this)) {
-            var change = interceptChange(this, {
-                object: this.array,
-                type: "splice",
-                index: index,
-                removedCount: deleteCount,
-                added: newItems
-            });
-            if (!change) return EMPTY_ARRAY;
-            deleteCount = change.removedCount;
-            newItems = change.added;
-        }
-        newItems = newItems.map(function (v) {
-            return _this.enhancer(v, undefined);
-        });
-        var lengthDelta = newItems.length - deleteCount;
-        this.updateArrayLength(length, lengthDelta); // create or remove new entries
-        var res = this.spliceItemsIntoValues(index, deleteCount, newItems);
-        if (deleteCount !== 0 || newItems.length !== 0) this.notifyArraySplice(index, newItems, res);
-        return this.dehanceValues(res);
-    };
-    ObservableArrayAdministration.prototype.spliceItemsIntoValues = function (index, deleteCount, newItems) {
-        if (newItems.length < MAX_SPLICE_SIZE) {
-            return (_a = this.values).splice.apply(_a, [index, deleteCount].concat(newItems));
-        } else {
-            var res = this.values.slice(index, index + deleteCount);
-            this.values = this.values.slice(0, index).concat(newItems, this.values.slice(index + deleteCount));
-            return res;
-        }
-        var _a;
-    };
-    ObservableArrayAdministration.prototype.notifyArrayChildUpdate = function (index, newValue, oldValue) {
-        var notifySpy = !this.owned && isSpyEnabled();
-        var notify = hasListeners(this);
-        var change = notify || notifySpy ? {
-            object: this.array,
-            type: "update",
-            index: index,
-            newValue: newValue,
-            oldValue: oldValue
-        } : null;
-        if (notifySpy) spyReportStart(change);
-        this.atom.reportChanged();
-        if (notify) notifyListeners(this, change);
-        if (notifySpy) spyReportEnd();
-    };
-    ObservableArrayAdministration.prototype.notifyArraySplice = function (index, added, removed) {
-        var notifySpy = !this.owned && isSpyEnabled();
-        var notify = hasListeners(this);
-        var change = notify || notifySpy ? {
-            object: this.array,
-            type: "splice",
-            index: index,
-            removed: removed,
-            added: added,
-            removedCount: removed.length,
-            addedCount: added.length
-        } : null;
-        if (notifySpy) spyReportStart(change);
-        this.atom.reportChanged();
-        // conform: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/observe
-        if (notify) notifyListeners(this, change);
-        if (notifySpy) spyReportEnd();
-    };
-    return ObservableArrayAdministration;
-}();
-var ObservableArray = function (_super) {
-    __extends(ObservableArray, _super);
-    function ObservableArray(initialValues, enhancer, name, owned) {
-        if (name === void 0) {
-            name = "ObservableArray@" + getNextId();
-        }
-        if (owned === void 0) {
-            owned = false;
-        }
-        var _this = _super.call(this) || this;
-        var adm = new ObservableArrayAdministration(name, enhancer, _this, owned);
-        addHiddenFinalProp(_this, "$mobx", adm);
-        if (initialValues && initialValues.length) {
-            _this.spliceWithArray(0, 0, initialValues);
-        }
-        if (safariPrototypeSetterInheritanceBug) {
-            // Seems that Safari won't use numeric prototype setter untill any * numeric property is
-            // defined on the instance. After that it works fine, even if this property is deleted.
-            Object.defineProperty(adm.array, "0", ENTRY_0);
-        }
-        return _this;
-    }
-    ObservableArray.prototype.intercept = function (handler) {
-        return this.$mobx.intercept(handler);
-    };
-    ObservableArray.prototype.observe = function (listener, fireImmediately) {
-        if (fireImmediately === void 0) {
-            fireImmediately = false;
-        }
-        return this.$mobx.observe(listener, fireImmediately);
-    };
-    ObservableArray.prototype.clear = function () {
-        return this.splice(0);
-    };
-    ObservableArray.prototype.concat = function () {
-        var arrays = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            arrays[_i] = arguments[_i];
-        }
-        this.$mobx.atom.reportObserved();
-        return Array.prototype.concat.apply(this.peek(), arrays.map(function (a) {
-            return isObservableArray(a) ? a.peek() : a;
-        }));
-    };
-    ObservableArray.prototype.replace = function (newItems) {
-        return this.$mobx.spliceWithArray(0, this.$mobx.values.length, newItems);
-    };
-    /**
-     * Converts this array back to a (shallow) javascript structure.
-     * For a deep clone use mobx.toJS
-     */
-    ObservableArray.prototype.toJS = function () {
-        return this.slice();
-    };
-    ObservableArray.prototype.toJSON = function () {
-        // Used by JSON.stringify
-        return this.toJS();
-    };
-    ObservableArray.prototype.peek = function () {
-        this.$mobx.atom.reportObserved();
-        return this.$mobx.dehanceValues(this.$mobx.values);
-    };
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-    ObservableArray.prototype.find = function (predicate, thisArg, fromIndex) {
-        if (fromIndex === void 0) {
-            fromIndex = 0;
-        }
-        var idx = this.findIndex.apply(this, arguments);
-        return idx === -1 ? undefined : this.get(idx);
-    };
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
-    ObservableArray.prototype.findIndex = function (predicate, thisArg, fromIndex) {
-        if (fromIndex === void 0) {
-            fromIndex = 0;
-        }
-        var items = this.peek(),
-            l = items.length;
-        for (var i = fromIndex; i < l; i++) {
-            if (predicate.call(thisArg, items[i], i, this)) return i;
-        }return -1;
-    };
-    /*
-     * functions that do alter the internal structure of the array, (based on lib.es6.d.ts)
-     * since these functions alter the inner structure of the array, the have side effects.
-     * Because the have side effects, they should not be used in computed function,
-     * and for that reason the do not call dependencyState.notifyObserved
-     */
-    ObservableArray.prototype.splice = function (index, deleteCount) {
-        var newItems = [];
-        for (var _i = 2; _i < arguments.length; _i++) {
-            newItems[_i - 2] = arguments[_i];
-        }
-        switch (arguments.length) {
-            case 0:
-                return [];
-            case 1:
-                return this.$mobx.spliceWithArray(index);
-            case 2:
-                return this.$mobx.spliceWithArray(index, deleteCount);
-        }
-        return this.$mobx.spliceWithArray(index, deleteCount, newItems);
-    };
-    ObservableArray.prototype.spliceWithArray = function (index, deleteCount, newItems) {
-        return this.$mobx.spliceWithArray(index, deleteCount, newItems);
-    };
-    ObservableArray.prototype.push = function () {
-        var items = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            items[_i] = arguments[_i];
-        }
-        var adm = this.$mobx;
-        adm.spliceWithArray(adm.values.length, 0, items);
-        return adm.values.length;
-    };
-    ObservableArray.prototype.pop = function () {
-        return this.splice(Math.max(this.$mobx.values.length - 1, 0), 1)[0];
-    };
-    ObservableArray.prototype.shift = function () {
-        return this.splice(0, 1)[0];
-    };
-    ObservableArray.prototype.unshift = function () {
-        var items = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            items[_i] = arguments[_i];
-        }
-        var adm = this.$mobx;
-        adm.spliceWithArray(0, 0, items);
-        return adm.values.length;
-    };
-    ObservableArray.prototype.reverse = function () {
-        // reverse by default mutates in place before returning the result
-        // which makes it both a 'derivation' and a 'mutation'.
-        // so we deviate from the default and just make it an dervitation
-        var clone = this.slice();
-        return clone.reverse.apply(clone, arguments);
-    };
-    ObservableArray.prototype.sort = function (compareFn) {
-        // sort by default mutates in place before returning the result
-        // which goes against all good practices. Let's not change the array in place!
-        var clone = this.slice();
-        return clone.sort.apply(clone, arguments);
-    };
-    ObservableArray.prototype.remove = function (value) {
-        var idx = this.$mobx.dehanceValues(this.$mobx.values).indexOf(value);
-        if (idx > -1) {
-            this.splice(idx, 1);
-            return true;
-        }
-        return false;
-    };
-    ObservableArray.prototype.move = function (fromIndex, toIndex) {
-        function checkIndex(index) {
-            if (index < 0) {
-                throw new Error("[mobx.array] Index out of bounds: " + index + " is negative");
-            }
-            var length = this.$mobx.values.length;
-            if (index >= length) {
-                throw new Error("[mobx.array] Index out of bounds: " + index + " is not smaller than " + length);
-            }
-        }
-        checkIndex.call(this, fromIndex);
-        checkIndex.call(this, toIndex);
-        if (fromIndex === toIndex) {
-            return;
-        }
-        var oldItems = this.$mobx.values;
-        var newItems;
-        if (fromIndex < toIndex) {
-            newItems = oldItems.slice(0, fromIndex).concat(oldItems.slice(fromIndex + 1, toIndex + 1), [oldItems[fromIndex]], oldItems.slice(toIndex + 1));
-        } else {
-            // toIndex < fromIndex
-            newItems = oldItems.slice(0, toIndex).concat([oldItems[fromIndex]], oldItems.slice(toIndex, fromIndex), oldItems.slice(fromIndex + 1));
-        }
-        this.replace(newItems);
-    };
-    // See #734, in case property accessors are unreliable...
-    ObservableArray.prototype.get = function (index) {
-        var impl = this.$mobx;
-        if (impl) {
-            if (index < impl.values.length) {
-                impl.atom.reportObserved();
-                return impl.dehanceValue(impl.values[index]);
-            }
-            console.warn("[mobx.array] Attempt to read an array index (" + index + ") that is out of bounds (" + impl.values.length + "). Please check length first. Out of bound indices will not be tracked by MobX");
-        }
-        return undefined;
-    };
-    // See #734, in case property accessors are unreliable...
-    ObservableArray.prototype.set = function (index, newValue) {
-        var adm = this.$mobx;
-        var values = adm.values;
-        if (index < values.length) {
-            // update at index in range
-            checkIfStateModificationsAreAllowed(adm.atom);
-            var oldValue = values[index];
-            if (hasInterceptors(adm)) {
-                var change = interceptChange(adm, {
-                    type: "update",
-                    object: this,
-                    index: index,
-                    newValue: newValue
-                });
-                if (!change) return;
-                newValue = change.newValue;
-            }
-            newValue = adm.enhancer(newValue, oldValue);
-            var changed = newValue !== oldValue;
-            if (changed) {
-                values[index] = newValue;
-                adm.notifyArrayChildUpdate(index, newValue, oldValue);
-            }
-        } else if (index === values.length) {
-            // add a new item
-            adm.spliceWithArray(index, 0, [newValue]);
-        } else {
-            // out of bounds
-            throw new Error("[mobx.array] Index out of bounds, " + index + " is larger than " + values.length);
-        }
-    };
-    return ObservableArray;
-}(StubArray);
-declareIterator(ObservableArray.prototype, function () {
-    return arrayAsIterator(this.slice());
-});
-Object.defineProperty(ObservableArray.prototype, "length", {
-    enumerable: false,
-    configurable: true,
-    get: function get() {
-        return this.$mobx.getArrayLength();
-    },
-    set: function set(newLength) {
-        this.$mobx.setArrayLength(newLength);
-    }
-});
-["every", "filter", "forEach", "indexOf", "join", "lastIndexOf", "map", "reduce", "reduceRight", "slice", "some", "toString", "toLocaleString"].forEach(function (funcName) {
-    var baseFunc = Array.prototype[funcName];
-    invariant(typeof baseFunc === "function", "Base function not defined on Array prototype: '" + funcName + "'");
-    addHiddenProp(ObservableArray.prototype, funcName, function () {
-        return baseFunc.apply(this.peek(), arguments);
-    });
-});
-/**
- * We don't want those to show up in `for (const key in ar)` ...
- */
-makeNonEnumerable(ObservableArray.prototype, ["constructor", "intercept", "observe", "clear", "concat", "get", "replace", "toJS", "toJSON", "peek", "find", "findIndex", "splice", "spliceWithArray", "push", "pop", "set", "shift", "unshift", "reverse", "sort", "remove", "move", "toString", "toLocaleString"]);
-// See #364
-var ENTRY_0 = createArrayEntryDescriptor(0);
-function createArrayEntryDescriptor(index) {
-    return {
-        enumerable: false,
-        configurable: false,
-        get: function get() {
-            // TODO: Check `this`?, see #752?
-            return this.get(index);
-        },
-        set: function set(value) {
-            this.set(index, value);
-        }
-    };
-}
-function createArrayBufferItem(index) {
-    Object.defineProperty(ObservableArray.prototype, "" + index, createArrayEntryDescriptor(index));
-}
-function reserveArrayBuffer(max) {
-    for (var index = OBSERVABLE_ARRAY_BUFFER_SIZE; index < max; index++) {
-        createArrayBufferItem(index);
-    }OBSERVABLE_ARRAY_BUFFER_SIZE = max;
-}
-reserveArrayBuffer(1000);
-var isObservableArrayAdministration = createInstanceofPredicate("ObservableArrayAdministration", ObservableArrayAdministration);
-function isObservableArray(thing) {
-    return isObject(thing) && isObservableArrayAdministration(thing.$mobx);
-}
-
-var UNCHANGED = {};
-var ObservableValue = function (_super) {
-    __extends(ObservableValue, _super);
-    function ObservableValue(value, enhancer, name, notifySpy) {
-        if (name === void 0) {
-            name = "ObservableValue@" + getNextId();
-        }
-        if (notifySpy === void 0) {
-            notifySpy = true;
-        }
-        var _this = _super.call(this, name) || this;
-        _this.enhancer = enhancer;
-        _this.hasUnreportedChange = false;
-        _this.dehancer = undefined;
-        _this.value = enhancer(value, undefined, name);
-        if (notifySpy && isSpyEnabled()) {
-            // only notify spy if this is a stand-alone observable
-            spyReport({ type: "create", object: _this, newValue: _this.value });
-        }
-        return _this;
-    }
-    ObservableValue.prototype.dehanceValue = function (value) {
-        if (this.dehancer !== undefined) return this.dehancer(value);
-        return value;
-    };
-    ObservableValue.prototype.set = function (newValue) {
-        var oldValue = this.value;
-        newValue = this.prepareNewValue(newValue);
-        if (newValue !== UNCHANGED) {
-            var notifySpy = isSpyEnabled();
-            if (notifySpy) {
-                spyReportStart({
-                    type: "update",
-                    object: this,
-                    newValue: newValue,
-                    oldValue: oldValue
-                });
-            }
-            this.setNewValue(newValue);
-            if (notifySpy) spyReportEnd();
-        }
-    };
-    ObservableValue.prototype.prepareNewValue = function (newValue) {
-        checkIfStateModificationsAreAllowed(this);
-        if (hasInterceptors(this)) {
-            var change = interceptChange(this, {
-                object: this,
-                type: "update",
-                newValue: newValue
-            });
-            if (!change) return UNCHANGED;
-            newValue = change.newValue;
-        }
-        // apply modifier
-        newValue = this.enhancer(newValue, this.value, this.name);
-        return this.value !== newValue ? newValue : UNCHANGED;
-    };
-    ObservableValue.prototype.setNewValue = function (newValue) {
-        var oldValue = this.value;
-        this.value = newValue;
-        this.reportChanged();
-        if (hasListeners(this)) {
-            notifyListeners(this, {
-                type: "update",
-                object: this,
-                newValue: newValue,
-                oldValue: oldValue
-            });
-        }
-    };
-    ObservableValue.prototype.get = function () {
-        this.reportObserved();
-        return this.dehanceValue(this.value);
-    };
-    ObservableValue.prototype.intercept = function (handler) {
-        return registerInterceptor(this, handler);
-    };
-    ObservableValue.prototype.observe = function (listener, fireImmediately) {
-        if (fireImmediately) listener({
-            object: this,
-            type: "update",
-            newValue: this.value,
-            oldValue: undefined
-        });
-        return registerListener(this, listener);
-    };
-    ObservableValue.prototype.toJSON = function () {
-        return this.get();
-    };
-    ObservableValue.prototype.toString = function () {
-        return this.name + "[" + this.value + "]";
-    };
-    ObservableValue.prototype.valueOf = function () {
-        return toPrimitive(this.get());
-    };
-    return ObservableValue;
-}(BaseAtom);
-ObservableValue.prototype[primitiveSymbol()] = ObservableValue.prototype.valueOf;
-var isObservableValue = createInstanceofPredicate("ObservableValue", ObservableValue);
-
-var messages = {
-    m001: "It is not allowed to assign new values to @action fields",
-    m002: "`runInAction` expects a function",
-    m003: "`runInAction` expects a function without arguments",
-    m004: "autorun expects a function",
-    m005: "Warning: attempted to pass an action to autorun. Actions are untracked and will not trigger on state changes. Use `reaction` or wrap only your state modification code in an action.",
-    m006: "Warning: attempted to pass an action to autorunAsync. Actions are untracked and will not trigger on state changes. Use `reaction` or wrap only your state modification code in an action.",
-    m007: "reaction only accepts 2 or 3 arguments. If migrating from MobX 2, please provide an options object",
-    m008: "wrapping reaction expression in `asReference` is no longer supported, use options object instead",
-    m009: "@computed can only be used on getter functions, like: '@computed get myProps() { return ...; }'. It looks like it was used on a property.",
-    m010: "@computed can only be used on getter functions, like: '@computed get myProps() { return ...; }'",
-    m011: "First argument to `computed` should be an expression. If using computed as decorator, don't pass it arguments",
-    m012: "computed takes one or two arguments if used as function",
-    m013: "[mobx.expr] 'expr' should only be used inside other reactive functions.",
-    m014: "extendObservable expected 2 or more arguments",
-    m015: "extendObservable expects an object as first argument",
-    m016: "extendObservable should not be used on maps, use map.merge instead",
-    m017: "all arguments of extendObservable should be objects",
-    m018: "extending an object with another observable (object) is not supported. Please construct an explicit propertymap, using `toJS` if need. See issue #540",
-    m019: "[mobx.isObservable] isObservable(object, propertyName) is not supported for arrays and maps. Use map.has or array.length instead.",
-    m020: "modifiers can only be used for individual object properties",
-    m021: "observable expects zero or one arguments",
-    m022: "@observable can not be used on getters, use @computed instead",
-    m024: "whyRun() can only be used if a derivation is active, or by passing an computed value / reaction explicitly. If you invoked whyRun from inside a computation; the computation is currently suspended but re-evaluating because somebody requested its value.",
-    m025: "whyRun can only be used on reactions and computed values",
-    m026: "`action` can only be invoked on functions",
-    m028: "It is not allowed to set `useStrict` when a derivation is running",
-    m029: "INTERNAL ERROR only onBecomeUnobserved shouldn't be called twice in a row",
-    m030a: "Since strict-mode is enabled, changing observed observable values outside actions is not allowed. Please wrap the code in an `action` if this change is intended. Tried to modify: ",
-    m030b: "Side effects like changing state are not allowed at this point. Are you trying to modify state from, for example, the render function of a React component? Tried to modify: ",
-    m031: "Computed values are not allowed to cause side effects by changing observables that are already being observed. Tried to modify: ",
-    m032: "* This computation is suspended (not in use by any reaction) and won't run automatically.\n	Didn't expect this computation to be suspended at this point?\n	  1. Make sure this computation is used by a reaction (reaction, autorun, observer).\n	  2. Check whether you are using this computation synchronously (in the same stack as they reaction that needs it).",
-    m033: "`observe` doesn't support the fire immediately property for observable maps.",
-    m034: "`mobx.map` is deprecated, use `new ObservableMap` or `mobx.observable.map` instead",
-    m035: "Cannot make the designated object observable; it is not extensible",
-    m036: "It is not possible to get index atoms from arrays",
-    m037: "Hi there! I'm sorry you have just run into an exception.\nIf your debugger ends up here, know that some reaction (like the render() of an observer component, autorun or reaction)\nthrew an exception and that mobx caught it, to avoid that it brings the rest of your application down.\nThe original cause of the exception (the code that caused this reaction to run (again)), is still in the stack.\n\nHowever, more interesting is the actual stack trace of the error itself.\nHopefully the error is an instanceof Error, because in that case you can inspect the original stack of the error from where it was thrown.\nSee `error.stack` property, or press the very subtle \"(...)\" link you see near the console.error message that probably brought you here.\nThat stack is more interesting than the stack of this console.error itself.\n\nIf the exception you see is an exception you created yourself, make sure to use `throw new Error(\"Oops\")` instead of `throw \"Oops\"`,\nbecause the javascript environment will only preserve the original stack trace in the first form.\n\nYou can also make sure the debugger pauses the next time this very same exception is thrown by enabling \"Pause on caught exception\".\n(Note that it might pause on many other, unrelated exception as well).\n\nIf that all doesn't help you out, feel free to open an issue https://github.com/mobxjs/mobx/issues!\n",
-    m038: "Missing items in this list?\n    1. Check whether all used values are properly marked as observable (use isObservable to verify)\n    2. Make sure you didn't dereference values too early. MobX observes props, not primitives. E.g: use 'person.name' instead of 'name' in your computation.\n"
-};
-function getMessage(id) {
-    return messages[id];
-}
-
-function createAction(actionName, fn) {
-    invariant(typeof fn === "function", getMessage("m026"));
-    invariant(typeof actionName === "string" && actionName.length > 0, "actions should have valid names, got: '" + actionName + "'");
-    var res = function res() {
-        return executeAction(actionName, fn, this, arguments);
-    };
-    res.originalFn = fn;
-    res.isMobxAction = true;
-    return res;
-}
-function executeAction(actionName, fn, scope, args) {
-    var runInfo = startAction(actionName, fn, scope, args);
-    try {
-        return fn.apply(scope, args);
-    } finally {
-        endAction(runInfo);
-    }
-}
-function startAction(actionName, fn, scope, args) {
-    var notifySpy = isSpyEnabled() && !!actionName;
-    var startTime = 0;
-    if (notifySpy) {
-        startTime = Date.now();
-        var l = args && args.length || 0;
-        var flattendArgs = new Array(l);
-        if (l > 0) for (var i = 0; i < l; i++) {
-            flattendArgs[i] = args[i];
-        }spyReportStart({
-            type: "action",
-            name: actionName,
-            fn: fn,
-            object: scope,
-            arguments: flattendArgs
-        });
-    }
-    var prevDerivation = untrackedStart();
-    startBatch();
-    var prevAllowStateChanges = allowStateChangesStart(true);
-    return {
-        prevDerivation: prevDerivation,
-        prevAllowStateChanges: prevAllowStateChanges,
-        notifySpy: notifySpy,
-        startTime: startTime
-    };
-}
-function endAction(runInfo) {
-    allowStateChangesEnd(runInfo.prevAllowStateChanges);
-    endBatch();
-    untrackedEnd(runInfo.prevDerivation);
-    if (runInfo.notifySpy) spyReportEnd({ time: Date.now() - runInfo.startTime });
-}
-function useStrict(strict) {
-    invariant(globalState.trackingDerivation === null, getMessage("m028"));
-    globalState.strictMode = strict;
-    globalState.allowStateChanges = !strict;
-}
-function isStrictModeEnabled() {
-    return globalState.strictMode;
-}
-function allowStateChanges(allowStateChanges, func) {
-    // TODO: deprecate / refactor this function in next major
-    // Currently only used by `@observer`
-    // Proposed change: remove first param, rename to `forbidStateChanges`,
-    // require error callback instead of the hardcoded error message now used
-    // Use `inAction` instead of allowStateChanges in derivation.ts to check strictMode
-    var prev = allowStateChangesStart(allowStateChanges);
-    var res;
-    try {
-        res = func();
-    } finally {
-        allowStateChangesEnd(prev);
-    }
-    return res;
-}
-function allowStateChangesStart(allowStateChanges) {
-    var prev = globalState.allowStateChanges;
-    globalState.allowStateChanges = allowStateChanges;
-    return prev;
-}
-function allowStateChangesEnd(prev) {
-    globalState.allowStateChanges = prev;
-}
-
-/**
- * Constructs a decorator, that normalizes the differences between
- * TypeScript and Babel. Mainly caused by the fact that legacy-decorator cannot assign
- * values during instance creation to properties that have a getter setter.
- *
- * - Sigh -
- *
- * Also takes care of the difference between @decorator field and @decorator(args) field, and different forms of values.
- * For performance (cpu and mem) reasons the properties are always defined on the prototype (at least initially).
- * This means that these properties despite being enumerable might not show up in Object.keys() (but they will show up in for...in loops).
- */
-function createClassPropertyDecorator(
-/**
- * This function is invoked once, when the property is added to a new instance.
- * When this happens is not strictly determined due to differences in TS and Babel:
- * Typescript: Usually when constructing the new instance
- * Babel, sometimes Typescript: during the first get / set
- * Both: when calling `runLazyInitializers(instance)`
- */
-onInitialize, _get, _set, enumerable,
-/**
- * Can this decorator invoked with arguments? e.g. @decorator(args)
- */
-allowCustomArguments) {
-    function classPropertyDecorator(target, key, descriptor, customArgs, argLen) {
-        if (argLen === void 0) {
-            argLen = 0;
-        }
-        invariant(allowCustomArguments || quacksLikeADecorator(arguments), "This function is a decorator, but it wasn't invoked like a decorator");
-        if (!descriptor) {
-            // typescript (except for getter / setters)
-            var newDescriptor = {
-                enumerable: enumerable,
-                configurable: true,
-                get: function get() {
-                    if (!this.__mobxInitializedProps || this.__mobxInitializedProps[key] !== true) typescriptInitializeProperty(this, key, undefined, onInitialize, customArgs, descriptor);
-                    return _get.call(this, key);
-                },
-                set: function set(v) {
-                    if (!this.__mobxInitializedProps || this.__mobxInitializedProps[key] !== true) {
-                        typescriptInitializeProperty(this, key, v, onInitialize, customArgs, descriptor);
-                    } else {
-                        _set.call(this, key, v);
-                    }
-                }
-            };
-            if (arguments.length < 3 || arguments.length === 5 && argLen < 3) {
-                // Typescript target is ES3, so it won't define property for us
-                // or using Reflect.decorate polyfill, which will return no descriptor
-                // (see https://github.com/mobxjs/mobx/issues/333)
-                Object.defineProperty(target, key, newDescriptor);
-            }
-            return newDescriptor;
-        } else {
-            // babel and typescript getter / setter props
-            if (!hasOwnProperty(target, "__mobxLazyInitializers")) {
-                addHiddenProp(target, "__mobxLazyInitializers", target.__mobxLazyInitializers && target.__mobxLazyInitializers.slice() || [] // support inheritance
-                );
-            }
-            var value_1 = descriptor.value,
-                initializer_1 = descriptor.initializer;
-            target.__mobxLazyInitializers.push(function (instance) {
-                onInitialize(instance, key, initializer_1 ? initializer_1.call(instance) : value_1, customArgs, descriptor);
-            });
-            return {
-                enumerable: enumerable,
-                configurable: true,
-                get: function get() {
-                    if (this.__mobxDidRunLazyInitializers !== true) runLazyInitializers(this);
-                    return _get.call(this, key);
-                },
-                set: function set(v) {
-                    if (this.__mobxDidRunLazyInitializers !== true) runLazyInitializers(this);
-                    _set.call(this, key, v);
-                }
-            };
-        }
-    }
-    if (allowCustomArguments) {
-        /** If custom arguments are allowed, we should return a function that returns a decorator */
-        return function () {
-            /** Direct invocation: @decorator bla */
-            if (quacksLikeADecorator(arguments)) return classPropertyDecorator.apply(null, arguments);
-            /** Indirect invocation: @decorator(args) bla */
-            var outerArgs = arguments;
-            var argLen = arguments.length;
-            return function (target, key, descriptor) {
-                return classPropertyDecorator(target, key, descriptor, outerArgs, argLen);
-            };
-        };
-    }
-    return classPropertyDecorator;
-}
-function typescriptInitializeProperty(instance, key, v, onInitialize, customArgs, baseDescriptor) {
-    if (!hasOwnProperty(instance, "__mobxInitializedProps")) addHiddenProp(instance, "__mobxInitializedProps", {});
-    instance.__mobxInitializedProps[key] = true;
-    onInitialize(instance, key, v, customArgs, baseDescriptor);
-}
-function runLazyInitializers(instance) {
-    if (instance.__mobxDidRunLazyInitializers === true) return;
-    if (instance.__mobxLazyInitializers) {
-        addHiddenProp(instance, "__mobxDidRunLazyInitializers", true);
-        instance.__mobxDidRunLazyInitializers && instance.__mobxLazyInitializers.forEach(function (initializer) {
-            return initializer(instance);
-        });
-    }
-}
-function quacksLikeADecorator(args) {
-    return (args.length === 2 || args.length === 3) && typeof args[1] === "string";
-}
-
-var actionFieldDecorator = createClassPropertyDecorator(function (target, key, value, args, originalDescriptor) {
-    var actionName = args && args.length === 1 ? args[0] : value.name || key || "<unnamed action>";
-    var wrappedAction = action(actionName, value);
-    addHiddenProp(target, key, wrappedAction);
-}, function (key) {
-    return this[key];
-}, function () {
-    invariant(false, getMessage("m001"));
-}, false, true);
-var boundActionDecorator = createClassPropertyDecorator(function (target, key, value) {
-    defineBoundAction(target, key, value);
-}, function (key) {
-    return this[key];
-}, function () {
-    invariant(false, getMessage("m001"));
-}, false, false);
-var action = function action(arg1, arg2, arg3, arg4) {
-    if (arguments.length === 1 && typeof arg1 === "function") return createAction(arg1.name || "<unnamed action>", arg1);
-    if (arguments.length === 2 && typeof arg2 === "function") return createAction(arg1, arg2);
-    if (arguments.length === 1 && typeof arg1 === "string") return namedActionDecorator(arg1);
-    return namedActionDecorator(arg2).apply(null, arguments);
-};
-action.bound = function boundAction(arg1, arg2, arg3) {
-    if (typeof arg1 === "function") {
-        var action_1 = createAction("<not yet bound action>", arg1);
-        action_1.autoBind = true;
-        return action_1;
-    }
-    return boundActionDecorator.apply(null, arguments);
-};
-function namedActionDecorator(name) {
-    return function (target, prop, descriptor) {
-        if (descriptor && typeof descriptor.value === "function") {
-            // TypeScript @action method() { }. Defined on proto before being decorated
-            // Don't use the field decorator if we are just decorating a method
-            descriptor.value = createAction(name, descriptor.value);
-            descriptor.enumerable = false;
-            descriptor.configurable = true;
-            return descriptor;
-        }
-        if (descriptor !== undefined && descriptor.get !== undefined) {
-            throw new Error("[mobx] action is not expected to be used with getters");
-        }
-        // bound instance methods
-        return actionFieldDecorator(name).apply(this, arguments);
-    };
-}
-function runInAction(arg1, arg2, arg3) {
-    var actionName = typeof arg1 === "string" ? arg1 : arg1.name || "<unnamed action>";
-    var fn = typeof arg1 === "function" ? arg1 : arg2;
-    var scope = typeof arg1 === "function" ? arg2 : arg3;
-    invariant(typeof fn === "function", getMessage("m002"));
-    invariant(fn.length === 0, getMessage("m003"));
-    invariant(typeof actionName === "string" && actionName.length > 0, "actions should have valid names, got: '" + actionName + "'");
-    return executeAction(actionName, fn, scope, undefined);
-}
-function isAction(thing) {
-    return typeof thing === "function" && thing.isMobxAction === true;
-}
-function defineBoundAction(target, propertyName, fn) {
-    var res = function res() {
-        return executeAction(propertyName, fn, target, arguments);
-    };
-    res.isMobxAction = true;
-    addHiddenProp(target, propertyName, res);
-}
-
-function identityComparer(a, b) {
-    return a === b;
-}
-function structuralComparer(a, b) {
-    return deepEqual(a, b);
-}
-function defaultComparer(a, b) {
-    return areBothNaN(a, b) || identityComparer(a, b);
-}
-var comparer = {
-    identity: identityComparer,
-    structural: structuralComparer,
-    default: defaultComparer
-};
-
-function autorun(arg1, arg2, arg3) {
-    var name, view, scope;
-    if (typeof arg1 === "string") {
-        name = arg1;
-        view = arg2;
-        scope = arg3;
-    } else {
-        name = arg1.name || "Autorun@" + getNextId();
-        view = arg1;
-        scope = arg2;
-    }
-    invariant(typeof view === "function", getMessage("m004"));
-    invariant(isAction(view) === false, getMessage("m005"));
-    if (scope) view = view.bind(scope);
-    var reaction = new Reaction(name, function () {
-        this.track(reactionRunner);
-    });
-    function reactionRunner() {
-        view(reaction);
-    }
-    reaction.schedule();
-    return reaction.getDisposer();
-}
-function when(arg1, arg2, arg3, arg4) {
-    var name, predicate, effect, scope;
-    if (typeof arg1 === "string") {
-        name = arg1;
-        predicate = arg2;
-        effect = arg3;
-        scope = arg4;
-    } else {
-        name = "When@" + getNextId();
-        predicate = arg1;
-        effect = arg2;
-        scope = arg3;
-    }
-    var disposer = autorun(name, function (r) {
-        if (predicate.call(scope)) {
-            r.dispose();
-            var prevUntracked = untrackedStart();
-            effect.call(scope);
-            untrackedEnd(prevUntracked);
-        }
-    });
-    return disposer;
-}
-function autorunAsync(arg1, arg2, arg3, arg4) {
-    var name, func, delay, scope;
-    if (typeof arg1 === "string") {
-        name = arg1;
-        func = arg2;
-        delay = arg3;
-        scope = arg4;
-    } else {
-        name = arg1.name || "AutorunAsync@" + getNextId();
-        func = arg1;
-        delay = arg2;
-        scope = arg3;
-    }
-    invariant(isAction(func) === false, getMessage("m006"));
-    if (delay === void 0) delay = 1;
-    if (scope) func = func.bind(scope);
-    var isScheduled = false;
-    var r = new Reaction(name, function () {
-        if (!isScheduled) {
-            isScheduled = true;
-            setTimeout(function () {
-                isScheduled = false;
-                if (!r.isDisposed) r.track(reactionRunner);
-            }, delay);
-        }
-    });
-    function reactionRunner() {
-        func(r);
-    }
-    r.schedule();
-    return r.getDisposer();
-}
-function reaction(expression, effect, arg3) {
-    if (arguments.length > 3) {
-        fail(getMessage("m007"));
-    }
-    if (isModifierDescriptor(expression)) {
-        fail(getMessage("m008"));
-    }
-    var opts;
-    if ((typeof arg3 === "undefined" ? "undefined" : _typeof(arg3)) === "object") {
-        opts = arg3;
-    } else {
-        opts = {};
-    }
-    opts.name = opts.name || expression.name || effect.name || "Reaction@" + getNextId();
-    opts.fireImmediately = arg3 === true || opts.fireImmediately === true;
-    opts.delay = opts.delay || 0;
-    opts.compareStructural = opts.compareStructural || opts.struct || false;
-    // TODO: creates ugly spy events, use `effect = (r) => runInAction(opts.name, () => effect(r))` instead
-    effect = action(opts.name, opts.context ? effect.bind(opts.context) : effect);
-    if (opts.context) {
-        expression = expression.bind(opts.context);
-    }
-    var firstTime = true;
-    var isScheduled = false;
-    var value;
-    var equals = opts.equals ? opts.equals : opts.compareStructural || opts.struct ? comparer.structural : comparer.default;
-    var r = new Reaction(opts.name, function () {
-        if (firstTime || opts.delay < 1) {
-            reactionRunner();
-        } else if (!isScheduled) {
-            isScheduled = true;
-            setTimeout(function () {
-                isScheduled = false;
-                reactionRunner();
-            }, opts.delay);
-        }
-    });
-    function reactionRunner() {
-        if (r.isDisposed) return;
-        var changed = false;
-        r.track(function () {
-            var nextValue = expression(r);
-            changed = firstTime || !equals(value, nextValue);
-            value = nextValue;
-        });
-        if (firstTime && opts.fireImmediately) effect(value, r);
-        if (!firstTime && changed === true) effect(value, r);
-        if (firstTime) firstTime = false;
-    }
-    r.schedule();
-    return r.getDisposer();
-}
-
-/**
- * A node in the state dependency root that observes other nodes, and can be observed itself.
- *
- * ComputedValue will remember the result of the computation for the duration of the batch, or
- * while being observed.
- *
- * During this time it will recompute only when one of its direct dependencies changed,
- * but only when it is being accessed with `ComputedValue.get()`.
- *
- * Implementation description:
- * 1. First time it's being accessed it will compute and remember result
- *    give back remembered result until 2. happens
- * 2. First time any deep dependency change, propagate POSSIBLY_STALE to all observers, wait for 3.
- * 3. When it's being accessed, recompute if any shallow dependency changed.
- *    if result changed: propagate STALE to all observers, that were POSSIBLY_STALE from the last step.
- *    go to step 2. either way
- *
- * If at any point it's outside batch and it isn't observed: reset everything and go to 1.
- */
-var ComputedValue = function () {
-    /**
-     * Create a new computed value based on a function expression.
-     *
-     * The `name` property is for debug purposes only.
-     *
-     * The `equals` property specifies the comparer function to use to determine if a newly produced
-     * value differs from the previous value. Two comparers are provided in the library; `defaultComparer`
-     * compares based on identity comparison (===), and `structualComparer` deeply compares the structure.
-     * Structural comparison can be convenient if you always produce an new aggregated object and
-     * don't want to notify observers if it is structurally the same.
-     * This is useful for working with vectors, mouse coordinates etc.
-     */
-    function ComputedValue(derivation, scope, equals, name, setter) {
-        this.derivation = derivation;
-        this.scope = scope;
-        this.equals = equals;
-        this.dependenciesState = IDerivationState.NOT_TRACKING;
-        this.observing = []; // nodes we are looking at. Our value depends on these nodes
-        this.newObserving = null; // during tracking it's an array with new observed observers
-        this.isPendingUnobservation = false;
-        this.observers = [];
-        this.observersIndexes = {};
-        this.diffValue = 0;
-        this.runId = 0;
-        this.lastAccessedBy = 0;
-        this.lowestObserverState = IDerivationState.UP_TO_DATE;
-        this.unboundDepsCount = 0;
-        this.__mapid = "#" + getNextId();
-        this.value = new CaughtException(null);
-        this.isComputing = false; // to check for cycles
-        this.isRunningSetter = false;
-        this.name = name || "ComputedValue@" + getNextId();
-        if (setter) this.setter = createAction(name + "-setter", setter);
-    }
-    ComputedValue.prototype.onBecomeStale = function () {
-        propagateMaybeChanged(this);
-    };
-    ComputedValue.prototype.onBecomeUnobserved = function () {
-        clearObserving(this);
-        this.value = undefined;
-    };
-    /**
-     * Returns the current value of this computed value.
-     * Will evaluate its computation first if needed.
-     */
-    ComputedValue.prototype.get = function () {
-        invariant(!this.isComputing, "Cycle detected in computation " + this.name, this.derivation);
-        if (globalState.inBatch === 0) {
-            // This is an minor optimization which could be omitted to simplify the code
-            // The computedValue is accessed outside of any mobx stuff. Batch observing should be enough and don't need
-            // tracking as it will never be called again inside this batch.
-            startBatch();
-            if (shouldCompute(this)) this.value = this.computeValue(false);
-            endBatch();
-        } else {
-            reportObserved(this);
-            if (shouldCompute(this)) if (this.trackAndCompute()) propagateChangeConfirmed(this);
-        }
-        var result = this.value;
-        if (isCaughtException(result)) throw result.cause;
-        return result;
-    };
-    ComputedValue.prototype.peek = function () {
-        var res = this.computeValue(false);
-        if (isCaughtException(res)) throw res.cause;
-        return res;
-    };
-    ComputedValue.prototype.set = function (value) {
-        if (this.setter) {
-            invariant(!this.isRunningSetter, "The setter of computed value '" + this.name + "' is trying to update itself. Did you intend to update an _observable_ value, instead of the computed property?");
-            this.isRunningSetter = true;
-            try {
-                this.setter.call(this.scope, value);
-            } finally {
-                this.isRunningSetter = false;
-            }
-        } else invariant(false, "[ComputedValue '" + this.name + "'] It is not possible to assign a new value to a computed value.");
-    };
-    ComputedValue.prototype.trackAndCompute = function () {
-        if (isSpyEnabled()) {
-            spyReport({
-                object: this.scope,
-                type: "compute",
-                fn: this.derivation
-            });
-        }
-        var oldValue = this.value;
-        var wasSuspended = this.dependenciesState === IDerivationState.NOT_TRACKING;
-        var newValue = this.value = this.computeValue(true);
-        return wasSuspended || isCaughtException(oldValue) || isCaughtException(newValue) || !this.equals(oldValue, newValue);
-    };
-    ComputedValue.prototype.computeValue = function (track) {
-        this.isComputing = true;
-        globalState.computationDepth++;
-        var res;
-        if (track) {
-            res = trackDerivedFunction(this, this.derivation, this.scope);
-        } else {
-            try {
-                res = this.derivation.call(this.scope);
-            } catch (e) {
-                res = new CaughtException(e);
-            }
-        }
-        globalState.computationDepth--;
-        this.isComputing = false;
-        return res;
-    };
-    ComputedValue.prototype.observe = function (listener, fireImmediately) {
-        var _this = this;
-        var firstTime = true;
-        var prevValue = undefined;
-        return autorun(function () {
-            var newValue = _this.get();
-            if (!firstTime || fireImmediately) {
-                var prevU = untrackedStart();
-                listener({
-                    type: "update",
-                    object: _this,
-                    newValue: newValue,
-                    oldValue: prevValue
-                });
-                untrackedEnd(prevU);
-            }
-            firstTime = false;
-            prevValue = newValue;
-        });
-    };
-    ComputedValue.prototype.toJSON = function () {
-        return this.get();
-    };
-    ComputedValue.prototype.toString = function () {
-        return this.name + "[" + this.derivation.toString() + "]";
-    };
-    ComputedValue.prototype.valueOf = function () {
-        return toPrimitive(this.get());
-    };
-    ComputedValue.prototype.whyRun = function () {
-        var isTracking = Boolean(globalState.trackingDerivation);
-        var observing = unique(this.isComputing ? this.newObserving : this.observing).map(function (dep) {
-            return dep.name;
-        });
-        var observers = unique(getObservers(this).map(function (dep) {
-            return dep.name;
-        }));
-        return "\nWhyRun? computation '" + this.name + "':\n * Running because: " + (isTracking ? "[active] the value of this computation is needed by a reaction" : this.isComputing ? "[get] The value of this computed was requested outside a reaction" : "[idle] not running at the moment") + "\n" + (this.dependenciesState === IDerivationState.NOT_TRACKING ? getMessage("m032") : " * This computation will re-run if any of the following observables changes:\n    " + joinStrings(observing) + "\n    " + (this.isComputing && isTracking ? " (... or any observable accessed during the remainder of the current run)" : "") + "\n    " + getMessage("m038") + "\n\n  * If the outcome of this computation changes, the following observers will be re-run:\n    " + joinStrings(observers) + "\n");
-    };
-    return ComputedValue;
-}();
-ComputedValue.prototype[primitiveSymbol()] = ComputedValue.prototype.valueOf;
-var isComputedValue = createInstanceofPredicate("ComputedValue", ComputedValue);
-
-var ObservableObjectAdministration = function () {
-    function ObservableObjectAdministration(target, name) {
-        this.target = target;
-        this.name = name;
-        this.values = {};
-        this.changeListeners = null;
-        this.interceptors = null;
-    }
-    /**
-     * Observes this object. Triggers for the events 'add', 'update' and 'delete'.
-     * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe
-     * for callback details
-     */
-    ObservableObjectAdministration.prototype.observe = function (callback, fireImmediately) {
-        invariant(fireImmediately !== true, "`observe` doesn't support the fire immediately property for observable objects.");
-        return registerListener(this, callback);
-    };
-    ObservableObjectAdministration.prototype.intercept = function (handler) {
-        return registerInterceptor(this, handler);
-    };
-    return ObservableObjectAdministration;
-}();
-function asObservableObject(target, name) {
-    if (isObservableObject(target) && target.hasOwnProperty("$mobx")) return target.$mobx;
-    invariant(Object.isExtensible(target), getMessage("m035"));
-    if (!isPlainObject(target)) name = (target.constructor.name || "ObservableObject") + "@" + getNextId();
-    if (!name) name = "ObservableObject@" + getNextId();
-    var adm = new ObservableObjectAdministration(target, name);
-    addHiddenFinalProp(target, "$mobx", adm);
-    return adm;
-}
-function defineObservablePropertyFromDescriptor(adm, propName, descriptor, defaultEnhancer) {
-    if (adm.values[propName] && !isComputedValue(adm.values[propName])) {
-        // already observable property
-        invariant("value" in descriptor, "The property " + propName + " in " + adm.name + " is already observable, cannot redefine it as computed property");
-        adm.target[propName] = descriptor.value; // the property setter will make 'value' reactive if needed.
-        return;
-    }
-    // not yet observable property
-    if ("value" in descriptor) {
-        // not a computed value
-        if (isModifierDescriptor(descriptor.value)) {
-            // x : ref(someValue)
-            var modifierDescriptor = descriptor.value;
-            defineObservableProperty(adm, propName, modifierDescriptor.initialValue, modifierDescriptor.enhancer);
-        } else if (isAction(descriptor.value) && descriptor.value.autoBind === true) {
-            defineBoundAction(adm.target, propName, descriptor.value.originalFn);
-        } else if (isComputedValue(descriptor.value)) {
-            // x: computed(someExpr)
-            defineComputedPropertyFromComputedValue(adm, propName, descriptor.value);
-        } else {
-            // x: someValue
-            defineObservableProperty(adm, propName, descriptor.value, defaultEnhancer);
-        }
-    } else {
-        // get x() { return 3 } set x(v) { }
-        defineComputedProperty(adm, propName, descriptor.get, descriptor.set, comparer.default, true);
-    }
-}
-function defineObservableProperty(adm, propName, newValue, enhancer) {
-    assertPropertyConfigurable(adm.target, propName);
-    if (hasInterceptors(adm)) {
-        var change = interceptChange(adm, {
-            object: adm.target,
-            name: propName,
-            type: "add",
-            newValue: newValue
-        });
-        if (!change) return;
-        newValue = change.newValue;
-    }
-    var observable = adm.values[propName] = new ObservableValue(newValue, enhancer, adm.name + "." + propName, false);
-    newValue = observable.value; // observableValue might have changed it
-    Object.defineProperty(adm.target, propName, generateObservablePropConfig(propName));
-    notifyPropertyAddition(adm, adm.target, propName, newValue);
-}
-function defineComputedProperty(adm, propName, getter, setter, equals, asInstanceProperty) {
-    if (asInstanceProperty) assertPropertyConfigurable(adm.target, propName);
-    adm.values[propName] = new ComputedValue(getter, adm.target, equals, adm.name + "." + propName, setter);
-    if (asInstanceProperty) {
-        Object.defineProperty(adm.target, propName, generateComputedPropConfig(propName));
-    }
-}
-function defineComputedPropertyFromComputedValue(adm, propName, computedValue) {
-    var name = adm.name + "." + propName;
-    computedValue.name = name;
-    if (!computedValue.scope) computedValue.scope = adm.target;
-    adm.values[propName] = computedValue;
-    Object.defineProperty(adm.target, propName, generateComputedPropConfig(propName));
-}
-var observablePropertyConfigs = {};
-var computedPropertyConfigs = {};
-function generateObservablePropConfig(propName) {
-    return observablePropertyConfigs[propName] || (observablePropertyConfigs[propName] = {
-        configurable: true,
-        enumerable: true,
-        get: function get() {
-            return this.$mobx.values[propName].get();
-        },
-        set: function set(v) {
-            setPropertyValue(this, propName, v);
-        }
-    });
-}
-function generateComputedPropConfig(propName) {
-    return computedPropertyConfigs[propName] || (computedPropertyConfigs[propName] = {
-        configurable: true,
-        enumerable: false,
-        get: function get() {
-            return this.$mobx.values[propName].get();
-        },
-        set: function set(v) {
-            return this.$mobx.values[propName].set(v);
-        }
-    });
-}
-function setPropertyValue(instance, name, newValue) {
-    var adm = instance.$mobx;
-    var observable = adm.values[name];
-    // intercept
-    if (hasInterceptors(adm)) {
-        var change = interceptChange(adm, {
-            type: "update",
-            object: instance,
-            name: name,
-            newValue: newValue
-        });
-        if (!change) return;
-        newValue = change.newValue;
-    }
-    newValue = observable.prepareNewValue(newValue);
-    // notify spy & observers
-    if (newValue !== UNCHANGED) {
-        var notify = hasListeners(adm);
-        var notifySpy = isSpyEnabled();
-        var change = notify || notifySpy ? {
-            type: "update",
-            object: instance,
-            oldValue: observable.value,
-            name: name,
-            newValue: newValue
-        } : null;
-        if (notifySpy) spyReportStart(change);
-        observable.setNewValue(newValue);
-        if (notify) notifyListeners(adm, change);
-        if (notifySpy) spyReportEnd();
-    }
-}
-function notifyPropertyAddition(adm, object, name, newValue) {
-    var notify = hasListeners(adm);
-    var notifySpy = isSpyEnabled();
-    var change = notify || notifySpy ? {
-        type: "add",
-        object: object,
-        name: name,
-        newValue: newValue
-    } : null;
-    if (notifySpy) spyReportStart(change);
-    if (notify) notifyListeners(adm, change);
-    if (notifySpy) spyReportEnd();
-}
-var isObservableObjectAdministration = createInstanceofPredicate("ObservableObjectAdministration", ObservableObjectAdministration);
-function isObservableObject(thing) {
-    if (isObject(thing)) {
-        // Initializers run lazily when transpiling to babel, so make sure they are run...
-        runLazyInitializers(thing);
-        return isObservableObjectAdministration(thing.$mobx);
-    }
-    return false;
-}
-
-/**
- * Returns true if the provided value is reactive.
- * @param value object, function or array
- * @param property if property is specified, checks whether value.property is reactive.
- */
-function isObservable(value, property) {
-    if (value === null || value === undefined) return false;
-    if (property !== undefined) {
-        if (isObservableArray(value) || isObservableMap(value)) throw new Error(getMessage("m019"));else if (isObservableObject(value)) {
-            var o = value.$mobx;
-            return o.values && !!o.values[property];
-        }
-        return false;
-    }
-    // For first check, see #701
-    return isObservableObject(value) || !!value.$mobx || isAtom(value) || isReaction(value) || isComputedValue(value);
-}
-
-function createDecoratorForEnhancer(enhancer) {
-    invariant(!!enhancer, ":(");
-    return createClassPropertyDecorator(function (target, name, baseValue, _, baseDescriptor) {
-        assertPropertyConfigurable(target, name);
-        invariant(!baseDescriptor || !baseDescriptor.get, getMessage("m022"));
-        var adm = asObservableObject(target, undefined);
-        defineObservableProperty(adm, name, baseValue, enhancer);
-    }, function (name) {
-        var observable = this.$mobx.values[name];
-        if (observable === undefined // See #505
-        ) return undefined;
-        return observable.get();
-    }, function (name, value) {
-        setPropertyValue(this, name, value);
-    }, true, false);
-}
-
-function extendObservable(target) {
-    var properties = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        properties[_i - 1] = arguments[_i];
-    }
-    return extendObservableHelper(target, deepEnhancer, properties);
-}
-function extendShallowObservable(target) {
-    var properties = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        properties[_i - 1] = arguments[_i];
-    }
-    return extendObservableHelper(target, referenceEnhancer, properties);
-}
-function extendObservableHelper(target, defaultEnhancer, properties) {
-    invariant(arguments.length >= 2, getMessage("m014"));
-    invariant((typeof target === "undefined" ? "undefined" : _typeof(target)) === "object", getMessage("m015"));
-    invariant(!isObservableMap(target), getMessage("m016"));
-    properties.forEach(function (propSet) {
-        invariant((typeof propSet === "undefined" ? "undefined" : _typeof(propSet)) === "object", getMessage("m017"));
-        invariant(!isObservable(propSet), getMessage("m018"));
-    });
-    var adm = asObservableObject(target);
-    var definedProps = {};
-    // Note could be optimised if properties.length === 1
-    for (var i = properties.length - 1; i >= 0; i--) {
-        var propSet = properties[i];
-        for (var key in propSet) {
-            if (definedProps[key] !== true && hasOwnProperty(propSet, key)) {
-                definedProps[key] = true;
-                if (target === propSet && !isPropertyConfigurable(target, key)) continue; // see #111, skip non-configurable or non-writable props for `observable(object)`.
-                var descriptor = Object.getOwnPropertyDescriptor(propSet, key);
-                defineObservablePropertyFromDescriptor(adm, key, descriptor, defaultEnhancer);
-            }
-        }
-    }
-    return target;
-}
-
-var deepDecorator = createDecoratorForEnhancer(deepEnhancer);
-var shallowDecorator = createDecoratorForEnhancer(shallowEnhancer);
-var refDecorator = createDecoratorForEnhancer(referenceEnhancer);
-var deepStructDecorator = createDecoratorForEnhancer(deepStructEnhancer);
-var refStructDecorator = createDecoratorForEnhancer(refStructEnhancer);
-/**
- * Turns an object, array or function into a reactive structure.
- * @param v the value which should become observable.
- */
-function createObservable(v) {
-    if (v === void 0) {
-        v = undefined;
-    }
-    // @observable someProp;
-    if (typeof arguments[1] === "string") return deepDecorator.apply(null, arguments);
-    invariant(arguments.length <= 1, getMessage("m021"));
-    invariant(!isModifierDescriptor(v), getMessage("m020"));
-    // it is an observable already, done
-    if (isObservable(v)) return v;
-    // something that can be converted and mutated?
-    var res = deepEnhancer(v, undefined, undefined);
-    // this value could be converted to a new observable data structure, return it
-    if (res !== v) return res;
-    // otherwise, just box it
-    return observable.box(v);
-}
-var observableFactories = {
-    box: function box(value, name) {
-        if (arguments.length > 2) incorrectlyUsedAsDecorator("box");
-        return new ObservableValue(value, deepEnhancer, name);
-    },
-    shallowBox: function shallowBox(value, name) {
-        if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowBox");
-        return new ObservableValue(value, referenceEnhancer, name);
-    },
-    array: function array(initialValues, name) {
-        if (arguments.length > 2) incorrectlyUsedAsDecorator("array");
-        return new ObservableArray(initialValues, deepEnhancer, name);
-    },
-    shallowArray: function shallowArray(initialValues, name) {
-        if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowArray");
-        return new ObservableArray(initialValues, referenceEnhancer, name);
-    },
-    map: function map(initialValues, name) {
-        if (arguments.length > 2) incorrectlyUsedAsDecorator("map");
-        return new ObservableMap(initialValues, deepEnhancer, name);
-    },
-    shallowMap: function shallowMap(initialValues, name) {
-        if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowMap");
-        return new ObservableMap(initialValues, referenceEnhancer, name);
-    },
-    object: function object(props, name) {
-        if (arguments.length > 2) incorrectlyUsedAsDecorator("object");
-        var res = {};
-        // convert to observable object
-        asObservableObject(res, name);
-        // add properties
-        extendObservable(res, props);
-        return res;
-    },
-    shallowObject: function shallowObject(props, name) {
-        if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowObject");
-        var res = {};
-        asObservableObject(res, name);
-        extendShallowObservable(res, props);
-        return res;
-    },
-    ref: function ref() {
-        if (arguments.length < 2) {
-            // although ref creates actually a modifier descriptor, the type of the resultig properties
-            // of the object is `T` in the end, when the descriptors are interpreted
-            return createModifierDescriptor(referenceEnhancer, arguments[0]);
-        } else {
-            return refDecorator.apply(null, arguments);
-        }
-    },
-    shallow: function shallow() {
-        if (arguments.length < 2) {
-            // although ref creates actually a modifier descriptor, the type of the resultig properties
-            // of the object is `T` in the end, when the descriptors are interpreted
-            return createModifierDescriptor(shallowEnhancer, arguments[0]);
-        } else {
-            return shallowDecorator.apply(null, arguments);
-        }
-    },
-    deep: function deep() {
-        if (arguments.length < 2) {
-            // although ref creates actually a modifier descriptor, the type of the resultig properties
-            // of the object is `T` in the end, when the descriptors are interpreted
-            return createModifierDescriptor(deepEnhancer, arguments[0]);
-        } else {
-            return deepDecorator.apply(null, arguments);
-        }
-    },
-    struct: function struct() {
-        if (arguments.length < 2) {
-            // although ref creates actually a modifier descriptor, the type of the resultig properties
-            // of the object is `T` in the end, when the descriptors are interpreted
-            return createModifierDescriptor(deepStructEnhancer, arguments[0]);
-        } else {
-            return deepStructDecorator.apply(null, arguments);
-        }
-    }
-};
-var observable = createObservable;
-// weird trick to keep our typings nicely with our funcs, and still extend the observable function
-Object.keys(observableFactories).forEach(function (name) {
-    return observable[name] = observableFactories[name];
-});
-observable.deep.struct = observable.struct;
-observable.ref.struct = function () {
-    if (arguments.length < 2) {
-        return createModifierDescriptor(refStructEnhancer, arguments[0]);
-    } else {
-        return refStructDecorator.apply(null, arguments);
-    }
-};
-function incorrectlyUsedAsDecorator(methodName) {
-    fail("Expected one or two arguments to observable." + methodName + ". Did you accidentally try to use observable." + methodName + " as decorator?");
-}
-
-function isModifierDescriptor(thing) {
-    return (typeof thing === "undefined" ? "undefined" : _typeof(thing)) === "object" && thing !== null && thing.isMobxModifierDescriptor === true;
-}
-function createModifierDescriptor(enhancer, initialValue) {
-    invariant(!isModifierDescriptor(initialValue), "Modifiers cannot be nested");
-    return {
-        isMobxModifierDescriptor: true,
-        initialValue: initialValue,
-        enhancer: enhancer
-    };
-}
-function deepEnhancer(v, _, name) {
-    if (isModifierDescriptor(v)) fail("You tried to assign a modifier wrapped value to a collection, please define modifiers when creating the collection, not when modifying it");
-    // it is an observable already, done
-    if (isObservable(v)) return v;
-    // something that can be converted and mutated?
-    if (Array.isArray(v)) return observable.array(v, name);
-    if (isPlainObject(v)) return observable.object(v, name);
-    if (isES6Map(v)) return observable.map(v, name);
-    return v;
-}
-function shallowEnhancer(v, _, name) {
-    if (isModifierDescriptor(v)) fail("You tried to assign a modifier wrapped value to a collection, please define modifiers when creating the collection, not when modifying it");
-    if (v === undefined || v === null) return v;
-    if (isObservableObject(v) || isObservableArray(v) || isObservableMap(v)) return v;
-    if (Array.isArray(v)) return observable.shallowArray(v, name);
-    if (isPlainObject(v)) return observable.shallowObject(v, name);
-    if (isES6Map(v)) return observable.shallowMap(v, name);
-    return fail("The shallow modifier / decorator can only used in combination with arrays, objects and maps");
-}
-function referenceEnhancer(newValue) {
-    // never turn into an observable
-    return newValue;
-}
-function deepStructEnhancer(v, oldValue, name) {
-    // don't confuse structurally compare enhancer with ref enhancer! The latter is probably
-    // more suited for immutable objects
-    if (deepEqual(v, oldValue)) return oldValue;
-    // it is an observable already, done
-    if (isObservable(v)) return v;
-    // something that can be converted and mutated?
-    if (Array.isArray(v)) return new ObservableArray(v, deepStructEnhancer, name);
-    if (isES6Map(v)) return new ObservableMap(v, deepStructEnhancer, name);
-    if (isPlainObject(v)) {
-        var res = {};
-        asObservableObject(res, name);
-        extendObservableHelper(res, deepStructEnhancer, [v]);
-        return res;
-    }
-    return v;
-}
-function refStructEnhancer(v, oldValue, name) {
-    if (deepEqual(v, oldValue)) return oldValue;
-    return v;
-}
-
-/**
- * During a transaction no views are updated until the end of the transaction.
- * The transaction will be run synchronously nonetheless.
- *
- * @param action a function that updates some reactive state
- * @returns any value that was returned by the 'action' parameter.
- */
-function transaction(action, thisArg) {
-    if (thisArg === void 0) {
-        thisArg = undefined;
-    }
-    startBatch();
-    try {
-        return action.apply(thisArg);
-    } finally {
-        endBatch();
-    }
-}
-
-var ObservableMapMarker = {};
-var ObservableMap = function () {
-    function ObservableMap(initialData, enhancer, name) {
-        if (enhancer === void 0) {
-            enhancer = deepEnhancer;
-        }
-        if (name === void 0) {
-            name = "ObservableMap@" + getNextId();
-        }
-        this.enhancer = enhancer;
-        this.name = name;
-        this.$mobx = ObservableMapMarker;
-        this._data = Object.create(null);
-        this._hasMap = Object.create(null); // hasMap, not hashMap >-).
-        this._keys = new ObservableArray(undefined, referenceEnhancer, this.name + ".keys()", true);
-        this.interceptors = null;
-        this.changeListeners = null;
-        this.dehancer = undefined;
-        this.merge(initialData);
-    }
-    ObservableMap.prototype._has = function (key) {
-        return typeof this._data[key] !== "undefined";
-    };
-    ObservableMap.prototype.has = function (key) {
-        if (!this.isValidKey(key)) return false;
-        key = "" + key;
-        if (this._hasMap[key]) return this._hasMap[key].get();
-        return this._updateHasMapEntry(key, false).get();
-    };
-    ObservableMap.prototype.set = function (key, value) {
-        this.assertValidKey(key);
-        key = "" + key;
-        var hasKey = this._has(key);
-        if (hasInterceptors(this)) {
-            var change = interceptChange(this, {
-                type: hasKey ? "update" : "add",
-                object: this,
-                newValue: value,
-                name: key
-            });
-            if (!change) return this;
-            value = change.newValue;
-        }
-        if (hasKey) {
-            this._updateValue(key, value);
-        } else {
-            this._addValue(key, value);
-        }
-        return this;
-    };
-    ObservableMap.prototype.delete = function (key) {
-        var _this = this;
-        this.assertValidKey(key);
-        key = "" + key;
-        if (hasInterceptors(this)) {
-            var change = interceptChange(this, {
-                type: "delete",
-                object: this,
-                name: key
-            });
-            if (!change) return false;
-        }
-        if (this._has(key)) {
-            var notifySpy = isSpyEnabled();
-            var notify = hasListeners(this);
-            var change = notify || notifySpy ? {
-                type: "delete",
-                object: this,
-                oldValue: this._data[key].value,
-                name: key
-            } : null;
-            if (notifySpy) spyReportStart(change);
-            transaction(function () {
-                _this._keys.remove(key);
-                _this._updateHasMapEntry(key, false);
-                var observable$$1 = _this._data[key];
-                observable$$1.setNewValue(undefined);
-                _this._data[key] = undefined;
-            });
-            if (notify) notifyListeners(this, change);
-            if (notifySpy) spyReportEnd();
-            return true;
-        }
-        return false;
-    };
-    ObservableMap.prototype._updateHasMapEntry = function (key, value) {
-        // optimization; don't fill the hasMap if we are not observing, or remove entry if there are no observers anymore
-        var entry = this._hasMap[key];
-        if (entry) {
-            entry.setNewValue(value);
-        } else {
-            entry = this._hasMap[key] = new ObservableValue(value, referenceEnhancer, this.name + "." + key + "?", false);
-        }
-        return entry;
-    };
-    ObservableMap.prototype._updateValue = function (name, newValue) {
-        var observable$$1 = this._data[name];
-        newValue = observable$$1.prepareNewValue(newValue);
-        if (newValue !== UNCHANGED) {
-            var notifySpy = isSpyEnabled();
-            var notify = hasListeners(this);
-            var change = notify || notifySpy ? {
-                type: "update",
-                object: this,
-                oldValue: observable$$1.value,
-                name: name,
-                newValue: newValue
-            } : null;
-            if (notifySpy) spyReportStart(change);
-            observable$$1.setNewValue(newValue);
-            if (notify) notifyListeners(this, change);
-            if (notifySpy) spyReportEnd();
-        }
-    };
-    ObservableMap.prototype._addValue = function (name, newValue) {
-        var _this = this;
-        transaction(function () {
-            var observable$$1 = _this._data[name] = new ObservableValue(newValue, _this.enhancer, _this.name + "." + name, false);
-            newValue = observable$$1.value; // value might have been changed
-            _this._updateHasMapEntry(name, true);
-            _this._keys.push(name);
-        });
-        var notifySpy = isSpyEnabled();
-        var notify = hasListeners(this);
-        var change = notify || notifySpy ? {
-            type: "add",
-            object: this,
-            name: name,
-            newValue: newValue
-        } : null;
-        if (notifySpy) spyReportStart(change);
-        if (notify) notifyListeners(this, change);
-        if (notifySpy) spyReportEnd();
-    };
-    ObservableMap.prototype.get = function (key) {
-        key = "" + key;
-        if (this.has(key)) return this.dehanceValue(this._data[key].get());
-        return this.dehanceValue(undefined);
-    };
-    ObservableMap.prototype.dehanceValue = function (value) {
-        if (this.dehancer !== undefined) {
-            return this.dehancer(value);
-        }
-        return value;
-    };
-    ObservableMap.prototype.keys = function () {
-        return arrayAsIterator(this._keys.slice());
-    };
-    ObservableMap.prototype.values = function () {
-        return arrayAsIterator(this._keys.map(this.get, this));
-    };
-    ObservableMap.prototype.entries = function () {
-        var _this = this;
-        return arrayAsIterator(this._keys.map(function (key) {
-            return [key, _this.get(key)];
-        }));
-    };
-    ObservableMap.prototype.forEach = function (callback, thisArg) {
-        var _this = this;
-        this.keys().forEach(function (key) {
-            return callback.call(thisArg, _this.get(key), key, _this);
-        });
-    };
-    /** Merge another object into this object, returns this. */
-    ObservableMap.prototype.merge = function (other) {
-        var _this = this;
-        if (isObservableMap(other)) {
-            other = other.toJS();
-        }
-        transaction(function () {
-            if (isPlainObject(other)) Object.keys(other).forEach(function (key) {
-                return _this.set(key, other[key]);
-            });else if (Array.isArray(other)) other.forEach(function (_a) {
-                var key = _a[0],
-                    value = _a[1];
-                return _this.set(key, value);
-            });else if (isES6Map(other)) other.forEach(function (value, key) {
-                return _this.set(key, value);
-            });else if (other !== null && other !== undefined) fail("Cannot initialize map from " + other);
-        });
-        return this;
-    };
-    ObservableMap.prototype.clear = function () {
-        var _this = this;
-        transaction(function () {
-            untracked(function () {
-                _this.keys().forEach(_this.delete, _this);
-            });
-        });
-    };
-    ObservableMap.prototype.replace = function (values) {
-        var _this = this;
-        transaction(function () {
-            // grab all the keys that are present in the new map but not present in the current map
-            // and delete them from the map, then merge the new map
-            // this will cause reactions only on changed values
-            var newKeys = getMapLikeKeys(values);
-            var oldKeys = _this.keys();
-            var missingKeys = oldKeys.filter(function (k) {
-                return newKeys.indexOf(k) === -1;
-            });
-            missingKeys.forEach(function (k) {
-                return _this.delete(k);
-            });
-            _this.merge(values);
-        });
-        return this;
-    };
-    Object.defineProperty(ObservableMap.prototype, "size", {
-        get: function get() {
-            return this._keys.length;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Returns a shallow non observable object clone of this map.
-     * Note that the values might still be observable. For a deep clone use mobx.toJS.
-     */
-    ObservableMap.prototype.toJS = function () {
-        var _this = this;
-        var res = {};
-        this.keys().forEach(function (key) {
-            return res[key] = _this.get(key);
-        });
-        return res;
-    };
-    ObservableMap.prototype.toJSON = function () {
-        // Used by JSON.stringify
-        return this.toJS();
-    };
-    ObservableMap.prototype.isValidKey = function (key) {
-        if (key === null || key === undefined) return false;
-        if (typeof key === "string" || typeof key === "number" || typeof key === "boolean") return true;
-        return false;
-    };
-    ObservableMap.prototype.assertValidKey = function (key) {
-        if (!this.isValidKey(key)) throw new Error("[mobx.map] Invalid key: '" + key + "', only strings, numbers and booleans are accepted as key in observable maps.");
-    };
-    ObservableMap.prototype.toString = function () {
-        var _this = this;
-        return this.name + "[{ " + this.keys().map(function (key) {
-            return key + ": " + ("" + _this.get(key));
-        }).join(", ") + " }]";
-    };
-    /**
-     * Observes this object. Triggers for the events 'add', 'update' and 'delete'.
-     * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe
-     * for callback details
-     */
-    ObservableMap.prototype.observe = function (listener, fireImmediately) {
-        invariant(fireImmediately !== true, getMessage("m033"));
-        return registerListener(this, listener);
-    };
-    ObservableMap.prototype.intercept = function (handler) {
-        return registerInterceptor(this, handler);
-    };
-    return ObservableMap;
-}();
-declareIterator(ObservableMap.prototype, function () {
-    return this.entries();
-});
-function map(initialValues) {
-    deprecated("`mobx.map` is deprecated, use `new ObservableMap` or `mobx.observable.map` instead");
-    return observable.map(initialValues);
-}
-/* 'var' fixes small-build issue */
-var isObservableMap = createInstanceofPredicate("ObservableMap", ObservableMap);
-
-var EMPTY_ARRAY = [];
-Object.freeze(EMPTY_ARRAY);
-function getGlobal() {
-    return typeof window !== "undefined" ? window : global;
-}
-function getNextId() {
-    return ++globalState.mobxGuid;
-}
-function fail(message, thing) {
-    invariant(false, message, thing);
-    throw "X"; // unreachable
-}
-function invariant(check, message, thing) {
-    if (!check) throw new Error("[mobx] Invariant failed: " + message + (thing ? " in '" + thing + "'" : ""));
-}
-/**
- * Prints a deprecation message, but only one time.
- * Returns false if the deprecated message was already printed before
- */
-var deprecatedMessages = [];
-function deprecated(msg) {
-    if (deprecatedMessages.indexOf(msg) !== -1) return false;
-    deprecatedMessages.push(msg);
-    console.error("[mobx] Deprecated: " + msg);
-    return true;
-}
-/**
- * Makes sure that the provided function is invoked at most once.
- */
-function once(func) {
-    var invoked = false;
-    return function () {
-        if (invoked) return;
-        invoked = true;
-        return func.apply(this, arguments);
-    };
-}
-var noop = function noop() {};
-function unique(list) {
-    var res = [];
-    list.forEach(function (item) {
-        if (res.indexOf(item) === -1) res.push(item);
-    });
-    return res;
-}
-function joinStrings(things, limit, separator) {
-    if (limit === void 0) {
-        limit = 100;
-    }
-    if (separator === void 0) {
-        separator = " - ";
-    }
-    if (!things) return "";
-    var sliced = things.slice(0, limit);
-    return "" + sliced.join(separator) + (things.length > limit ? " (... and " + (things.length - limit) + "more)" : "");
-}
-function isObject(value) {
-    return value !== null && (typeof value === "undefined" ? "undefined" : _typeof(value)) === "object";
-}
-function isPlainObject(value) {
-    if (value === null || (typeof value === "undefined" ? "undefined" : _typeof(value)) !== "object") return false;
-    var proto = Object.getPrototypeOf(value);
-    return proto === Object.prototype || proto === null;
-}
-function objectAssign() {
-    var res = arguments[0];
-    for (var i = 1, l = arguments.length; i < l; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-            if (hasOwnProperty(source, key)) {
-                res[key] = source[key];
-            }
-        }
-    }
-    return res;
-}
-var prototypeHasOwnProperty = Object.prototype.hasOwnProperty;
-function hasOwnProperty(object, propName) {
-    return prototypeHasOwnProperty.call(object, propName);
-}
-function makeNonEnumerable(object, propNames) {
-    for (var i = 0; i < propNames.length; i++) {
-        addHiddenProp(object, propNames[i], object[propNames[i]]);
-    }
-}
-function addHiddenProp(object, propName, value) {
-    Object.defineProperty(object, propName, {
-        enumerable: false,
-        writable: true,
-        configurable: true,
-        value: value
-    });
-}
-function addHiddenFinalProp(object, propName, value) {
-    Object.defineProperty(object, propName, {
-        enumerable: false,
-        writable: false,
-        configurable: true,
-        value: value
-    });
-}
-function isPropertyConfigurable(object, prop) {
-    var descriptor = Object.getOwnPropertyDescriptor(object, prop);
-    return !descriptor || descriptor.configurable !== false && descriptor.writable !== false;
-}
-function assertPropertyConfigurable(object, prop) {
-    invariant(isPropertyConfigurable(object, prop), "Cannot make property '" + prop + "' observable, it is not configurable and writable in the target object");
-}
-function getEnumerableKeys(obj) {
-    var res = [];
-    for (var key in obj) {
-        res.push(key);
-    }return res;
-}
-/**
- * Naive deepEqual. Doesn't check for prototype, non-enumerable or out-of-range properties on arrays.
- * If you have such a case, you probably should use this function but something fancier :).
- */
-function deepEqual(a, b) {
-    if (a === null && b === null) return true;
-    if (a === undefined && b === undefined) return true;
-    if (areBothNaN(a, b)) return true;
-    if ((typeof a === "undefined" ? "undefined" : _typeof(a)) !== "object") return a === b;
-    var aIsArray = isArrayLike(a);
-    var aIsMap = isMapLike(a);
-    if (aIsArray !== isArrayLike(b)) {
-        return false;
-    } else if (aIsMap !== isMapLike(b)) {
-        return false;
-    } else if (aIsArray) {
-        if (a.length !== b.length) return false;
-        for (var i = a.length - 1; i >= 0; i--) {
-            if (!deepEqual(a[i], b[i])) return false;
-        }return true;
-    } else if (aIsMap) {
-        if (a.size !== b.size) return false;
-        var equals_1 = true;
-        a.forEach(function (value, key) {
-            equals_1 = equals_1 && deepEqual(b.get(key), value);
-        });
-        return equals_1;
-    } else if ((typeof a === "undefined" ? "undefined" : _typeof(a)) === "object" && (typeof b === "undefined" ? "undefined" : _typeof(b)) === "object") {
-        if (a === null || b === null) return false;
-        if (isMapLike(a) && isMapLike(b)) {
-            if (a.size !== b.size) return false;
-            // Freaking inefficient.... Create PR if you run into this :) Much appreciated!
-            return deepEqual(observable.shallowMap(a).entries(), observable.shallowMap(b).entries());
-        }
-        if (getEnumerableKeys(a).length !== getEnumerableKeys(b).length) return false;
-        for (var prop in a) {
-            if (!(prop in b)) return false;
-            if (!deepEqual(a[prop], b[prop])) return false;
-        }
-        return true;
-    }
-    return false;
-}
-function createInstanceofPredicate(name, clazz) {
-    var propName = "isMobX" + name;
-    clazz.prototype[propName] = true;
-    return function (x) {
-        return isObject(x) && x[propName] === true;
-    };
-}
-function areBothNaN(a, b) {
-    return typeof a === "number" && typeof b === "number" && isNaN(a) && isNaN(b);
-}
-/**
- * Returns whether the argument is an array, disregarding observability.
- */
-function isArrayLike(x) {
-    return Array.isArray(x) || isObservableArray(x);
-}
-function isMapLike(x) {
-    return isES6Map(x) || isObservableMap(x);
-}
-function isES6Map(thing) {
-    if (getGlobal().Map !== undefined && thing instanceof getGlobal().Map) return true;
-    return false;
-}
-function getMapLikeKeys(map$$1) {
-    var keys;
-    if (isPlainObject(map$$1)) keys = Object.keys(map$$1);else if (Array.isArray(map$$1)) keys = map$$1.map(function (_a) {
-        var key = _a[0];
-        return key;
-    });else if (isMapLike(map$$1)) keys = Array.from(map$$1.keys());else fail("Cannot get keys from " + map$$1);
-    return keys;
-}
-function primitiveSymbol() {
-    return typeof Symbol === "function" && Symbol.toPrimitive || "@@toPrimitive";
-}
-function toPrimitive(value) {
-    return value === null ? null : (typeof value === "undefined" ? "undefined" : _typeof(value)) === "object" ? "" + value : value;
-}
-
-/**
- * These values will persist if global state is reset
- */
-var persistentKeys = ["mobxGuid", "resetId", "spyListeners", "strictMode", "runId"];
-var MobXGlobals = function () {
-    function MobXGlobals() {
-        /**
-         * MobXGlobals version.
-         * MobX compatiblity with other versions loaded in memory as long as this version matches.
-         * It indicates that the global state still stores similar information
-         */
-        this.version = 5;
-        /**
-         * Currently running derivation
-         */
-        this.trackingDerivation = null;
-        /**
-         * Are we running a computation currently? (not a reaction)
-         */
-        this.computationDepth = 0;
-        /**
-         * Each time a derivation is tracked, it is assigned a unique run-id
-         */
-        this.runId = 0;
-        /**
-         * 'guid' for general purpose. Will be persisted amongst resets.
-         */
-        this.mobxGuid = 0;
-        /**
-         * Are we in a batch block? (and how many of them)
-         */
-        this.inBatch = 0;
-        /**
-         * Observables that don't have observers anymore, and are about to be
-         * suspended, unless somebody else accesses it in the same batch
-         *
-         * @type {IObservable[]}
-         */
-        this.pendingUnobservations = [];
-        /**
-         * List of scheduled, not yet executed, reactions.
-         */
-        this.pendingReactions = [];
-        /**
-         * Are we currently processing reactions?
-         */
-        this.isRunningReactions = false;
-        /**
-         * Is it allowed to change observables at this point?
-         * In general, MobX doesn't allow that when running computations and React.render.
-         * To ensure that those functions stay pure.
-         */
-        this.allowStateChanges = true;
-        /**
-         * If strict mode is enabled, state changes are by default not allowed
-         */
-        this.strictMode = false;
-        /**
-         * Used by createTransformer to detect that the global state has been reset.
-         */
-        this.resetId = 0;
-        /**
-         * Spy callbacks
-         */
-        this.spyListeners = [];
-        /**
-         * Globally attached error handlers that react specifically to errors in reactions
-         */
-        this.globalReactionErrorHandlers = [];
-    }
-    return MobXGlobals;
-}();
-var globalState = new MobXGlobals();
-var shareGlobalStateCalled = false;
-var runInIsolationCalled = false;
-var warnedAboutMultipleInstances = false;
-{
-    var global_1 = getGlobal();
-    if (!global_1.__mobxInstanceCount) {
-        global_1.__mobxInstanceCount = 1;
-    } else {
-        global_1.__mobxInstanceCount++;
-        setTimeout(function () {
-            if (!shareGlobalStateCalled && !runInIsolationCalled && !warnedAboutMultipleInstances) {
-                warnedAboutMultipleInstances = true;
-                console.warn("[mobx] Warning: there are multiple mobx instances active. This might lead to unexpected results. See https://github.com/mobxjs/mobx/issues/1082 for details.");
-            }
-        });
-    }
-}
-function isolateGlobalState() {
-    runInIsolationCalled = true;
-    getGlobal().__mobxInstanceCount--;
-}
-function shareGlobalState() {
-    // TODO: remove in 4.0; just use peer dependencies instead.
-    deprecated("Using `shareGlobalState` is not recommended, use peer dependencies instead. See https://github.com/mobxjs/mobx/issues/1082 for details.");
-    shareGlobalStateCalled = true;
-    var global = getGlobal();
-    var ownState = globalState;
-    /**
-     * Backward compatibility check
-     */
-    if (global.__mobservableTrackingStack || global.__mobservableViewStack) throw new Error("[mobx] An incompatible version of mobservable is already loaded.");
-    if (global.__mobxGlobal && global.__mobxGlobal.version !== ownState.version) throw new Error("[mobx] An incompatible version of mobx is already loaded.");
-    if (global.__mobxGlobal) globalState = global.__mobxGlobal;else global.__mobxGlobal = ownState;
-}
-function getGlobalState() {
-    return globalState;
-}
-
-/**
- * For testing purposes only; this will break the internal state of existing observables,
- * but can be used to get back at a stable state after throwing errors
- */
-function resetGlobalState() {
-    globalState.resetId++;
-    var defaultGlobals = new MobXGlobals();
-    for (var key in defaultGlobals) {
-        if (persistentKeys.indexOf(key) === -1) globalState[key] = defaultGlobals[key];
-    }globalState.allowStateChanges = !globalState.strictMode;
-}
-
-function hasObservers(observable) {
-    return observable.observers && observable.observers.length > 0;
-}
-function getObservers(observable) {
-    return observable.observers;
-}
-function addObserver(observable, node) {
-    // invariant(node.dependenciesState !== -1, "INTERNAL ERROR, can add only dependenciesState !== -1");
-    // invariant(observable._observers.indexOf(node) === -1, "INTERNAL ERROR add already added node");
-    // invariantObservers(observable);
-    var l = observable.observers.length;
-    if (l) {
-        // because object assignment is relatively expensive, let's not store data about index 0.
-        observable.observersIndexes[node.__mapid] = l;
-    }
-    observable.observers[l] = node;
-    if (observable.lowestObserverState > node.dependenciesState) observable.lowestObserverState = node.dependenciesState;
-    // invariantObservers(observable);
-    // invariant(observable._observers.indexOf(node) !== -1, "INTERNAL ERROR didn't add node");
-}
-function removeObserver(observable, node) {
-    // invariant(globalState.inBatch > 0, "INTERNAL ERROR, remove should be called only inside batch");
-    // invariant(observable._observers.indexOf(node) !== -1, "INTERNAL ERROR remove already removed node");
-    // invariantObservers(observable);
-    if (observable.observers.length === 1) {
-        // deleting last observer
-        observable.observers.length = 0;
-        queueForUnobservation(observable);
-    } else {
-        // deleting from _observersIndexes is straight forward, to delete from _observers, let's swap `node` with last element
-        var list = observable.observers;
-        var map = observable.observersIndexes;
-        var filler = list.pop(); // get last element, which should fill the place of `node`, so the array doesn't have holes
-        if (filler !== node) {
-            // otherwise node was the last element, which already got removed from array
-            var index = map[node.__mapid] || 0; // getting index of `node`. this is the only place we actually use map.
-            if (index) {
-                // map store all indexes but 0, see comment in `addObserver`
-                map[filler.__mapid] = index;
-            } else {
-                delete map[filler.__mapid];
-            }
-            list[index] = filler;
-        }
-        delete map[node.__mapid];
-    }
-    // invariantObservers(observable);
-    // invariant(observable._observers.indexOf(node) === -1, "INTERNAL ERROR remove already removed node2");
-}
-function queueForUnobservation(observable) {
-    if (!observable.isPendingUnobservation) {
-        // invariant(globalState.inBatch > 0, "INTERNAL ERROR, remove should be called only inside batch");
-        // invariant(observable._observers.length === 0, "INTERNAL ERROR, should only queue for unobservation unobserved observables");
-        observable.isPendingUnobservation = true;
-        globalState.pendingUnobservations.push(observable);
-    }
-}
-/**
- * Batch starts a transaction, at least for purposes of memoizing ComputedValues when nothing else does.
- * During a batch `onBecomeUnobserved` will be called at most once per observable.
- * Avoids unnecessary recalculations.
- */
-function startBatch() {
-    globalState.inBatch++;
-}
-function endBatch() {
-    if (--globalState.inBatch === 0) {
-        runReactions();
-        // the batch is actually about to finish, all unobserving should happen here.
-        var list = globalState.pendingUnobservations;
-        for (var i = 0; i < list.length; i++) {
-            var observable = list[i];
-            observable.isPendingUnobservation = false;
-            if (observable.observers.length === 0) {
-                observable.onBecomeUnobserved();
-                // NOTE: onBecomeUnobserved might push to `pendingUnobservations`
-            }
-        }
-        globalState.pendingUnobservations = [];
-    }
-}
-function reportObserved(observable) {
-    var derivation = globalState.trackingDerivation;
-    if (derivation !== null) {
-        /**
-         * Simple optimization, give each derivation run an unique id (runId)
-         * Check if last time this observable was accessed the same runId is used
-         * if this is the case, the relation is already known
-         */
-        if (derivation.runId !== observable.lastAccessedBy) {
-            observable.lastAccessedBy = derivation.runId;
-            derivation.newObserving[derivation.unboundDepsCount++] = observable;
-        }
-    } else if (observable.observers.length === 0) {
-        queueForUnobservation(observable);
-    }
-}
-/**
- * NOTE: current propagation mechanism will in case of self reruning autoruns behave unexpectedly
- * It will propagate changes to observers from previous run
- * It's hard or maybe impossible (with reasonable perf) to get it right with current approach
- * Hopefully self reruning autoruns aren't a feature people should depend on
- * Also most basic use cases should be ok
- */
-// Called by Atom when its value changes
-function propagateChanged(observable) {
-    // invariantLOS(observable, "changed start");
-    if (observable.lowestObserverState === IDerivationState.STALE) return;
-    observable.lowestObserverState = IDerivationState.STALE;
-    var observers = observable.observers;
-    var i = observers.length;
-    while (i--) {
-        var d = observers[i];
-        if (d.dependenciesState === IDerivationState.UP_TO_DATE) d.onBecomeStale();
-        d.dependenciesState = IDerivationState.STALE;
-    }
-    // invariantLOS(observable, "changed end");
-}
-// Called by ComputedValue when it recalculate and its value changed
-function propagateChangeConfirmed(observable) {
-    // invariantLOS(observable, "confirmed start");
-    if (observable.lowestObserverState === IDerivationState.STALE) return;
-    observable.lowestObserverState = IDerivationState.STALE;
-    var observers = observable.observers;
-    var i = observers.length;
-    while (i--) {
-        var d = observers[i];
-        if (d.dependenciesState === IDerivationState.POSSIBLY_STALE) d.dependenciesState = IDerivationState.STALE;else if (d.dependenciesState === IDerivationState.UP_TO_DATE // this happens during computing of `d`, just keep lowestObserverState up to date.
-        ) observable.lowestObserverState = IDerivationState.UP_TO_DATE;
-    }
-    // invariantLOS(observable, "confirmed end");
-}
-// Used by computed when its dependency changed, but we don't wan't to immediately recompute.
-function propagateMaybeChanged(observable) {
-    // invariantLOS(observable, "maybe start");
-    if (observable.lowestObserverState !== IDerivationState.UP_TO_DATE) return;
-    observable.lowestObserverState = IDerivationState.POSSIBLY_STALE;
-    var observers = observable.observers;
-    var i = observers.length;
-    while (i--) {
-        var d = observers[i];
-        if (d.dependenciesState === IDerivationState.UP_TO_DATE) {
-            d.dependenciesState = IDerivationState.POSSIBLY_STALE;
-            d.onBecomeStale();
-        }
-    }
-    // invariantLOS(observable, "maybe end");
-}
-
-var IDerivationState;
-(function (IDerivationState) {
-    // before being run or (outside batch and not being observed)
-    // at this point derivation is not holding any data about dependency tree
-    IDerivationState[IDerivationState["NOT_TRACKING"] = -1] = "NOT_TRACKING";
-    // no shallow dependency changed since last computation
-    // won't recalculate derivation
-    // this is what makes mobx fast
-    IDerivationState[IDerivationState["UP_TO_DATE"] = 0] = "UP_TO_DATE";
-    // some deep dependency changed, but don't know if shallow dependency changed
-    // will require to check first if UP_TO_DATE or POSSIBLY_STALE
-    // currently only ComputedValue will propagate POSSIBLY_STALE
-    //
-    // having this state is second big optimization:
-    // don't have to recompute on every dependency change, but only when it's needed
-    IDerivationState[IDerivationState["POSSIBLY_STALE"] = 1] = "POSSIBLY_STALE";
-    // A shallow dependency has changed since last computation and the derivation
-    // will need to recompute when it's needed next.
-    IDerivationState[IDerivationState["STALE"] = 2] = "STALE";
-})(IDerivationState || (IDerivationState = {}));
-var CaughtException = function () {
-    function CaughtException(cause) {
-        this.cause = cause;
-        // Empty
-    }
-    return CaughtException;
-}();
-function isCaughtException(e) {
-    return e instanceof CaughtException;
-}
-/**
- * Finds out whether any dependency of the derivation has actually changed.
- * If dependenciesState is 1 then it will recalculate dependencies,
- * if any dependency changed it will propagate it by changing dependenciesState to 2.
- *
- * By iterating over the dependencies in the same order that they were reported and
- * stopping on the first change, all the recalculations are only called for ComputedValues
- * that will be tracked by derivation. That is because we assume that if the first x
- * dependencies of the derivation doesn't change then the derivation should run the same way
- * up until accessing x-th dependency.
- */
-function shouldCompute(derivation) {
-    switch (derivation.dependenciesState) {
-        case IDerivationState.UP_TO_DATE:
-            return false;
-        case IDerivationState.NOT_TRACKING:
-        case IDerivationState.STALE:
-            return true;
-        case IDerivationState.POSSIBLY_STALE:
-            {
-                var prevUntracked = untrackedStart(); // no need for those computeds to be reported, they will be picked up in trackDerivedFunction.
-                var obs = derivation.observing,
-                    l = obs.length;
-                for (var i = 0; i < l; i++) {
-                    var obj = obs[i];
-                    if (isComputedValue(obj)) {
-                        try {
-                            obj.get();
-                        } catch (e) {
-                            // we are not interested in the value *or* exception at this moment, but if there is one, notify all
-                            untrackedEnd(prevUntracked);
-                            return true;
-                        }
-                        // if ComputedValue `obj` actually changed it will be computed and propagated to its observers.
-                        // and `derivation` is an observer of `obj`
-                        if (derivation.dependenciesState === IDerivationState.STALE) {
-                            untrackedEnd(prevUntracked);
-                            return true;
-                        }
-                    }
-                }
-                changeDependenciesStateTo0(derivation);
-                untrackedEnd(prevUntracked);
-                return false;
-            }
-    }
-}
-function isComputingDerivation() {
-    return globalState.trackingDerivation !== null; // filter out actions inside computations
-}
-function checkIfStateModificationsAreAllowed(atom) {
-    var hasObservers$$1 = atom.observers.length > 0;
-    // Should never be possible to change an observed observable from inside computed, see #798
-    if (globalState.computationDepth > 0 && hasObservers$$1) fail(getMessage("m031") + atom.name);
-    // Should not be possible to change observed state outside strict mode, except during initialization, see #563
-    if (!globalState.allowStateChanges && hasObservers$$1) fail(getMessage(globalState.strictMode ? "m030a" : "m030b") + atom.name);
-}
-/**
- * Executes the provided function `f` and tracks which observables are being accessed.
- * The tracking information is stored on the `derivation` object and the derivation is registered
- * as observer of any of the accessed observables.
- */
-function trackDerivedFunction(derivation, f, context) {
-    // pre allocate array allocation + room for variation in deps
-    // array will be trimmed by bindDependencies
-    changeDependenciesStateTo0(derivation);
-    derivation.newObserving = new Array(derivation.observing.length + 100);
-    derivation.unboundDepsCount = 0;
-    derivation.runId = ++globalState.runId;
-    var prevTracking = globalState.trackingDerivation;
-    globalState.trackingDerivation = derivation;
-    var result;
-    try {
-        result = f.call(context);
-    } catch (e) {
-        result = new CaughtException(e);
-    }
-    globalState.trackingDerivation = prevTracking;
-    bindDependencies(derivation);
-    return result;
-}
-/**
- * diffs newObserving with observing.
- * update observing to be newObserving with unique observables
- * notify observers that become observed/unobserved
- */
-function bindDependencies(derivation) {
-    // invariant(derivation.dependenciesState !== IDerivationState.NOT_TRACKING, "INTERNAL ERROR bindDependencies expects derivation.dependenciesState !== -1");
-    var prevObserving = derivation.observing;
-    var observing = derivation.observing = derivation.newObserving;
-    var lowestNewObservingDerivationState = IDerivationState.UP_TO_DATE;
-    // Go through all new observables and check diffValue: (this list can contain duplicates):
-    //   0: first occurrence, change to 1 and keep it
-    //   1: extra occurrence, drop it
-    var i0 = 0,
-        l = derivation.unboundDepsCount;
-    for (var i = 0; i < l; i++) {
-        var dep = observing[i];
-        if (dep.diffValue === 0) {
-            dep.diffValue = 1;
-            if (i0 !== i) observing[i0] = dep;
-            i0++;
-        }
-        // Upcast is 'safe' here, because if dep is IObservable, `dependenciesState` will be undefined,
-        // not hitting the condition
-        if (dep.dependenciesState > lowestNewObservingDerivationState) {
-            lowestNewObservingDerivationState = dep.dependenciesState;
-        }
-    }
-    observing.length = i0;
-    derivation.newObserving = null; // newObserving shouldn't be needed outside tracking (statement moved down to work around FF bug, see #614)
-    // Go through all old observables and check diffValue: (it is unique after last bindDependencies)
-    //   0: it's not in new observables, unobserve it
-    //   1: it keeps being observed, don't want to notify it. change to 0
-    l = prevObserving.length;
-    while (l--) {
-        var dep = prevObserving[l];
-        if (dep.diffValue === 0) {
-            removeObserver(dep, derivation);
-        }
-        dep.diffValue = 0;
-    }
-    // Go through all new observables and check diffValue: (now it should be unique)
-    //   0: it was set to 0 in last loop. don't need to do anything.
-    //   1: it wasn't observed, let's observe it. set back to 0
-    while (i0--) {
-        var dep = observing[i0];
-        if (dep.diffValue === 1) {
-            dep.diffValue = 0;
-            addObserver(dep, derivation);
-        }
-    }
-    // Some new observed derivations may become stale during this derivation computation
-    // so they have had no chance to propagate staleness (#916)
-    if (lowestNewObservingDerivationState !== IDerivationState.UP_TO_DATE) {
-        derivation.dependenciesState = lowestNewObservingDerivationState;
-        derivation.onBecomeStale();
-    }
-}
-function clearObserving(derivation) {
-    // invariant(globalState.inBatch > 0, "INTERNAL ERROR clearObserving should be called only inside batch");
-    var obs = derivation.observing;
-    derivation.observing = [];
-    var i = obs.length;
-    while (i--) {
-        removeObserver(obs[i], derivation);
-    }derivation.dependenciesState = IDerivationState.NOT_TRACKING;
-}
-function untracked(action) {
-    var prev = untrackedStart();
-    var res = action();
-    untrackedEnd(prev);
-    return res;
-}
-function untrackedStart() {
-    var prev = globalState.trackingDerivation;
-    globalState.trackingDerivation = null;
-    return prev;
-}
-function untrackedEnd(prev) {
-    globalState.trackingDerivation = prev;
-}
-/**
- * needed to keep `lowestObserverState` correct. when changing from (2 or 1) to 0
- *
- */
-function changeDependenciesStateTo0(derivation) {
-    if (derivation.dependenciesState === IDerivationState.UP_TO_DATE) return;
-    derivation.dependenciesState = IDerivationState.UP_TO_DATE;
-    var obs = derivation.observing;
-    var i = obs.length;
-    while (i--) {
-        obs[i].lowestObserverState = IDerivationState.UP_TO_DATE;
-    }
-}
-
-var Reaction = function () {
-    function Reaction(name, onInvalidate) {
-        if (name === void 0) {
-            name = "Reaction@" + getNextId();
-        }
-        this.name = name;
-        this.onInvalidate = onInvalidate;
-        this.observing = []; // nodes we are looking at. Our value depends on these nodes
-        this.newObserving = [];
-        this.dependenciesState = IDerivationState.NOT_TRACKING;
-        this.diffValue = 0;
-        this.runId = 0;
-        this.unboundDepsCount = 0;
-        this.__mapid = "#" + getNextId();
-        this.isDisposed = false;
-        this._isScheduled = false;
-        this._isTrackPending = false;
-        this._isRunning = false;
-    }
-    Reaction.prototype.onBecomeStale = function () {
-        this.schedule();
-    };
-    Reaction.prototype.schedule = function () {
-        if (!this._isScheduled) {
-            this._isScheduled = true;
-            globalState.pendingReactions.push(this);
-            runReactions();
-        }
-    };
-    Reaction.prototype.isScheduled = function () {
-        return this._isScheduled;
-    };
-    /**
-     * internal, use schedule() if you intend to kick off a reaction
-     */
-    Reaction.prototype.runReaction = function () {
-        if (!this.isDisposed) {
-            startBatch();
-            this._isScheduled = false;
-            if (shouldCompute(this)) {
-                this._isTrackPending = true;
-                this.onInvalidate();
-                if (this._isTrackPending && isSpyEnabled()) {
-                    // onInvalidate didn't trigger track right away..
-                    spyReport({
-                        object: this,
-                        type: "scheduled-reaction"
-                    });
-                }
-            }
-            endBatch();
-        }
-    };
-    Reaction.prototype.track = function (fn) {
-        startBatch();
-        var notify = isSpyEnabled();
-        var startTime;
-        if (notify) {
-            startTime = Date.now();
-            spyReportStart({
-                object: this,
-                type: "reaction",
-                fn: fn
-            });
-        }
-        this._isRunning = true;
-        var result = trackDerivedFunction(this, fn, undefined);
-        this._isRunning = false;
-        this._isTrackPending = false;
-        if (this.isDisposed) {
-            // disposed during last run. Clean up everything that was bound after the dispose call.
-            clearObserving(this);
-        }
-        if (isCaughtException(result)) this.reportExceptionInDerivation(result.cause);
-        if (notify) {
-            spyReportEnd({
-                time: Date.now() - startTime
-            });
-        }
-        endBatch();
-    };
-    Reaction.prototype.reportExceptionInDerivation = function (error) {
-        var _this = this;
-        if (this.errorHandler) {
-            this.errorHandler(error, this);
-            return;
-        }
-        var message = "[mobx] Encountered an uncaught exception that was thrown by a reaction or observer component, in: '" + this;
-        var messageToUser = getMessage("m037");
-        console.error(message || messageToUser /* latter will not be true, make sure uglify doesn't remove */, error);
-        /** If debugging brought you here, please, read the above message :-). Tnx! */
-        if (isSpyEnabled()) {
-            spyReport({
-                type: "error",
-                message: message,
-                error: error,
-                object: this
-            });
-        }
-        globalState.globalReactionErrorHandlers.forEach(function (f) {
-            return f(error, _this);
-        });
-    };
-    Reaction.prototype.dispose = function () {
-        if (!this.isDisposed) {
-            this.isDisposed = true;
-            if (!this._isRunning) {
-                // if disposed while running, clean up later. Maybe not optimal, but rare case
-                startBatch();
-                clearObserving(this);
-                endBatch();
-            }
-        }
-    };
-    Reaction.prototype.getDisposer = function () {
-        var r = this.dispose.bind(this);
-        r.$mobx = this;
-        r.onError = registerErrorHandler;
-        return r;
-    };
-    Reaction.prototype.toString = function () {
-        return "Reaction[" + this.name + "]";
-    };
-    Reaction.prototype.whyRun = function () {
-        var observing = unique(this._isRunning ? this.newObserving : this.observing).map(function (dep) {
-            return dep.name;
-        });
-        return "\nWhyRun? reaction '" + this.name + "':\n * Status: [" + (this.isDisposed ? "stopped" : this._isRunning ? "running" : this.isScheduled() ? "scheduled" : "idle") + "]\n * This reaction will re-run if any of the following observables changes:\n    " + joinStrings(observing) + "\n    " + (this._isRunning ? " (... or any observable accessed during the remainder of the current run)" : "") + "\n\t" + getMessage("m038") + "\n";
-    };
-    return Reaction;
-}();
-function registerErrorHandler(handler) {
-    invariant(this && this.$mobx && isReaction(this.$mobx), "Invalid `this`");
-    invariant(!this.$mobx.errorHandler, "Only one onErrorHandler can be registered");
-    this.$mobx.errorHandler = handler;
-}
-function onReactionError(handler) {
-    globalState.globalReactionErrorHandlers.push(handler);
-    return function () {
-        var idx = globalState.globalReactionErrorHandlers.indexOf(handler);
-        if (idx >= 0) globalState.globalReactionErrorHandlers.splice(idx, 1);
-    };
-}
-/**
- * Magic number alert!
- * Defines within how many times a reaction is allowed to re-trigger itself
- * until it is assumed that this is gonna be a never ending loop...
- */
-var MAX_REACTION_ITERATIONS = 100;
-var reactionScheduler = function reactionScheduler(f) {
-    return f();
-};
-function runReactions() {
-    // Trampolining, if runReactions are already running, new reactions will be picked up
-    if (globalState.inBatch > 0 || globalState.isRunningReactions) return;
-    reactionScheduler(runReactionsHelper);
-}
-function runReactionsHelper() {
-    globalState.isRunningReactions = true;
-    var allReactions = globalState.pendingReactions;
-    var iterations = 0;
-    // While running reactions, new reactions might be triggered.
-    // Hence we work with two variables and check whether
-    // we converge to no remaining reactions after a while.
-    while (allReactions.length > 0) {
-        if (++iterations === MAX_REACTION_ITERATIONS) {
-            console.error("Reaction doesn't converge to a stable state after " + MAX_REACTION_ITERATIONS + " iterations." + (" Probably there is a cycle in the reactive function: " + allReactions[0]));
-            allReactions.splice(0); // clear reactions
-        }
-        var remainingReactions = allReactions.splice(0);
-        for (var i = 0, l = remainingReactions.length; i < l; i++) {
-            remainingReactions[i].runReaction();
-        }
-    }
-    globalState.isRunningReactions = false;
-}
-var isReaction = createInstanceofPredicate("Reaction", Reaction);
-function setReactionScheduler(fn) {
-    var baseScheduler = reactionScheduler;
-    reactionScheduler = function reactionScheduler(f) {
-        return fn(function () {
-            return baseScheduler(f);
-        });
-    };
-}
-
-function asReference(value) {
-    deprecated("asReference is deprecated, use observable.ref instead");
-    return observable.ref(value);
-}
-function asStructure(value) {
-    deprecated("asStructure is deprecated. Use observable.struct, computed.struct or reaction options instead.");
-    return observable.struct(value);
-}
-function asFlat(value) {
-    deprecated("asFlat is deprecated, use observable.shallow instead");
-    return observable.shallow(value);
-}
-function asMap(data) {
-    deprecated("asMap is deprecated, use observable.map or observable.shallowMap instead");
-    return observable.map(data || {});
-}
-
-function createComputedDecorator(equals) {
-    return createClassPropertyDecorator(function (target, name, _, __, originalDescriptor) {
-        invariant(typeof originalDescriptor !== "undefined", getMessage("m009"));
-        invariant(typeof originalDescriptor.get === "function", getMessage("m010"));
-        var adm = asObservableObject(target, "");
-        defineComputedProperty(adm, name, originalDescriptor.get, originalDescriptor.set, equals, false);
-    }, function (name) {
-        var observable = this.$mobx.values[name];
-        if (observable === undefined // See #505
-        ) return undefined;
-        return observable.get();
-    }, function (name, value) {
-        this.$mobx.values[name].set(value);
-    }, false, false);
-}
-var computedDecorator = createComputedDecorator(comparer.default);
-var computedStructDecorator = createComputedDecorator(comparer.structural);
-/**
- * Decorator for class properties: @computed get value() { return expr; }.
- * For legacy purposes also invokable as ES5 observable created: `computed(() => expr)`;
- */
-var computed = function computed(arg1, arg2, arg3) {
-    if (typeof arg2 === "string") {
-        return computedDecorator.apply(null, arguments);
-    }
-    invariant(typeof arg1 === "function", getMessage("m011"));
-    invariant(arguments.length < 3, getMessage("m012"));
-    var opts = (typeof arg2 === "undefined" ? "undefined" : _typeof(arg2)) === "object" ? arg2 : {};
-    opts.setter = typeof arg2 === "function" ? arg2 : opts.setter;
-    var equals = opts.equals ? opts.equals : opts.compareStructural || opts.struct ? comparer.structural : comparer.default;
-    return new ComputedValue(arg1, opts.context, equals, opts.name || arg1.name || "", opts.setter);
-};
-computed.struct = computedStructDecorator;
-computed.equals = createComputedDecorator;
-
-function getAtom(thing, property) {
-    if ((typeof thing === "undefined" ? "undefined" : _typeof(thing)) === "object" && thing !== null) {
-        if (isObservableArray(thing)) {
-            invariant(property === undefined, getMessage("m036"));
-            return thing.$mobx.atom;
-        }
-        if (isObservableMap(thing)) {
-            var anyThing = thing;
-            if (property === undefined) return getAtom(anyThing._keys);
-            var observable = anyThing._data[property] || anyThing._hasMap[property];
-            invariant(!!observable, "the entry '" + property + "' does not exist in the observable map '" + getDebugName(thing) + "'");
-            return observable;
-        }
-        // Initializers run lazily when transpiling to babel, so make sure they are run...
-        runLazyInitializers(thing);
-        if (property && !thing.$mobx) thing[property]; // See #1072 // TODO: remove in 4.0
-        if (isObservableObject(thing)) {
-            if (!property) return fail("please specify a property");
-            var observable = thing.$mobx.values[property];
-            invariant(!!observable, "no observable property '" + property + "' found on the observable object '" + getDebugName(thing) + "'");
-            return observable;
-        }
-        if (isAtom(thing) || isComputedValue(thing) || isReaction(thing)) {
-            return thing;
-        }
-    } else if (typeof thing === "function") {
-        if (isReaction(thing.$mobx)) {
-            // disposer function
-            return thing.$mobx;
-        }
-    }
-    return fail("Cannot obtain atom from " + thing);
-}
-function getAdministration(thing, property) {
-    invariant(thing, "Expecting some object");
-    if (property !== undefined) return getAdministration(getAtom(thing, property));
-    if (isAtom(thing) || isComputedValue(thing) || isReaction(thing)) return thing;
-    if (isObservableMap(thing)) return thing;
-    // Initializers run lazily when transpiling to babel, so make sure they are run...
-    runLazyInitializers(thing);
-    if (thing.$mobx) return thing.$mobx;
-    invariant(false, "Cannot obtain administration from " + thing);
-}
-function getDebugName(thing, property) {
-    var named;
-    if (property !== undefined) named = getAtom(thing, property);else if (isObservableObject(thing) || isObservableMap(thing)) named = getAdministration(thing);else named = getAtom(thing); // valid for arrays as well
-    return named.name;
-}
-
-function isComputed(value, property) {
-    if (value === null || value === undefined) return false;
-    if (property !== undefined) {
-        if (isObservableObject(value) === false) return false;
-        if (!value.$mobx.values[property]) return false;
-        var atom = getAtom(value, property);
-        return isComputedValue(atom);
-    }
-    return isComputedValue(value);
-}
-
-function observe(thing, propOrCb, cbOrFire, fireImmediately) {
-    if (typeof cbOrFire === "function") return observeObservableProperty(thing, propOrCb, cbOrFire, fireImmediately);else return observeObservable(thing, propOrCb, cbOrFire);
-}
-function observeObservable(thing, listener, fireImmediately) {
-    return getAdministration(thing).observe(listener, fireImmediately);
-}
-function observeObservableProperty(thing, property, listener, fireImmediately) {
-    return getAdministration(thing, property).observe(listener, fireImmediately);
-}
-
-function intercept(thing, propOrHandler, handler) {
-    if (typeof handler === "function") return interceptProperty(thing, propOrHandler, handler);else return interceptInterceptable(thing, propOrHandler);
-}
-function interceptInterceptable(thing, handler) {
-    return getAdministration(thing).intercept(handler);
-}
-function interceptProperty(thing, property, handler) {
-    return getAdministration(thing, property).intercept(handler);
-}
-
-/**
- * expr can be used to create temporarily views inside views.
- * This can be improved to improve performance if a value changes often, but usually doesn't affect the outcome of an expression.
- *
- * In the following example the expression prevents that a component is rerender _each time_ the selection changes;
- * instead it will only rerenders when the current todo is (de)selected.
- *
- * reactiveComponent((props) => {
- *     const todo = props.todo;
- *     const isSelected = mobx.expr(() => props.viewState.selection === todo);
- *     return <div className={isSelected ? "todo todo-selected" : "todo"}>{todo.title}</div>
- * });
- *
- */
-function expr(expr, scope) {
-    if (!isComputingDerivation()) console.warn(getMessage("m013"));
-    // optimization: would be more efficient if the expr itself wouldn't be evaluated first on the next change, but just a 'changed' signal would be fired
-    return computed(expr, { context: scope }).get();
-}
-
-function toJS(source, detectCycles, __alreadySeen) {
-    if (detectCycles === void 0) {
-        detectCycles = true;
-    }
-    if (__alreadySeen === void 0) {
-        __alreadySeen = [];
-    }
-    // optimization: using ES6 map would be more efficient!
-    // optimization: lift this function outside toJS, this makes recursion expensive
-    function cache(value) {
-        if (detectCycles) __alreadySeen.push([source, value]);
-        return value;
-    }
-    if (isObservable(source)) {
-        if (detectCycles && __alreadySeen === null) __alreadySeen = [];
-        if (detectCycles && source !== null && (typeof source === "undefined" ? "undefined" : _typeof(source)) === "object") {
-            for (var i = 0, l = __alreadySeen.length; i < l; i++) {
-                if (__alreadySeen[i][0] === source) return __alreadySeen[i][1];
-            }
-        }
-        if (isObservableArray(source)) {
-            var res = cache([]);
-            var toAdd = source.map(function (value) {
-                return toJS(value, detectCycles, __alreadySeen);
-            });
-            res.length = toAdd.length;
-            for (var i = 0, l = toAdd.length; i < l; i++) {
-                res[i] = toAdd[i];
-            }return res;
-        }
-        if (isObservableObject(source)) {
-            var res = cache({});
-            for (var key in source) {
-                res[key] = toJS(source[key], detectCycles, __alreadySeen);
-            }return res;
-        }
-        if (isObservableMap(source)) {
-            var res_1 = cache({});
-            source.forEach(function (value, key) {
-                return res_1[key] = toJS(value, detectCycles, __alreadySeen);
-            });
-            return res_1;
-        }
-        if (isObservableValue(source)) return toJS(source.get(), detectCycles, __alreadySeen);
-    }
-    return source;
-}
-
-function createTransformer(transformer, onCleanup) {
-    invariant(typeof transformer === "function" && transformer.length < 2, "createTransformer expects a function that accepts one argument");
-    // Memoizes: object id -> reactive view that applies transformer to the object
-    var objectCache = {};
-    // If the resetId changes, we will clear the object cache, see #163
-    // This construction is used to avoid leaking refs to the objectCache directly
-    var resetId = globalState.resetId;
-    // Local transformer class specifically for this transformer
-    var Transformer = function (_super) {
-        __extends(Transformer, _super);
-        function Transformer(sourceIdentifier, sourceObject) {
-            var _this = _super.call(this, function () {
-                return transformer(sourceObject);
-            }, undefined, comparer.default, "Transformer-" + transformer.name + "-" + sourceIdentifier, undefined) || this;
-            _this.sourceIdentifier = sourceIdentifier;
-            _this.sourceObject = sourceObject;
-            return _this;
-        }
-        Transformer.prototype.onBecomeUnobserved = function () {
-            var lastValue = this.value;
-            _super.prototype.onBecomeUnobserved.call(this);
-            delete objectCache[this.sourceIdentifier];
-            if (onCleanup) onCleanup(lastValue, this.sourceObject);
-        };
-        return Transformer;
-    }(ComputedValue);
-    return function (object) {
-        if (resetId !== globalState.resetId) {
-            objectCache = {};
-            resetId = globalState.resetId;
-        }
-        var identifier = getMemoizationId(object);
-        var reactiveTransformer = objectCache[identifier];
-        if (reactiveTransformer) return reactiveTransformer.get();
-        // Not in cache; create a reactive view
-        reactiveTransformer = objectCache[identifier] = new Transformer(identifier, object);
-        return reactiveTransformer.get();
-    };
-}
-function getMemoizationId(object) {
-    if (typeof object === "string" || typeof object === "number") return object;
-    if (object === null || (typeof object === "undefined" ? "undefined" : _typeof(object)) !== "object") throw new Error("[mobx] transform expected some kind of object or primitive value, got: " + object);
-    var tid = object.$transformId;
-    if (tid === undefined) {
-        tid = getNextId();
-        addHiddenProp(object, "$transformId", tid);
-    }
-    return tid;
-}
-
-function log(msg) {
-    console.log(msg);
-    return msg;
-}
-function whyRun(thing, prop) {
-    switch (arguments.length) {
-        case 0:
-            thing = globalState.trackingDerivation;
-            if (!thing) return log(getMessage("m024"));
-            break;
-        case 2:
-            thing = getAtom(thing, prop);
-            break;
-    }
-    thing = getAtom(thing);
-    if (isComputedValue(thing)) return log(thing.whyRun());else if (isReaction(thing)) return log(thing.whyRun());
-    return fail(getMessage("m025"));
-}
-
-function getDependencyTree(thing, property) {
-    return nodeToDependencyTree(getAtom(thing, property));
-}
-function nodeToDependencyTree(node) {
-    var result = {
-        name: node.name
-    };
-    if (node.observing && node.observing.length > 0) result.dependencies = unique(node.observing).map(nodeToDependencyTree);
-    return result;
-}
-function getObserverTree(thing, property) {
-    return nodeToObserverTree(getAtom(thing, property));
-}
-function nodeToObserverTree(node) {
-    var result = {
-        name: node.name
-    };
-    if (hasObservers(node)) result.observers = getObservers(node).map(nodeToObserverTree);
-    return result;
-}
-
-function interceptReads(thing, propOrHandler, handler) {
-    var target;
-    if (isObservableMap(thing) || isObservableArray(thing) || isObservableValue(thing)) {
-        target = getAdministration(thing);
-    } else if (isObservableObject(thing)) {
-        if (typeof propOrHandler !== "string") return fail("InterceptReads can only be used with a specific property, not with an object in general");
-        target = getAdministration(thing, propOrHandler);
-    } else {
-        return fail("Expected observable map, object or array as first array");
-    }
-    if (target.dehancer !== undefined) return fail("An intercept reader was already established");
-    target.dehancer = typeof propOrHandler === "function" ? propOrHandler : handler;
-    return function () {
-        target.dehancer = undefined;
-    };
-}
-
-/**
- * (c) Michel Weststrate 2015 - 2016
- * MIT Licensed
- *
- * Welcome to the mobx sources! To get an global overview of how MobX internally works,
- * this is a good place to start:
- * https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.xvbh6qd74
- *
- * Source folders:
- * ===============
- *
- * - api/     Most of the public static methods exposed by the module can be found here.
- * - core/    Implementation of the MobX algorithm; atoms, derivations, reactions, dependency trees, optimizations. Cool stuff can be found here.
- * - types/   All the magic that is need to have observable objects, arrays and values is in this folder. Including the modifiers like `asFlat`.
- * - utils/   Utility stuff.
- *
- */
-var extras = {
-    allowStateChanges: allowStateChanges,
-    deepEqual: deepEqual,
-    getAtom: getAtom,
-    getDebugName: getDebugName,
-    getDependencyTree: getDependencyTree,
-    getAdministration: getAdministration,
-    getGlobalState: getGlobalState,
-    getObserverTree: getObserverTree,
-    interceptReads: interceptReads,
-    isComputingDerivation: isComputingDerivation,
-    isSpyEnabled: isSpyEnabled,
-    onReactionError: onReactionError,
-    reserveArrayBuffer: reserveArrayBuffer,
-    resetGlobalState: resetGlobalState,
-    isolateGlobalState: isolateGlobalState,
-    shareGlobalState: shareGlobalState,
-    spyReport: spyReport,
-    spyReportEnd: spyReportEnd,
-    spyReportStart: spyReportStart,
-    setReactionScheduler: setReactionScheduler
-};
-var everything = {
-    Reaction: Reaction,
-    untracked: untracked,
-    Atom: Atom,
-    BaseAtom: BaseAtom,
-    useStrict: useStrict,
-    isStrictModeEnabled: isStrictModeEnabled,
-    spy: spy,
-    comparer: comparer,
-    asReference: asReference,
-    asFlat: asFlat,
-    asStructure: asStructure,
-    asMap: asMap,
-    isModifierDescriptor: isModifierDescriptor,
-    isObservableObject: isObservableObject,
-    isBoxedObservable: isObservableValue,
-    isObservableArray: isObservableArray,
-    ObservableMap: ObservableMap,
-    isObservableMap: isObservableMap,
-    map: map,
-    transaction: transaction,
-    observable: observable,
-    computed: computed,
-    isObservable: isObservable,
-    isComputed: isComputed,
-    extendObservable: extendObservable,
-    extendShallowObservable: extendShallowObservable,
-    observe: observe,
-    intercept: intercept,
-    autorun: autorun,
-    autorunAsync: autorunAsync,
-    when: when,
-    reaction: reaction,
-    action: action,
-    isAction: isAction,
-    runInAction: runInAction,
-    expr: expr,
-    toJS: toJS,
-    createTransformer: createTransformer,
-    whyRun: whyRun,
-    isArrayLike: isArrayLike,
-    extras: extras
-};
-var warnedAboutDefaultExport = false;
-var _loop_1 = function _loop_1(p) {
-    var val = everything[p];
-    Object.defineProperty(everything, p, {
-        get: function get() {
-            if (!warnedAboutDefaultExport) {
-                warnedAboutDefaultExport = true;
-                console.warn("Using default export (`import mobx from 'mobx'`) is deprecated " + "and won’t work in mobx@4.0.0\n" + "Use `import * as mobx from 'mobx'` instead");
-            }
-            return val;
-        }
-    });
-};
-for (var p in everything) {
-    _loop_1(p);
-}
-if ((typeof __MOBX_DEVTOOLS_GLOBAL_HOOK__ === "undefined" ? "undefined" : _typeof(__MOBX_DEVTOOLS_GLOBAL_HOOK__)) === "object") {
-    __MOBX_DEVTOOLS_GLOBAL_HOOK__.injectMobx({ spy: spy, extras: extras });
-}
-
-var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-// These functions can be stubbed out in specific environments
-var unstable_batchedUpdates$1 = undefined;
-
-var _typeof$1 = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-};
-
-var classCallCheck = function classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-        throw new TypeError("Cannot call a class as a function");
-    }
-};
-
-var createClass = function () {
-    function defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-        }
-    }
-
-    return function (Constructor, protoProps, staticProps) {
-        if (protoProps) defineProperties(Constructor.prototype, protoProps);
-        if (staticProps) defineProperties(Constructor, staticProps);
-        return Constructor;
-    };
-}();
-
-var inherits = function inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : _typeof2(superClass)));
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-        constructor: {
-            value: subClass,
-            enumerable: false,
-            writable: true,
-            configurable: true
-        }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-};
-
-var possibleConstructorReturn = function possibleConstructorReturn(self, call) {
-    if (!self) {
-        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && ((typeof call === 'undefined' ? 'undefined' : _typeof2(call)) === "object" || typeof call === "function") ? call : self;
-};
-
-var EventEmitter = function () {
-    function EventEmitter() {
-        classCallCheck(this, EventEmitter);
-        this.listeners = [];
-    }
-
-    createClass(EventEmitter, [{
-        key: "on",
-        value: function on(cb) {
-            var _this = this;
-
-            this.listeners.push(cb);
-            return function () {
-                var index = _this.listeners.indexOf(cb);
-                if (index !== -1) _this.listeners.splice(index, 1);
-            };
-        }
-    }, {
-        key: "emit",
-        value: function emit(data) {
-            this.listeners.forEach(function (fn) {
-                return fn(data);
-            });
-        }
-    }]);
-    return EventEmitter;
-}();
-
-var REACT_STATICS = {
-    childContextTypes: true,
-    contextTypes: true,
-    defaultProps: true,
-    displayName: true,
-    getDefaultProps: true,
-    mixins: true,
-    propTypes: true,
-    type: true
-};
-
-var KNOWN_STATICS = {
-    name: true,
-    length: true,
-    prototype: true,
-    caller: true,
-    callee: true,
-    arguments: true,
-    arity: true
-};
-
-var defineProperty$1 = Object.defineProperty;
-var getOwnPropertyNames = Object.getOwnPropertyNames;
-var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-var getPrototypeOf = Object.getPrototypeOf;
-var objectPrototype = getPrototypeOf && getPrototypeOf(Object);
-
-var hoistNonReactStatics = function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
-    if (typeof sourceComponent !== 'string') {
-        // don't hoist over string (html) components
-
-        if (objectPrototype) {
-            var inheritedComponent = getPrototypeOf(sourceComponent);
-            if (inheritedComponent && inheritedComponent !== objectPrototype) {
-                hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
-            }
-        }
-
-        var keys = getOwnPropertyNames(sourceComponent);
-
-        if (getOwnPropertySymbols) {
-            keys = keys.concat(getOwnPropertySymbols(sourceComponent));
-        }
-
-        for (var i = 0; i < keys.length; ++i) {
-            var key = keys[i];
-            if (!REACT_STATICS[key] && !KNOWN_STATICS[key] && (!blacklist || !blacklist[key])) {
-                var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
-                try {
-                    // Avoid failures from read-only properties
-                    defineProperty$1(targetComponent, key, descriptor);
-                } catch (e) {}
-            }
-        }
-
-        return targetComponent;
-    }
-
-    return targetComponent;
-};
-
-// Copied from React.PropTypes
-function createChainableTypeChecker(validate) {
-    function checkType(isRequired, props, propName, componentName, location, propFullName) {
-        for (var _len = arguments.length, rest = Array(_len > 6 ? _len - 6 : 0), _key = 6; _key < _len; _key++) {
-            rest[_key - 6] = arguments[_key];
-        }
-
-        return untracked(function () {
-            componentName = componentName || "<<anonymous>>";
-            propFullName = propFullName || propName;
-            if (props[propName] == null) {
-                if (isRequired) {
-                    var actual = props[propName] === null ? "null" : "undefined";
-                    return new Error("The " + location + " `" + propFullName + "` is marked as required " + "in `" + componentName + "`, but its value is `" + actual + "`.");
-                }
-                return null;
-            } else {
-                return validate.apply(undefined, [props, propName, componentName, location, propFullName].concat(rest));
-            }
-        });
-    }
-
-    var chainedCheckType = checkType.bind(null, false);
-    chainedCheckType.isRequired = checkType.bind(null, true);
-    return chainedCheckType;
-}
-
-// Copied from React.PropTypes
-function isSymbol(propType, propValue) {
-    // Native Symbol.
-    if (propType === "symbol") {
-        return true;
-    }
-
-    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-    if (propValue["@@toStringTag"] === "Symbol") {
-        return true;
-    }
-
-    // Fallback for non-spec compliant Symbols which are polyfilled.
-    if (typeof Symbol === "function" && propValue instanceof Symbol) {
-        return true;
-    }
-
-    return false;
-}
-
-// Copied from React.PropTypes
-function getPropType(propValue) {
-    var propType = typeof propValue === "undefined" ? "undefined" : _typeof$1(propValue);
-    if (Array.isArray(propValue)) {
-        return "array";
-    }
-    if (propValue instanceof RegExp) {
-        // Old webkits (at least until Android 4.0) return 'function' rather than
-        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-        // passes PropTypes.object.
-        return "object";
-    }
-    if (isSymbol(propType, propValue)) {
-        return "symbol";
-    }
-    return propType;
-}
-
-// This handles more types than `getPropType`. Only used for error messages.
-// Copied from React.PropTypes
-function getPreciseType(propValue) {
-    var propType = getPropType(propValue);
-    if (propType === "object") {
-        if (propValue instanceof Date) {
-            return "date";
-        } else if (propValue instanceof RegExp) {
-            return "regexp";
-        }
-    }
-    return propType;
-}
-
-function createObservableTypeCheckerCreator(allowNativeType, mobxType) {
-    return createChainableTypeChecker(function (props, propName, componentName, location, propFullName) {
-        return untracked(function () {
-            if (allowNativeType) {
-                if (getPropType(props[propName]) === mobxType.toLowerCase()) return null;
-            }
-            var mobxChecker = void 0;
-            switch (mobxType) {
-                case "Array":
-                    mobxChecker = isObservableArray;
-                    break;
-                case "Object":
-                    mobxChecker = isObservableObject;
-                    break;
-                case "Map":
-                    mobxChecker = isObservableMap;
-                    break;
-                default:
-                    throw new Error("Unexpected mobxType: " + mobxType);
-            }
-            var propValue = props[propName];
-            if (!mobxChecker(propValue)) {
-                var preciseType = getPreciseType(propValue);
-                var nativeTypeExpectationMessage = allowNativeType ? " or javascript `" + mobxType.toLowerCase() + "`" : "";
-                return new Error("Invalid prop `" + propFullName + "` of type `" + preciseType + "` supplied to" + " `" + componentName + "`, expected `mobx.Observable" + mobxType + "`" + nativeTypeExpectationMessage + ".");
-            }
-            return null;
-        });
-    });
-}
-
-function createObservableArrayOfTypeChecker(allowNativeType, typeChecker) {
-    return createChainableTypeChecker(function (props, propName, componentName, location, propFullName) {
-        for (var _len2 = arguments.length, rest = Array(_len2 > 5 ? _len2 - 5 : 0), _key2 = 5; _key2 < _len2; _key2++) {
-            rest[_key2 - 5] = arguments[_key2];
-        }
-
-        return untracked(function () {
-            if (typeof typeChecker !== "function") {
-                return new Error("Property `" + propFullName + "` of component `" + componentName + "` has " + "invalid PropType notation.");
-            }
-            var error = createObservableTypeCheckerCreator(allowNativeType, "Array")(props, propName, componentName);
-            if (error instanceof Error) return error;
-            var propValue = props[propName];
-            for (var i = 0; i < propValue.length; i++) {
-                error = typeChecker.apply(undefined, [propValue, i, componentName, location, propFullName + "[" + i + "]"].concat(rest));
-                if (error instanceof Error) return error;
-            }
-            return null;
-        });
-    });
-}
-
-var observableArray = createObservableTypeCheckerCreator(false, "Array");
-var observableArrayOf = createObservableArrayOfTypeChecker.bind(null, false);
-var observableMap = createObservableTypeCheckerCreator(false, "Map");
-var observableObject = createObservableTypeCheckerCreator(false, "Object");
-var arrayOrObservableArray = createObservableTypeCheckerCreator(true, "Array");
-var arrayOrObservableArrayOf = createObservableArrayOfTypeChecker.bind(null, true);
-var objectOrObservableObject = createObservableTypeCheckerCreator(true, "Object");
-
-var propTypes = Object.freeze({
-    observableArray: observableArray,
-    observableArrayOf: observableArrayOf,
-    observableMap: observableMap,
-    observableObject: observableObject,
-    arrayOrObservableArray: arrayOrObservableArray,
-    arrayOrObservableArrayOf: arrayOrObservableArrayOf,
-    objectOrObservableObject: objectOrObservableObject
-});
-
-function isStateless(component) {
-    // `function() {}` has prototype, but `() => {}` doesn't
-    // `() => {}` via Babel has prototype too.
-    return !(component.prototype && component.prototype.render);
-}
-
-var injectorContextTypes = {
-    mobxStores: objectOrObservableObject
-};
-Object.seal(injectorContextTypes);
-
-var proxiedInjectorProps = {
-    contextTypes: {
-        get: function get$$1() {
-            return injectorContextTypes;
-        },
-        set: function set$$1(_) {
-            console.warn("Mobx Injector: you are trying to attach `contextTypes` on an component decorated with `inject` (or `observer`) HOC. Please specify the contextTypes on the wrapped component instead. It is accessible through the `wrappedComponent`");
-        },
-        configurable: true,
-        enumerable: false
-    },
-    isMobxInjector: {
-        value: true,
-        writable: true,
-        configurable: true,
-        enumerable: true
-
-        /**
-         * Store Injection
-         */
-    } };function createStoreInjector(grabStoresFn, component, injectNames) {
-    var _class, _temp2;
-
-    var displayName = "inject-" + (component.displayName || component.name || component.constructor && component.constructor.name || "Unknown");
-    if (injectNames) displayName += "-with-" + injectNames;
-
-    var Injector = (_temp2 = _class = function (_Component) {
-        inherits(Injector, _Component);
-
-        function Injector() {
-            var _ref;
-
-            var _temp, _this, _ret;
-
-            classCallCheck(this, Injector);
-
-            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-                args[_key] = arguments[_key];
-            }
-
-            return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = Injector.__proto__ || Object.getPrototypeOf(Injector)).call.apply(_ref, [this].concat(args))), _this), _this.storeRef = function (instance) {
-                _this.wrappedInstance = instance;
-            }, _temp), possibleConstructorReturn(_this, _ret);
-        }
-
-        createClass(Injector, [{
-            key: "render",
-            value: function render() {
-                // Optimization: it might be more efficient to apply the mapper function *outside* the render method
-                // (if the mapper is a function), that could avoid expensive(?) re-rendering of the injector component
-                // See this test: 'using a custom injector is not too reactive' in inject.js
-                var newProps = {};
-                for (var key in this.props) {
-                    if (this.props.hasOwnProperty(key)) {
-                        newProps[key] = this.props[key];
-                    }
-                }var additionalProps = grabStoresFn(this.context.mobxStores || {}, newProps, this.context) || {};
-                for (var _key2 in additionalProps) {
-                    newProps[_key2] = additionalProps[_key2];
-                }
-
-                if (!isStateless(component)) {
-                    newProps.ref = this.storeRef;
-                }
-
-                return React.createElement(component, newProps);
-            }
-        }]);
-        return Injector;
-    }(React.Component), _class.displayName = displayName, _temp2);
-
-    // Static fields from component should be visible on the generated Injector
-
-    hoistNonReactStatics(Injector, component);
-
-    Injector.wrappedComponent = component;
-    Object.defineProperties(Injector, proxiedInjectorProps);
-
-    return Injector;
-}
-
-function grabStoresByName(storeNames) {
-    return function (baseStores, nextProps) {
-        storeNames.forEach(function (storeName) {
-            if (storeName in nextProps // prefer props over stores
-            ) return;
-            if (!(storeName in baseStores)) throw new Error("MobX injector: Store '" + storeName + "' is not available! Make sure it is provided by some Provider");
-            nextProps[storeName] = baseStores[storeName];
-        });
-        return nextProps;
-    };
-}
-
-/**
- * higher order component that injects stores to a child.
- * takes either a varargs list of strings, which are stores read from the context,
- * or a function that manually maps the available stores from the context to props:
- * storesToProps(mobxStores, props, context) => newProps
- */
-function inject() /* fn(stores, nextProps) or ...storeNames */{
-    var grabStoresFn = void 0;
-    if (typeof arguments[0] === "function") {
-        grabStoresFn = arguments[0];
-        return function (componentClass) {
-            var injected = createStoreInjector(grabStoresFn, componentClass);
-            injected.isMobxInjector = false; // supress warning
-            // mark the Injector as observer, to make it react to expressions in `grabStoresFn`,
-            // see #111
-            injected = observer(injected);
-            injected.isMobxInjector = true; // restore warning
-            return injected;
-        };
-    } else {
-        var storeNames = [];
-        for (var i = 0; i < arguments.length; i++) {
-            storeNames[i] = arguments[i];
-        }grabStoresFn = grabStoresByName(storeNames);
-        return function (componentClass) {
-            return createStoreInjector(grabStoresFn, componentClass, storeNames.join("-"));
-        };
-    }
-}
-
-/**
- * dev tool support
- */
-var isDevtoolsEnabled = false;
-
-var isUsingStaticRendering = false;
-
-var warnedAboutObserverInjectDeprecation = false;
-
-// WeakMap<Node, Object>;
-var componentByNodeRegistery = typeof WeakMap !== "undefined" ? new WeakMap() : undefined;
-var renderReporter = new EventEmitter();
-
-function findDOMNode$2(component) {
-    if (reactDom.findDOMNode) {
-        try {
-            return reactDom.findDOMNode(component);
-        } catch (e) {
-            // findDOMNode will throw in react-test-renderer, see:
-            // See https://github.com/mobxjs/mobx-react/issues/216
-            // Is there a better heuristic?
-            return null;
-        }
-    }
-    return null;
-}
-
-function reportRendering(component) {
-    var node = findDOMNode$2(component);
-    if (node && componentByNodeRegistery) componentByNodeRegistery.set(node, component);
-
-    renderReporter.emit({
-        event: "render",
-        renderTime: component.__$mobRenderEnd - component.__$mobRenderStart,
-        totalTime: Date.now() - component.__$mobRenderStart,
-        component: component,
-        node: node
-    });
-}
-
-function trackComponents() {
-    if (typeof WeakMap === "undefined") throw new Error("[mobx-react] tracking components is not supported in this browser.");
-    if (!isDevtoolsEnabled) isDevtoolsEnabled = true;
-}
-
-/**
- * Errors reporter
- */
-
-var errorsReporter = new EventEmitter();
-
-/**
- * Utilities
- */
-
-function patch(target, funcName) {
-    var runMixinFirst = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-    var base = target[funcName];
-    var mixinFunc = reactiveMixin[funcName];
-    var f = !base ? mixinFunc : runMixinFirst === true ? function () {
-        mixinFunc.apply(this, arguments);
-        base.apply(this, arguments);
-    } : function () {
-        base.apply(this, arguments);
-        mixinFunc.apply(this, arguments);
-    };
-
-    // MWE: ideally we freeze here to protect against accidental overwrites in component instances, see #195
-    // ...but that breaks react-hot-loader, see #231...
-    target[funcName] = f;
-}
-
-function isObjectShallowModified(prev, next) {
-    if (null == prev || null == next || (typeof prev === "undefined" ? "undefined" : _typeof$1(prev)) !== "object" || (typeof next === "undefined" ? "undefined" : _typeof$1(next)) !== "object") {
-        return prev !== next;
-    }
-    var keys = Object.keys(prev);
-    if (keys.length !== Object.keys(next).length) {
-        return true;
-    }
-    var key = void 0;
-    for (var i = keys.length - 1; key = keys[i]; i--) {
-        if (next[key] !== prev[key]) {
-            return true;
-        }
-    }
-    return false;
-}
-
-/**
- * ReactiveMixin
- */
-var reactiveMixin = {
-    componentWillMount: function componentWillMount() {
-        var _this = this;
-
-        if (isUsingStaticRendering === true) return;
-        // Generate friendly name for debugging
-        var initialName = this.displayName || this.name || this.constructor && (this.constructor.displayName || this.constructor.name) || "<component>";
-        var rootNodeID = this._reactInternalInstance && this._reactInternalInstance._rootNodeID;
-
-        /**
-         * If props are shallowly modified, react will render anyway,
-         * so atom.reportChanged() should not result in yet another re-render
-         */
-        var skipRender = false;
-        /**
-         * forceUpdate will re-assign this.props. We don't want that to cause a loop,
-         * so detect these changes
-         */
-        var isForcingUpdate = false;
-
-        function makePropertyObservableReference(propName) {
-            var valueHolder = this[propName];
-            var atom = new Atom("reactive " + propName);
-            Object.defineProperty(this, propName, {
-                configurable: true,
-                enumerable: true,
-                get: function get$$1() {
-                    atom.reportObserved();
-                    return valueHolder;
-                },
-                set: function set$$1(v) {
-                    if (!isForcingUpdate && isObjectShallowModified(valueHolder, v)) {
-                        valueHolder = v;
-                        skipRender = true;
-                        atom.reportChanged();
-                        skipRender = false;
-                    } else {
-                        valueHolder = v;
-                    }
-                }
-            });
-        }
-
-        // make this.props an observable reference, see #124
-        makePropertyObservableReference.call(this, "props");
-        // make state an observable reference
-        makePropertyObservableReference.call(this, "state");
-
-        // wire up reactive render
-        var baseRender = this.render.bind(this);
-        var reaction$$1 = null;
-        var isRenderingPending = false;
-
-        var initialRender = function initialRender() {
-            reaction$$1 = new Reaction(initialName + "#" + rootNodeID + ".render()", function () {
-                if (!isRenderingPending) {
-                    // N.B. Getting here *before mounting* means that a component constructor has side effects (see the relevant test in misc.js)
-                    // This unidiomatic React usage but React will correctly warn about this so we continue as usual
-                    // See #85 / Pull #44
-                    isRenderingPending = true;
-                    if (typeof _this.componentWillReact === "function") _this.componentWillReact(); // TODO: wrap in action?
-                    if (_this.__$mobxIsUnmounted !== true) {
-                        // If we are unmounted at this point, componentWillReact() had a side effect causing the component to unmounted
-                        // TODO: remove this check? Then react will properly warn about the fact that this should not happen? See #73
-                        // However, people also claim this migth happen during unit tests..
-                        var hasError = true;
-                        try {
-                            isForcingUpdate = true;
-                            if (!skipRender) React.Component.prototype.forceUpdate.call(_this);
-                            hasError = false;
-                        } finally {
-                            isForcingUpdate = false;
-                            if (hasError) reaction$$1.dispose();
-                        }
-                    }
-                }
-            });
-            reaction$$1.reactComponent = _this;
-            reactiveRender.$mobx = reaction$$1;
-            _this.render = reactiveRender;
-            return reactiveRender();
-        };
-
-        var reactiveRender = function reactiveRender() {
-            isRenderingPending = false;
-            var exception = undefined;
-            var rendering = undefined;
-            reaction$$1.track(function () {
-                if (isDevtoolsEnabled) {
-                    _this.__$mobRenderStart = Date.now();
-                }
-                try {
-                    rendering = extras.allowStateChanges(false, baseRender);
-                } catch (e) {
-                    exception = e;
-                }
-                if (isDevtoolsEnabled) {
-                    _this.__$mobRenderEnd = Date.now();
-                }
-            });
-            if (exception) {
-                errorsReporter.emit(exception);
-                throw exception;
-            }
-            return rendering;
-        };
-
-        this.render = initialRender;
-    },
-
-    componentWillUnmount: function componentWillUnmount() {
-        if (isUsingStaticRendering === true) return;
-        this.render.$mobx && this.render.$mobx.dispose();
-        this.__$mobxIsUnmounted = true;
-        if (isDevtoolsEnabled) {
-            var node = findDOMNode$2(this);
-            if (node && componentByNodeRegistery) {
-                componentByNodeRegistery.delete(node);
-            }
-            renderReporter.emit({
-                event: "destroy",
-                component: this,
-                node: node
-            });
-        }
-    },
-
-    componentDidMount: function componentDidMount() {
-        if (isDevtoolsEnabled) {
-            reportRendering(this);
-        }
-    },
-
-    componentDidUpdate: function componentDidUpdate() {
-        if (isDevtoolsEnabled) {
-            reportRendering(this);
-        }
-    },
-
-    shouldComponentUpdate: function shouldComponentUpdate(nextProps, nextState) {
-        if (isUsingStaticRendering) {
-            console.warn("[mobx-react] It seems that a re-rendering of a React component is triggered while in static (server-side) mode. Please make sure components are rendered only once server-side.");
-        }
-        // update on any state changes (as is the default)
-        if (this.state !== nextState) {
-            return true;
-        }
-        // update if props are shallowly not equal, inspired by PureRenderMixin
-        // we could return just 'false' here, and avoid the `skipRender` checks etc
-        // however, it is nicer if lifecycle events are triggered like usually,
-        // so we return true here if props are shallowly modified.
-        return isObjectShallowModified(this.props, nextProps);
-    }
-
-    /**
-     * Observer function / decorator
-     */
-};function observer(arg1, arg2) {
-    if (typeof arg1 === "string") {
-        throw new Error("Store names should be provided as array");
-    }
-    if (Array.isArray(arg1)) {
-        // component needs stores
-        if (!warnedAboutObserverInjectDeprecation) {
-            warnedAboutObserverInjectDeprecation = true;
-            console.warn('Mobx observer: Using observer to inject stores is deprecated since 4.0. Use `@inject("store1", "store2") @observer ComponentClass` or `inject("store1", "store2")(observer(componentClass))` instead of `@observer(["store1", "store2"]) ComponentClass`');
-        }
-        if (!arg2) {
-            // invoked as decorator
-            return function (componentClass) {
-                return observer(arg1, componentClass);
-            };
-        } else {
-            return inject.apply(null, arg1)(observer(arg2));
-        }
-    }
-    var componentClass = arg1;
-
-    if (componentClass.isMobxInjector === true) {
-        console.warn("Mobx observer: You are trying to use 'observer' on a component that already has 'inject'. Please apply 'observer' before applying 'inject'");
-    }
-
-    // Stateless function component:
-    // If it is function but doesn't seem to be a react class constructor,
-    // wrap it to a react class automatically
-    if (typeof componentClass === "function" && (!componentClass.prototype || !componentClass.prototype.render) && !componentClass.isReactClass && !React.Component.isPrototypeOf(componentClass)) {
-        var _class, _temp;
-
-        return observer((_temp = _class = function (_Component) {
-            inherits(_class, _Component);
-
-            function _class() {
-                classCallCheck(this, _class);
-                return possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
-            }
-
-            createClass(_class, [{
-                key: "render",
-                value: function render() {
-                    return componentClass.call(this, this.props, this.context);
-                }
-            }]);
-            return _class;
-        }(React.Component), _class.displayName = componentClass.displayName || componentClass.name, _class.contextTypes = componentClass.contextTypes, _class.propTypes = componentClass.propTypes, _class.defaultProps = componentClass.defaultProps, _temp));
-    }
-
-    if (!componentClass) {
-        throw new Error("Please pass a valid component to 'observer'");
-    }
-
-    var target = componentClass.prototype || componentClass;
-    mixinLifecycleEvents(target);
-    componentClass.isMobXReactObserver = true;
-    return componentClass;
-}
-
-function mixinLifecycleEvents(target) {
-    patch(target, "componentWillMount", true);["componentDidMount", "componentWillUnmount", "componentDidUpdate"].forEach(function (funcName) {
-        patch(target, funcName);
-    });
-    if (!target.shouldComponentUpdate) {
-        target.shouldComponentUpdate = reactiveMixin.shouldComponentUpdate;
-    }
-}
-
-// TODO: support injection somehow as well?
-var Observer = observer(function (_ref) {
-    var children = _ref.children;
-    return children();
-});
-
-Observer.displayName = "Observer";
-
-Observer.propTypes = {
-    children: function children(propValue, key, componentName, location, propFullName) {
-        if (typeof propValue[key] !== "function") return new Error("Invalid prop `" + propFullName + "` of type `" + _typeof$1(propValue[key]) + "` supplied to" + " `" + componentName + "`, expected `function`.");
-    }
-};
-
-var _class;
-var _temp;
-
-var specialReactKeys = { children: true, key: true, ref: true };
-
-var Provider = (_temp = _class = function (_Component) {
-    inherits(Provider, _Component);
-
-    function Provider() {
-        classCallCheck(this, Provider);
-        return possibleConstructorReturn(this, (Provider.__proto__ || Object.getPrototypeOf(Provider)).apply(this, arguments));
-    }
-
-    createClass(Provider, [{
-        key: "render",
-        value: function render() {
-            return React.Children.only(this.props.children);
-        }
-    }, {
-        key: "getChildContext",
-        value: function getChildContext() {
-            var stores = {};
-            // inherit stores
-            var baseStores = this.context.mobxStores;
-            if (baseStores) for (var key in baseStores) {
-                stores[key] = baseStores[key];
-            }
-            // add own stores
-            for (var _key in this.props) {
-                if (!specialReactKeys[_key] && _key !== "suppressChangedStoreWarning") stores[_key] = this.props[_key];
-            }return {
-                mobxStores: stores
-            };
-        }
-    }, {
-        key: "componentWillReceiveProps",
-        value: function componentWillReceiveProps(nextProps) {
-            // Maybe this warning is too aggressive?
-            if (Object.keys(nextProps).length !== Object.keys(this.props).length) console.warn("MobX Provider: The set of provided stores has changed. Please avoid changing stores as the change might not propagate to all children");
-            if (!nextProps.suppressChangedStoreWarning) for (var key in nextProps) {
-                if (!specialReactKeys[key] && this.props[key] !== nextProps[key]) console.warn("MobX Provider: Provided store '" + key + "' has changed. Please avoid replacing stores as the change might not propagate to all children");
-            }
-        }
-    }]);
-    return Provider;
-}(React.Component), _class.contextTypes = {
-    mobxStores: objectOrObservableObject
-}, _class.childContextTypes = {
-    mobxStores: objectOrObservableObject.isRequired
-}, _temp);
-
-if (!React.Component) throw new Error("mobx-react requires React to be available");
-if (!extras) throw new Error("mobx-react requires mobx to be available");
-
-if (typeof reactDom.unstable_batchedUpdates === "function") extras.setReactionScheduler(reactDom.unstable_batchedUpdates);else if (typeof unstable_batchedUpdates$1 === "function") extras.setReactionScheduler(unstable_batchedUpdates$1);
-
-/* DevTool support */
-// See: https://github.com/andykog/mobx-devtools/blob/d8976c24b8cb727ed59f9a0bc905a009df79e221/src/backend/installGlobalHook.js
-
-if ((typeof __MOBX_DEVTOOLS_GLOBAL_HOOK__ === "undefined" ? "undefined" : _typeof$1(__MOBX_DEVTOOLS_GLOBAL_HOOK__)) === "object") {
-    var mobx$1 = { spy: spy, extras: extras };
-    var mobxReact = { renderReporter: renderReporter, componentByNodeRegistery: componentByNodeRegistery, trackComponents: trackComponents };
-    __MOBX_DEVTOOLS_GLOBAL_HOOK__.injectMobxReact(mobxReact, mobx$1);
-}
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-// eslint-disable-next-line import/prefer-default-export
-var createAccordionStore = function createAccordionStore(_ref) {
-    var accordion = _ref.accordion,
-        onChange = _ref.onChange;
-
-    var store = observable({
-        items: [],
-        accordion: accordion,
-        onChange: onChange,
-        addItem: action.bound(function addItem(newItem) {
-            if (this.accordion && newItem.expanded) {
-                // If this is a true accordion and the new item is expanded, then the others must be closed.
-                this.items = [].concat(_toConsumableArray(this.items.map(function (item) {
-                    return _extends({}, item, { expanded: false });
-                })), [newItem]);
-            } else {
-                this.items = [].concat(_toConsumableArray(this.items), [newItem]);
-            }
-        }),
-        removeItem: action.bound(function removeItem(key) {
-            this.items = this.items.filter(function (item) {
-                return item.uuid !== key;
-            });
-        }),
-        setExpanded: action.bound(function setExpanded(key, expanded) {
-            var _this = this;
-
-            this.items = this.items.map(function (item) {
-                if (item.uuid === key) {
-                    return _extends({}, item, {
-                        expanded: expanded
-                    });
-                } else if (_this.accordion && expanded) {
-                    // If this is an accordion, we might need to collapse the other expanded item.
-                    return _extends({}, item, {
-                        expanded: false
-                    });
-                }
-                return item;
-            });
-        })
-    });
-    return store;
-};
-
-var _extends$1 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Accordion = function (_Component) {
-    _inherits(Accordion, _Component);
-
-    function Accordion() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
-        _classCallCheck(this, Accordion);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Accordion.__proto__ || Object.getPrototypeOf(Accordion)).call.apply(_ref, [this].concat(args))), _this), _this.accordionStore = createAccordionStore({
-            accordion: _this.props.accordion,
-            onChange: _this.props.onChange
-        }), _temp), _possibleConstructorReturn(_this, _ret);
-    }
-
-    _createClass(Accordion, [{
-        key: 'render',
-        value: function render() {
-            var _props = this.props,
-                accordionProp = _props.accordion,
-                onChange = _props.onChange,
-                rest = _objectWithoutProperties(_props, ['accordion', 'onChange']);
-
-            var accordion = this.accordionStore.accordion;
-
-
-            return React__default.createElement(
-                Provider,
-                { accordionStore: this.accordionStore },
-                React__default.createElement('div', _extends$1({ role: accordion ? 'tablist' : null }, rest))
-            );
-        }
-    }]);
-
-    return Accordion;
-}(React.Component);
-
-Accordion.defaultProps = {
-    accordion: true,
-    onChange: function onChange() {},
-    className: 'accordion',
-    children: null
-};
-
-/*!
- * consecutive
- * Get consecutive numbers
- * Copyright(c) 2017 ivanoff .$ curl -A cv ivanoff.org.ua
- * MIT Licensed
- */
-
-var consecutive = function (begin, base, inc) {
-  var number = begin || 0;
-  if (typeof base !== 'number') base = 10;
-  if (typeof inc !== 'number') inc = 1;
-
-  return function () {
-    var res;
-    if (typeof base === 'undefined' || base === 10) {
-      res = number;
-      number += inc;
-    } else {
-      res = number.toString();
-      number = (parseInt(number, base) + inc).toString(base);
-    }
-
-    return res;
-  };
-};
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var classnames = createCommonjsModule(function (module) {
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-/*!
-  Copyright (c) 2016 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg === 'undefined' ? 'undefined' : _typeof(arg);
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				classes.push(classNames.apply(null, arg));
-			} else if (argType === 'object') {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if ('object' !== 'undefined' && module.exports) {
-		module.exports = classNames;
-	} else if (typeof undefined === 'function' && _typeof(undefined.amd) === 'object' && undefined.amd) {
-		// register as 'classnames', consistent with npm package name
-		undefined('classnames', [], function () {
-			return classNames;
-		});
-	} else {
-		window.classNames = classNames;
-	}
-})();
-});
-
-var _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass$1 = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _objectWithoutProperties$1(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck$1(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn$1(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits$1(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-var nextUuid = consecutive();
-function resetNextUuid() {
-    nextUuid = consecutive();
-}
-
-var AccordionItem = function (_Component) {
-    _inherits$1(AccordionItem, _Component);
-
-    function AccordionItem() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
-        _classCallCheck$1(this, AccordionItem);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn$1(this, (_ref = AccordionItem.__proto__ || Object.getPrototypeOf(AccordionItem)).call.apply(_ref, [this].concat(args))), _this), _this.uuid = nextUuid(), _temp), _possibleConstructorReturn$1(_this, _ret);
-    }
-
-    _createClass$1(AccordionItem, [{
-        key: 'componentWillMount',
-        value: function componentWillMount() {
-            var _props = this.props,
-                accordionStore = _props.accordionStore,
-                disabled = _props.disabled;
-
-
-            accordionStore.addItem({
-                uuid: this.uuid,
-                expanded: this.props.expanded || false,
-                disabled: disabled
-            });
-        }
-    }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            this.props.accordionStore.removeItem(this.uuid);
-        }
-
-        // This is here so that the user can dynamically set the 'expanded' state using the 'expanded' prop.
-
-    }, {
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(_ref2) {
-            var expanded = _ref2.expanded,
-                accordionStore = _ref2.accordionStore;
-
-            if (expanded !== this.props.expanded) {
-                accordionStore.setExpanded(this.uuid, expanded);
-            }
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var _props2 = this.props,
-                className = _props2.className,
-                hideBodyClassName = _props2.hideBodyClassName,
-                accordionStore = _props2.accordionStore,
-                disabled = _props2.disabled,
-                expandedProp = _props2.expanded,
-                rest = _objectWithoutProperties$1(_props2, ['className', 'hideBodyClassName', 'accordionStore', 'disabled', 'expanded']);
-
-            var currentItem = accordionStore.items.find(function (item) {
-                return item.uuid === _this2.uuid;
-            });
-
-            if (!currentItem) {
-                return null;
-            }
-            var expanded = currentItem.expanded;
-
-
-            return React__default.createElement(
-                Provider,
-                { uuid: this.uuid },
-                React__default.createElement('div', _extends$2({
-                    className: classnames(className, _defineProperty({}, hideBodyClassName, !expanded && hideBodyClassName))
-                }, rest))
-            );
-        }
-    }]);
-
-    return AccordionItem;
-}(React.Component);
-
-AccordionItem.defaultProps = {
-    className: 'accordion__item',
-    hideBodyClassName: '',
-    disabled: false,
-    expanded: false
-};
-
-
-var accordionItem = inject('accordionStore')(observer(AccordionItem));
-
-var _extends$3 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass$2 = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _defineProperty$1(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _objectWithoutProperties$2(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck$2(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn$2(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits$2(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AccordionItemTitle = function (_Component) {
-    _inherits$2(AccordionItemTitle, _Component);
-
-    function AccordionItemTitle() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
-        _classCallCheck$2(this, AccordionItemTitle);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn$2(this, (_ref = AccordionItemTitle.__proto__ || Object.getPrototypeOf(AccordionItemTitle)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function () {
-            var _this$props = _this.props,
-                uuid = _this$props.uuid,
-                accordionStore = _this$props.accordionStore;
-            var accordion = accordionStore.accordion,
-                onChange = accordionStore.onChange,
-                items = accordionStore.items;
-
-            var foundItem = items.find(function (item) {
-                return item.uuid === uuid;
-            });
-            if (!foundItem) return;
-
-            _this.props.accordionStore.setExpanded(foundItem.uuid, !foundItem.expanded);
-
-            if (accordion) {
-                onChange(foundItem.uuid);
-            } else {
-                onChange(_this.props.accordionStore.items.filter(function (item) {
-                    return item.expanded;
-                }).map(function (item) {
-                    return item.uuid;
-                }));
-            }
-        }, _this.handleKeyPress = function (evt) {
-            if (evt.charCode === 13 || evt.charCode === 32) {
-                _this.handleClick();
-            }
-        }, _temp), _possibleConstructorReturn$2(_this, _ret);
-    }
-
-    _createClass$2(AccordionItemTitle, [{
-        key: 'render',
-        value: function render() {
-            var _props$accordionStore = this.props.accordionStore,
-                items = _props$accordionStore.items,
-                accordion = _props$accordionStore.accordion;
-
-            var _props = this.props,
-                uuid = _props.uuid,
-                className = _props.className,
-                hideBodyClassName = _props.hideBodyClassName,
-                accordionStore = _props.accordionStore,
-                rest = _objectWithoutProperties$2(_props, ['uuid', 'className', 'hideBodyClassName', 'accordionStore']);
-
-            var foundItem = items.find(function (item) {
-                return item.uuid === uuid;
-            });
-            if (!foundItem) return null;
-
-            var expanded = foundItem.expanded,
-                disabled = foundItem.disabled;
-
-
-            var id = 'accordion__title-' + uuid;
-            var ariaControls = 'accordion__body-' + uuid;
-            var role = accordion ? 'tab' : 'button';
-            var titleClassName = classnames(className, _defineProperty$1({}, hideBodyClassName, hideBodyClassName && !expanded));
-
-            if (role === 'tab') {
-                return React__default.createElement('div', _extends$3({
-                    id: id,
-                    'aria-selected': expanded,
-                    'aria-controls': ariaControls,
-                    className: titleClassName,
-                    onClick: disabled ? undefined : this.handleClick,
-                    role: role,
-                    tabIndex: '0' // eslint-disable-line jsx-a11y/no-noninteractive-tabindex
-                    , onKeyPress: this.handleKeyPress,
-                    disabled: disabled
-                }, rest));
-            }
-            return React__default.createElement('div', _extends$3({
-                id: id,
-                'aria-expanded': expanded,
-                'aria-controls': ariaControls,
-                className: titleClassName,
-                onClick: disabled ? undefined : this.handleClick,
-                role: role,
-                tabIndex: '0' // eslint-disable-line jsx-a11y/no-noninteractive-tabindex
-                , onKeyPress: this.handleKeyPress,
-                disabled: disabled
-            }, rest));
-        }
-    }]);
-
-    return AccordionItemTitle;
-}(React.Component);
-
-AccordionItemTitle.accordionElementName = 'AccordionItemTitle';
-AccordionItemTitle.defaultProps = {
-    className: 'accordion__title',
-    hideBodyClassName: ''
-};
-
-
-var accordionItemTitle = inject('accordionStore', 'uuid')(observer(AccordionItemTitle));
-
-var _extends$4 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _defineProperty$2(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _objectWithoutProperties$3(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-var defaultProps = {
-    className: 'accordion__body',
-    hideBodyClassName: 'accordion__body--hidden'
-};
-
-var AccordionItemBody = function AccordionItemBody(props) {
-    var accordionStore = props.accordionStore,
-        uuid = props.uuid,
-        className = props.className,
-        hideBodyClassName = props.hideBodyClassName,
-        rest = _objectWithoutProperties$3(props, ['accordionStore', 'uuid', 'className', 'hideBodyClassName']);
-
-    var _props$accordionStore = props.accordionStore,
-        items = _props$accordionStore.items,
-        accordion = _props$accordionStore.accordion;
-
-    var foundItem = items.find(function (item) {
-        return item.uuid === uuid;
-    });
-    if (!foundItem) return null;
-
-    var expanded = foundItem.expanded;
-
-    var id = 'accordion__body-' + uuid;
-    var ariaLabelledby = 'accordion__title-' + uuid;
-    var role = accordion ? 'tabpanel' : null;
-
-    var bodyClass = classnames(className, _defineProperty$2({}, hideBodyClassName, !expanded));
-    var ariaHidden = !expanded;
-    return React__default.createElement('div', _extends$4({
-        id: id,
-        className: bodyClass,
-        'aria-hidden': ariaHidden,
-        'aria-labelledby': ariaLabelledby,
-        role: role
-    }, rest));
-};
-
-AccordionItemBody.defaultProps = defaultProps;
-
-var accordionItemBody = inject('accordionStore', 'uuid')(observer(AccordionItemBody));
-
-exports.Accordion = Accordion;
-exports.AccordionItem = accordionItem;
-exports.AccordionItemTitle = accordionItemTitle;
-exports.AccordionItemBody = accordionItemBody;
-exports.resetNextUuid = resetNextUuid;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
-},{"react":431,"react-dom":350}],348:[function(require,module,exports){
+},{}],348:[function(require,module,exports){
 (function (process){
 /** @license React v16.2.0
  * react-dom.development.js
@@ -60662,7 +55992,7 @@ module.exports = reactDom;
 
 }).call(this,require('_process'))
 
-},{"_process":341,"fbjs/lib/EventListener":137,"fbjs/lib/ExecutionEnvironment":138,"fbjs/lib/camelizeStyleName":140,"fbjs/lib/containsNode":141,"fbjs/lib/emptyFunction":142,"fbjs/lib/emptyObject":143,"fbjs/lib/focusNode":144,"fbjs/lib/getActiveElement":145,"fbjs/lib/hyphenateStyleName":147,"fbjs/lib/invariant":148,"fbjs/lib/shallowEqual":151,"fbjs/lib/warning":152,"object-assign":339,"prop-types/checkPropTypes":342,"react":431}],349:[function(require,module,exports){
+},{"_process":342,"fbjs/lib/EventListener":138,"fbjs/lib/ExecutionEnvironment":139,"fbjs/lib/camelizeStyleName":141,"fbjs/lib/containsNode":142,"fbjs/lib/emptyFunction":143,"fbjs/lib/emptyObject":144,"fbjs/lib/focusNode":145,"fbjs/lib/getActiveElement":146,"fbjs/lib/hyphenateStyleName":148,"fbjs/lib/invariant":149,"fbjs/lib/shallowEqual":152,"fbjs/lib/warning":153,"object-assign":340,"prop-types/checkPropTypes":343,"react":437}],349:[function(require,module,exports){
 /** @license React v16.2.0
  * react-dom.production.min.js
  *
@@ -60893,7 +56223,7 @@ var Sg={createPortal:Qg,findDOMNode:function(a){if(null==a)return null;if(1===a.
 E("40");return a._reactRootContainer?(Z.unbatchedUpdates(function(){Pg(null,null,a,!1,function(){a._reactRootContainer=null})}),!0):!1},unstable_createPortal:Qg,unstable_batchedUpdates:tc,unstable_deferredUpdates:Z.deferredUpdates,flushSync:Z.flushSync,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{EventPluginHub:mb,EventPluginRegistry:Va,EventPropagators:Cb,ReactControlledComponent:qc,ReactDOMComponentTree:sb,ReactDOMEventListener:xd}};
 Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",rendererPackageName:"react-dom"});var Tg=Object.freeze({default:Sg}),Ug=Tg&&Sg||Tg;module.exports=Ug["default"]?Ug["default"]:Ug;
 
-},{"fbjs/lib/EventListener":137,"fbjs/lib/ExecutionEnvironment":138,"fbjs/lib/containsNode":141,"fbjs/lib/emptyFunction":142,"fbjs/lib/emptyObject":143,"fbjs/lib/focusNode":144,"fbjs/lib/getActiveElement":145,"fbjs/lib/shallowEqual":151,"object-assign":339,"react":431}],350:[function(require,module,exports){
+},{"fbjs/lib/EventListener":138,"fbjs/lib/ExecutionEnvironment":139,"fbjs/lib/containsNode":142,"fbjs/lib/emptyFunction":143,"fbjs/lib/emptyObject":144,"fbjs/lib/focusNode":145,"fbjs/lib/getActiveElement":146,"fbjs/lib/shallowEqual":152,"object-assign":340,"react":437}],350:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -60936,7 +56266,7 @@ if ("development" === 'production') {
 
 }).call(this,require('_process'))
 
-},{"./cjs/react-dom.development.js":348,"./cjs/react-dom.production.min.js":349,"_process":341}],351:[function(require,module,exports){
+},{"./cjs/react-dom.development.js":348,"./cjs/react-dom.production.min.js":349,"_process":342}],351:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -61150,7 +56480,7 @@ EventListener.propTypes = "development" !== "production" ? {
 exports.default = EventListener;
 }).call(this,require('_process'))
 
-},{"./supports":352,"_process":341,"babel-runtime/core-js/object/assign":17,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/core-js/object/keys":21,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/typeof":34,"fbjs/lib/shallowEqual":151,"prop-types":345,"react":431,"warning":453}],352:[function(require,module,exports){
+},{"./supports":352,"_process":342,"babel-runtime/core-js/object/assign":17,"babel-runtime/core-js/object/get-prototype-of":20,"babel-runtime/core-js/object/keys":21,"babel-runtime/helpers/classCallCheck":25,"babel-runtime/helpers/createClass":26,"babel-runtime/helpers/inherits":29,"babel-runtime/helpers/objectWithoutProperties":30,"babel-runtime/helpers/possibleConstructorReturn":31,"babel-runtime/helpers/typeof":34,"fbjs/lib/shallowEqual":152,"prop-types":346,"react":437,"warning":464}],352:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -61379,7 +56709,7 @@ Col.contextTypes = {
   gutterWidth: _propTypes2.default.number
 };
 exports.default = Col;
-},{"../../utils":368,"./style":354,"lodash/throttle":209,"prop-types":345,"react":431}],354:[function(require,module,exports){
+},{"../../utils":368,"./style":354,"lodash/throttle":210,"prop-types":346,"react":437}],354:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -61610,7 +56940,7 @@ Container.defaultProps = {
   style: {}
 };
 exports.default = Container;
-},{"../../utils":368,"./style":356,"lodash/throttle":209,"prop-types":345,"react":431}],356:[function(require,module,exports){
+},{"../../utils":368,"./style":356,"lodash/throttle":210,"prop-types":346,"react":437}],356:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -61790,7 +57120,7 @@ Row.childContextTypes = {
   gutterWidth: _propTypes2.default.number
 };
 exports.default = Row;
-},{"../../utilities/ClearFix":361,"./style":358,"prop-types":345,"react":431}],358:[function(require,module,exports){
+},{"../../utilities/ClearFix":361,"./style":358,"prop-types":346,"react":437}],358:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -61923,7 +57253,7 @@ RenderAny.defaultProps = {
 };
 
 exports.default = RenderAny;
-},{"prop-types":345,"react":431}],361:[function(require,module,exports){
+},{"prop-types":346,"react":437}],361:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62022,7 +57352,7 @@ ClearFix.defaultProps = {
   xl: false
 };
 exports.default = ClearFix;
-},{"../Visible":366,"./style":362,"prop-types":345,"react":431}],362:[function(require,module,exports){
+},{"../Visible":366,"./style":362,"prop-types":346,"react":437}],362:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62161,7 +57491,7 @@ Hidden.defaultProps = {
   xl: false
 };
 exports.default = Hidden;
-},{"../../support/RenderAny":360,"../../utils":368,"./style":364,"lodash/throttle":209,"prop-types":345,"react":431}],364:[function(require,module,exports){
+},{"../../support/RenderAny":360,"../../utils":368,"./style":364,"lodash/throttle":210,"prop-types":346,"react":437}],364:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62288,7 +57618,7 @@ ScreenClassRender.contextTypes = {
   breakpoints: _propTypes2.default.arrayOf(_propTypes2.default.number)
 };
 exports.default = ScreenClassRender;
-},{"../../support/RenderAny":360,"../../utils":368,"lodash/throttle":209,"prop-types":345,"react":431}],366:[function(require,module,exports){
+},{"../../support/RenderAny":360,"../../utils":368,"lodash/throttle":210,"prop-types":346,"react":437}],366:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62409,7 +57739,7 @@ Visible.defaultProps = {
   xl: false
 };
 exports.default = Visible;
-},{"../../support/RenderAny":360,"../../utils":368,"./style":367,"lodash/throttle":209,"prop-types":345,"react":431}],367:[function(require,module,exports){
+},{"../../support/RenderAny":360,"../../utils":368,"./style":367,"lodash/throttle":210,"prop-types":346,"react":437}],367:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62698,7 +58028,7 @@ var InfiniteComputer = function () {
 module.exports = InfiniteComputer;
 }).call(this,require('_process'))
 
-},{"_process":341}],372:[function(require,module,exports){
+},{"_process":342}],372:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -63147,7 +58477,7 @@ module.exports = Infinite;
 global.Infinite = Infinite;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./utils/checkProps":374,"./utils/establish-polyfills":375,"./utils/infiniteHelpers":376,"./utils/scaleEnum":377,"./utils/window":378,"lodash.isfinite":192,"prop-types":345,"react":431}],373:[function(require,module,exports){
+},{"./utils/checkProps":374,"./utils/establish-polyfills":375,"./utils/infiniteHelpers":376,"./utils/scaleEnum":377,"./utils/window":378,"lodash.isfinite":193,"prop-types":346,"react":437}],373:[function(require,module,exports){
 "use strict";
 
 var opts = {
@@ -63221,7 +58551,7 @@ module.exports = function (props) {
 };
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"lodash.isfinite":192,"react":431}],375:[function(require,module,exports){
+},{"lodash.isfinite":193,"react":437}],375:[function(require,module,exports){
 'use strict';
 
 /*
@@ -63238,7 +58568,7 @@ if (!Object.assign) {
 if (!Array.isArray) {
   Array.isArray = require('lodash.isarray');
 }
-},{"lodash.isarray":191,"object-assign":379}],376:[function(require,module,exports){
+},{"lodash.isarray":192,"object-assign":379}],376:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -63348,7 +58678,7 @@ module.exports = {
 };
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../computers/arrayInfiniteComputer.js":369,"../computers/constantInfiniteComputer.js":370,"./scaleEnum":377,"./window":378,"react":431}],377:[function(require,module,exports){
+},{"../computers/arrayInfiniteComputer.js":369,"../computers/constantInfiniteComputer.js":370,"./scaleEnum":377,"./window":378,"react":437}],377:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -63542,7 +58872,7 @@ Animate.defaultProps = {
   show: true
 };
 exports.default = Animate;
-},{"../core/transition":382,"d3-timer":134,"react":431}],381:[function(require,module,exports){
+},{"../core/transition":382,"d3-timer":135,"react":437}],381:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -63744,7 +59074,7 @@ function create(node, id, config) {
     delete node.TRANSITION_SCHEDULES; // eslint-disable-line no-param-reassign
   }
 }
-},{"d3-timer":134}],384:[function(require,module,exports){
+},{"d3-timer":135}],384:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -63935,7 +59265,7 @@ function transition(config) {
     scheduleTransitions.call(this, config);
   }
 }
-},{"./schedule":383,"./tween":386,"d3-timer":134}],386:[function(require,module,exports){
+},{"./schedule":383,"./tween":386,"d3-timer":135}],386:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -63994,7 +59324,7 @@ function getTween(nameSpace, attr, value1) {
     return stateTween;
   };
 }
-},{"d3-interpolate":133}],387:[function(require,module,exports){
+},{"d3-interpolate":134}],387:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -64084,7 +59414,7 @@ function createProvider() {
 exports.default = createProvider();
 }).call(this,require('_process'))
 
-},{"../utils/PropTypes":397,"../utils/warning":401,"_process":341,"prop-types":345,"react":431}],388:[function(require,module,exports){
+},{"../utils/PropTypes":397,"../utils/warning":401,"_process":342,"prop-types":346,"react":437}],388:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -64394,7 +59724,7 @@ selectorFactory) {
 }
 }).call(this,require('_process'))
 
-},{"../utils/PropTypes":397,"../utils/Subscription":398,"_process":341,"hoist-non-react-statics":161,"invariant":188,"react":431}],389:[function(require,module,exports){
+},{"../utils/PropTypes":397,"../utils/Subscription":398,"_process":342,"hoist-non-react-statics":162,"invariant":189,"react":437}],389:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -64552,7 +59882,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 }
 
 exports.default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
-},{"./wrapMapToProps":395,"redux":445}],391:[function(require,module,exports){
+},{"./wrapMapToProps":395,"redux":451}],391:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -64634,7 +59964,7 @@ function whenMergePropsIsOmitted(mergeProps) {
 exports.default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
 }).call(this,require('_process'))
 
-},{"../utils/verifyPlainObject":400,"_process":341}],393:[function(require,module,exports){
+},{"../utils/verifyPlainObject":400,"_process":342}],393:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -64751,7 +60081,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 }
 }).call(this,require('_process'))
 
-},{"./verifySubselectors":394,"_process":341}],394:[function(require,module,exports){
+},{"./verifySubselectors":394,"_process":342}],394:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -64860,7 +60190,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
 }
 }).call(this,require('_process'))
 
-},{"../utils/verifyPlainObject":400,"_process":341}],396:[function(require,module,exports){
+},{"../utils/verifyPlainObject":400,"_process":342}],396:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -64908,7 +60238,7 @@ var storeShape = exports.storeShape = _propTypes2.default.shape({
   dispatch: _propTypes2.default.func.isRequired,
   getState: _propTypes2.default.func.isRequired
 });
-},{"prop-types":345}],398:[function(require,module,exports){
+},{"prop-types":346}],398:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -65061,7 +60391,7 @@ function verifyPlainObject(value, displayName, methodName) {
     (0, _warning2.default)(methodName + '() in ' + displayName + ' must return a plain object. Instead received ' + value + '.');
   }
 }
-},{"./warning":401,"lodash/isPlainObject":206}],401:[function(require,module,exports){
+},{"./warning":401,"lodash/isPlainObject":207}],401:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -65157,7 +60487,7 @@ BrowserRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = BrowserRouter;
-},{"./Router":410,"history/createBrowserHistory":156,"prop-types":345,"react":431,"warning":453}],403:[function(require,module,exports){
+},{"./Router":410,"history/createBrowserHistory":157,"prop-types":346,"react":437,"warning":464}],403:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -65226,7 +60556,7 @@ HashRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = HashRouter;
-},{"./Router":410,"history/createHashHistory":157,"prop-types":345,"react":431,"warning":453}],404:[function(require,module,exports){
+},{"./Router":410,"history/createHashHistory":158,"prop-types":346,"react":437,"warning":464}],404:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -65337,7 +60667,7 @@ Link.contextTypes = {
   }).isRequired
 };
 exports.default = Link;
-},{"invariant":188,"prop-types":345,"react":431}],405:[function(require,module,exports){
+},{"invariant":189,"prop-types":346,"react":437}],405:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -65436,7 +60766,7 @@ NavLink.defaultProps = {
 };
 
 exports.default = NavLink;
-},{"./Link":404,"./Route":409,"prop-types":345,"react":431}],407:[function(require,module,exports){
+},{"./Link":404,"./Route":409,"prop-types":346,"react":437}],407:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -65675,7 +61005,7 @@ MemoryRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = MemoryRouter;
-},{"./Router":420,"history/createMemoryHistory":158,"prop-types":345,"react":431,"warning":453}],417:[function(require,module,exports){
+},{"./Router":420,"history/createMemoryHistory":159,"prop-types":346,"react":437,"warning":464}],417:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -65766,7 +61096,7 @@ Prompt.contextTypes = {
   }).isRequired
 };
 exports.default = Prompt;
-},{"invariant":188,"prop-types":345,"react":431}],418:[function(require,module,exports){
+},{"invariant":189,"prop-types":346,"react":437}],418:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -65875,7 +61205,7 @@ Redirect.contextTypes = {
   }).isRequired
 };
 exports.default = Redirect;
-},{"history":160,"invariant":188,"prop-types":345,"react":431,"warning":453}],419:[function(require,module,exports){
+},{"history":161,"invariant":189,"prop-types":346,"react":437,"warning":464}],419:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -66028,7 +61358,7 @@ Route.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Route;
-},{"./matchPath":424,"invariant":188,"prop-types":345,"react":431,"warning":453}],420:[function(require,module,exports){
+},{"./matchPath":424,"invariant":189,"prop-types":346,"react":437,"warning":464}],420:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -66148,7 +61478,7 @@ Router.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Router;
-},{"invariant":188,"prop-types":345,"react":431,"warning":453}],421:[function(require,module,exports){
+},{"invariant":189,"prop-types":346,"react":437,"warning":464}],421:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -66334,7 +61664,7 @@ StaticRouter.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = StaticRouter;
-},{"./Router":420,"history/PathUtils":155,"invariant":188,"prop-types":345,"react":431,"warning":453}],422:[function(require,module,exports){
+},{"./Router":420,"history/PathUtils":156,"invariant":189,"prop-types":346,"react":437,"warning":464}],422:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -66431,7 +61761,7 @@ Switch.propTypes = {
   location: _propTypes2.default.object
 };
 exports.default = Switch;
-},{"./matchPath":424,"invariant":188,"prop-types":345,"react":431,"warning":453}],423:[function(require,module,exports){
+},{"./matchPath":424,"invariant":189,"prop-types":346,"react":437,"warning":464}],423:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -66562,7 +61892,7 @@ var matchPath = function matchPath(pathname) {
 };
 
 exports.default = matchPath;
-},{"path-to-regexp":340}],425:[function(require,module,exports){
+},{"path-to-regexp":341}],425:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -66612,7 +61942,733 @@ var withRouter = function withRouter(Component) {
 };
 
 exports.default = withRouter;
-},{"./Route":419,"hoist-non-react-statics":161,"prop-types":345,"react":431}],426:[function(require,module,exports){
+},{"./Route":419,"hoist-non-react-statics":162,"prop-types":346,"react":437}],426:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _utils = require('./utils');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Accordion = function (_Component) {
+  _inherits(Accordion, _Component);
+
+  function Accordion(props) {
+    _classCallCheck(this, Accordion);
+
+    var _this = _possibleConstructorReturn(this, (Accordion.__proto__ || Object.getPrototypeOf(Accordion)).call(this, props));
+
+    _this.state = {
+      activeItems: (0, _utils.getActiveItems)(props.children, props.allowMultiple)
+    };
+    return _this;
+  }
+
+  _createClass(Accordion, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(_ref) {
+      var children = _ref.children,
+          allowMultiple = _ref.allowMultiple;
+
+      if (!(0, _utils.isSame)((0, _utils.getChildrenActiveItems)(this.props.children), (0, _utils.getChildrenActiveItems)(children))) {
+        this.setState({
+          activeItems: (0, _utils.getActiveItems)(children, allowMultiple)
+        });
+      }
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick(index) {
+      var _props = this.props,
+          allowMultiple = _props.allowMultiple,
+          children = _props.children,
+          onChange = _props.onChange,
+          openNextAccordionItem = _props.openNextAccordionItem;
+
+      // clone active items state array
+
+      var activeItems = this.state.activeItems.slice(0);
+
+      var position = activeItems.indexOf(index);
+
+      if (position !== -1) {
+        activeItems.splice(position, 1);
+
+        if (openNextAccordionItem && index !== children.length - 1) {
+          activeItems.push(index + 1);
+        }
+      } else if (allowMultiple) {
+        activeItems.push(index);
+      } else {
+        activeItems = [index];
+      }
+
+      var newState = {
+        activeItems: activeItems
+      };
+
+      this.setState(newState);
+
+      if (onChange) {
+        onChange(newState);
+      }
+    }
+  }, {
+    key: 'renderItems',
+    value: function renderItems() {
+      var _this2 = this;
+
+      var _props2 = this.props,
+          children = _props2.children,
+          duration = _props2.duration,
+          easing = _props2.easing;
+
+
+      if (!children) {
+        return null;
+      }
+
+      var activeItems = this.state.activeItems;
+
+
+      return (0, _utils.arrayify)(children).filter(function (c) {
+        return c;
+      }).map(function (item, index) {
+        var _item$props = item.props,
+            disabled = _item$props.disabled,
+            itemDuration = _item$props.duration,
+            itemEasing = _item$props.easing;
+
+
+        var isExpanded = !disabled && activeItems.indexOf(index) !== -1;
+
+        return _react2.default.cloneElement(item, {
+          duration: itemDuration || duration,
+          easing: itemEasing || easing,
+          expanded: isExpanded,
+          key: index,
+          index: index,
+          onClick: _this2.handleClick.bind(_this2, index),
+          ref: 'item-' + index
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props3 = this.props,
+          className = _props3.className,
+          style = _props3.style,
+          Root = _props3.rootTag;
+
+
+      return _react2.default.createElement(
+        Root,
+        { className: (0, _classnames2.default)('react-sanfona', className), style: style },
+        this.renderItems()
+      );
+    }
+  }]);
+
+  return Accordion;
+}(_react.Component);
+
+exports.default = Accordion;
+
+
+Accordion.defaultProps = {
+  activeItems: [0],
+  allowMultiple: false,
+  duration: 300,
+  easing: 'ease',
+  rootTag: 'div'
+};
+
+Accordion.propTypes = {
+  allowMultiple: _propTypes2.default.bool,
+  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]),
+  className: _propTypes2.default.string,
+  duration: _propTypes2.default.number,
+  easing: _propTypes2.default.string,
+  onChange: _propTypes2.default.func,
+  openNextAccordionItem: _propTypes2.default.bool,
+  style: _propTypes2.default.object,
+  rootTag: _propTypes2.default.string
+};
+},{"./utils":427,"classnames":37,"prop-types":346,"react":437}],427:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getChildrenActiveItems = getChildrenActiveItems;
+exports.getActiveItems = getActiveItems;
+exports.isSame = isSame;
+var arrayify = exports.arrayify = function arrayify(obj) {
+  return [].concat(obj);
+};
+
+function getChildrenActiveItems(children) {
+  var activeItems = [];
+
+  arrayify(children).filter(function (c) {
+    return c;
+  }).forEach(function (children, index) {
+    if (!children.props.disabled && children.props.expanded) {
+      activeItems.push(index);
+    }
+  });
+
+  return activeItems;
+}
+
+function getActiveItems(children, allowMultiple) {
+  var activeItems = getChildrenActiveItems(children);
+
+  if (!allowMultiple && activeItems.length > 0) {
+    activeItems = activeItems.slice(0, 1);
+  }
+
+  return activeItems;
+}
+
+// https://stackoverflow.com/a/22395463/338762
+function isSame(array1, array2) {
+  return array1.length === array2.length && array1.every(function (element, index) {
+    return element === array2[index];
+  });
+}
+},{}],428:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
+var _AccordionItemBody = require('../AccordionItemBody');
+
+var _AccordionItemBody2 = _interopRequireDefault(_AccordionItemBody);
+
+var _AccordionItemTitle = require('../AccordionItemTitle');
+
+var _AccordionItemTitle2 = _interopRequireDefault(_AccordionItemTitle);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AccordionItem = function (_Component) {
+  _inherits(AccordionItem, _Component);
+
+  function AccordionItem(props) {
+    _classCallCheck(this, AccordionItem);
+
+    var _this = _possibleConstructorReturn(this, (AccordionItem.__proto__ || Object.getPrototypeOf(AccordionItem)).call(this, props));
+
+    _this.state = {
+      maxHeight: props.expanded ? 'none' : 0,
+      overflow: props.expanded ? 'visible' : 'hidden'
+    };
+    return _this;
+  }
+
+  _createClass(AccordionItem, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.uuid = this.props.uuid || _uuid2.default.v4();
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setMaxHeight(false);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearTimeout(this.timeout);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      var _props = this.props,
+          children = _props.children,
+          disabled = _props.disabled,
+          expanded = _props.expanded;
+
+
+      if (prevProps.expanded !== expanded) {
+        if (disabled) return;
+
+        if (expanded) {
+          this.handleExpand();
+        } else {
+          this.handleCollapse();
+        }
+      } else if (prevProps.children !== children) {
+        this.setMaxHeight(false);
+      }
+    }
+  }, {
+    key: 'handleExpand',
+    value: function handleExpand() {
+      var _props2 = this.props,
+          index = _props2.index,
+          onExpand = _props2.onExpand,
+          slug = _props2.slug;
+
+
+      this.setMaxHeight(false);
+
+      if (onExpand) {
+        slug ? onExpand(slug, index) : onExpand(index);
+      }
+    }
+  }, {
+    key: 'handleCollapse',
+    value: function handleCollapse() {
+      var _props3 = this.props,
+          index = _props3.index,
+          onClose = _props3.onClose,
+          slug = _props3.slug;
+
+
+      this.setMaxHeight(true);
+
+      if (onClose) {
+        slug ? onClose(slug, index) : onClose(index);
+      }
+    }
+  }, {
+    key: 'setMaxHeight',
+    value: function setMaxHeight(collapse) {
+      var _this2 = this;
+
+      var _props4 = this.props,
+          duration = _props4.duration,
+          expanded = _props4.expanded;
+
+
+      clearTimeout(this.timeout);
+
+      var bodyNode = _reactDom2.default.findDOMNode(this.refs.body);
+      var images = bodyNode.querySelectorAll('img');
+
+      if (images.length > 0) {
+        return this.preloadImages(bodyNode, images);
+      }
+
+      this.setState({
+        maxHeight: expanded || collapse ? bodyNode.scrollHeight + 'px' : 0,
+        overflow: 'hidden'
+      });
+
+      if (expanded) {
+        this.timeout = setTimeout(function () {
+          _this2.setState({
+            maxHeight: 'none',
+            overflow: 'visible'
+          });
+        }, duration);
+      } else {
+        this.timeout = setTimeout(function () {
+          _this2.setState({
+            maxHeight: 0
+          });
+        }, 0);
+      }
+    }
+
+    // Wait for images to load before calculating maxHeight
+
+  }, {
+    key: 'preloadImages',
+    value: function preloadImages(node) {
+      var _this3 = this;
+
+      var images = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+      var expanded = this.props.expanded;
+
+
+      var imagesLoaded = 0;
+
+      var imgLoaded = function imgLoaded() {
+        imagesLoaded++;
+
+        if (imagesLoaded === images.length) {
+          _this3.setState({
+            maxHeight: expanded ? node.scrollHeight + 'px' : 0,
+            overflow: 'hidden'
+          });
+        }
+      };
+
+      for (var i = 0; i < images.length; i += 1) {
+        var img = new Image();
+        img.src = images[i].src;
+        img.onload = img.onerror = imgLoaded;
+      }
+    }
+  }, {
+    key: 'getProps',
+    value: function getProps() {
+      var _props5 = this.props,
+          className = _props5.className,
+          disabled = _props5.disabled,
+          disabledClassName = _props5.disabledClassName,
+          expanded = _props5.expanded,
+          expandedClassName = _props5.expandedClassName,
+          style = _props5.style;
+
+
+      var props = {
+        className: (0, _classnames2.default)('react-sanfona-item', className, {
+          'react-sanfona-item-expanded': expanded && !disabled,
+          'react-sanfona-item-disabled': disabled
+        }, expandedClassName && _defineProperty({}, expandedClassName, expanded), disabledClassName && _defineProperty({}, disabledClassName, disabled)),
+        style: style
+      };
+
+      return props;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props6 = this.props,
+          bodyClassName = _props6.bodyClassName,
+          bodyTag = _props6.bodyTag,
+          children = _props6.children,
+          disabled = _props6.disabled,
+          duration = _props6.duration,
+          easing = _props6.easing,
+          onClick = _props6.onClick,
+          Root = _props6.rootTag,
+          title = _props6.title,
+          titleClassName = _props6.titleClassName,
+          titleTag = _props6.titleTag;
+      var _state = this.state,
+          maxHeight = _state.maxHeight,
+          overflow = _state.overflow;
+
+
+      return _react2.default.createElement(
+        Root,
+        _extends({}, this.getProps(), { ref: 'item' }),
+        _react2.default.createElement(_AccordionItemTitle2.default, {
+          className: titleClassName,
+          expanded: this.props.expanded,
+          onClick: disabled ? null : onClick,
+          rootTag: titleTag,
+          title: title,
+          uuid: this.uuid
+        }),
+        _react2.default.createElement(
+          _AccordionItemBody2.default,
+          {
+            className: bodyClassName,
+            duration: duration,
+            easing: easing,
+            expanded: this.props.expanded,
+            maxHeight: maxHeight,
+            overflow: overflow,
+            ref: 'body',
+            rootTag: bodyTag,
+            uuid: this.uuid
+          },
+          children
+        )
+      );
+    }
+  }]);
+
+  return AccordionItem;
+}(_react.Component);
+
+exports.default = AccordionItem;
+
+
+AccordionItem.defaultProps = {
+  rootTag: 'div',
+  titleTag: 'h3',
+  bodyTag: 'div'
+};
+
+AccordionItem.propTypes = {
+  bodyClassName: _propTypes2.default.string,
+  bodyTag: _propTypes2.default.string,
+  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]),
+  className: _propTypes2.default.string,
+  disabled: _propTypes2.default.bool,
+  disabledClassName: _propTypes2.default.string,
+  duration: _propTypes2.default.number,
+  easing: _propTypes2.default.string,
+  expanded: _propTypes2.default.bool,
+  expandedClassName: _propTypes2.default.string,
+  index: _propTypes2.default.number,
+  onClick: _propTypes2.default.func,
+  onClose: _propTypes2.default.func,
+  onExpand: _propTypes2.default.func,
+  rootTag: _propTypes2.default.string,
+  slug: _propTypes2.default.string,
+  style: _propTypes2.default.object,
+  title: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
+  titleClassName: _propTypes2.default.string,
+  titleTag: _propTypes2.default.string,
+  uuid: _propTypes2.default.string
+};
+},{"../AccordionItemBody":429,"../AccordionItemTitle":430,"classnames":37,"prop-types":346,"react":437,"react-dom":350,"uuid":458}],429:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AccordionItemBody = function (_Component) {
+  _inherits(AccordionItemBody, _Component);
+
+  function AccordionItemBody() {
+    _classCallCheck(this, AccordionItemBody);
+
+    return _possibleConstructorReturn(this, (AccordionItemBody.__proto__ || Object.getPrototypeOf(AccordionItemBody)).apply(this, arguments));
+  }
+
+  _createClass(AccordionItemBody, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          duration = _props.duration,
+          easing = _props.easing,
+          expanded = _props.expanded,
+          maxHeight = _props.maxHeight,
+          overflow = _props.overflow,
+          Root = _props.rootTag,
+          uuid = _props.uuid;
+
+
+      var style = {
+        maxHeight: maxHeight,
+        overflow: overflow,
+        transition: 'max-height ' + duration + 'ms ' + easing
+      };
+
+      return _react2.default.createElement(
+        Root,
+        {
+          'aria-hidden': !expanded,
+          'aria-labelledby': 'react-safona-item-title-' + uuid,
+          className: (0, _classnames2.default)('react-sanfona-item-body', className),
+          id: 'react-safona-item-body-' + uuid,
+          style: style
+        },
+        _react2.default.createElement(
+          'div',
+          { className: 'react-sanfona-item-body-wrapper' },
+          children
+        )
+      );
+    }
+  }]);
+
+  return AccordionItemBody;
+}(_react.Component);
+
+exports.default = AccordionItemBody;
+
+
+AccordionItemBody.defaultProps = {
+  rootTag: 'div'
+};
+
+AccordionItemBody.propTypes = {
+  className: _propTypes2.default.string,
+  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]),
+  duration: _propTypes2.default.number,
+  easing: _propTypes2.default.string,
+  expanded: _propTypes2.default.bool,
+  maxHeight: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  overflow: _propTypes2.default.string,
+  rootTag: _propTypes2.default.string,
+  uuid: _propTypes2.default.string
+};
+},{"classnames":37,"prop-types":346,"react":437}],430:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+exports.default = AccordionItemTitle;
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function AccordionItemTitle(_ref) {
+  var className = _ref.className,
+      expanded = _ref.expanded,
+      onClick = _ref.onClick,
+      Root = _ref.rootTag,
+      title = _ref.title,
+      uuid = _ref.uuid;
+
+  var style = {
+    cursor: 'pointer',
+    margin: 0
+  };
+
+  if ((typeof title === 'undefined' ? 'undefined' : _typeof(title)) === 'object') {
+    return _react2.default.cloneElement(title, {
+      onClick: onClick,
+      id: 'react-safona-item-title-' + uuid,
+      'aria-controls': 'react-sanfona-item-body-' + uuid
+    });
+  }
+
+  return _react2.default.createElement(
+    Root,
+    {
+      'aria-controls': 'react-sanfona-item-body-' + uuid,
+      'aria-expanded': expanded,
+      className: (0, _classnames2.default)('react-sanfona-item-title', className),
+      id: 'react-safona-item-title-' + uuid,
+      onClick: onClick,
+      style: style
+    },
+    title
+  );
+}
+
+AccordionItemTitle.defaultProps = {
+  rootTag: 'h3'
+};
+
+AccordionItemTitle.propTypes = {
+  className: _propTypes2.default.string,
+  expanded: _propTypes2.default.bool,
+  onClick: _propTypes2.default.func,
+  rootTag: _propTypes2.default.string,
+  title: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
+  uuid: _propTypes2.default.string
+};
+},{"classnames":37,"prop-types":346,"react":437}],431:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.AccordionItemBody = exports.AccordionItemTitle = exports.AccordionItem = exports.Accordion = undefined;
+
+var _Accordion2 = require('./Accordion');
+
+var _Accordion3 = _interopRequireDefault(_Accordion2);
+
+var _AccordionItem2 = require('./AccordionItem');
+
+var _AccordionItem3 = _interopRequireDefault(_AccordionItem2);
+
+var _AccordionItemTitle2 = require('./AccordionItemTitle');
+
+var _AccordionItemTitle3 = _interopRequireDefault(_AccordionItemTitle2);
+
+var _AccordionItemBody2 = require('./AccordionItemBody');
+
+var _AccordionItemBody3 = _interopRequireDefault(_AccordionItemBody2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Accordion = _Accordion3.default;
+exports.AccordionItem = _AccordionItem3.default;
+exports.AccordionItemTitle = _AccordionItemTitle3.default;
+exports.AccordionItemBody = _AccordionItemBody3.default;
+},{"./Accordion":426,"./AccordionItem":428,"./AccordionItemBody":429,"./AccordionItemTitle":430}],432:[function(require,module,exports){
 var ReactDOM = require('react-dom');
 var scroll = require('scroll-to');
 
@@ -66645,7 +62701,7 @@ module.exports = function (ref, options) {
   if (element === null) return 0;
   return scroll(0, calculateScrollOffset(element, options.offset, options.align), options);
 };
-},{"react-dom":350,"scroll-to":448}],427:[function(require,module,exports){
+},{"react-dom":350,"scroll-to":454}],433:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -66918,7 +62974,7 @@ exports.default = TransitionGroup;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./utils/ChildMapping":428,"_process":341,"chain-function":36,"prop-types":345,"react":431,"warning":453}],428:[function(require,module,exports){
+},{"./utils/ChildMapping":434,"_process":342,"chain-function":36,"prop-types":346,"react":437,"warning":464}],434:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -67010,7 +63066,7 @@ function mergeChildMappings(prev, next) {
 
   return childMapping;
 }
-},{"react":431}],429:[function(require,module,exports){
+},{"react":437}],435:[function(require,module,exports){
 (function (process){
 /** @license React v16.2.0
  * react.development.js
@@ -68372,7 +64428,7 @@ module.exports = react;
 
 }).call(this,require('_process'))
 
-},{"_process":341,"fbjs/lib/emptyFunction":142,"fbjs/lib/emptyObject":143,"fbjs/lib/invariant":148,"fbjs/lib/warning":152,"object-assign":339,"prop-types/checkPropTypes":342}],430:[function(require,module,exports){
+},{"_process":342,"fbjs/lib/emptyFunction":143,"fbjs/lib/emptyObject":144,"fbjs/lib/invariant":149,"fbjs/lib/warning":153,"object-assign":340,"prop-types/checkPropTypes":343}],436:[function(require,module,exports){
 /** @license React v16.2.0
  * react.production.min.js
  *
@@ -68395,7 +64451,7 @@ var U={Children:{map:function(a,b,e){if(null==a)return a;var c=[];T(a,c,null,b,e
 d=a.key,g=a.ref,k=a._owner;if(null!=b){void 0!==b.ref&&(g=b.ref,k=G.current);void 0!==b.key&&(d=""+b.key);if(a.type&&a.type.defaultProps)var f=a.type.defaultProps;for(h in b)H.call(b,h)&&!I.hasOwnProperty(h)&&(c[h]=void 0===b[h]&&void 0!==f?f[h]:b[h])}var h=arguments.length-2;if(1===h)c.children=e;else if(1<h){f=Array(h);for(var l=0;l<h;l++)f[l]=arguments[l+2];c.children=f}return{$$typeof:r,type:a.type,key:d,ref:g,props:c,_owner:k}},createFactory:function(a){var b=J.bind(null,a);b.type=a;return b},
 isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:G,assign:m}},V=Object.freeze({default:U}),W=V&&U||V;module.exports=W["default"]?W["default"]:W;
 
-},{"fbjs/lib/emptyFunction":142,"fbjs/lib/emptyObject":143,"object-assign":339}],431:[function(require,module,exports){
+},{"fbjs/lib/emptyFunction":143,"fbjs/lib/emptyObject":144,"object-assign":340}],437:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -68407,7 +64463,7 @@ if ("development" === 'production') {
 
 }).call(this,require('_process'))
 
-},{"./cjs/react.development.js":429,"./cjs/react.production.min.js":430,"_process":341}],432:[function(require,module,exports){
+},{"./cjs/react.development.js":435,"./cjs/react.production.min.js":436,"_process":342}],438:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -68433,7 +64489,7 @@ function compose() {
     };
   });
 }
-},{}],433:[function(require,module,exports){
+},{}],439:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -68450,7 +64506,7 @@ var getDisplayName = function getDisplayName(Component) {
 };
 
 exports.default = getDisplayName;
-},{}],434:[function(require,module,exports){
+},{}],440:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -68489,7 +64545,7 @@ var pure = function pure(BaseComponent) {
 exports.default = pure;
 }).call(this,require('_process'))
 
-},{"./setDisplayName":435,"./shallowEqual":437,"./shouldUpdate":438,"./wrapDisplayName":439,"_process":341}],435:[function(require,module,exports){
+},{"./setDisplayName":441,"./shallowEqual":443,"./shouldUpdate":444,"./wrapDisplayName":445,"_process":342}],441:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -68505,7 +64561,7 @@ var setDisplayName = function setDisplayName(displayName) {
 };
 
 exports.default = setDisplayName;
-},{"./setStatic":436}],436:[function(require,module,exports){
+},{"./setStatic":442}],442:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -68519,7 +64575,7 @@ var setStatic = function setStatic(key, value) {
 };
 
 exports.default = setStatic;
-},{}],437:[function(require,module,exports){
+},{}],443:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -68531,7 +64587,7 @@ var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _shallowEqual2.default;
-},{"fbjs/lib/shallowEqual":151}],438:[function(require,module,exports){
+},{"fbjs/lib/shallowEqual":152}],444:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -68589,7 +64645,7 @@ var shouldUpdate = function shouldUpdate(test) {
 exports.default = shouldUpdate;
 }).call(this,require('_process'))
 
-},{"./setDisplayName":435,"./wrapDisplayName":439,"_process":341,"react":431}],439:[function(require,module,exports){
+},{"./setDisplayName":441,"./wrapDisplayName":445,"_process":342,"react":437}],445:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -68605,7 +64661,7 @@ var wrapDisplayName = function wrapDisplayName(BaseComponent, hocName) {
 };
 
 exports.default = wrapDisplayName;
-},{"./getDisplayName":433}],440:[function(require,module,exports){
+},{"./getDisplayName":439}],446:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -68664,7 +64720,7 @@ function applyMiddleware() {
     };
   };
 }
-},{"./compose":443}],441:[function(require,module,exports){
+},{"./compose":449}],447:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -68716,7 +64772,7 @@ function bindActionCreators(actionCreators, dispatch) {
   }
   return boundActionCreators;
 }
-},{}],442:[function(require,module,exports){
+},{}],448:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -68863,7 +64919,7 @@ function combineReducers(reducers) {
 }
 }).call(this,require('_process'))
 
-},{"./createStore":444,"./utils/warning":446,"_process":341,"lodash/isPlainObject":206}],443:[function(require,module,exports){
+},{"./createStore":450,"./utils/warning":452,"_process":342,"lodash/isPlainObject":207}],449:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -68900,7 +64956,7 @@ function compose() {
     };
   });
 }
-},{}],444:[function(require,module,exports){
+},{}],450:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -69162,7 +65218,7 @@ var ActionTypes = exports.ActionTypes = {
     replaceReducer: replaceReducer
   }, _ref2[_symbolObservable2['default']] = observable, _ref2;
 }
-},{"lodash/isPlainObject":206,"symbol-observable":450}],445:[function(require,module,exports){
+},{"lodash/isPlainObject":207,"symbol-observable":456}],451:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -69212,7 +65268,7 @@ exports.applyMiddleware = _applyMiddleware2['default'];
 exports.compose = _compose2['default'];
 }).call(this,require('_process'))
 
-},{"./applyMiddleware":440,"./bindActionCreators":441,"./combineReducers":442,"./compose":443,"./createStore":444,"./utils/warning":446,"_process":341}],446:[function(require,module,exports){
+},{"./applyMiddleware":446,"./bindActionCreators":447,"./combineReducers":448,"./compose":449,"./createStore":450,"./utils/warning":452,"_process":342}],452:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -69238,7 +65294,7 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-},{}],447:[function(require,module,exports){
+},{}],453:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -69313,7 +65369,7 @@ function resolvePathname(to) {
 
 exports.default = resolvePathname;
 module.exports = exports['default'];
-},{}],448:[function(require,module,exports){
+},{}],454:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -69381,7 +65437,7 @@ function scroll() {
   return { top: y, left: x };
 }
 
-},{"raf":38,"tween":39}],449:[function(require,module,exports){
+},{"raf":39,"tween":40}],455:[function(require,module,exports){
 module.exports = function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
@@ -69394,7 +65450,7 @@ module.exports = function (target) {
   return target;
 };
 
-},{}],450:[function(require,module,exports){
+},{}],456:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -69427,7 +65483,7 @@ var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./ponyfill.js":451}],451:[function(require,module,exports){
+},{"./ponyfill.js":457}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -69451,7 +65507,218 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
-},{}],452:[function(require,module,exports){
+},{}],458:[function(require,module,exports){
+var v1 = require('./v1');
+var v4 = require('./v4');
+
+var uuid = v4;
+uuid.v1 = v1;
+uuid.v4 = v4;
+
+module.exports = uuid;
+
+},{"./v1":461,"./v4":462}],459:[function(require,module,exports){
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+for (var i = 0; i < 256; ++i) {
+  byteToHex[i] = (i + 0x100).toString(16).substr(1);
+}
+
+function bytesToUuid(buf, offset) {
+  var i = offset || 0;
+  var bth = byteToHex;
+  return bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]];
+}
+
+module.exports = bytesToUuid;
+
+},{}],460:[function(require,module,exports){
+// Unique ID creation requires a high quality random # generator.  In the
+// browser this is a little complicated due to unknown quality of Math.random()
+// and inconsistent support for the `crypto` API.  We do the best we can via
+// feature-detection
+
+// getRandomValues needs to be invoked in a context where "this" is a Crypto implementation.
+var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues.bind(crypto)) ||
+                      (typeof(msCrypto) != 'undefined' && msCrypto.getRandomValues.bind(msCrypto));
+if (getRandomValues) {
+  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
+  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
+
+  module.exports = function whatwgRNG() {
+    getRandomValues(rnds8);
+    return rnds8;
+  };
+} else {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var rnds = new Array(16);
+
+  module.exports = function mathRNG() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return rnds;
+  };
+}
+
+},{}],461:[function(require,module,exports){
+var rng = require('./lib/rng');
+var bytesToUuid = require('./lib/bytesToUuid');
+
+// **`v1()` - Generate time-based UUID**
+//
+// Inspired by https://github.com/LiosK/UUID.js
+// and http://docs.python.org/library/uuid.html
+
+var _nodeId;
+var _clockseq;
+
+// Previous uuid creation time
+var _lastMSecs = 0;
+var _lastNSecs = 0;
+
+// See https://github.com/broofa/node-uuid for API details
+function v1(options, buf, offset) {
+  var i = buf && offset || 0;
+  var b = buf || [];
+
+  options = options || {};
+  var node = options.node || _nodeId;
+  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
+
+  // node and clockseq need to be initialized to random values if they're not
+  // specified.  We do this lazily to minimize issues related to insufficient
+  // system entropy.  See #189
+  if (node == null || clockseq == null) {
+    var seedBytes = rng();
+    if (node == null) {
+      // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
+      node = _nodeId = [
+        seedBytes[0] | 0x01,
+        seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]
+      ];
+    }
+    if (clockseq == null) {
+      // Per 4.2.2, randomize (14 bit) clockseq
+      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 0x3fff;
+    }
+  }
+
+  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
+  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
+  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
+  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
+  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
+
+  // Per 4.2.1.2, use count of uuid's generated during the current clock
+  // cycle to simulate higher resolution clock
+  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
+
+  // Time since last uuid creation (in msecs)
+  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
+
+  // Per 4.2.1.2, Bump clockseq on clock regression
+  if (dt < 0 && options.clockseq === undefined) {
+    clockseq = clockseq + 1 & 0x3fff;
+  }
+
+  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
+  // time interval
+  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
+    nsecs = 0;
+  }
+
+  // Per 4.2.1.2 Throw error if too many uuids are requested
+  if (nsecs >= 10000) {
+    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
+  }
+
+  _lastMSecs = msecs;
+  _lastNSecs = nsecs;
+  _clockseq = clockseq;
+
+  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
+  msecs += 12219292800000;
+
+  // `time_low`
+  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
+  b[i++] = tl >>> 24 & 0xff;
+  b[i++] = tl >>> 16 & 0xff;
+  b[i++] = tl >>> 8 & 0xff;
+  b[i++] = tl & 0xff;
+
+  // `time_mid`
+  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
+  b[i++] = tmh >>> 8 & 0xff;
+  b[i++] = tmh & 0xff;
+
+  // `time_high_and_version`
+  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
+  b[i++] = tmh >>> 16 & 0xff;
+
+  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
+  b[i++] = clockseq >>> 8 | 0x80;
+
+  // `clock_seq_low`
+  b[i++] = clockseq & 0xff;
+
+  // `node`
+  for (var n = 0; n < 6; ++n) {
+    b[i + n] = node[n];
+  }
+
+  return buf ? buf : bytesToUuid(b);
+}
+
+module.exports = v1;
+
+},{"./lib/bytesToUuid":459,"./lib/rng":460}],462:[function(require,module,exports){
+var rng = require('./lib/rng');
+var bytesToUuid = require('./lib/bytesToUuid');
+
+function v4(options, buf, offset) {
+  var i = buf && offset || 0;
+
+  if (typeof(options) == 'string') {
+    buf = options === 'binary' ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] & 0x0f) | 0x40;
+  rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii < 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}
+
+module.exports = v4;
+
+},{"./lib/bytesToUuid":459,"./lib/rng":460}],463:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -69495,7 +65762,7 @@ function valueEqual(a, b) {
 
 exports.default = valueEqual;
 module.exports = exports['default'];
-},{}],453:[function(require,module,exports){
+},{}],464:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -69560,6 +65827,6 @@ module.exports = warning;
 
 }).call(this,require('_process'))
 
-},{"_process":341}]},{},[1])
+},{"_process":342}]},{},[1])
 
 //# sourceMappingURL=bundle.js.map

@@ -6,7 +6,7 @@ import Slider from 'material-ui/Slider';
 import Toggle from 'material-ui/Toggle';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
-import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from 'react-accessible-accordion';
+import { Accordion, AccordionItem } from 'react-sanfona';
 
 import { updatePreference } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
@@ -80,24 +80,21 @@ const behavior = [
 
 const headerStyle = {fontSize: '20px', paddingBottom: '20px'};
 
-function buildPrefs(name, prefs, expanded) {
+function buildPrefs(name, prefs, i) {
   return (
-    <AccordionItem expanded={expanded} key={`prefs-${name}`}>
-      <AccordionItemTitle>{name}</AccordionItemTitle>
-      <AccordionItemBody>
-        <Table selectable={false}>
-          <TableHeader displaySelectAll={false}>
-            <TableRow>
-              <TableHeaderColumn></TableHeaderColumn>
-              <TableHeaderColumn style={headerStyle}>Preference</TableHeaderColumn>
-              <TableHeaderColumn style={headerStyle}>Importance</TableHeaderColumn>
-            </TableRow>
-          </TableHeader>
-          <TableBody displayRowCheckbox={false}>
-            {prefs}
-          </TableBody>
-        </Table>
-      </AccordionItemBody>
+    <AccordionItem expanded={i === 0} key={`prefs-${name}`} title={name}>
+      <Table selectable={false}>
+        <TableHeader displaySelectAll={false}>
+          <TableRow>
+            <TableHeaderColumn></TableHeaderColumn>
+            <TableHeaderColumn style={headerStyle}>Preference</TableHeaderColumn>
+            <TableHeaderColumn style={headerStyle}>Importance</TableHeaderColumn>
+          </TableRow>
+        </TableHeader>
+        <TableBody displayRowCheckbox={false}>
+          {prefs}
+        </TableBody>
+      </Table>
     </AccordionItem>
   );
 }
@@ -140,8 +137,8 @@ class Preferences extends React.Component {
 
     return (
       <div id='preferences'>
-        <Accordion onChange={(i) => this.setState({open: i})}>
-          {allPrefs.map((obj, i) => buildPrefs(obj.name, obj.props.map(p => buildRow(p, preferences)), open === i))}
+        <Accordion onChange={(i) => this.setState({open: i})} allowMultiple>
+          {allPrefs.map((obj, i) => buildPrefs(obj.name, obj.props.map(p => buildRow(p, preferences)), i))}
         </Accordion>
         <RaisedButton overlayStyle={{color: 'white'}} secondary={true} onClick={this.submit}>Submit</RaisedButton>
       </div>
