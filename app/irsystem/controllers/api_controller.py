@@ -18,7 +18,7 @@ from app.irsystem.models.helpers import validate_json
 from app.irsystem.models import schemas
 from app.irsystem.src.dog_compare import get_similar
 from app.irsystem.src.structured_compare import structured_score
-from app.irsystem.src.freetext_compare import freetext_score, get_more_matches, WEIGHT_EPSILON
+from app.irsystem.src.freetext_compare import freetext_score, WEIGHT_EPSILON
 from app.irsystem.data.doggo_data import STRUCTURED_DATA, FREETEXT_DATA, STRUCTURED_METADATA
 
 
@@ -44,7 +44,7 @@ def write_current_search_names(uuid, dog_names, is_new_search):
     pickle.dump(user_data, open(path, 'w'))
 
 
-def get_json_from_dog_names(dogs_scores, structured_scores=None, require_min=True):
+def get_json_from_dog_names(dogs_scores, structured_scores=None, dog_term_weights=None, require_min=True):
     dogs = []
     for dog, score in dogs_scores:
         # Don't include dogs that are bad matches
@@ -70,8 +70,6 @@ def get_json_from_dog_names(dogs_scores, structured_scores=None, require_min=Tru
             contributions = sorted(contrib_data.keys(), key=lambda x: contrib_data[x], reverse=True)[:3]
             contrib_vals = []
             for contrib in contributions:
-                if contrib_data[contrib] < .01:
-                    continue
                 factor = {
                     "name": contrib,
                     "value": STRUCTURED_DATA[dog][contrib],
@@ -81,6 +79,13 @@ def get_json_from_dog_names(dogs_scores, structured_scores=None, require_min=Tru
             dog_json["contributions"] = contrib_vals
         else:
             dog_json["contributions"] = []
+
+        if dog_term_weights is not None:
+            term_contribs = sorted(dog_term_weights[dog].items(), key=lambda x: x[1], reverse=True)
+            term_contribs = [w for w, _ in term_contribs][:3]
+            # total_weight = sum(t[1] for t in term_contribs)
+            # term_contribs = []
+            dog_json["term_contributions"] = term_contribs
 
         dogs.append(dog_json)
     return dogs
@@ -177,12 +182,9 @@ def normalize_search_scores(scores):
 
 def get_normalized_search_score(request_json, liked_dogs):
     if 'search' in request_json:
-        if liked_dogs:
-            search_scores = get_more_matches(request_json['search'], liked_dogs)
-        else:
-            search_scores = freetext_score(request_json['search'])
-        return normalize_search_scores(search_scores)
-    return None
+        search_scores, dog_term_weights = freetext_score(request_json['search'], liked_dogs)
+        return normalize_search_scores(search_scores), dog_term_weights
+    return None, None
 
 
 def get_similar_search_score(request_json):
@@ -232,7 +234,7 @@ def get_dogs(request_json):
     liked_dogs = get_liked_dogs(session['uuid'])
 
     structured_scores = get_preferences_score(request_json)
-    normalized_search_scores = get_normalized_search_score(request_json, liked_dogs)
+    normalized_search_scores, dog_term_weights = get_normalized_search_score(request_json, liked_dogs)
     similar_search_scores = get_similar_search_score(request_json)
 
     structured_num_score = {s:v["score"] for s, v in structured_scores.items()} if structured_scores is not None else None
@@ -248,7 +250,9 @@ def get_dogs(request_json):
     end_index = start_index + DOGS_PER_PAGE
 
     write_current_search_names(session['uuid'], dog_names[start_index: end_index], start_index is 0)
-    return json.dumps({"dogs": get_json_from_dog_names(dogs_scores[start_index: end_index], structured_scores)})
+    return json.dumps({"dogs": get_json_from_dog_names(dogs_scores[start_index: end_index], 
+                                                        structured_scores, 
+                                                        dog_term_weights=dog_term_weights)})
 
 
 @irsystem.route('/get_similar', methods=['POST'])

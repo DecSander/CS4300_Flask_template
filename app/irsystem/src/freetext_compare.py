@@ -2,6 +2,7 @@ from __future__ import division
 import json
 import os
 import collections
+from collections import defaultdict
 import numpy as np
 import math
 from nltk.tokenize import TreebankWordTokenizer
@@ -107,10 +108,14 @@ try:
 except IOError:
     calc_norms()
 
-def calc_query_vector(query):
+def tokenize(query):
     q = re.sub('[' + string.punctuation + ']', '', query.lower())
     tokenizer = TreebankWordTokenizer()
     query = tokenizer.tokenize(q)
+    return query
+
+def calc_query_vector(query):
+    query = tokenize(query)
 
     query_vector = collections.Counter([w for w in query if w in idf])
     for w, c in query_vector.iteritems():
@@ -144,7 +149,8 @@ def rocchio(original_query, liked_dogs):
     return new_vector
 
 
-def score_vector(query_vector):
+def score_vector(query_vector, orig_query):
+    orig_query = tokenize(orig_query)
     result = {}
     
     query_norm = 0
@@ -155,24 +161,36 @@ def score_vector(query_vector):
     query_norm = math.sqrt(query_norm)
 
     doc_scores = [0] * len(doc_norms)
+    dog_term_weights = {d:defaultdict(lambda: 0) for d in dog_index}
     for term in query_vector:
         if term in inv_word_doc_matrix and term in idf:
             for doc_count in inv_word_doc_matrix[term]:
-                doc_scores[doc_count[0]] += doc_count[1] * (idf[term]) * query_vector[term]
+                dog = dog_index[doc_count[0]]
+                term_score = doc_count[1] * (idf[term]) * query_vector[term]
+                if term in orig_query:
+                    dog_term_weights[dog][term] = term_score
+                doc_scores[doc_count[0]] += term_score
     for i in range(len(doc_norms)):
         doc_scores[i] = doc_scores[i] / (doc_norms[i] * query_norm)
         result[dog_index[i]] = doc_scores[i] if not np.isnan(doc_scores[i]) else WEIGHT_EPSILON
-    return result
+    return result, dog_term_weights
 
 
-def freetext_score(query):
+
+
+def freetext_score(query, liked_dogs=None):
+    print liked_dogs
+    if liked_dogs:
+        query_vector = rocchio(query, liked_dogs)
+    else:
+        query_vector = calc_query_vector(query)
     structured_scores = structured_score(create_form_data(query))
-    free_text_scores =  score_vector(calc_query_vector(query))
+    free_text_scores, dog_term_weights = score_vector(query_vector, query)
     final_scores = {}
     free_weight = 0.6
     for dog in structured_scores.keys():
         final_scores[dog] = ((1-free_weight)*structured_scores[dog]["score"] + free_weight*free_text_scores[dog])/2
-    return final_scores
+    return final_scores, dog_term_weights
 
 def create_form_data(query):
     large = ["big","large", "huge"]
@@ -221,10 +239,6 @@ def create_form_data(query):
             preferences[field] = {"importance": 0, "value": 1}
     return preferences
     
-
-def get_more_matches(original_query, liked_dogs):
-    new_query_vector = rocchio(original_query, liked_dogs)
-    return score_vector(new_query_vector)
 
 if __name__ == "__main__":
     print get_more_matches("Small cute fluffy", ["mastiff"])["mastiff"]
