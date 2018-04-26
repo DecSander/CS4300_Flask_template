@@ -179,7 +179,6 @@ def score_vector(query_vector, orig_query):
 
 
 def freetext_score(query, liked_dogs=None):
-    print liked_dogs
     if liked_dogs:
         query_vector = rocchio(query, liked_dogs)
     else:
@@ -232,7 +231,7 @@ def create_form_data(query):
         preferences["temperament"] = {"importance": 1, "value": 1}
         
     if "trainable" in query:
-        preferences["Train-ability"] = {"importance": 1, "value": 1}
+        preferences["trainability"] = {"importance": 1, "value": 1}
 
     for field in fields:
         if field not in preferences:
