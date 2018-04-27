@@ -107,6 +107,9 @@ export default function globalReducer(state = initialState, action) {
     return state
       .set('page', 0)
       .set('currentBreeds', List());
+  case 'CLEAR_BREEDS':
+    return state
+      .set('currentBreeds', List());
 
   case 'INCREASE_PAGE_NUMBER':
     return state

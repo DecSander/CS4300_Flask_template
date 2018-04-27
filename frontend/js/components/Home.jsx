@@ -10,7 +10,8 @@ import FontIcon from 'material-ui/FontIcon';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-import { updatePreference, changeCheckPreferences, changeSearch, resetPageNumber } from 'infra/GlobalActions';
+import { updatePreference, changeCheckPreferences, changeSearch,
+  resetPageNumber, clearBreeds } from 'infra/GlobalActions';
 import { requestMoreBreeds } from 'infra/api';
 import Preferences from 'components/Preferences';
 import { breeds } from 'infra/const';
@@ -33,6 +34,7 @@ class Home extends React.Component {
   submitNoPrefs = () => {
     const { history, preferences, search, page } = this.props;
     resetPageNumber();
+    clearBreeds();
     changeCheckPreferences(false);
     requestMoreBreeds(1, search, preferences, false);
     history.push('/breeds');

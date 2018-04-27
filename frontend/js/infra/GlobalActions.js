@@ -111,3 +111,9 @@ export function receiveSimilarDogs(dogs) {
     dogs
   });
 }
+
+export function clearBreeds() {
+  return GlobalStore.dispatch({
+    type: 'CLEAR_BREEDS'
+  });
+}

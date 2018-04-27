@@ -727,6 +727,7 @@ var Home = function (_React$Component) {
           page = _this$props.page;
 
       (0, _GlobalActions.resetPageNumber)();
+      (0, _GlobalActions.clearBreeds)();
       (0, _GlobalActions.changeCheckPreferences)(false);
       (0, _api.requestMoreBreeds)(1, search, preferences, false);
       history.push('/breeds');
@@ -1390,6 +1391,7 @@ exports.resetPageNumber = resetPageNumber;
 exports.requestSimilarDogsStart = requestSimilarDogsStart;
 exports.requestSimilarDogsFailed = requestSimilarDogsFailed;
 exports.receiveSimilarDogs = receiveSimilarDogs;
+exports.clearBreeds = clearBreeds;
 
 var _GlobalStore = require('infra/GlobalStore');
 
@@ -1508,6 +1510,12 @@ function receiveSimilarDogs(dogs) {
   });
 }
 
+function clearBreeds() {
+  return _GlobalStore2.default.dispatch({
+    type: 'CLEAR_BREEDS'
+  });
+}
+
 },{"infra/GlobalStore":12}],11:[function(require,module,exports){
 'use strict';
 
@@ -1615,6 +1623,8 @@ function globalReducer() {
     case 'RESET_BREED_LIST':
       (0, _api.sendResetBreeds)();
       return state.set('page', 0).set('currentBreeds', (0, _immutable.List)());
+    case 'CLEAR_BREEDS':
+      return state.set('currentBreeds', (0, _immutable.List)());
 
     case 'INCREASE_PAGE_NUMBER':
       return state.set('page', state.page + 1);
