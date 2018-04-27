@@ -62,9 +62,14 @@ class Matches extends React.Component {
     );
   }
 
+  buildContributingWord = (word) => {
+    return word;
+  }
+
   buildDialog = () => {
     const { similarDogs, retrievingSimilarDogs, failedRetrieveDogs, retrievedBreed } = this.props;
     const { selectedBreed, modalOpen } = this.state;
+    console.log(selectedBreed);
     if (selectedBreed === null) {
       return null;
     } else {
@@ -82,6 +87,8 @@ class Matches extends React.Component {
           <br /><br /><br />
           {selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null}
           <Contributions values={selectedBreed.contributions} />
+          {selectedBreed.contributingWords.size > 0 ? 'Dogs that made this search match' : null}
+          {selectedBreed.contributingWords.size > 0 ? selectedBreed.contributingWords.map(this.buildContributingWord) : null}
           {similarDogs.size > 0 && !retrievingSimilarDogs ? 'Similar Dogs:' : null}
           {similarDogsComponent}
         </Dialog>

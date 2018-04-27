@@ -7,7 +7,8 @@ const Breed = Record({
   img: List(),
   match: 0,
   description: '',
-  contributions: List()
+  contributions: List(),
+  contributingWords: List()
 });
 
 const Contribution = Record({
@@ -44,7 +45,8 @@ function buildDog(breed) {
     img: List(breed.images),
     description: breed.description,
     match: Math.round(breed.percent_match * 100),
-    contributions: List(breed.contributions).map(Contribution)
+    contributions: List(breed.contributions).map(Contribution),
+    contributingWords: breed.term_contributions === undefined ? List() : List(breed.term_contributions)
   });
 }
 

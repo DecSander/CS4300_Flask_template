@@ -298,6 +298,13 @@ var Breeds = function (_Component) {
         ),
         (0, _utils.formatText)(dog.name)
       );
+    }, _this.buildContributingWord = function (word) {
+      return _react2.default.createElement(
+        'span',
+        null,
+        word,
+        _react2.default.createElement('br', null)
+      );
     }, _this.buildDialog = function () {
       var _this$props = _this.props,
           similarDogs = _this$props.similarDogs,
@@ -315,6 +322,8 @@ var Breeds = function (_Component) {
       if (selectedBreed === null) {
         return null;
       } else {
+        console.log(selectedBreed.contributingWords.size);
+        console.log(selectedBreed.contributingWords);
         if (!retrievingSimilarDogs && selectedBreed.name !== retrievedBreed && !failedRetrieveDogs) (0, _api.getSimilarDogs)(selectedBreed.name);
         var similarDogsComponent = retrievingSimilarDogs ? _react2.default.createElement(_CircularProgress2.default, { size: 25, thickness: 4 }) : _react2.default.createElement(
           _reactGridSystem.Row,
@@ -334,6 +343,9 @@ var Breeds = function (_Component) {
           _react2.default.createElement('br', null),
           selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null,
           _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions }),
+          selectedBreed.contributingWords.size > 0 ? 'Top matching search terms:' : null,
+          _react2.default.createElement('br', null),
+          selectedBreed.contributingWords.size > 0 ? selectedBreed.contributingWords.slice(0, 2).map(_this.buildContributingWord) : null,
           _react2.default.createElement('br', null),
           similarDogs.size > 0 && !retrievingSimilarDogs ? 'Similar Dogs:' : null,
           similarDogsComponent
@@ -945,6 +957,8 @@ var Matches = function (_React$Component) {
         ),
         dog.name
       );
+    }, _this.buildContributingWord = function (word) {
+      return word;
     }, _this.buildDialog = function () {
       var _this$props = _this.props,
           similarDogs = _this$props.similarDogs,
@@ -955,6 +969,7 @@ var Matches = function (_React$Component) {
           selectedBreed = _this$state.selectedBreed,
           modalOpen = _this$state.modalOpen;
 
+      console.log(selectedBreed);
       if (selectedBreed === null) {
         return null;
       } else {
@@ -977,6 +992,8 @@ var Matches = function (_React$Component) {
           _react2.default.createElement('br', null),
           selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null,
           _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions }),
+          selectedBreed.contributingWords.size > 0 ? 'Dogs that made this search match' : null,
+          selectedBreed.contributingWords.size > 0 ? selectedBreed.contributingWords.map(_this.buildContributingWord) : null,
           similarDogs.size > 0 && !retrievingSimilarDogs ? 'Similar Dogs:' : null,
           similarDogsComponent
         );
@@ -1469,7 +1486,8 @@ var Breed = (0, _immutable.Record)({
   img: (0, _immutable.List)(),
   match: 0,
   description: '',
-  contributions: (0, _immutable.List)()
+  contributions: (0, _immutable.List)(),
+  contributingWords: (0, _immutable.List)()
 });
 
 var Contribution = (0, _immutable.Record)({
@@ -1506,7 +1524,8 @@ function buildDog(breed) {
     img: (0, _immutable.List)(breed.images),
     description: breed.description,
     match: Math.round(breed.percent_match * 100),
-    contributions: (0, _immutable.List)(breed.contributions).map(Contribution)
+    contributions: (0, _immutable.List)(breed.contributions).map(Contribution),
+    contributingWords: breed.term_contributions === undefined ? (0, _immutable.List)() : (0, _immutable.List)(breed.term_contributions)
   });
 }
 

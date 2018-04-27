@@ -66,6 +66,10 @@ class Breeds extends Component {
     );
   }
 
+  buildContributingWord = (word) => {
+    return <span>{word}<br /></span>;
+  }
+
   buildDialog = () => {
     const { similarDogs, retrievingSimilarDogs, failedRetrieveDogs, retrievedBreed } = this.props;
     const { selectedBreed, modalOpen, selectedNumber } = this.state;
@@ -73,6 +77,8 @@ class Breeds extends Component {
     if (selectedBreed === null) {
       return null;
     } else {
+      console.log(selectedBreed.contributingWords.size);
+      console.log(selectedBreed.contributingWords);
       if (!retrievingSimilarDogs && (selectedBreed.name !== retrievedBreed) && !failedRetrieveDogs) getSimilarDogs(selectedBreed.name);
       const similarDogsComponent = retrievingSimilarDogs
         ? <CircularProgress size={25} thickness={4} />
@@ -87,6 +93,9 @@ class Breeds extends Component {
           <br /><br /><br />
           {selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null}
           <Contributions values={selectedBreed.contributions} />
+          {selectedBreed.contributingWords.size > 0 ? 'Top matching search terms:' : null}
+          <br />
+          {selectedBreed.contributingWords.size > 0 ? selectedBreed.contributingWords.slice(0, 2).map(this.buildContributingWord) : null}
           <br />
           {similarDogs.size > 0 && !retrievingSimilarDogs ? 'Similar Dogs:' : null}
           {similarDogsComponent}
