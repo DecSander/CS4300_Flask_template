@@ -140,7 +140,7 @@ class Preferences extends React.Component {
         <Accordion onChange={(i) => this.setState({open: i})} allowMultiple>
           {allPrefs.map((obj, i) => buildPrefs(obj.name, obj.props.map(p => buildRow(p, preferences)), i))}
         </Accordion>
-        <RaisedButton overlayStyle={{color: 'white'}} secondary={true} onClick={this.submit}>Submit</RaisedButton>
+        <RaisedButton style={{marginLeft: '47%', marginTop: '-20px', marginBottom: '50px'}} overlayStyle={{color: 'white'}} secondary={true} onClick={this.submit}>Submit</RaisedButton>
       </div>
     );
   }

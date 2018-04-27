@@ -1321,7 +1321,7 @@ var Preferences = function (_React$Component) {
         ),
         _react2.default.createElement(
           _RaisedButton2.default,
-          { overlayStyle: { color: 'white' }, secondary: true, onClick: this.submit },
+          { style: { marginLeft: '47%', marginTop: '-20px', marginBottom: '50px' }, overlayStyle: { color: 'white' }, secondary: true, onClick: this.submit },
           'Submit'
         )
       );
