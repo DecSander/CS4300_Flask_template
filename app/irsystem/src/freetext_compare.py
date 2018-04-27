@@ -57,10 +57,14 @@ def calc_norms():
                         text_data.append(stripped)
             else:
                 if tags is not None:
-                    for text in tags:
+                    for text_likes in tags:
+                        likes = text_likes['likes']
+                        text = text_likes['text']
                         if isinstance(text, unicode):
                             stripped = re.sub('[' + string.punctuation + ']', '', text.lower())
                             text_data.append(stripped)
+                            for i in range(likes):
+                                text_data.append(stripped)
         tokenizer = TreebankWordTokenizer()
         text_tokens = []
         doggo_trigrams[dog] = Counter()
@@ -197,8 +201,6 @@ def score_vector(query_vector, orig_query):
     return result, dog_term_weights
 
 
-
-
 def freetext_score(query, liked_dogs=None):
     if liked_dogs:
         query_vector = rocchio(query, liked_dogs)
@@ -211,6 +213,7 @@ def freetext_score(query, liked_dogs=None):
     for dog in structured_scores.keys():
         final_scores[dog] = ((1-free_weight)*structured_scores[dog]["score"] + free_weight*free_text_scores[dog])/2
     return final_scores, dog_term_weights
+
 
 def create_form_data(query):
     large = ["big","large", "huge"]
@@ -261,8 +264,7 @@ def create_form_data(query):
     
 
 if __name__ == "__main__":
-    print get_more_matches("Small cute fluffy", ["mastiff"])["mastiff"]
-    print "\n"
     scores = freetext_score("small")
-    sorted_scores = sorted(scores.items(), key=operator.itemgetter(1))
+    print(scores)
+    sorted_scores = sorted(scores[0].items(), key=operator.itemgetter(1))
     print(sorted_scores)
