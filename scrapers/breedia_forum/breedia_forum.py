@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup as BSoup
 import re
 import time
-import sys
+import sys, os
 import shelve
 import json
 from tqdm import tqdm
@@ -13,8 +13,11 @@ BASE_URL = "http://www.forum.breedia.com/"
 BREEDS_ROOT = "categories/dog-breed-forums.3/"
 last_request = 0
 cache = shelve.open("cache.data")
-with open("output.json", 'r') as f:
-    data = json.loads(f.read())
+if os.path.exists("output.json"):
+    with open("output.json", 'r') as f:
+        data = json.loads(f.read())
+else:
+    data = {}
 DOG_BREED_LIST = []
 
 def url_get(url):
@@ -30,6 +33,7 @@ def url_get(url):
     if diff < 1/RATE_LIMIT:
         time.sleep(1/RATE_LIMIT - diff)
 
+    print "rul request sed"
     last_request = time.time()
     html_text = requests.get(url).text
     cache[url] = html_text
@@ -85,8 +89,20 @@ if __name__ == "__main__":
                                     if thread_page_num != 1:
                                         thread_page = url_get(BASE_URL + thread_ref + "page-" + str(thread_page_num))
 
-                                    for message in thread_page.find_all(class_="messageText"):
-                                        breed_messages.append(message.text.strip())
+                                    for message in thread_page.select("div.messageInfo.primaryContent"):
+                                        text = message.find(class_="messageContent").text
+                                        like_info = message.find(class_="LikeText")
+                                        if like_info:
+                                            listed = len(like_info.find_all(class_="username"))
+                                            other_info = re.findall(r"(\d+) other", like_info.text)
+                                            if other_info:
+                                                other = int(other_info[-1])
+                                            else:
+                                                other = 0
+                                            likes = listed + other
+                                        else:
+                                            likes = 0
+                                        breed_messages.append({"text":text.strip(), "likes": likes})
 
                         data[breed] = breed_messages
                         not_done = True
