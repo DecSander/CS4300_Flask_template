@@ -958,7 +958,12 @@ var Matches = function (_React$Component) {
         dog.name
       );
     }, _this.buildContributingWord = function (word) {
-      return word;
+      return _react2.default.createElement(
+        'span',
+        null,
+        word,
+        _react2.default.createElement('br', null)
+      );
     }, _this.buildDialog = function () {
       var _this$props = _this.props,
           similarDogs = _this$props.similarDogs,
@@ -992,8 +997,10 @@ var Matches = function (_React$Component) {
           _react2.default.createElement('br', null),
           selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null,
           _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions }),
-          selectedBreed.contributingWords.size > 0 ? 'Dogs that made this search match' : null,
-          selectedBreed.contributingWords.size > 0 ? selectedBreed.contributingWords.map(_this.buildContributingWord) : null,
+          selectedBreed.contributingWords.size > 0 ? 'Top matching search terms:' : null,
+          _react2.default.createElement('br', null),
+          selectedBreed.contributingWords.size > 0 ? selectedBreed.contributingWords.slice(0, 2).map(_this.buildContributingWord) : null,
+          _react2.default.createElement('br', null),
           similarDogs.size > 0 && !retrievingSimilarDogs ? 'Similar Dogs:' : null,
           similarDogsComponent
         );
