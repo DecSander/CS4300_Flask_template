@@ -2,7 +2,7 @@ from __future__ import division
 import json
 import os
 import collections
-from collections import defaultdict
+from collections import defaultdict, Counter
 import numpy as np
 import math
 from nltk.tokenize import TreebankWordTokenizer
@@ -37,6 +37,8 @@ dog_index = None
 
 def calc_norms():
     global idf, norms, inv_word_doc_matrix, dog_index
+    doggo_trigrams = {}
+    full_trigrams = Counter()
     doggo_data = []
     inv_dog_index = {}
     dog_index = []
@@ -48,22 +50,41 @@ def calc_norms():
                 for tag, text in tags.iteritems():
                     if isinstance(text, list):
                         for elem in text:
-                            text_data.append(elem)
+                            stripped = re.sub('[' + string.punctuation + ']', '', elem.lower())
+                            text_data.append(stripped)
                     elif isinstance(text, unicode):
-                        text_data.append(text)
+                        stripped = re.sub('[' + string.punctuation + ']', '', text.lower())
+                        text_data.append(stripped)
             else:
                 if tags is not None:
                     for text in tags:
                         if isinstance(text, unicode):
-                            text_data.append(text)
+                            stripped = re.sub('[' + string.punctuation + ']', '', text.lower())
+                            text_data.append(stripped)
         tokenizer = TreebankWordTokenizer()
         text_tokens = []
+        doggo_trigrams[dog] = Counter()
         for s in text_data:
-            text_tokens.extend(tokenizer.tokenize(s.strip().replace('\n', ' ')))
+            tokens = tokenizer.tokenize(s.strip().replace('\n', ' '))
+            trigrams = [" ".join(x) for x in zip(tokens, tokens[1:], tokens[2:])]
+            doggo_trigrams[dog].update(trigrams)
+            full_trigrams.update(trigrams)
+            text_tokens.extend(tokens)
         doggo_data.append(text_tokens)
         dog_index.append(dog)
         inv_dog_index[dog] = i
         i += 1
+
+    final_doggo_trigrams = {}
+    for dog in doggo_trigrams:
+        final_doggo_trigrams[dog] = {}
+        for trigram in doggo_trigrams[dog]:
+            dog_name = set(dog.replace("-", " ").lower().split())
+            if full_trigrams[trigram] > 3 and not dog_name & set(trigram.split()):
+                final_doggo_trigrams[dog][trigram] = doggo_trigrams[dog][trigram] / full_trigrams[trigram]
+
+    with open("trigram_info.json", 'w') as f:
+        f.write(json.dumps(final_doggo_trigrams))
 
     inv_word_doc_matrix = {}
     for i in range(len(doggo_data)):
