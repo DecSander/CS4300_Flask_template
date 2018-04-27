@@ -87,6 +87,16 @@ class Home extends React.Component {
             <Preferences ref={section => { this.Preferences = section; }} />
           </Col>
         </Row>
+        <Row>
+          <Col xs={12}>
+            <p>Troy Joseph (tcj29)</p>
+            <p>Matan Presberg (mgp64)</p>
+            <p>Declan Sander (dms497)</p>
+            <p>James Stoyell (jms852)</p>
+            <p>Alyssa Trigg (avt26)</p>
+            <br />
+          </Col>
+        </Row>
       </Container>
     );
   }

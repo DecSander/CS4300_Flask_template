@@ -818,6 +818,40 @@ var Home = function (_React$Component) {
                 _this2.Preferences = section;
               } })
           )
+        ),
+        _react2.default.createElement(
+          _reactGridSystem.Row,
+          null,
+          _react2.default.createElement(
+            _reactGridSystem.Col,
+            { xs: 12 },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Troy Joseph (tcj29)'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Matan Presberg (mgp64)'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Declan Sander (dms497)'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'James Stoyell (jms852)'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Alyssa Trigg (avt26)'
+            ),
+            _react2.default.createElement('br', null)
+          )
         )
       );
     }
