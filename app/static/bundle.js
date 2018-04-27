@@ -733,6 +733,7 @@ var Home = function (_React$Component) {
       history.push('/breeds');
     }, _this.submitWithPrefs = function () {
       (0, _GlobalActions.changeCheckPreferences)(true);
+      (0, _GlobalActions.clearBreeds)();
       (0, _GlobalActions.resetPageNumber)();
       (0, _reactScrollToComponent2.default)(_this.Preferences, { offset: 0, align: 'top', duration: 400 });
     }, _this.keypress = function (e) {

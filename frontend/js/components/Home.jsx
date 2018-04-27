@@ -42,6 +42,7 @@ class Home extends React.Component {
 
   submitWithPrefs = () => {
     changeCheckPreferences(true);
+    clearBreeds();
     resetPageNumber();
     scrollToComponent(this.Preferences, { offset: 0, align: 'top', duration: 400})
   }
