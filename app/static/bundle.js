@@ -343,7 +343,7 @@ var Breeds = function (_Component) {
           _react2.default.createElement('br', null),
           selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null,
           _react2.default.createElement(_Contributions2.default, { values: selectedBreed.contributions }),
-          selectedBreed.contributingWords.size > 0 ? 'Top matching search terms:' : null,
+          selectedBreed.contributingWords.size > 0 ? 'Top matching search terms (from forums):' : null,
           _react2.default.createElement('br', null),
           selectedBreed.contributingWords.size > 0 ? selectedBreed.contributingWords.slice(0, 2).map(_this.buildContributingWord) : null,
           _react2.default.createElement('br', null),
