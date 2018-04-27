@@ -87,7 +87,7 @@ class Matches extends React.Component {
           <br /><br /><br />
           {selectedBreed.contributions.size > 0 ? 'Why this is a good dog:' : null}
           <Contributions values={selectedBreed.contributions} />
-          {selectedBreed.contributingWords.size > 0 ? 'Top matching search terms:' : null}
+          {selectedBreed.contributingWords.size > 0 ? 'Top matching search terms (from forums):' : null}
           <br />
           {selectedBreed.contributingWords.size > 0 ? selectedBreed.contributingWords.slice(0, 2).map(this.buildContributingWord) : null}
           <br />
