@@ -185,8 +185,14 @@ def rocchio(original_query, liked_dogs, disliked_dogs):
     new_vector = {}
     all_words = set(w for l in [query_vector.keys()] + [x.keys() for x in liked_dog_vectors.values()] + [x.keys() for x in disliked_dog_vectors.values()] for w in l)
     for word in all_words:
-        relevant_score = BETA * (sum(d[word] for d in liked_dog_vectors.values()) / float(len(liked_dog_vectors)))
-        irrelevant_score = GAMMA * (sum(d[word] for d in disliked_dog_vectors.values()) / float(len(disliked_dog_vectors)))
+        if liked_dog_vectors:
+            relevant_score = BETA * (sum(d[word] for d in liked_dog_vectors.values()) / float(len(liked_dog_vectors)))
+        else:
+            relevant_score = 0
+        if disliked_dog_vectors:
+            irrelevant_score = GAMMA * (sum(d[word] for d in disliked_dog_vectors.values()) / float(len(disliked_dog_vectors)))
+        else:
+            irrelevant_score = 0
         original_score = ALPHA * query_vector[word]
         new_vector[word] = relevant_score + original_score - irrelevant_score
 
