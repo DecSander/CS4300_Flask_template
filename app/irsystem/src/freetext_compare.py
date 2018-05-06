@@ -20,9 +20,9 @@ base_pickles = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "
 # This is here in case all the weights are 0, we don't want to just fail
 WEIGHT_EPSILON = .00001
 
-ALPHA = 0.6
-BETA = 0.35
-GAMMA = 0.05
+ALPHA = 0.3
+BETA = 0.6
+GAMMA = 0.1
 
 
 idf_path = os.path.join(base_pickles, 'idf.json')
