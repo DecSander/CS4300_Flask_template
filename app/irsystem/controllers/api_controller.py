@@ -180,9 +180,9 @@ def normalize_search_scores(scores):
         normalized_search_scores = {k: v * 0.99 / float(max_search_value) for k, v in scores.items()}
     return normalized_search_scores
 
-def get_normalized_search_score(request_json, liked_dogs):
+def get_normalized_search_score(request_json, liked_dogs, disliked_dogs):
     if 'search' in request_json:
-        search_scores, dog_term_weights = freetext_score(request_json['search'], liked_dogs)
+        search_scores, dog_term_weights = freetext_score(request_json['search'], liked_dogs, disliked_dogs)
         return normalize_search_scores(search_scores), dog_term_weights
     return None, None
 
@@ -212,6 +212,13 @@ def get_liked_dogs(uuid):
     user_data = pickle.load(open(path, 'r'))
     return user_data['liked']
 
+def get_disliked_dogs(uuid):
+    path = 'database/' + str(uuid) + ".pickle"
+    if not os.path.isfile(path):
+        return []
+    user_data = pickle.load(open(path, 'r'))
+    return user_data['disliked']
+
 
 def filter_liked_dogs(uuid, dogs_scores):
     liked = get_liked_dogs(uuid)
@@ -232,9 +239,10 @@ def get_dogs(request_json):
         session['uuid'] = str(uuidmod.uuid1())
 
     liked_dogs = get_liked_dogs(session['uuid'])
+    disliked_dogs = get_disliked_dogs(session['uuid'])
 
     structured_scores = get_preferences_score(request_json)
-    normalized_search_scores, dog_term_weights = get_normalized_search_score(request_json, liked_dogs)
+    normalized_search_scores, dog_term_weights = get_normalized_search_score(request_json, liked_dogs, disliked_dogs)
     similar_search_scores = get_similar_search_score(request_json)
 
     structured_num_score = {s:v["score"] for s, v in structured_scores.items()} if structured_scores is not None else None

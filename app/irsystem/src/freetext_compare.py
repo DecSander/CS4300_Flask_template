@@ -20,8 +20,9 @@ base_pickles = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "
 # This is here in case all the weights are 0, we don't want to just fail
 WEIGHT_EPSILON = .00001
 
-ALPHA = 0.8
-BETA = 1 - ALPHA
+ALPHA = 0.6
+BETA = 0.35
+GAMMA = 0.05
 
 
 idf_path = os.path.join(base_pickles, 'idf.json')
@@ -148,6 +149,10 @@ def calc_query_vector(query):
 
     return query_vector
 
+def normalize_vector(v):
+    s = sum(v.values())
+    return Counter({k:v/s for k,v in v.items()})
+
 def calc_dog_vectors(dogs):
     dog_vectors = {dog:collections.Counter() for dog in dogs}
     for word, scores in inv_word_doc_matrix.items():
@@ -156,20 +161,34 @@ def calc_dog_vectors(dogs):
             if dog in dog_vectors:
                 dog_vectors[dog][word] = tf * idf[word]
     
-    sums = {d:float(sum(score for _,score in c.items())) for d, c in dog_vectors.items()}
-    dog_vectors = {d:collections.Counter({w:score/sums[d] for w, score in dog_vectors[d].items()}) for d in dog_vectors}
+    # sums = {d:float(sum(score for _,score in c.items())) for d, c in dog_vectors.items()}
+    # dog_vectors = {d:collections.Counter({w:score/sums[d] for w, score in dog_vectors[d].items()}) for d in dog_vectors}
+    for d in dog_vectors:
+        dog_vectors[d] = normalize_vector(dog_vectors[d])
     return dog_vectors
 
-def rocchio(original_query, liked_dogs):
-    dog_vectors = calc_dog_vectors(liked_dogs)
-    query_vector = calc_query_vector(original_query)
+def rocchio(original_query, liked_dogs, disliked_dogs):
+    print liked_dogs, disliked_dogs
+    if liked_dogs is None:
+        liked_dogs = []
+    if disliked_dogs is None:
+        disliked_dogs = []
+
+    disliked_dogs = set(list(disliked_dogs)[:10])
+    liked_dogs = set(list(liked_dogs)[:10])
+    disliked_dog_vectors = calc_dog_vectors(disliked_dogs)
+    liked_dog_vectors = calc_dog_vectors(liked_dogs)
+
+    query_vector = normalize_vector(calc_query_vector(original_query))
+    print query_vector
 
     new_vector = {}
-    all_words = set(w for l in [query_vector.keys()] + [x.keys() for x in dog_vectors.values()] for w in l)
+    all_words = set(w for l in [query_vector.keys()] + [x.keys() for x in liked_dog_vectors.values()] + [x.keys() for x in disliked_dog_vectors.values()] for w in l)
     for word in all_words:
-        relevant_score = BETA * (sum(d[word] for d in dog_vectors.values()) / float(len(dog_vectors)))
+        relevant_score = BETA * (sum(d[word] for d in liked_dog_vectors.values()) / float(len(liked_dog_vectors)))
+        irrelevant_score = GAMMA * (sum(d[word] for d in disliked_dog_vectors.values()) / float(len(disliked_dog_vectors)))
         original_score = ALPHA * query_vector[word]
-        new_vector[word] = relevant_score + original_score
+        new_vector[word] = relevant_score + original_score - irrelevant_score
 
     return new_vector
 
@@ -201,9 +220,9 @@ def score_vector(query_vector, orig_query):
     return result, dog_term_weights
 
 
-def freetext_score(query, liked_dogs=None):
-    if liked_dogs:
-        query_vector = rocchio(query, liked_dogs)
+def freetext_score(query, liked_dogs=None, disliked_dogs=None):
+    if liked_dogs or disliked_dogs:
+        query_vector = rocchio(query, liked_dogs, disliked_dogs)
     else:
         query_vector = calc_query_vector(query)
     structured_scores = structured_score(create_form_data(query))
