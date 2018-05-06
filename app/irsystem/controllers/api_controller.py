@@ -35,7 +35,7 @@ def write_current_search_names(uuid, dog_names, is_new_search):
     if os.path.isfile(path):
         user_data = pickle.load(open(path, 'r'))
     else:
-        user_data = {'exclude': [], 'liked': set(), 'disliked': set()}
+        user_data = {'exclude': [], 'liked': set(), 'disliked': []}
 
     if is_new_search:
         user_data['exclude'] = list(dog_names)
@@ -96,13 +96,13 @@ def updated_liked_data(uuid, dog):
     if os.path.isfile(path):
         user_data = pickle.load(open(path, 'r'))
     else:
-        user_data = {'exclude': [], 'liked': set(), 'disliked': set()}
+        user_data = {'exclude': [], 'liked': set(), 'disliked': []}
 
     user_data['liked'].add(dog)
 
     index = user_data['exclude'].index(dog)
-    disliked = [d for d in user_data['exclude'][0:index] if d not in user_data['liked']]
-    user_data['disliked'].update(disliked)
+    disliked = [d for d in user_data['exclude'][0:index] if d not in user_data['liked'] and d not in user_data['disliked']]
+    user_data['disliked'] += disliked
 
     pickle.dump(user_data, open(path, 'w'))
 
@@ -112,7 +112,7 @@ def get_likes(uuid):
     if os.path.isfile(path):
         user_data = pickle.load(open(path, 'r'))
     else:
-        user_data = {'exclude': [], 'liked': set(), 'disliked': set()}
+        user_data = {'exclude': [], 'liked': set(), 'disliked': []}
 
     dogs_scores = ((dog, 0) for dog in user_data['liked'])
     return {"liked": get_json_from_dog_names(dogs_scores, require_min=False)}
@@ -128,7 +128,7 @@ def unlike_dog(uuid, dog_name):
         raise ValueError("Error: Can't remove dog, unknown UUID")
 
     user_data['liked'].remove(dog_name)
-    user_data['disliked'].add(dog_name)
+    user_data['disliked'].append(dog_name)
 
     pickle.dump(user_data, open(path, 'w'))
 
